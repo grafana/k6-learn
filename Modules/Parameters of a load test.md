@@ -44,7 +44,7 @@ The transaction distribution for a load test describes:
 
 Ramp-up is the amount of time it takes for a load test to go from 0 users to the desired number of users, and is found at the beginning of a test. Ramp-down is the time it takes for a load test to go from the desired number of users back down to 0, and is found at the end of a test. Ramp-up and ramp-down periods simulate real traffic against an application. In many production environments, users do not start accessing a site simultaneously, and instead gradually trickle into the application, and away from it, over some time.
 
-![](images/load_profile-ramp-up.png.png)
+![](load_profile-ramp-up.png.png)
 _Load test with ramp-up period highlighted_
 
 In the load test above, the highlighted portions show the ramp-up period, which is 5 minutes. During the first 5 minutes of the test, the script gradually increases the number of virtual users from 0 to 20.
@@ -82,7 +82,7 @@ Load profiles are typically described by plotting the number of virtual users ov
 
 ![](images/load_profile-no_ramp-up_or_ramp-down.png)
 
-![](images/load_profile-constant.png.png)
+![](load_profile-constant.png.png)
 _Constant load profile_
 
 The most common load profile is 
