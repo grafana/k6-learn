@@ -1,3 +1,5 @@
+# k6 Workshop
+
 ## Objectives
 
 The main goal of this workshop is to give attendees enough hands-on experience to be able to build and execute their own performance tests as part of their current testing efforts.
@@ -9,7 +11,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 ### 1: Performance testing principles
 
  - [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
- - [[Goals of performance testing]]
+ - [Goals of performance testing](Goals%20of%20performance%20testing.md)
  - [Parameters of a load test](Modules/Parameters%20of%20a%20load%20test.md)
  - [[Load testing types]]
  - [Clarifying testing criteria](Modules/Clarifying%20testing%20criteria.md)
