@@ -1,7 +1,7 @@
 There are many ways to start scripting with k6, but we're starting with [k6 OSS](https://github.com/grafana/k6) for a few reasons:
 - It is a fully-fledged load testing tool on its own, and it doesn't require a subscription or any payment to use. 
 - k6 Cloud, the SaaS platform, also uses k6 OSS, so the skills you learn in this section will apply even if you decide to use k6 Cloud later. 
-- Learning to script in k6 OSS gives you the ability to add on more advanced scenarios and features later. Other methods of script generation that we'll discusss later are limited in functionality.
+- Learning to script in k6 OSS gives you the ability to add on more advanced scenarios and features later. Other methods of script generation that we'll discuss later are limited in functionality.
 
 Let's get started!
 
@@ -11,115 +11,106 @@ First, install k6 by [following the instructions here](https://k6.io/docs/gettin
 
 Next, pick your favorite IDE or text editor. Many of us use and recommend [VS Code](https://code.visualstudio.com/), but you can also use [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/), or anything else you're already using that can create text files.
 
-## Hello World: Writing your first k6 script!
+## Writing your first k6 script
 
 Time to write the script! 
 
 k6 supports multiple protocols, but for now, let's stick to HTTP. Your first script will do a basic HTTP POST request against a test API that will echo back whatever you send to it.
 
-Create a new file named `test.js`, and open it in your favorite IDE:
+Create a new file named `test.js`, and open it in your favorite IDE. This file is our test script. k6 scripts are always written in JavaScript, even though k6 itself is written in Go. We're going to create the script together, step by step. Copy and paste the code snippets as necessary, so that your script looks like the one here.
 
-```bash
-$ touch ./test.js
-```
-
-We'll now start by importing the HTTP Client from the built-in module `k6/http`.
+Import the HTTP Client from the built-in module `k6/http`:
 
 ```js
 import http from 'k6/http';
 ```
 
-We'll then create and export a default function, which is what will be executed by our virtual user:
+Now, create and export a default function:
 
 ```js
 export default function() {
 }
 ```
 
-Next, we'll add the logic for making the actual http call.
+Any code placed in the default function will be executed by each k6 virtual user when the test is run.
+
+Let's add the logic for making the actual HTTP call:
 
 ```js
 import http from 'k6/http';
 
 export default function() {
-  let url = 'https://httpbin.test.k6.io/';
-  http.post(url, 'hello, world!');
+  let url = 'https://httpbin.test.k6.io/post';
+  let response = http.post(url, 'Hello world!');
 }
 ```
 
-While this will work, it's not particularly useful. We have no idea whether the request actually returns anything, and if it does; whether it is what we expected. Let's log the response to the console, just to make sure:
+Here, we're instructing k6 to send an HTTP POST request to the API endpoint `https://httpbin.test.k6.io/post` with the body `Hello world!`
+
+We could actually run this script already, and k6 would make the HTTP POST request, but how would we know if it worked? Let's log the response to the console, just to make sure:
 
 ```js
 import http from 'k6/http';
 
 export default function() {
-  let url = 'https://httpbin.test.k6.io/';
-  let r = http.post(url, 'hello, world!');
-  
-  console.log(r.json().data);
+  let url = 'https://httpbin.test.k6.io/post';
+  let response = http.post(url, 'Hello world!');
+
+  console.log(response.json().data);
 }
 ```
 
-As a last step, let's go ahead and actually run our test:
+We'll learn more ways to verify the results of our tests later, but for now, let's go ahead and run our first test!
+
+## Hello World: running your k6 script
+
+Save your script in your editor. Then, open up your terminal and go to the directory you saved your k6 script in. Now, run the test:
+
+```js
+k6 run test.js
+```
+
+You should get something like this:
 
 ```plain
 $ k6 run test.js
 
-          /\      |‾‾| /‾‾/   /‾‾/
-     /\  /  \     |  |/  /   /  /
-    /  \/    \    |     (   /   ‾‾\
-   /          \   |  |\  \ |  (‾)  |
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
   / __________ \  |__| \__\ \_____/ .io
 
   execution: local
-     script: 01-hello-world.js
+     script: test.js
      output: -
 
   scenarios: (100.00%) 1 scenario, 1 max VUs, 10m30s max duration (incl. graceful stop):
            * default: 1 iterations for each of 1 VUs (maxDuration: 10m0s, gracefulStop: 30s)
 
-INFO[0001] hello, world!                                 source=console
+INFO[0001] Hello world!                                  source=console
 
-running (00m01.1s), 0/1 VUs, 1 complete and 0 interrupted iterations
-default ✓ [======================================] 1 VUs  00m01.1s/10m0s  1/1 iters, 1 per VU
+running (00m00.7s), 0/1 VUs, 1 complete and 0 interrupted iterations
+default ✓ [======================================] 1 VUs  00m00.7s/10m0s  1/1 iters, 1 per VU
 
-     data_received..................: 6.0 kB 5.6 kB/s
-     data_sent......................: 728 B  681 B/s
-     http_req_blocked...............: avg=965.29ms min=965.29ms med=965.29ms max=965.29ms p(90)=965.29ms p(95)=965.29ms
-     http_req_connecting............: avg=98.43ms  min=98.43ms  med=98.43ms  max=98.43ms  p(90)=98.43ms  p(95)=98.43ms
-     http_req_duration..............: avg=102.06ms min=102.06ms med=102.06ms max=102.06ms p(90)=102.06ms p(95)=102.06ms
-       { expected_response:true }...: avg=102.06ms min=102.06ms med=102.06ms max=102.06ms p(90)=102.06ms p(95)=102.06ms
-     http_req_failed................: 0.00%  ✓ 0   ✗ 1
-     http_req_receiving.............: avg=63µs     min=63µs     med=63µs     max=63µs     p(90)=63µs     p(95)=63µs
-     http_req_sending...............: avg=240µs    min=240µs    med=240µs    max=240µs    p(90)=240µs    p(95)=240µs
-     http_req_tls_handshaking.......: avg=324.53ms min=324.53ms med=324.53ms max=324.53ms p(90)=324.53ms p(95)=324.53ms
-     http_req_waiting...............: avg=101.75ms min=101.75ms med=101.75ms max=101.75ms p(90)=101.75ms p(95)=101.75ms
-     http_reqs......................: 1      0.936076/s
-     iteration_duration.............: avg=1.06s    min=1.06s    med=1.06s    max=1.06s    p(90)=1.06s    p(95)=1.06s
-     iterations.....................: 1      0.936076/s
-     vus............................: 1      min=1 max=1
-     vus_max........................: 1      min=1 max=1
+     data_received..................: 5.9 kB 9.0 kB/s
+     data_sent......................: 564 B  860 B/s
+     http_req_blocked...............: avg=524.18ms min=524.18ms med=524.18ms max=524.18ms p(90)=524.18ms p(95)=524.18ms
+     http_req_connecting............: avg=123.28ms min=123.28ms med=123.28ms max=123.28ms p(90)=123.28ms p(95)=123.28ms
+     http_req_duration..............: avg=130.19ms min=130.19ms med=130.19ms max=130.19ms p(90)=130.19ms p(95)=130.19ms
+       { expected_response:true }...: avg=130.19ms min=130.19ms med=130.19ms max=130.19ms p(90)=130.19ms p(95)=130.19ms
+     http_req_failed................: 0.00%  ✓ 0        ✗ 1
+     http_req_receiving.............: avg=165µs    min=165µs    med=165µs    max=165µs    p(90)=165µs    p(95)=165µs   
+     http_req_sending...............: avg=80µs     min=80µs     med=80µs     max=80µs     p(90)=80µs     p(95)=80µs    
+     http_req_tls_handshaking.......: avg=399.48ms min=399.48ms med=399.48ms max=399.48ms p(90)=399.48ms p(95)=399.48ms
+     http_req_waiting...............: avg=129.94ms min=129.94ms med=129.94ms max=129.94ms p(90)=129.94ms p(95)=129.94ms
+     http_reqs......................: 1      1.525116/s
+     iteration_duration.............: avg=654.72ms min=654.72ms med=654.72ms max=654.72ms p(90)=654.72ms p(95)=654.72ms
+     iterations.....................: 1      1.525116/s
 
 ```
 
-Did you spot that? The logging we added is actually part of the output! 
-
-```plain
-INFO[0001] hello, world!                                 source=console
-```
-
-> ### 🧠  Did you know?
-> The k6 HTTP client has built-in support for all of the HTTP methods commonly used to interact with a web server. In this example we did a `POST` request using `http.post`, but the following methods are available as well:
-> 
-> - `DELETE`, or `http.del`
-> - `GET`, or `http.get`
-> - `OPTIONS`, or `http.options`
-> - `PATCH`, or `http.patch`
-> - `PUT`,or `http.put`
->
-> ...or if you want to do something completely different, the even more customizable `http.request`.
-
-As for the rest of the output, we'll have a look at that in the next part.
+That's a lot of metrics! In the next section, we'll go over what each of these lines mean.
 
 ## Test your knowledge
 
@@ -145,7 +136,7 @@ Answer: C
 
 ### Question 3
 
-Where in a test script do we place http calls to have them executed by a virtual user?
+Where in a test script should we place HTTP calls to have them executed by a virtual user?
 
 A: In the global scope
 B: In an exported default function
