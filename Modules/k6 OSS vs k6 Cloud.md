@@ -7,7 +7,7 @@ There are two ways for you to start creating your test script from scratch: k6 O
 k6 OSS is better for you in these situations:
 - You want to try out k6 and learn how to use it.
 - You want to generate load locally, or within a private network.
-- You don't need distributed execution.
+- You don't need distributed execution, or you're willing to set up the [k6 operator](https://github.com/grafana/k6-operator) to run distributed tests.
 - You don't mind scripting in JavaScript.
 
 k6 Cloud is better for you in these situations:

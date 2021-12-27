@@ -11,33 +11,31 @@ Upon completing the workshop, attendees will know how to write realistic load te
 ### 1: Performance testing principles
 
  - [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
- - [Goals of performance testing](Goals%20of%20performance%20testing.md)
+ - ==[Goals of performance testing](Goals%20of%20performance%20testing.md)==
  - [Parameters of a load test](Modules/Parameters%20of%20a%20load%20test.md)
- - [[Load testing types]]
+ - ==[[Load testing types]]==
  - [Clarifying testing criteria](Modules/Clarifying%20testing%20criteria.md)
-- What to test: [Determining scope](Modules/Determining%20scope.md)
+- What to test: Determining scope
 - Where to test: environments
 - Who does the testing?
-- [Types of load tests](Modules/Types%20of%20load%20tests.md)
+- Types of load tests
 - The architecture of a load testing stack: diagram and explanation
-- [[Performance testing metrics]]
+- Performance testing metrics
 	- Consider just measuring steady state
 
 ### 2: k6 Foundations
 
 - [k6 OSS vs k6 Cloud](Modules/k6%20OSS%20vs%20k6%20Cloud.md) differences and use cases
 - k6 OSS
-	- How to install k6 OSS
-	- Overview of key APIs
-	- Writing an initial script: [HTTP Requests](Modules/HTTP%20Requests.md)
+	- [Getting started with k6 OSS](Getting%20started%20with%20k6%20OSS.md)
 	- How to run a local k6 test
+	- Output basics: what each metric means
 	- Checks
 	- sleep and why it's important
 	- Think time
 	- VU, duration, and iteration settings
 	- Adding thresholds
 	- k6 options
-	- Output basics: what each metric means
 - k6 Cloud
 	- Recording a script using the browser extension
 	- Creating a script using the Test Builder
@@ -53,7 +51,8 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - Best practices for writing reusable and maintainable code
 - Data correlation
 - Shared Array and CSV Files
-- Batching HTTP requests
+- [HTTP Requests - Metrics](HTTP%20Requests%20-%20Metrics.md)
+- [HTTP Requests - Batching Requests](HTTP%20Requests%20-%20Batching%20Requests.md)
 - Using groups
 - Setup and Teardown functions
 - Custom metrics
@@ -97,7 +96,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - Source control (git)
 - Connection reuse options
 - Caching options
-- Other protocols
+- [[Additional protocols]]
 - Framework for a complex test (multiple scripts calling each other) - modular scripting
 - Mocks and stubs
 - xk6 extensions

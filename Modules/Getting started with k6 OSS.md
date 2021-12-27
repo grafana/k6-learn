@@ -1,13 +1,21 @@
-%%
-tags:
-  - #workshop
-  - #devrel 
-  - #community
-%%
+There are many ways to start scripting with k6, but we're starting with [k6 OSS](https://github.com/grafana/k6) for a few reasons:
+- It is a fully-fledged load testing tool on its own, and it doesn't require a subscription or any payment to use. 
+- k6 Cloud, the SaaS platform, also uses k6 OSS, so the skills you learn in this section will apply even if you decide to use k6 Cloud later. 
+- Learning to script in k6 OSS gives you the ability to add on more advanced scenarios and features later. Other methods of script generation that we'll discusss later are limited in functionality.
 
+Let's get started!
 
+## Installation
 
-As a first step, we'll do a basic HTTP POST request against a test API that will echo back whatever we're sending to it.
+First, install k6 by [following the instructions here](https://k6.io/docs/getting-started/installation/) for your operating system.
+
+Next, pick your favorite IDE or text editor. Many of us use and recommend [VS Code](https://code.visualstudio.com/), but you can also use [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/), or anything else you're already using that can create text files.
+
+## Hello World: Writing your first k6 script!
+
+Time to write the script! 
+
+k6 supports multiple protocols, but for now, let's stick to HTTP. Your first script will do a basic HTTP POST request against a test API that will echo back whatever you send to it.
 
 Create a new file named `test.js`, and open it in your favorite IDE:
 
