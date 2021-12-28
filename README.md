@@ -19,7 +19,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - What to test: Determining scope
 - Where to test: environments
 - Who does the testing?
-- Types of load tests
+- [[Types of load tests]]
 - The architecture of a load testing stack: diagram and explanation
 - Performance testing metrics
 	- Consider just measuring steady state
@@ -31,10 +31,9 @@ Upon completing the workshop, attendees will know how to write realistic load te
 	- [Getting started with k6 OSS](Getting%20started%20with%20k6%20OSS.md)
 	- [Understanding k6 results](Understanding%20k6%20results.md)
 	- [Adding checks to your script](Adding%20checks%20to%20your%20script.md)
-	- sleep and think time
-	- VU, duration, and iteration settings
+	- [Adding think time using sleep](Adding%20think%20time%20using%20sleep.md)
+	- k6 options: VU, duration, and iteration settings
 	- Adding thresholds
-	- k6 options
 - k6 Cloud
 	- Recording a script using the browser extension
 	- Creating a script using the Test Builder

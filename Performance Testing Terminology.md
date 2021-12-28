@@ -8,6 +8,8 @@
 
 ### Think time
 
+https://k6.io/docs/javascript-api/k6/sleep-t/
+
 ### Transaction
 
 ### Scenario
@@ -37,4 +39,6 @@ https://k6.io/docs/using-k6/checks/
 ### Threshold
 
 ### Requirement
+
+### Load generator
 
