@@ -159,14 +159,127 @@ The line below reports the response time for only the successful requests.
   { expected_response:true }...: avg=130.19ms min=130.19ms med=130.19ms max=130.19ms p(90)=130.19ms p(95)=130.19ms
 ```
 
-
+To improve accuracy and prevent failed requests from skewing results, use the 95th percentile value of the successful requests as a response time.
 
 #### Error rate
 
+The `http_req_failed` metric describes the [error rate](Performance%20Testing%20Terminology.md#Error%20rate) for the test. The error rate is the number of requests that failed during the test, as a percentage of the total requests.
+
+```plain
+http_req_failed................: 0.00%  ✓ 0        ✗ 1
+```
+
+`http_req_failed` automatically marks HTTP response codes of between 200 and 399. This means that HTTP 4xx and HTTP 5xx response codes are considered errors by k6 by default. (Note: This behavior can be changed using [`setResponseCallback`](https://k6.io/docs/javascript-api/k6-http/setresponsecallback-callback).)
+
+This test run had an error rate of `0.00%`, because the single request it ran succeeded. It may seem counter-intuitive, but the `✓` on this line actually means that no requests had `http_req_failed = true`, meaning that there were no failures. Conversely, the `✗` means that 1 request had `http_req_failed = false`, meaning that it was successful.
+
+#### Number of requests
+
+The number of total requests sent by all VUs during the test is described in the line below.
+
+```plain
+http_reqs......................: 1      1.525116/s
+```
+
+Additionally, the number `1.525116/s` is the number of **requests per second (rps)** that the test executed throughout the test. In some tools, this is described as "test throughput". This helps you further quantify how much load your application experienced during the test.
 
 #### Iteration duration
 
+`http_req_duration`, the most commonly used metric for "response time", measures the time taken for an HTTP request within the script to get a response from the server. But what if you have multiple HTTP requests strung together in a user flow, and you'd like to know how the entire flow would take for a user?
+
+In that case, the iteration duration is the metric you should have a look at.
+
+```plain
+iteration_duration.............: avg=654.72ms min=654.72ms med=654.72ms max=654.72ms p(90)=654.72ms p(95)=654.72ms
+```
+
+The iteration duration is the amount of time it took for k6 to perform a single loop of your entire script. If your script included steps like logging in, browsing a product page, adding to a cart, and entering payment information, then the iteration duration gives you an idea of how long one of your application's users might take to purchase a product.
+
+This metric could be useful when you're trying to decide on what is an acceptable response time for each HTTP request. For example, perhaps the payment request takes 2 seconds, but if the total iteration duration is still only 3 seconds, you might decide that's acceptable anyway.
+
+Like the other metrics, the iteration duration is expressed in terms of the average, minimum, median, maximum, 90th percentile, and 95th percentile times, in milliseconds.
+
 #### Number of iterations
+
+The number of iterations describes how many times k6 looped through your script in total, including the iterations for all VUs. This metric can be useful when you want to verify some output associated with each iteration, such as an account signup.
+
+```plain
+iterations.....................: 1      1.525116/s
+```
+
+The number `1.525116/s` on the same line is the **iterations per second**. It describes the rate at which k6 did full iterations through the script. This, like [requests per second](Understanding%20k6%20results.md#Number%20of%20requests), is a measure of the speed or rate at which k6 sent messages to the application server.
+
+## Next up
+
+Logging the response bodies of requests to the console might be good when troubleshooting, but what if you just want to verify the response automatically, without having to check the log? In the next section, you'll learn about checks.
 
 ## Test your knowledge
 
+To answer the following questions, refer to the sample end-of-test summary report below.
+
+```plain
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: test.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 10 max VUs, 2m30s max duration (incl. graceful stop):
+           * default: 10 looping VUs for 2m0s (gracefulStop: 30s)
+
+
+running (2m00.1s), 00/10 VUs, 9463 complete and 0 interrupted iterations
+default ✓ [======================================] 10 VUs  2m0s
+
+     data_received..................: 6.3 MB 52 kB/s
+     data_sent......................: 1.5 MB 12 kB/s
+     http_req_blocked...............: avg=4.46ms   min=1µs      med=5µs      max=647.67ms p(90)=9µs      p(95)=11µs    
+     http_req_connecting............: avg=1.4ms    min=0s       med=0s       max=255.11ms p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=122.22ms min=111.57ms med=120.95ms max=282.39ms p(90)=127.78ms p(95)=131.04ms
+       { expected_response:true }...: avg=122.22ms min=111.57ms med=120.95ms max=282.39ms p(90)=127.78ms p(95)=131.04ms
+     http_req_failed................: 0.00%  ✓ 0         ✗ 9463
+     http_req_receiving.............: avg=107.08µs min=15µs     med=85µs     max=13.35ms  p(90)=163µs    p(95)=197µs   
+     http_req_sending...............: avg=35.86µs  min=5µs      med=30µs     max=2.7ms    p(90)=59µs     p(95)=72µs    
+     http_req_tls_handshaking.......: avg=2.99ms   min=0s       med=0s       max=501.24ms p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=122.08ms min=111.47ms med=120.81ms max=282.16ms p(90)=127.64ms p(95)=130.87ms
+     http_reqs......................: 9463   78.808231/s
+     iteration_duration.............: avg=126.85ms min=111.75ms med=121.14ms max=803.13ms p(90)=128.46ms p(95)=132.55ms
+     iterations.....................: 9463   78.808231/s
+     vus............................: 10     min=10      max=10
+     vus_max........................: 10     min=10      max=10
+```
+
+
+### Question 1
+
+Which of the following is the best value to use as the response time for all HTTP requests?
+
+A: 131.04 ms
+B: 122.08 ms
+C: 4.46 ms
+
+Answer: A
+
+### Question 2
+
+How many virtual users did this test execute?
+
+A: 9463
+B: 1
+C: 10
+
+Answer: C
+
+### Question 3
+
+How many requests failed?
+
+A: 0
+B: 9463
+C: 10
+
+Answer: A

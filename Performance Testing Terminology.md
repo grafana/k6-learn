@@ -1,3 +1,5 @@
+
+
 ### Ramp-up
 
 ### Ramp-down
@@ -25,3 +27,14 @@ https://k6.io/docs/using-k6/scenarios/graceful-stop/
 30 seconds by default
 
 ### Percentiles
+
+### Error rate
+
+### Check
+
+https://k6.io/docs/using-k6/checks/
+
+### Threshold
+
+### Requirement
+

@@ -15,6 +15,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
  - [Parameters of a load test](Modules/Parameters%20of%20a%20load%20test.md)
  - ==[[Load testing types]]==
  - [Clarifying testing criteria](Modules/Clarifying%20testing%20criteria.md)
+ - Making scripts realistic
 - What to test: Determining scope
 - Where to test: environments
 - Who does the testing?
@@ -29,9 +30,8 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - k6 OSS
 	- [Getting started with k6 OSS](Getting%20started%20with%20k6%20OSS.md)
 	- [Understanding k6 results](Understanding%20k6%20results.md)
-	- Checks
-	- sleep and why it's important
-	- Think time
+	- [Adding checks to your script](Adding%20checks%20to%20your%20script.md)
+	- sleep and think time
 	- VU, duration, and iteration settings
 	- Adding thresholds
 	- k6 options
