@@ -28,8 +28,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [k6 OSS vs k6 Cloud](Modules/k6%20OSS%20vs%20k6%20Cloud.md) differences and use cases
 - k6 OSS
 	- [Getting started with k6 OSS](Getting%20started%20with%20k6%20OSS.md)
-	- How to run a local k6 test
-	- Output basics: what each metric means
+	- [Understanding k6 results](Understanding%20k6%20results.md)
 	- Checks
 	- sleep and why it's important
 	- Think time

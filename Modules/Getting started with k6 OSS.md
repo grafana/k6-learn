@@ -34,7 +34,7 @@ export default function() {
 
 Any code placed in the default function will be executed by each k6 virtual user when the test is run.
 
-Let's add the logic for making the actual HTTP call:
+Add the logic for making the actual HTTP call:
 
 ```js
 import http from 'k6/http';
@@ -45,9 +45,9 @@ export default function() {
 }
 ```
 
-Here, we're instructing k6 to send an HTTP POST request to the API endpoint `https://httpbin.test.k6.io/post` with the body `Hello world!`
+Here, you're instructing k6 to send an HTTP POST request to the API endpoint `https://httpbin.test.k6.io/post` with the body `Hello world!`
 
-We could actually run this script already, and k6 would make the HTTP POST request, but how would we know if it worked? Let's log the response to the console, just to make sure:
+You could actually run this script already, and k6 would make the HTTP POST request, but how would you know if it worked? Here's how to log the response to the console:
 
 ```js
 import http from 'k6/http';
@@ -60,7 +60,7 @@ export default function() {
 }
 ```
 
-We'll learn more ways to verify the results of our tests later, but for now, let's go ahead and run our first test!
+You'll learn more ways to verify the results of your tests later, but for now, go ahead and run your first test!
 
 ## Hello World: running your k6 script
 
