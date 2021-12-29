@@ -83,8 +83,9 @@ The script will pause for a number of seconds between 1 and 5, inclusive of both
 
 The real answer is: it depends.
 
-Some factors that may influence the duration of the right think time for your script are:
-- 
+Some factors that affect the duration of the think time you add are the goals for your testing, what the production traffic looks like, and the computing resources that you have at your disposal. It's best to model test scripts as closely as possible to what occurs in production environments.
+
+In the absence of any data on production traffic, however, you can time how long it takes for *you* to go through a user flow and use that as a starting point.
 
 ## Test your knowledge
 
@@ -100,23 +101,26 @@ Answer: B
 
 ### Question 2
 
+In the following line, what does the number 3 represent?
 
+`sleep(3)`
 
-A: 
-B: 
-C: 
+A: A think time of 3 milliseconds
+B: The number of iterations that will get a think time
+C: A think time of 3 millisecond
+
 
 Answer: C
 
 ### Question 3
 
+A script without think time runs with a single iteration, and the iteration duration was 5 seconds. What would the iteration duration have been if the script had included a sleep of 1 second?
 
+A: 5 seconds
+B: 6 seconds
+C: 4 seconds
 
-A: 
-B: 
-C: B
-
-Answer: 
+Answer: B
 
 ## Next Up
 
