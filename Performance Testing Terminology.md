@@ -42,3 +42,6 @@ https://k6.io/docs/using-k6/checks/
 
 ### Load generator
 
+### Environment variable
+
+### Test options

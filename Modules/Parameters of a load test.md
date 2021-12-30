@@ -93,6 +93,8 @@ A load profile describes the shape of the traffic generated over a certain amoun
 
 Load profiles are typically described by plotting the number of virtual users over time.
 
+### Simple load profile
+
 ![Simple load profile for a load test](images/load_profile-no_ramp-up_or_ramp-down.png)
 _Simple load profile for a load test_
 
@@ -103,6 +105,8 @@ For example, in the screenshot above, the script started 20 VUs. When the end of
 ```ad-note
 In k6, the `default` function is the part that is repeated throughout the test. You can nest other functions within this function or choose to iterate a different function instead by using [the exec option within a scenario](https://k6.io/docs/using-k6/scenarios/#common-options).
 ```
+
+### Constant load profile with ramps
 
 Sometimes, the load profile above may be too simple. If you are running thousands of VUs, it may not be realistic to start all of those VUs at the same time. Doing so may cause your application to respond in strange ways. Similarly, a hard stop for all VUs at the end of the test may not be realistic either.
 

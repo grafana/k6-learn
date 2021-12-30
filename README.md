@@ -32,7 +32,8 @@ Upon completing the workshop, attendees will know how to write realistic load te
 	- [Understanding k6 results](Understanding%20k6%20results.md)
 	- [Adding checks to your script](Adding%20checks%20to%20your%20script.md)
 	- [Adding think time using sleep](Adding%20think%20time%20using%20sleep.md)
-	- k6 options: VU, duration, and iteration settings
+	- [k6 Test Options](k6%20Test%20Options.md)
+		- VU, duration, and iteration settings
 	- Adding thresholds
 - k6 Cloud
 	- Recording a script using the browser extension
