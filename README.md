@@ -33,14 +33,17 @@ Upon completing the workshop, attendees will know how to write realistic load te
 	- [Adding checks to your script](Adding%20checks%20to%20your%20script.md)
 	- [Adding think time using sleep](Adding%20think%20time%20using%20sleep.md)
 	- [k6 Test Options](k6%20Test%20Options.md)
-		- VU, duration, and iteration settings
-	- Adding thresholds
+	- [Setting thresholds in k6](Setting%20thresholds%20in%20k6.md)
 - k6 Cloud
-	- Recording a script using the browser extension
+	- [[Recording a k6 script]]
 	- Creating a script using the Test Builder
 	- Choosing different availability zones
 	- Choosing a load profile
 	- Explanation of output per tab
+- Using k6 OSS with k6 Cloud
+	- `k6 login cloud`
+	- `k6 run test.js -o cloud`
+	- `k6 cloud test.js`
 
 ## 3: k6 Intermediate
 
@@ -57,6 +60,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - Custom metrics
 - Environment variables
 - Using tags
+- Thresholds for tags and groups
 - Best practices for designing realistic load tests
 
 ### Execution
@@ -66,7 +70,6 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - Executors and which is best when
 - Multiple scenarios
 - Stages
-- Thresholds, including those that stop tests if breached
 - Environment variables
 - Sending results to k6 Cloud `k6 run test.js -o cloud`
 - `k6 login cloud`

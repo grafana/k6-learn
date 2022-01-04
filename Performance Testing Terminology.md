@@ -38,6 +38,8 @@ https://k6.io/docs/using-k6/checks/
 
 ### Threshold
 
+https://k6.io/docs/using-k6/thresholds/
+
 ### Requirement
 
 ### Load generator
@@ -45,3 +47,5 @@ https://k6.io/docs/using-k6/checks/
 ### Environment variable
 
 ### Test options
+
+### CI/CD
