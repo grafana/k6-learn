@@ -34,16 +34,18 @@ Upon completing the workshop, attendees will know how to write realistic load te
 	- [Adding think time using sleep](Adding%20think%20time%20using%20sleep.md)
 	- [k6 Test Options](k6%20Test%20Options.md)
 	- [Setting thresholds in k6](Setting%20thresholds%20in%20k6.md)
+	- [k6 results output options](k6%20results%20output%20options.md)
+- [[Using k6 OSS with k6 Cloud]]
+	- Signing up for k6 Cloud
+	- `k6 login cloud`
+	- `k6 run test.js -o cloud`
+	- `k6 cloud test.js`
 - k6 Cloud
-	- [[Recording a k6 script]]
+	- [Recording a k6 script](Recording%20a%20k6%20script.md)
 	- Creating a script using the Test Builder
 	- Choosing different availability zones
 	- Choosing a load profile
 	- Explanation of output per tab
-- Using k6 OSS with k6 Cloud
-	- `k6 login cloud`
-	- `k6 run test.js -o cloud`
-	- `k6 cloud test.js`
 
 ## 3: k6 Intermediate
 

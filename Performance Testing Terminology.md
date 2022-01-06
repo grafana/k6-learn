@@ -49,3 +49,7 @@ https://k6.io/docs/using-k6/thresholds/
 ### Test options
 
 ### CI/CD
+
+### Group
+
+https://k6.io/docs/using-k6/tags-and-groups/#groups
