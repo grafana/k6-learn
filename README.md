@@ -10,12 +10,10 @@ Upon completing the workshop, attendees will know how to write realistic load te
 
 ### 1: Performance testing principles
 
- - [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
- - ==[Goals of performance testing](Goals%20of%20performance%20testing.md)==
- - [Parameters of a load test](Modules/Parameters%20of%20a%20load%20test.md)
- - ==[[Load testing types]]==
- - [Clarifying testing criteria](Modules/Clarifying%20testing%20criteria.md)
- - Making scripts realistic
+- [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
+- [Parameters of a load test](Modules/Parameters%20of%20a%20load%20test.md)
+- [Clarifying testing criteria](Modules/Clarifying%20testing%20criteria.md)
+- Making scripts realistic
 - What to test: Determining scope
 - Where to test: environments
 - Who does the testing?
@@ -35,11 +33,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 	- [k6 Test Options](k6%20Test%20Options.md)
 	- [Setting thresholds in k6](Setting%20thresholds%20in%20k6.md)
 	- [k6 results output options](k6%20results%20output%20options.md)
-- [[Using k6 OSS with k6 Cloud]]
-	- Signing up for k6 Cloud
-	- `k6 login cloud`
-	- `k6 run test.js -o cloud`
-	- `k6 cloud test.js`
+- [Using k6 OSS with k6 Cloud](Using%20k6%20OSS%20with%20k6%20Cloud.md)
 - k6 Cloud
 	- [Recording a k6 script](Recording%20a%20k6%20script.md)
 	- Creating a script using the Test Builder

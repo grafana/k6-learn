@@ -133,5 +133,4 @@ The previous two options let you output k6 results in different formats, but the
 
 An alternative to this is to use k6 Cloud. k6 Cloud is a paid SaaS platform built around k6 OSS. You can use k6 without using k6 Cloud, but k6 Cloud does provide some added functionalities that are quite useful, and one of them is results visualization.
 
-In the next section, you're going to explore k6 Cloud and how it could help you analyze results. The 
-
+The next section talks about k6 Cloud, how to use it in conjunction with k6 OSS, and how it could help you analyze results.
