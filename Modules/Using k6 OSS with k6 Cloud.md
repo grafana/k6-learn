@@ -2,6 +2,9 @@ k6 Cloud is an optional service and load testing platform that provides the best
 
 ## Using k6 OSS with k6 Cloud
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jDmMmc75RRM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ### Sign up for k6 Cloud
 
 k6 Cloud is free (no credit card required) for the first 50 cloud tests, so that's what we're going to use. You will not need a paid account for any of these exercises.
