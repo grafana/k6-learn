@@ -1,3 +1,5 @@
+# Clarifying testing criteria
+
 Before you begin testing, it's important to get a good understanding of _why_ you're doing load testing. Now is a good time to talk to your team and other stakeholders about what you're looking to get out of this round of load testing. 
 
 Are you reacting to a production incident that was performance-related? Are you trying to determine whether this application version degraded performance when compared to the version in production? Your reason for load testing may significantly affect the types of tests you run, so getting clarity on the purpose of load testing before you begin is essential.
@@ -11,6 +13,8 @@ Below, we'll discuss the following test criteria and the differences between the
 - Thresholds
 - Checks
 - Assertions
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GyueCZi5qBI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Requirements
 

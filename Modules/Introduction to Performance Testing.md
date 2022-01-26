@@ -36,6 +36,8 @@ The term "load testing" refers to a type of back-end performance testing that in
 
 k6 is primarily a back-end performance testing tool that specializes in load testing but can also be used to run other types of tests, such as chaos experiments or functional API tests.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZR8zgIs3he4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Why should we do performance testing?
 
 Software testing began from what we now call "functional testing", which verifies whether an application functions as expected (as per requirements). However, modern definitions of functionality have now expanded to encompass aspects of an application that arise as side effects of its operation, like speed or reliability.

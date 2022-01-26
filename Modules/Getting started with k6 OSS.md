@@ -7,6 +7,8 @@ Let's get started!
 
 ## Installation
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y5tteMKZUqk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 First, install k6 by [following the instructions here](https://k6.io/docs/getting-started/installation/) for your operating system.
 
 Next, pick your favorite IDE or text editor. Many of us use and recommend [VS Code](https://code.visualstudio.com/), but you can also use [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/), or anything else you're already using that can create text files.

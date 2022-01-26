@@ -11,16 +11,25 @@ Upon completing the workshop, attendees will know how to write realistic load te
 ### 1: Performance testing principles
 
 - [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
-- [Parameters of a load test](Modules/Parameters%20of%20a%20load%20test.md)
-- [Clarifying testing criteria](Modules/Clarifying%20testing%20criteria.md)
-- Making scripts realistic
-- What to test: Determining scope
-- Where to test: environments
-- Who does the testing?
-- [[Types of load tests]]
-- The architecture of a load testing stack: diagram and explanation
-- Performance testing metrics
-	- Consider just measuring steady state
+- Planning
+	- [Clarifying testing criteria](Modules/Clarifying%20testing%20criteria.md)
+	- What to test: Determining scope
+	- Where to test: environments
+	- Who does the testing?
+	- The architecture of a load testing stack: diagram and explanation
+- Writing load testing scripts
+	- [[Choosing a load testing tool]]
+	- [[Load tests as code and shift-left testing]]
+	- [[Making scripts realistic]]
+- Executing load tests
+	- [Parameters of a load test](Modules/Parameters%20of%20a%20load%20test.md)
+	- [[Types of load tests]]
+	- On-premise vs cloud execution
+- Analyzing load testing results and reporting
+	- Important performance testing metrics
+- Continuous load testing
+	- [[What is continuous load testing and why should you do it]]
+	- CI/CD tools
 
 ### 2: k6 Foundations
 
@@ -35,17 +44,21 @@ Upon completing the workshop, attendees will know how to write realistic load te
 	- [k6 results output options](k6%20results%20output%20options.md)
 - [Using k6 OSS with k6 Cloud](Using%20k6%20OSS%20with%20k6%20Cloud.md)
 - k6 Cloud
+	- [[Overview of k6 Cloud]]
+	- [[The k6 Cloud interface]]
 	- [Recording a k6 script](Recording%20a%20k6%20script.md)
-	- Creating a script using the Test Builder
+	- [[Creating a script using the Test Builder]]
 	- Choosing different availability zones
-	- Choosing a load profile
-	- Explanation of output per tab
+	- [Choosing a load profile on k6 Cloud](Choosing%20a%20load%20profile%20on%20k6%20Cloud.md)
+	- [[Sending k6 results to k6 Cloud]]
+	- [[Analyzing results on k6 Cloud]]
+	- [[Continuous load testing with k6 Cloud]]
 
 ## 3: k6 Intermediate
 
 ### Scripting
 
-- Debugging, including web proxies
+- [[How to debug k6 load testing scripts]]
 - Best practices for writing reusable and maintainable code
 - Data correlation
 - Shared Array and CSV Files
@@ -98,13 +111,24 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - Framework for a complex test (multiple scripts calling each other) - modular scripting
 - Mocks and stubs
 - xk6 extensions
+	- [[How to use xk6-browser]]
+	- [[How to use the k6 operator for Kubernetes]]
+	- [[How to do chaos testing with k6]]
+	- [[How to make a k6 extension]]
 - k6 jslib
 - Custom summary output
 - Custom end-of-test summary (`handleSummary`)
-- Chaos experiments
-- k6 operator
 - CI/CD
-- Integration with observability tools like Grafana, Prometheus
+	- [[GitHub Actions]]
+	- [[GitLab]]
+	- [[Azure DevOps]]
+	- [[Circle CI]]
+- Integration with observability tools
+	- [[Observability and performance testing]]
+	- [[Integrating k6 with Grafana and Prometheus]]
+	- [[k6 and Netdata]]
+	- [[k6 and New Relic]]
+- [[k6 Use Cases]]
 
 ## End-to-end testing example
 
