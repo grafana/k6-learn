@@ -1,5 +1,7 @@
 # k6 Workshop
 
+_Note: While this is in progress, this is best viewed in [Obsidian](https://obsidian.md). That will change when it's released! - Nicole_
+
 ## Objectives
 
 The main goal of this workshop is to give attendees enough hands-on experience to be able to build and execute their own performance tests as part of their current testing efforts.
