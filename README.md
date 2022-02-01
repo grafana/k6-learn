@@ -1,7 +1,5 @@
 # k6 Workshop
 
-_Note: While this is in progress, this is best viewed in [Obsidian](https://obsidian.md). That will change when it's released! - Nicole_
-
 ## Objectives
 
 The main goal of this workshop is to give attendees enough hands-on experience to be able to build and execute their own performance tests as part of their current testing efforts.
@@ -10,7 +8,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 
 ## Curriculum
 
-### 1: Performance testing principles
+### 1: Performance testing principles: ==LEANDRO==
 
 - [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
 
@@ -40,7 +38,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 
 - [k6 OSS vs k6 Cloud](Modules/k6%20OSS%20vs%20k6%20Cloud.md) differences and use cases
 
-#### k6 OSS
+#### k6 OSS: ==NICOLE==
 - [Getting started with k6 OSS](Modules/Getting%20started%20with%20k6%20OSS.md)
 - [Understanding k6 results](Modules/Understanding%20k6%20results.md)
 - [Adding checks to your script](Modules/Adding%20checks%20to%20your%20script.md)
