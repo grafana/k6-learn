@@ -10,6 +10,58 @@ Upon completing the workshop, attendees will know how to write realistic load te
 
 ### 1: Performance testing principles: ==LEANDRO==
 
+==WIP==
+#### Introduction
+- What is performance testing?
+- Performance testing vs. Load testing
+- Performance assurance
+- Monitoring, Instrumentation, and observability
+- Reasons for performance assurance and testing
+- Agile vs. Waterfall
+
+#### Perf Automations
+- Why/when to automate for performance
+- Types of performance automated tests
+- Types of automations in performance
+- Non-automated performance tests
+- Synthetics and Organics
+
+#### Tested processes
+- What is a performance test case
+- Types of performance test cases
+- Differences with other test cases
+
+#### Automation pyramid
+- What is the pyramid?
+- Past and present (Monolyth, ice-cream, modern)
+- Tiers
+- Unit
+- Service
+- Front end
+- How tools map on tiers
+- How perf tests map on tiers
+
+#### Types of Load tests
+- Why different load test types?
+- Non-load tests
+- Mixing and concurrencies
+- Traditional Load tests
+	- Single
+	- Baseline
+	- Average
+	- Peak
+	- Breakpoint
+	- Spike
+- Modern/Continuous
+	- Dev
+	- Check-in
+	- Synthetics
+	- Local & Global
+	- Mini Load
+	- Modern "Traditional" Load
+- When to choose what?
+==/WIP==
+
 - [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
 
 #### Planning
