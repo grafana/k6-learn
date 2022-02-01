@@ -49,13 +49,13 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [Using k6 OSS with k6 Cloud](Modules/Using%20k6%20OSS%20with%20k6%20Cloud.md)
 
 #### k6 Cloud
-- [Overview of k6 Cloud](Modules/Overview%20of%20k6%20Cloud.md)
-- [The k6 Cloud interface](Modules/The%20k6%20Cloud%20interface.md)
+- [Overview of k6 Cloud](Modules/Overview%20of%20k6%20Cloud.md) ==Mark==
+- [The k6 Cloud interface](Modules/The%20k6%20Cloud%20interface.md) ==Mark==
 - [Recording a k6 script](Modules/Recording%20a%20k6%20script.md)
 - [Creating a script using the Test Builder](Modules/Creating%20a%20script%20using%20the%20Test%20Builder.md)
 - Choosing different availability zones
 - [Choosing a load profile on k6 Cloud](Modules/Choosing%20a%20load%20profile%20on%20k6%20Cloud.md)
-- [Analyzing results on k6 Cloud](Modules/Analyzing%20results%20on%20k6%20Cloud.md)
+- [Analyzing results on k6 Cloud](Modules/Analyzing%20results%20on%20k6%20Cloud.md) ==Mark==
 - [Continuous load testing with k6 Cloud](Modules/Continuous%20load%20testing%20with%20k6%20Cloud.md)
 
 ### 3: k6 Intermediate
