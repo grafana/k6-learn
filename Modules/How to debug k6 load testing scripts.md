@@ -104,11 +104,157 @@ Run that script, and you'll see a significant change in the end-of-test summary:
       ↳  0% — ✓ 0 / ✗ 1
 ```
 
+It turns out that the script does not return an HTTP 200 as expected, but that was difficult to find without the check. Adding the check identifies that there is a problem.
 
+But what's going on? What response is being returned, if not an HTTP 200?
+
+### The HTTP debug flag
+
+To find out exactly what the request is returning, you can use the `--http-debug` flag. Run the test like this:
+
+```shell
+k6 run test.js --http-debug
+```
+
+This time, the output includes some new information:
+
+```shell
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: testdata-simple.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 1 max VUs, 10m30s max duration (incl. graceful stop):
+           * default: 1 iterations for each of 1 VUs (maxDuration: 10m0s, gracefulStop: 30s)
+
+INFO[0000] Request:
+POST /login.php HTTP/1.1
+Host: test.k6.io
+User-Agent: k6/0.36.0 (https://k6.io/)
+Content-Length: 26
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+  group= iter=0 request_id=34a024e9-d51d-41e6-5695-a4a465b12978 scenario=default source=http-debug vu=1
+INFO[0000] Response:
+HTTP/1.1 308 Permanent Redirect
+Content-Length: 164
+Connection: keep-alive
+Content-Type: text/html
+Date: Tue, 01 Feb 2022 14:29:13 GMT
+Location: https://test.k6.io/login.php
+
+  group= iter=0 request_id=34a024e9-d51d-41e6-5695-a4a465b12978 scenario=default source=http-debug vu=1
+INFO[0000] Request:
+POST /login.php HTTP/1.1
+Host: test.k6.io
+User-Agent: k6/0.36.0 (https://k6.io/)
+Content-Length: 26
+Content-Type: application/x-www-form-urlencoded
+Referer: http://test.k6.io/login.php
+Accept-Encoding: gzip
+
+  group= iter=0 request_id=d33e02d3-0ac5-46cd-4437-45650f2c052e scenario=default source=http-debug vu=1
+INFO[0001] Response:
+HTTP/1.1 403 Forbidden
+Transfer-Encoding: chunked
+Connection: keep-alive
+Content-Type: text/plain;charset=UTF-8
+Date: Tue, 01 Feb 2022 14:29:14 GMT
+Set-Cookie: uid=bad; expires=Tue, 01-Feb-2022 15:29:14 GMT; Max-Age=3600; path=/; domain=test.k6.io; httponly
+Set-Cookie: sid=bad; expires=Tue, 01-Feb-2022 15:29:14 GMT; Max-Age=3600; path=/; domain=test.k6.io; httponly
+X-Powered-By: PHP/5.6.40
+
+  group= iter=0 request_id=d33e02d3-0ac5-46cd-4437-45650f2c052e scenario=default source=http-debug vu=1
+```
+
+The end-of-test summary now includes information on 2 requests and 2 responses. But wait a minute. Doesn't the script have only one request?
+
+Analyzing the output further, you can see what happened:
+- k6 sent an initial POST request.
+- The server responded with an HTTP 308 redirect.
+- k6 sent another POST, prompted by the redirect.
+- The server responded with an HTTP 403 Forbidden.
+
+Even though the script only contains a single request, the server's response prompted k6 to make a redirected request, which ultimately failed. [HTTP 403 Forbidden](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403) is an error relating to an authentication issue. This error confirms the theory of an authentication error.
+
+But *why* is there an authentication error?
+
+To get even more information, run the script again, this time requesting a full HTTP debug:
+
+```shell
+k6 run test.js --http-debug=full
+```
+
+This time, you see not just the response and request headers but also the request and response *bodies*:
+
+```shell
+INFO[0000] Request:
+POST /login.php HTTP/1.1
+Host: test.k6.io
+User-Agent: k6/0.36.0 (https://k6.io/)
+Content-Length: 26
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+login=user&password=userpw  group= iter=0 request_id=9b3c2dd9-8c2a-49bf-7a92-713c757d1a3a scenario=default source=http-debug vu=1
+INFO[0000] Response:
+HTTP/1.1 308 Permanent Redirect
+Content-Length: 164
+Connection: keep-alive
+Content-Type: text/html
+Date: Tue, 01 Feb 2022 14:35:34 GMT
+Location: https://test.k6.io/login.php
+
+<html>
+<head><title>308 Permanent Redirect</title></head>
+<body>
+<center><h1>308 Permanent Redirect</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+  group= iter=0 request_id=9b3c2dd9-8c2a-49bf-7a92-713c757d1a3a scenario=default source=http-debug vu=1
+INFO[0000] Request:
+POST /login.php HTTP/1.1
+Host: test.k6.io
+User-Agent: k6/0.36.0 (https://k6.io/)
+Content-Length: 26
+Content-Type: application/x-www-form-urlencoded
+Referer: http://test.k6.io/login.php
+Accept-Encoding: gzip
+
+login=user&password=userpw  group= iter=0 request_id=3d0d9247-b93e-47f0-6dee-2f0a3420ca4e scenario=default source=http-debug vu=1
+INFO[0001] Response:
+HTTP/1.1 403 Forbidden
+Transfer-Encoding: chunked
+Connection: keep-alive
+Content-Type: text/plain;charset=UTF-8
+Date: Tue, 01 Feb 2022 14:35:35 GMT
+Set-Cookie: uid=bad; expires=Tue, 01-Feb-2022 15:35:35 GMT; Max-Age=3600; path=/; domain=test.k6.io; httponly
+Set-Cookie: sid=bad; expires=Tue, 01-Feb-2022 15:35:35 GMT; Max-Age=3600; path=/; domain=test.k6.io; httponly
+X-Powered-By: PHP/5.6.40
+
+34
+error: invalid csrf token
+token: <not set>
+session: 
+0
+```
+
+The response body for the HTTP 403 reveals the issue: `token: <not set>`.
+
+The script posts a username and password, but no CSRF token! Bingo. Now you 
 
 ### Add logging
 
-You can add logging at specific parts of your script by using `console.log()`. The script below shows this statement in action:
+Since the script uses test data, it could very well be that the username and password are incorrect. Maybe the combination is what causes an authentication error. In this case, there are only three elements in each username and password array, so it wouldn't be too difficult to test them all manually. But what if you had hundreds of them?
+
+In that case, you can try adding logging at specific parts of your script by using `console.log()`. The script below shows this statement in action:
 
 ```js
 import http from 'k6/http';
@@ -132,8 +278,6 @@ export default function() {
 }
 ```
 
-Imagine that you ran this script, and you got back an HTTP 403 Forbidden. This error usually means that something went wrong with the authentication. How do you know which username and password combination the script tried?
-
 The `console.log()` statement prints out the exact combination used, like this:
 
 ```shell
@@ -142,9 +286,8 @@ INFO[0000] username: guest  / password: guestpw          source=console
 
 That way, you know exactly which combination to try. Perhaps the username or the password is incorrect, or perhaps both. Either way, adding logs to your script help you understand the value of key variables your script uses.
 
+Now, test 
 
-
-### The HTTP debug flag
 
 ### Streamlining script structure
 
