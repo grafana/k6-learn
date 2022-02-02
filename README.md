@@ -9,6 +9,8 @@ Upon completing the workshop, attendees will know how to write realistic load te
 ## Curriculum
 
 ### 1: Performance testing principles: ==LEANDRO==
+
+#### Theory
 - [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
 - Performance testing methodologies
 - Performance automation
