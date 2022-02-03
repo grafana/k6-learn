@@ -106,7 +106,52 @@ Run that script, and you'll see a significant change in the end-of-test summary:
 
 It turns out that the script does not return an HTTP 200 as expected, but that was difficult to find without the check. Adding the check identifies that there is a problem.
 
-But what's going on? What response is being returned, if not an HTTP 200?
+But what's going on? 
+
+### Add logging
+
+Since the script uses test data, it could very well be that the username and password are incorrect. Maybe the combination is what causes an authentication error. In this case, there are only three elements in each username and password array, so it wouldn't be too difficult to test them all manually. But what if you had hundreds of them?
+
+In that case, you can try adding logging at specific parts of your script by using `console.log()`. The script below shows this statement in action:
+
+```js
+import http from 'k6/http';
+import { check } from 'k6';
+
+let usernameArr = ['admin', 'user', 'guest'];
+let passwordArr = ['adminpw', 'userpw', 'guestpw'];
+
+export default function() {
+    // Get random username and password from array
+    let rand = Math.floor(Math.random() * 3);
+    let username = usernameArr[rand];
+    let password = passwordArr[rand];
+    console.log('username: ' + username, ' / password: ' + password);
+
+    let response = http.post('http://test.k6.io/login.php', { login: username, password: password });
+    check(response, {
+        'is status 200': (r) => r.status === 200,
+    })
+}
+}
+```
+
+The `console.log()` statement prints out the exact combination used, like this:
+
+```shell
+INFO[0000] username: guest  / password: guestpw          source=console
+```
+
+That way, you know exactly which combination to try. Perhaps the username or the password is incorrect, or perhaps both. Either way, adding logs to your script help you understand the value of key variables your script uses.
+
+```ad-warning
+title: Disable logging during load tests
+`console.log()` can be very resource-intensive, and too much logging can affect your test results. Comment out logging as much as possible to avoid high resource utilization during test execution.
+```
+
+Now, imagine you try to log into the app using the username and password selected by the script (`guest` and `guestpw`) and it works. What else could be wrong? 
+
+What response is being returned, if not an HTTP 200?
 
 ### The HTTP debug flag
 
@@ -171,6 +216,11 @@ Set-Cookie: sid=bad; expires=Tue, 01-Feb-2022 15:29:14 GMT; Max-Age=3600; path=/
 X-Powered-By: PHP/5.6.40
 
   group= iter=0 request_id=d33e02d3-0ac5-46cd-4437-45650f2c052e scenario=default source=http-debug vu=1
+```
+
+```ad-warning
+title: Use HTTP-debug only while debugging
+`http-debug` can be quite noisy, so avoid using it for longer or larger tests. It is best used for troubleshooting while writing a script.
 ```
 
 The end-of-test summary now includes information on 2 requests and 2 responses. But wait a minute. Doesn't the script have only one request?
@@ -246,59 +296,47 @@ session:
 0
 ```
 
-The response body for the HTTP 403 reveals the issue: `token: <not set>`.
+The response body for the HTTP 403 reveals the issue: `error: invalid csrf token`.
 
-The script posts a username and password, but no CSRF token! Bingo. Now you 
+The script posts a username and password, but no CSRF token! Bingo.
 
-### Add logging
-
-Since the script uses test data, it could very well be that the username and password are incorrect. Maybe the combination is what causes an authentication error. In this case, there are only three elements in each username and password array, so it wouldn't be too difficult to test them all manually. But what if you had hundreds of them?
-
-In that case, you can try adding logging at specific parts of your script by using `console.log()`. The script below shows this statement in action:
-
-```js
-import http from 'k6/http';
-import { check } from 'k6';
-
-let usernameArr = ['admin', 'user', 'guest'];
-let passwordArr = ['adminpw', 'userpw', 'guestpw'];
-
-export default function() {
-    // Get random username and password from array
-    let rand = Math.floor(Math.random() * 3);
-    let username = usernameArr[rand];
-    let password = passwordArr[rand];
-    console.log('username: ' + username, ' / password: ' + password);
-
-    let response = http.post('http://test.k6.io/login.php', { login: username, password: password });
-    check(response, {
-        'is status 200': (r) => r.status === 200,
-    })
-}
-}
-```
-
-The `console.log()` statement prints out the exact combination used, like this:
-
-```shell
-INFO[0000] username: guest  / password: guestpw          source=console
-```
-
-That way, you know exactly which combination to try. Perhaps the username or the password is incorrect, or perhaps both. Either way, adding logs to your script help you understand the value of key variables your script uses.
-
-Now, test 
-
-
-### Streamlining script structure
-
-## Create a custom summary output
-
-## Use a proxy
-
-## Experimental: Use a debugger
-
-## A note on debugging
-
-Disable it for test execution
+CSRF ([Cross-Site Request Forgery](https://owasp.org/www-community/attacks/csrf)) tokens are used to improve security by preventing attackers from hijacking a user's session. It appears the application requires a CSRF token that the script doesn't yet have. To get the CSRF token, you can create an initial request to get `https://test.k6.io/` and parse the response for that token. We'll cover that in the next section.
 
 ## Test your knowledge
+
+### Question 1
+
+What's the best way to verify whether an application returns a PDF file in response to a request sent by your script?
+
+A: Add a check based on the response body size.
+B: Use the `http-debug` flag to try to read the content of the PDF.
+C: Add a `console.log()` statement after the request is made.
+
+Answer: A
+
+### Question 2
+
+In the script used on this page, a random number is used to select a user account from arrays. How could you find out what the value of the random number is each time you run the script?
+
+A: 
+
+```js
+check(response, {
+        'random number selected': (r) => r.rand === 0,
+    })
+```
+
+B: `k6 run test.js --http-debug="rand"`
+C: `console.log('rand', rand);`
+
+Answer: C
+
+### Question 3
+
+Why should you disable as much logging as possible during a ramped-up load test?
+
+A: You should never do any logging when you're running a proper test.
+B: Unnecessary logging eats up resources on the load generator.
+C: Using `http-debug` is a better choice for use during a load test.
+
+Answer: B
