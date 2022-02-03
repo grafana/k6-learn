@@ -69,8 +69,9 @@ Upon completing the workshop, attendees will know how to write realistic load te
 #### Scripting
 
 - [How to debug k6 load testing scripts](Modules/How%20to%20debug%20k6%20load%20testing%20scripts.md)
-- Best practices for writing reusable and maintainable code
-- Data correlation
+- [Correlating values in k6](Correlating%20values%20in%20k6.md)
+- Using a proxy with k6
+- [Best practices for writing k6 scripts](Best%20practices%20for%20writing%20k6%20scripts.md)
 - Shared Array and CSV Files
 - [HTTP Requests - Metrics](Modules/HTTP%20Requests%20-%20Metrics.md)
 - [HTTP Requests - Batching Requests](Modules/HTTP%20Requests%20-%20Batching%20Requests.md)
@@ -119,6 +120,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [Additional protocols](Modules/Additional%20protocols.md)
 - Framework for a complex test (multiple scripts calling each other) - modular scripting
 - Mocks and stubs
+- Creating custom summary output
 
 #### Extending k6
 - xk6 extensions
@@ -126,6 +128,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 	- [How to use the k6 operator for Kubernetes](Modules/How%20to%20use%20the%20k6%20operator%20for%20Kubernetes.md)
 	- [How to do chaos testing with k6](Modules/How%20to%20do%20chaos%20testing%20with%20k6.md)
 	- [How to make a k6 extension](Modules/How%20to%20make%20a%20k6%20extension.md)
+	- Goja debugger
 - k6 jslib
 - Custom summary output
 - Custom end-of-test summary (`handleSummary`)
