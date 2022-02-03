@@ -1,8 +1,57 @@
 ## What is performance testing?
 
-Performance testing is the branch of software testing whose primary concern is verifying _how_ a system functions rather than _what_ its functions are. Performance testing seeks to measure qualitative aspects of a user's experience of a system such as its responsiveness during the course of normal operations.
+A great starting point on explaining what performance-testing means is defining it word by word. Here are some dictionary-paraphrasing definitions of each word.
 
-There are two general types of performance testing: front-end and back-end. Each one focuses on a different part of the system under test, although there may be some overlap in techniques and tools. Both types of testing are necessary to get a holistic view of application performance, and can be combined for the best testing results.
+**_Performance_**_: refers to the capabilities (how good, fast or efficient) of a machine, vehicle, or product, when observed under particular conditions._
+
+**_Testing_**_: take measures to check the quality, performance, or reliability of (something), especially before putting it into widespread use or practice._
+
+  
+
+When both words and definitions pair up, the meaning of the practice goes something like the following.
+
+  
+
+**_Performance Testing_** _is the act of measuring, validating, or checking a machine, vehicle, or product's capabilities (stability, speed, and efficiency) when observed under particular conditions._
+
+  
+
+For our interests, we will be talking about _Software_ Performance Testing, referring to it as just Performance Testing.
+
+  
+
+In other words, Performance Testing is a branch of software testing whose primary concern is verifying _how well_ a system works instead of _if_ it works (the focus of the functional testing practice). 
+
+Performance testing has three main focuses.
+
+1.  **_Time_**_: It seeks to measure the responsiveness of the solution to given events. In other words, how fast it will react. It can include qualitative aspects of a user's experience, such as responsiveness during normal operations._
+2.  **_Efficiency_**_: Another measurement of interest is the system's impact after the given event. The measurements can be computer resources consumption (CPU, RAM, etc.) and measurable metrics (temperature, connections, data transfers, etc.)_
+3.  **_Scenario_**_: This comes directly from the definition's section that states "when observed under particular conditions." The measurements should aim at a particular event or scenario. Things like RUM (Real User Monitoring), instrumentation, load-tests, single-user tests, no-user tests, and many more can be the possible scenarios to test here._
+
+  
+
+The third part is integral to the performance testing trade, as it challenges teams on ways to stimulate or trigger those specific circumstances or scenarios. The two main classifications on the mechanisms that trigger these scenarios are Organics and Synthetics.
+
+  
+
+**_Organic_**_: This category is for the triggering mechanisms done by real-life people. These include developers debugging, QA manual tests, UAT, beta users, production users, and living organisms interacting with the tested system. A critical requirement is to have performance monitors in the points of interest while the organic use occurs._
+
+  
+
+**_Synthetic_**_: This category refers to any automated or computer process that triggers the action(s) of interest. Automations mimic real user interaction continuously, single-threaded, or in volumes (load testing.) They generally include performance measurement mechanisms for the simulated actions (mainly response times). Also, the term commonly refers to the recurrent automated triggering of the processes to constantly measure and monitor their status._
+
+  
+
+As the goal of this workshop is around the k6 tool, we will focus on synthetics. Although, from the Grafana perspective, organics-monitoring and instrumentation may be valuable material to produce.
+
+  
+
+  
+
+**NOTE**: A common mistake in the industry is to use the terms Performance Testing and Load Testing interchangeably. Load testing is a sub-practice of Performance testing.
+![[LoadNotPerf.png]]
+![[LoadPartOfPerf.png]]
+
 
 ### Front-end performance testing
 
