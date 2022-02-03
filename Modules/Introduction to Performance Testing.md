@@ -56,7 +56,7 @@ As the goal of this workshop is around the k6 tool, we will focus on synthetics.
 ![LoadNotPerf](../images/LoadNotPerf.png)
 
 
-![[images/LoadPartOfPerf.png]]
+![LoadPartOfPerf](../images/LoadPartOfPerf.png)
 
 
 ### Front-end performance testing
