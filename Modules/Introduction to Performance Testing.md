@@ -22,6 +22,8 @@ For our interests, we will be talking about _Software_ Performance Testing, refe
 
 In other words, Performance Testing is a branch of software testing whose primary concern is verifying _how well_ a system works instead of _if_ it works (the focus of the functional testing practice). 
 
+### What the perf?
+
 Performance testing has three main focuses.
 
 1.  **_Time_**_: It seeks to measure the responsiveness of the solution to given events. In other words, how fast it will react. It can include qualitative aspects of a user's experience, such as responsiveness during normal operations._
@@ -29,6 +31,7 @@ Performance testing has three main focuses.
 3.  **_Scenario_**_: This comes directly from the definition's section that states "when observed under particular conditions." The measurements should aim at a particular event or scenario. Things like RUM (Real User Monitoring), instrumentation, load-tests, single-user tests, no-user tests, and many more can be the possible scenarios to test here._
 
   
+  ### Types
 
 The third part is integral to the performance testing trade, as it challenges teams on ways to stimulate or trigger those specific circumstances or scenarios. The two main classifications on the mechanisms that trigger these scenarios are Organics and Synthetics.
 
@@ -49,8 +52,8 @@ As the goal of this workshop is around the k6 tool, we will focus on synthetics.
   
 
 **NOTE**: A common mistake in the industry is to use the terms Performance Testing and Load Testing interchangeably. Load testing is a sub-practice of Performance testing.
-![[LoadNotPerf.png]]
-![[LoadPartOfPerf.png]]
+![[../images/LoadNotPerf.png]]
+![[images/LoadPartOfPerf.png]]
 
 
 ### Front-end performance testing
