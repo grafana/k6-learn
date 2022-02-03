@@ -69,8 +69,8 @@ Upon completing the workshop, attendees will know how to write realistic load te
 #### Scripting
 
 - [How to debug k6 load testing scripts](Modules/How%20to%20debug%20k6%20load%20testing%20scripts.md)
-- [Correlating values in k6](Correlating%20values%20in%20k6.md)
-- Using a proxy with k6
+- [Dynamic correlation in k6](Dynamic%20correlation%20in%20k6.md)
+- [Using a proxy with k6](Using%20a%20proxy%20with%20k6.md)
 - [Best practices for writing k6 scripts](Best%20practices%20for%20writing%20k6%20scripts.md)
 - Shared Array and CSV Files
 - [HTTP Requests - Metrics](Modules/HTTP%20Requests%20-%20Metrics.md)

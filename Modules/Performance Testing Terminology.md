@@ -1,18 +1,22 @@
 
 
+### Correlation
+
+### Iteration
+
 ### Ramp-up
 
 ### Ramp-down
 
-### Iteration
+
+### Scenario
+
 
 ### Think time
 
 https://k6.io/docs/javascript-api/k6/sleep-t/
 
 ### Transaction
-
-### Scenario
 
 ### Virtual user
 

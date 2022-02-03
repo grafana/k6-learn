@@ -52,7 +52,10 @@ As the goal of this workshop is around the k6 tool, we will focus on synthetics.
   
 
 **NOTE**: A common mistake in the industry is to use the terms Performance Testing and Load Testing interchangeably. Load testing is a sub-practice of Performance testing.
+
 ![[../images/LoadNotPerf.png]]
+
+
 ![[images/LoadPartOfPerf.png]]
 
 

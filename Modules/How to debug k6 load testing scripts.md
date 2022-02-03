@@ -4,8 +4,6 @@ While the k6 metrics help you in [understanding what happened in a k6 test](Unde
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zln_TWOuoho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 *In this k6 Office Hours, Tom Miseur and Nicole van der Hoeven demonstrate different ways to debug a k6 load testing script.*
 
-## Modify your script
-
 There are a few things you can add to your script that can help you determine what's happening at which point in the script.
 
 ### Add checks
@@ -17,8 +15,8 @@ Consider the script below.
 ```js
 import http from 'k6/http';
 
-let usernameArr = ['admin', 'user', 'guest'];
-let passwordArr = ['adminpw', 'userpw', 'guestpw'];
+let usernameArr = ['admin', 'test_user', 'guest'];
+let passwordArr = ['123', '1234', '12345'];
 
 export default function() {
     // Get random username and password from array
@@ -79,8 +77,8 @@ To find it, add a check to see what the response returned is.
 import http from 'k6/http';
 import { check } from 'k6';
 
-let usernameArr = ['admin', 'user', 'guest'];
-let passwordArr = ['adminpw', 'userpw', 'guestpw'];
+let usernameArr = ['admin', 'test_user', 'guest'];
+let passwordArr = ['123', '1234', '12345'];
 
 export default function() {
     // Get random username and password from array
@@ -118,8 +116,8 @@ In that case, you can try adding logging at specific parts of your script by usi
 import http from 'k6/http';
 import { check } from 'k6';
 
-let usernameArr = ['admin', 'user', 'guest'];
-let passwordArr = ['adminpw', 'userpw', 'guestpw'];
+let usernameArr = ['admin', 'test_user', 'guest'];
+let passwordArr = ['123', '1234', '12345'];
 
 export default function() {
     // Get random username and password from array
@@ -139,7 +137,7 @@ export default function() {
 The `console.log()` statement prints out the exact combination used, like this:
 
 ```shell
-INFO[0000] username: guest  / password: guestpw          source=console
+INFO[0000] username: guest  / password: 12345          source=console
 ```
 
 That way, you know exactly which combination to try. Perhaps the username or the password is incorrect, or perhaps both. Either way, adding logs to your script help you understand the value of key variables your script uses.
@@ -149,9 +147,35 @@ title: Disable logging during load tests
 `console.log()` can be very resource-intensive, and too much logging can affect your test results. Comment out logging as much as possible to avoid high resource utilization during test execution.
 ```
 
-Now, imagine you try to log into the app using the username and password selected by the script (`guest` and `guestpw`) and it works. What else could be wrong? 
+Now, imagine you try to log into the app using the username and password selected by the script (`guest` and `12345`) and it doesn't work. Aha! The credentials were wrong to begin with. You verify that the other two accounts you had work.
 
-What response is being returned, if not an HTTP 200?
+Remove the third `guest` credentials and modify the random number to return only `0` or `1`:
+
+```js
+import http from 'k6/http';
+import { check } from 'k6';
+
+let usernameArr = ['admin', 'test_user'];
+let passwordArr = ['123', '1234'];
+
+export default function() {
+
+    // Get random username and password from array
+    let rand = Math.floor(Math.random() * 2);
+    let username = usernameArr[rand];
+    let password = passwordArr[rand];
+	console.log('username: ' + username, ' / password: ' + password);
+
+    let response = http.post('http://test.k6.io/login.php', { login: username, password: password });
+    check(response, {
+        'is status 200': (r) => r.status === 200,
+    })
+}
+```
+
+When you re-run that script, you may notice that despite the corrected credentials, it still fails. This is a good thing! It means you've solved the first error and can begin working on the second.
+
+What else could be wrong? What response is being returned, if not an HTTP 200?
 
 ### The HTTP debug flag
 
