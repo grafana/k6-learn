@@ -136,38 +136,100 @@ default ✓ [======================================] 1 VUs  00m00.6s/10m0s  1/1 
 ```
 
 Now we're getting somewhere! The entire HTML body of the response is saved in the variable `response`.
+
 ## Extracting the value from the response
 
+The HTML for the login form from the previous output includes the CSRF token:
 
+```html
+<input type="hidden" name="csrftoken" value="NjI1NjkwOTkw">
+```
+
+This value is dynamic, so the script needs to extract it based on the format it is presented in.
+
+Add the following lines to your script:
+
+```js
+let csrfToken = response.html().find("input[name=csrftoken]").attr("value");
+console.log(csrfToken);
+```
+
+The first line parses the HTML response body and looks for the value of an `input` element with a `name` equal to `csrftoken`. Run the script to see if the value of `csrfToken` looks right, and you should get something like this:
+
+```js
+INFO[0001] NDExODkxOTcz                                  source=console
+```
+
+That looks like it's working! Try to get your script working:
+- Uncomment the login request and modify it so that the extracted CSRF token is passed along with the request
+- Add a check on the phrase "successfully authorized" after the login request, to verify that the script user has logged in.
+
+If you're stuck, compare your script against the script at the end of this section.
 
 ## Test your knowledge
 
 ### Question 1
 
+You suspect there may be a dynamic value that you need to correlate from a previous response and send with your request. What's the best way to confirm this suspicion?
 
+A: Use DevTools to look at the network traffic as you perform the action, then look at the parameters being passed with the successful request.
+B: Record the script and run it using k6.
+C: Add a check for the word `csrftoken` to see if there are any being returned in the response.
 
-A: 
-B: 
-C: 
-
-Answer: 
+Answer: A
 
 ### Question 2
 
-
+Which of the following might help you identify when correlation is required?
 
 A: 
-B: 
-C: 
+```js
+check(response, {
+        'is Unauthorized': r => r.body.includes('Unauthorized'),
+    })
+```
+B:  `let rand = Math.floor(Math.random() * 2);`
+C: `--http-debug=full`
 
-Answer: 
+Answer: C
 
 ### Question 3
 
+Why might replaying a recorded script yield errors?
 
+A: Some steps may require dynamic values extracted from earlier responses.
+B: There were no checks defined in the script.
+C: Running with multiple users may exert unnecessary load on the application server.
 
-A: 
-B: 
-C: 
+Answer: A
 
-Answer: 
+## The script
+```js
+import http from 'k6/http';
+import { check } from 'k6';
+
+let usernameArr = ['admin', 'test_user'];
+let passwordArr = ['123', '1234'];
+
+export default function() {
+
+    let response = http.get('https://test.k6.io/my_messages.php');
+    check(response, {
+        'is Unauthorized': r => r.body.includes('Unauthorized'),
+    })
+
+    let csrfToken = response.html().find("input[name=csrftoken]").attr("value");
+
+    // Get random username and password from array
+    let rand = Math.floor(Math.random() * 2);
+    let username = usernameArr[rand];
+    let password = passwordArr[rand];
+    console.log('username: ' + username, ' / password: ' + password);
+
+    response = http.post('http://test.k6.io/login.php', { login: username, password: password, csrftoken: csrfToken });
+    check(response, {
+        'is status 200': (r) => r.status === 200,
+        'Successful login': r => r.body.includes('successfully authorized'),
+    })
+}
+```
