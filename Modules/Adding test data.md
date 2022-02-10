@@ -123,38 +123,36 @@ Using a SharedArray is the most efficient way to add a list of data within a k6 
 
 ## Other test data
 
-Test data can also refer to 
-
-[data uploads](https://k6.io/docs/examples/data-uploads/)
+Test data can also refer to files that need to be uploaded as part of the scenario under test. For example, an image might need to be uploaded to simulate a user uploading their profile photo. For more information on scripting these types of data uploads, [check the documentation here.](https://k6.io/docs/examples/data-uploads/)
 
 ## Test your knowledge
 
 ### Question 1
 
+In which of the following situations would it be advisable to add test data to your load testing scripts?
 
+A: Your application locks out a user account after three logins in a short amount of time.
+B: You want to see how the application behaves when the same user refreshes a page repeatedly.
+C: Both A and B.
 
-A: 
-B: 
-C: 
-
-Answer: 
+Answer: A
 
 ### Question 2
 
+You have a CSV file with 100 MB of personal information that you'd like to use as test data. Which of the following approaches is the best one to use?
 
+A: SharedArray
+B: Simple array
+C: JSON files because the CSV is better converted into JSON
 
-A: 
-B: 
-C: 
-
-Answer: 
+Answer: A
 
 ### Question 3
 
+All the examples on this page include a `Math.random()` function to randomly select an element from the data file. In which situations might you want to remove this randomization?
 
+A: When you want to prevent server-side caching.
+B: When you want to guarantee that each element of test data has been sequentially utilized by the script.
+C: When you want to make your tests as realistic as possible.
 
-A: 
-B: 
-C: 
-
-Answer: 
+Answer: B

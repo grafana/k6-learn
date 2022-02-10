@@ -73,8 +73,8 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [Dynamic correlation in k6](Modules/Dynamic%20correlation%20in%20k6.md)
 - [Adding test data](Modules/Adding%20test%20data.md)
 - [Parallel requests in k6](Modules/Parallel%20requests%20in%20k6.md)
-- Using groups
-- Setup and Teardown functions
+- [Transactions and organizing code in k6](Transactions%20and%20organizing%20code%20in%20k6.md)
+- [Setup and Teardown functions](Setup%20and%20Teardown%20functions.md)
 - Custom metrics
 - Environment variables
 - Using tags
@@ -110,7 +110,6 @@ Upon completing the workshop, attendees will know how to write realistic load te
 ### 4: k6 Advanced
 
 #### Testing framework
-- Performance testing environments
 - Handling cookies
 - Source control (git)
 - Connection reuse options

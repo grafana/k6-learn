@@ -2,6 +2,9 @@
 
 ### Correlation
 
+### Embedded Resources
+
+
 ### Iteration
 
 ### Ramp-up
