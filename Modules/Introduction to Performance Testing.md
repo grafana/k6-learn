@@ -32,12 +32,7 @@ Performance testing has three main focuses.
 
 The third part is an integral to the performance testing trade, as it challenges teams on ways to stimulate or trigger those specific circumstances or scenarios.   
 
-**NOTE**: A common mistake in the industry is to use the terms Performance Testing and Load Testing interchangeably. Load testing is a sub-practice of Performance testing.
 
-![LoadNotPerf](../images/LoadNotPerf.png)
-
-
-![LoadPartOfPerf](../images/LoadPartOfPerf.png)
 
 
 
@@ -131,7 +126,8 @@ A: Performance testing is generating high user load or traffic against applicati
 B: Performance testing is an activity that requires specialized expertise to carry out.
 C: Performance testing requires a production-like environment.
 D: Observability and performance testing are complementary approaches to improving application quality.
+[[Load Testing]]
 
+Previous <-- [Main](../README.md)
 
-[Previous <-- Main](../README.md)
-[Next --> Performance Testing Methodologies](Performance%20testing%20%methodologies.md)
+Next -->[[Load Testing]]

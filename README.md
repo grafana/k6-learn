@@ -12,8 +12,8 @@ Upon completing the workshop, attendees will know how to write realistic load te
 
 #### Theory
 - [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
-- Load testing
-- Performance testing methodologies
+- [Load testing](Modules/Load%20Testing.md)
+- [Performance testing methodologies](Modules/Performance%20testing%20methodologies.md)
 - [Performance automation](Modules/Performance%20automation.md)
 - [The automation pyramid](Modules/The%20automation%20pyramid.md)
 - [Performance test cases](Modules/Performance%20test%20cases.md)
