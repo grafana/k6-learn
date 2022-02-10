@@ -1,5 +1,7 @@
 # k6 Workshop
 
+This is a work in progress!
+
 ## Objectives
 
 The main goal of this workshop is to give attendees enough hands-on experience to be able to build and execute their own performance tests as part of their current testing efforts.
