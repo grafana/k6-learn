@@ -88,7 +88,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - Debugging
 - k6/execution
 - Executors and which is best when
-- Multiple scenarios
+- [Scenarios](Modules/Scenarios.md)
 - Stages
 - Environment variables
 
@@ -117,7 +117,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - Connection reuse options
 - Caching options
 - [Additional protocols](Modules/Additional%20protocols.md)
-- Framework for a complex test (multiple scripts calling each other) - modular scripting
+- [Modular scripting](Modules/Modular%20scripting.md) - Framework for a complex test (multiple scripts calling each other)
 - Mocks and stubs
 - Creating custom summary output
 - [Using a proxy with k6](Modules/Using%20a%20proxy%20with%20k6.md)

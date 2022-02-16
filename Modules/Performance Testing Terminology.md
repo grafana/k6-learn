@@ -15,6 +15,10 @@
 ### Scenario
 
 
+### Tag
+
+https://k6.io/docs/using-k6/tags-and-groups/#tags
+
 ### Think time
 
 https://k6.io/docs/javascript-api/k6/sleep-t/
