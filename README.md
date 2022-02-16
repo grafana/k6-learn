@@ -75,8 +75,8 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [Dynamic correlation in k6](Modules/Dynamic%20correlation%20in%20k6.md)
 - [Adding test data](Modules/Adding%20test%20data.md)
 - [Parallel requests in k6](Modules/Parallel%20requests%20in%20k6.md)
-- [Transactions and organizing code in k6](Transactions%20and%20organizing%20code%20in%20k6.md)
-- [Setup and Teardown functions](Setup%20and%20Teardown%20functions.md)
+- [Transactions and organizing code in k6](Modules/Transactions%20and%20organizing%20code%20in%20k6.md)
+- [Setup and Teardown functions](Modules/Setup%20and%20Teardown%20functions.md)
 - Custom metrics
 - Environment variables
 - Using tags

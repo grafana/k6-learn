@@ -8,6 +8,12 @@ Transactions also organize test code, making it more readable and easier to debu
 
 ## Groups
 
+With [groups](https://k6.io/docs/using-k6/tags-and-groups/#groups), you can identify multiple requests as belonging to the same transaction. k6 will show the response time of grouped requests separately and as a group. Groups are best used for requests that are triggered by the same action. For example, here's an example of a group of the requests sent when a user goes to https://ecommerce.k6.io:
+
+```js
+
+```
+
 ## Tags
 
 ## URL grouping
