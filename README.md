@@ -8,7 +8,7 @@ The main goal of this workshop is to give attendees enough hands-on experience t
 
 Upon completing the workshop, attendees will know how to write realistic load tests that mimic real-life user behavior, how to identify what to focus their testing efforts on, how to automate their tests as well as how to visualize and interpret the results.
 
-## Curriculum: First iteration
+## Curriculum: Initial release
 
 ### 1: Performance testing principles: ==LEANDRO==
 
@@ -72,7 +72,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - Environment variables
 - Custom metrics
 
-### Glossary: [[Performance Testing Terminology]]
+### Glossary: [Performance Testing Terminology](Modules/Performance%20Testing%20Terminology.md)
 
 ## Future releases
 
