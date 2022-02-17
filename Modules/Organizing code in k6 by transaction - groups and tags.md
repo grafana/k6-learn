@@ -228,7 +228,7 @@ export function CheckoutPage() {
 }
 ```
 
-Using functions in this way gives you the added benefit of being able to define multiple user flows within the same script. For example, you could define one user flow that goes to the homepage only, another that visits the homepage and a few product pages, and a third that goes through all the pages and checks out. You'll learn more about scenarios in [Scenarios](Scenarios.md).
+Using functions in this way gives you the added benefit of being able to define multiple user flows within the same script. For example, you could define one user flow that goes to the homepage only, another that visits the homepage and a few product pages, and a third that goes through all the pages and checks out. You'll learn more about scenarios in [Workload modeling with scenarios](Workload%20modeling%20with%20scenarios.md).
 
 ### Modularizing your script further
 
