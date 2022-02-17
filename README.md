@@ -45,9 +45,6 @@ Upon completing the workshop, attendees will know how to write realistic load te
 
 ### 2: k6 Foundations
 
-- [k6 OSS vs k6 Cloud](Modules/k6%20OSS%20vs%20k6%20Cloud.md) differences and use cases
-
-#### k6 OSS: ==NICOLE==
 - [Getting started with k6 OSS](Modules/Getting%20started%20with%20k6%20OSS.md)
 - The k6 CLI (commands and options)
 - [Understanding k6 results](Modules/Understanding%20k6%20results.md)
@@ -121,6 +118,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 ### k6 Cloud
 
 #### Foundations
+- [k6 OSS vs k6 Cloud](Modules/k6%20OSS%20vs%20k6%20Cloud.md) differences and use cases
 - [Using k6 OSS with k6 Cloud](Modules/Using%20k6%20OSS%20with%20k6%20Cloud.md)
 - [Overview of k6 Cloud](Modules/Overview%20of%20k6%20Cloud.md) ==Mark==
 - [The k6 Cloud interface](Modules/The%20k6%20Cloud%20interface.md) ==Mark==
