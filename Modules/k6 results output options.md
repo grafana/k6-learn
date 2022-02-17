@@ -4,6 +4,8 @@ In this section, we'll discuss two common test result formats: CSV and JSON.
 
 Note: For both the CSV and JSON formats, you'll need your own visualization tool. This could be anything from [Google Sheets](https://sheets.google.com), to [Grafana](https://grafana.com), to [Tableau](https://tableau.com).
 
+## What's the difference between end-of-test results and time-series results?
+
 ## CSV
 
 ### Saving k6 results as a CSV
