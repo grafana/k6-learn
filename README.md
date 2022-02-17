@@ -15,33 +15,9 @@ Upon completing the workshop, attendees will know how to write realistic load te
 #### Theory
 - [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
 - [Load testing](Modules/Load%20Testing.md)
-- [Performance testing methodologies](Modules/Performance%20testing%20methodologies.md)
-- [Performance automation](Modules/Performance%20automation.md)
-- [The automation pyramid](Modules/The%20automation%20pyramid.md)
-- [Performance test cases](Modules/Performance%20test%20cases.md)
-
-#### Planning
-- [Clarifying testing criteria](Modules/Clarifying%20testing%20criteria.md)
-- What to test: Determining scope
-- Where to test: environments
-- Monitoring, instrumentation, and observability
-- Who does the testing?
-- The architecture of a load testing stack: diagram and explanation
-
-#### Writing load testing scripts
-- [Choosing a load testing tool](Modules/Choosing%20a%20load%20testing%20tool.md)
-- [Load tests as code and shift-left testing](Modules/Load%20tests%20as%20code%20and%20shift-left%20testing.md)
-- [Making scripts realistic](Modules/Making%20scripts%20realistic.md)
-
-#### Executing load tests
-- [Parameters of a load test](Modules/Parameters%20of%20a%20load%20test.md)
 - [Types of load tests](Modules/Types%20of%20load%20tests.md)
-- On-premise vs cloud execution
-- Analyzing load testing results and reporting
-	- Important performance testing metrics
-- Continuous load testing
-	- [What is continuous load testing and why should you do it](Modules/What%20is%20continuous%20load%20testing%20and%20why%20should%20you%20do%20it.md)
-	- CI/CD tools
+- High-level overview of the performance testing process
+- [Making scripts realistic](Modules/Making%20scripts%20realistic.md)
 
 ### 2: k6 Foundations
 
@@ -73,6 +49,35 @@ Upon completing the workshop, attendees will know how to write realistic load te
 ### Glossary: [Performance Testing Terminology](Modules/Performance%20Testing%20Terminology.md)
 
 ## Future releases
+
+### 1: Performance testing principles
+
+#### Theory
+- [Performance testing methodologies](Modules/Performance%20testing%20methodologies.md)
+- [Performance automation](Modules/Performance%20automation.md)
+- [The automation pyramid](Modules/The%20automation%20pyramid.md)
+- [Performance test cases](Modules/Performance%20test%20cases.md)
+
+#### Planning
+- [Clarifying testing criteria](Modules/Clarifying%20testing%20criteria.md)
+- What to test: Determining scope
+- Where to test: environments
+- Monitoring, instrumentation, and observability
+- Who does the testing?
+- The architecture of a load testing stack: diagram and explanation
+
+#### Writing load testing scripts
+- [Choosing a load testing tool](Modules/Choosing%20a%20load%20testing%20tool.md)
+- [Load tests as code and shift-left testing](Modules/Load%20tests%20as%20code%20and%20shift-left%20testing.md)
+
+#### Executing load tests
+- [Parameters of a load test](Modules/Parameters%20of%20a%20load%20test.md)
+- On-premise vs cloud execution
+- Analyzing load testing results and reporting
+	- Important performance testing metrics
+- Continuous load testing
+	- [What is continuous load testing and why should you do it](Modules/What%20is%20continuous%20load%20testing%20and%20why%20should%20you%20do%20it.md)
+	- CI/CD tools
 
 ### 4: k6 Advanced
 
