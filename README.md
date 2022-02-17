@@ -46,7 +46,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 ### 2: k6 Foundations
 
 - [Getting started with k6 OSS](Modules/Getting%20started%20with%20k6%20OSS.md)
-- The k6 CLI (commands and options)
+- [The k6 CLI](Modules/The%20k6%20CLI.md)
 - [Understanding k6 results](Modules/Understanding%20k6%20results.md)
 - [Adding checks to your script](Modules/Adding%20checks%20to%20your%20script.md)
 - [Adding think time using sleep](Modules/Adding%20think%20time%20using%20sleep.md)
