@@ -66,6 +66,11 @@ export default function () {
 
 The code imports a library called `papaparse` that lets you interact with CSV files. CSV files are best used when generating new usernames and accounts or when you'd like to be able to open the test data file in a spreadsheet application.
 
+```ad-warning
+title: Read from files outside the default function
+k6 does not allow you to place code that reads from a local filesystem within the default function. This restriction enforces the best practice of placing file reads in the init context (outside the default function). You can read more about that in [Test life cycle](https://k6.io/docs/using-k6/test-life-cycle/).
+```
+
 ## JSON files
 
 You can also store your test data in JSON files.
