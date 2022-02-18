@@ -121,27 +121,31 @@ That's a lot of metrics! In the next section, we'll go over what each of these l
 How do we access the JSON body of an HTTP response?
 
 A: `response.json()`
-B: `response.body()`
-C: `response.content`
 
-Answer: A
+B: `response.body()`
+
+C: `response.content`
 
 ### Question 2
 
 What is the name of the built-in module that contains the HTTP client?
 
 A: `http`
-B: `k6/http-client`
-C: `k6/http`
 
-Answer: C
+B: `k6/http-client`
+
+C: `k6/http`
 
 ### Question 3
 
 Where in a test script should we place HTTP calls to have them executed by a virtual user?
 
 A: In the global scope
+
 B: In an exported default function
+
 C: In a function called `exec()`
 
-Answer: B
+### Answers
+
+A, C, B
