@@ -1,5 +1,8 @@
 # Getting Started with k6 OSS
 
+[![hackmd-github-sync-badge](https://hackmd.io/_EzXoEOSQeWpZ-ia-IluTw/badge)](https://hackmd.io/_EzXoEOSQeWpZ-ia-IluTw)
+
+
 There are many ways to start scripting with k6, but we're starting with [k6 OSS](https://github.com/grafana/k6) for a few reasons:
 - It is a fully-fledged load testing tool on its own, and it doesn't require a subscription or any payment to use. 
 - k6 Cloud, the SaaS platform, also uses k6 OSS, so the skills you learn in this section will apply even if you decide to use k6 Cloud later. 
@@ -8,8 +11,6 @@ There are many ways to start scripting with k6, but we're starting with [k6 OSS]
 Let's get started!
 
 ## Installation
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y5tteMKZUqk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 First, install k6 by [following the instructions here](https://k6.io/docs/getting-started/installation/) for your operating system.
 
@@ -115,6 +116,10 @@ default ✓ [======================================] 1 VUs  00m00.7s/10m0s  1/1 
 ```
 
 That's a lot of metrics! In the next section, we'll go over what each of these lines mean.
+
+## Other resources
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y5tteMKZUqk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Test your knowledge
 
