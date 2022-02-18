@@ -56,13 +56,23 @@ As well, teams frequently use it as synthetic monitoring. It is triggered period
   
 
 _Example_:
+	
 ![Min Single Scenario](../images/ScensMinSing.png)
+	
 Name: MiniSingleLoad
+	
 Total threads: 3
-Processes: Process-A, 3 threads, 5 iterations per thread
+	
+Processes: 
+	
+	Process-A, 3 threads, 5 iterations per thread
+	
 Ramp-up: 0 seconds
+	
 Full load: as long as it takes, no wait time
+	
 Ramp-Down: 0 seconds
+	
 
   
 
@@ -73,16 +83,27 @@ This type of scenario puts together different single-process mini-load tests. It
   
 
 _Example_:
+	
 ![Min Concurrent Scenario](../images/ScensMinConc.png)
+	
 Name: MiniConcurrentLoad
+	
 Total threads: 3x3 = **9** (# of threads times # of processes)
+	
 Processes: 
-Process-A, 3 threads, 5 iterations per thread
-Process-B, 3 threads, 5 iterations per thread
-Process-C, 3 threads, 5 iterations per thread
+
+	Process-A, 3 threads, 5 iterations per thread
+
+	Process-B, 3 threads, 5 iterations per thread
+
+	Process-C, 3 threads, 5 iterations per thread
+	
 Ramp-up: 0 seconds
+	
 Full load: as long as it takes, no wait time
+	
 Ramp-Down: 0 seconds
+	
 
   
 
@@ -99,19 +120,33 @@ After that, the test ramps down gradually.
   
 
 _Example_:
+	
 ![Average Load Scenario](../images/ScensAvg.png)
+	
 Name: AverageLoad
+	
 Total threads: 53 (sum of all threads)
+	
 Processes: 
-Process-A, 10 threads, 10 iterations per thread/hour
-Process-B, 15 threads, 12 iterations per thread/hour
-Process-C, 5 threads, 100 iterations per thread/hour
-Process-D, 20 threads, 30 iterations per thread/hour
-Process-E, 3 threads, 10 iterations per thread/hour
+	
+	Process-A, 10 threads, 10 iterations per thread/hour
+	
+	Process-B, 15 threads, 12 iterations per thread/hour
+	
+	Process-C, 5 threads, 100 iterations per thread/hour
+	
+	Process-D, 20 threads, 30 iterations per thread/hour
+	
+	Process-E, 3 threads, 10 iterations per thread/hour
+	
 Ramp-up: 30 minutes
+	
 Full load: 60 minutes
+	
 Ramp-Down: 15 minutes
+	
 Total duration:~105 minutes  
+	
 
 ## Endurance
 
@@ -124,19 +159,33 @@ Typical durations for this are 4, 8, and even 24 hours. Some leave the test runn
   
 
 _Example_:
+	
 ![Endurance Scenario](../images/ScensEndur.png)
+	
 Name: Endurance
+	
 Total threads: 53 (sum of all threads)
+	
 Processes: 
-Process-A, 10 threads, 10 iterations per thread/hour
-Process-B, 15 threads, 12 iterations per thread/hour
-Process-C, 5 threads, 100 iterations per thread/hour
-Process-D, 20 threads, 30 iterations per thread/hour
-Process-E, 3 threads, 10 iterations per thread/hour
+
+	Process-A, 10 threads, 10 iterations per thread/hour
+
+	Process-B, 15 threads, 12 iterations per thread/hour
+
+	Process-C, 5 threads, 100 iterations per thread/hour
+
+	Process-D, 20 threads, 30 iterations per thread/hour
+
+	Process-E, 3 threads, 10 iterations per thread/hour
+	
 Ramp-up: 30 minutes
+	
 Full load: **360** minutes
+	
 Ramp-Down: 15 minutes
+	
 Total duration:~**405** minutes
+	
 
   
 
@@ -153,18 +202,31 @@ The phases and duration of the test are similar to the average load test.
   
 
 _Example_:
+	
 ![Stress Scenario](../images/ScensStress.png)
+	
 Name: StressLoad
+	
 Total threads: 85 (sum of all threads)
+	
 Processes: 
-Process-A, 15 threads, 10 iterations per thread/hour
-Process-B, 25 threads, 12 iterations per thread/hour
-Process-C, 10 threads, 100 iterations per thread/hour
-Process-D, 30 threads, 30 iterations per thread/hour
-Process-E, 5 threads, 10 iterations per thread/hour
+
+	Process-A, 15 threads, 10 iterations per thread/hour
+
+	Process-B, 25 threads, 12 iterations per thread/hour
+
+	Process-C, 10 threads, 100 iterations per thread/hour
+
+	Process-D, 30 threads, 30 iterations per thread/hour
+
+	Process-E, 5 threads, 10 iterations per thread/hour
+	
 Ramp-up: 30 minutes
+	
 Full load: 60 minutes
+	
 Ramp-Down: 15 minutes
+	
 Total duration:~105 minutes
 
   
@@ -178,19 +240,33 @@ The scenario usually departs from the average load utilizations defined per proc
   
 
 _Example_:
+	
 ![Break Point Scenario](../images/ScensBP.png)
+	
 Name: BreakpointLoad
+	
 Total threads: 1000
+	
 Processes: 
-Process-A, 25% of threads, 10 iterations per thread/hour
-Process-B, 35% of threads, 12 iterations per thread/hour
-Process-C, 20% of threads, 100 iterations per thread/hour
-Process-D, 15% of threads, 30 iterations per thread/hour
-Process-E, 5% of threads, 10 iterations per thread/hour
+
+	Process-A, 25% of threads, 10 iterations per thread/hour
+
+	Process-B, 35% of threads, 12 iterations per thread/hour
+
+	Process-C, 20% of threads, 100 iterations per thread/hour
+
+	Process-D, 15% of threads, 30 iterations per thread/hour
+
+	Process-E, 5% of threads, 10 iterations per thread/hour
+
 Ramp-up: 30 minutes
+
 Full load: 60 minutes
+
 Ramp-Down: 15 minutes
+
 Total duration:~105 minutes  
+	
 	
 
 ## Spike load
@@ -209,14 +285,25 @@ Another difference with the previous scenarios is the selection of processes to 
   
 
 _Example_:
+	
 ![Spike Scenario](../images/ScensSpike.png)
+	
 Name: SpikeLoad
+	
 Total threads: 300 (sum of all threads)
+	
 Processes: 
-Process-A, 55 threads, 100 iterations per thread/hour
-Process-R, 100 threads, 120 iterations per thread/hour
-Process-Z, 150 threads, 300 iterations per thread/hour
+
+	Process-A, 55 threads, 100 iterations per thread/hour
+
+	Process-R, 100 threads, 120 iterations per thread/hour
+
+	Process-Z, 150 threads, 300 iterations per thread/hour
+	
 Ramp-up: 5 minutes
+	
 Full load: 20 minutes
+	
 Ramp-Down: 5 minutes
+	
 Total duration:~30 minutes
