@@ -32,7 +32,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [Recording a k6 script](Modules/Recording%20a%20k6%20script.md)
 
 ### 3: k6 Intermediate
-
+``
 - [How to debug k6 load testing scripts](Modules/How%20to%20debug%20k6%20load%20testing%20scripts.md)
 - [Dynamic correlation in k6](Modules/Dynamic%20correlation%20in%20k6.md)
 - [Adding test data](Modules/Adding%20test%20data.md)
@@ -85,7 +85,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - Handling cookies
 - Source control (git)
 - Connection reuse options
-- Caching options
+- [Caching options](Modules/Caching%20options.md)
 - [Additional protocols](Modules/Additional%20protocols.md)
 - [Modular scripting](Modules/Modular%20scripting.md) - Framework for a complex test (multiple scripts calling each other)
 - Mocks and stubs
