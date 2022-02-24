@@ -20,7 +20,6 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [Making scripts realistic](Modules/Making%20scripts%20realistic.md)
 
 ### 2: k6 Foundations
-
 - [Getting started with k6 OSS](Modules/Getting%20started%20with%20k6%20OSS.md)
 - [The k6 CLI](Modules/The%20k6%20CLI.md)
 - [Understanding k6 results](Modules/Understanding%20k6%20results.md)
@@ -32,7 +31,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [Recording a k6 script](Modules/Recording%20a%20k6%20script.md)
 
 ### 3: k6 Intermediate
-``
+
 - [How to debug k6 load testing scripts](Modules/How%20to%20debug%20k6%20load%20testing%20scripts.md)
 - [Dynamic correlation in k6](Modules/Dynamic%20correlation%20in%20k6.md)
 - [Adding test data](Modules/Adding%20test%20data.md)
