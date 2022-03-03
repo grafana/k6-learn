@@ -2,12 +2,17 @@
 
 ### CLI
 
+https://k6.io/docs/using-k6/options/
+
 ### Correlation
 
 ### Duration
 
 ### Embedded Resources
 
+### Environment Variables
+
+https://k6.io/docs/using-k6/environment-variables/
 
 ### Iteration
 

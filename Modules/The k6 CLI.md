@@ -99,13 +99,51 @@ You can use `s`, `h`, and `m` to define the duration. The following are valid va
 
 #### Iterations
 
+You can also set the number of iterations using the command line using the `--iterations` or `-i` flag, like this:
 
+```shell
+k6 run test.js --iterations 100
+k6 run test.js -i 100
+```
+
+In either of the two lines above, k6 will run 100 iterations of the script.
 
 #### Stage
 
-#### Requests Per Second (RPS)
+In [Setting load profiles with executors](Setting%20load%20profiles%20with%20executors.md), you learned how to define stages in your script. You can also define them on the command line using `--stages` or `-s`, like this:
+
+```shell
+k6 run test.js --stage 1m:10
+k6 run test.js -s 1m:10
+```
+
+You can define a stage in this format: `duration:vus`. Here, the duration is set to 1 minute and the number of vus is set to 10.
+
+Each of the lines above instructs k6 to create a single scenario with the [ramping VUs executor](https://k6.io/docs/using-k6/scenarios/executors/ramping-vus) and one stage. When the test starts, it will gradually ramp up to 10 virtual users for a period of 1 minute.
+
+You can also define multiple stages on the command line.
+
+```shell
+k6 run test.js --stage 1m:10 --stage 10m:10
+```
+
+Here, k6 will run with two stages:
+- In the first stage, the test is executed with an increasing number of virtual users from 0 to 10, for one minute
+- In the second stage, the test holds steady with 10 virtual users for 10 minutes
 
 ### Environment variables
+
+So far, you've learned how to set execution options on the command line, changing test parameters such as virtual users, test duration, the number of iterations, and stages within a test. What if you want to set _other_ variables on the command line?
+
+In that case, you can use environment variables. Environment variables are variables whose values you can set outside of the k6 script.
+
+For example, you could use an environment variable to change the domain used by your test script from the command line. This is useful when you routinely test multiple environments, such as staging and test.
+
+To be able to set 
+
+
+Despite the name, these variables can hold many types of information, not just information about the environment. Here are some other things you could use an environment variable for:
+- 
 
 ### k6 Cloud
 
@@ -117,13 +155,13 @@ You can use `s`, `h`, and `m` to define the duration. The following are valid va
 
 ## Changing settings in k6
 
-
-
 - Command-line flags
 - Environment variables
 - Exported script options
 - Config file
 - Defaults
+
+
 ## Test your knowledge
 
 ### Question 1
