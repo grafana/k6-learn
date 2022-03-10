@@ -30,7 +30,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [k6 results output options](Modules/k6%20results%20output%20options.md)
 - [Recording a k6 script](Modules/Recording%20a%20k6%20script.md)
 
-### 3: k6 Intermediate _(Nicole)_
+### 3: k6 Intermediate _(Nicole and Paul)_
 
 - [How to debug k6 load testing scripts](Modules/How%20to%20debug%20k6%20load%20testing%20scripts.md)
 - [Dynamic correlation in k6](Modules/Dynamic%20correlation%20in%20k6.md)
@@ -38,18 +38,17 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [Parallel requests in k6](Modules/Parallel%20requests%20in%20k6.md)
 - [Organizing code in k6 by transaction - groups and tags](Modules/Organizing%20code%20in%20k6%20by%20transaction%20-%20groups%20and%20tags.md)
 - [Setup and Teardown functions](Modules/Setup%20and%20Teardown%20functions.md)
-- [Best practices for designing realistic k6 scripts](Modules/Best%20practices%20for%20designing%20realistic%20k6%20scripts.md)
 - [Setting load profiles with executors](Modules/Setting%20load%20profiles%20with%20executors.md) _(Paul)_
 - [Workload modeling with scenarios](Modules/Workload%20modeling%20with%20scenarios.md) _(Paul)_
 - [Creating and using custom metrics](Modules/Creating%20and%20using%20custom%20metrics.md)
-- [Environment variables](Modules/Environment%20variables.md)
 - [Using execution context variables](Modules/Using%20execution%20context%20variables.md)
+
 
 ### Glossary: [Performance Testing Terminology](Modules/Performance%20Testing%20Terminology.md)
 
 ## Future releases
 
-### 1: Performance testing principles
+### Performance testing principles
 
 #### Theory
 - [Performance testing methodologies](Modules/Performance%20testing%20methodologies.md)
@@ -78,7 +77,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 	- [What is continuous load testing and why should you do it](Modules/What%20is%20continuous%20load%20testing%20and%20why%20should%20you%20do%20it.md)
 	- CI/CD tools
 
-### 4: k6 Advanced
+### k6 OSS
 
 #### Testing framework
 - Handling cookies
