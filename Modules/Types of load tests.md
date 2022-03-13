@@ -1,4 +1,4 @@
-We load-test a system to observe and validate how it will behave or endure (survive) a significant volume of interactions. It generates a load similar to the one identified as a risk by different means.
+We load-test a system to observe and validate how it will behave or endure (survive) a significant volume of interactions. It generates a load similar to the one identified as a risk.
 
 There are two main ways to classify load testing. One deals with the ways or means to do the simulation, and the other deals with the types of load to simulate, also known as **scenarios**. 
 

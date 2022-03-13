@@ -4,77 +4,345 @@
 
 A common mistake in the industry is to use the terms Performance Testing and Load Testing interchangeably. Load testing is a sub-practice of Performance testing.
 
-[Performance testing](Introduction to Performance Testing) uncludes all actions that validate the speed and efficiency of software under diverse circumstances. Load testing is just one of those possible circumstances.
+[Performance testing](Introduction to Performance Testing) uncludes all actions that validate the speed and efficiency of software under diverse circumstances. Load testing is just one of the parts of performance testing.
 
 ![LoadNotPerf](../images/LoadNotPerf.png)
 
 
-![LoadPartOfPerf](../images/LoadPartOfPerf.png)
-
 ## Then... what is load testing?
 
-The term "load testing" refers to a type of testing that focuses on verifying and validating software when it receives considerable volumes of work/tasks to process.
+The term "load testing" refers to a type of testing that focuses on verifying and validating software when it receives considerable volumes of work/tasks to process.  
 
-  
-
-The term "considerable" can be very subjective and depend on the nature of the developed software. But in general, the project team has a good idea of what amounts to be considerable.
-
-  
-
-## Types of loads
-
-The types of load that a system can have are related to the interaction types that the solution can have. These fall into three main types. 
-
-1.  **Data volumes**. A system may receive large volumes of data to store or process. As well, a request may require the data volume to be submitted. These are usually large files, multiple files, multimedia, etc.
-2.  **Software interactions**. Applications can interact with other applications. The application under test can send requests to other applications or receive requests from other applications. These interactions can count as "load" when they are significant in payload, response, or the number of interactions.
-3.  **User interactions**. Online applications receive requests simultaneously from multiple remote users. The user interaction can be from web browsers, mobile applications, desktop applications, and many others. They also count as "load" when the payload, response, and number of requests become large.
-
- The most complicated kind of load test is the one that includes all of those mentioned above in the same circumstance.
-
-  
+Many organizations undermine the importance of load testing. They focus only on releasing the solution into production. But what can happen if no load testing is done, especially if the application expects to receive multiple user interactions?
 
 ## Reasons for load testing
 
-Load testing assures in the same line as performance testing. Although the concern is on the impact that extensive use (load) can impact the application's performance (speed and resources.)
+Load testing focuses on the impact of extensive use (load) over the application's performance (speed and resources.)
 
-Slowness or unresponsiveness when any or all of the three types of described load occur is the most significant risk that load testing tries to identify.
+*- The most significant risk that load testing tries to identify slowness or unresponsiveness when load occurs.*
 
-There is a correlation between the efficiency of the application's resource usage (efficiency) and the point where the speed and responsiveness start to degrade. That is why "efficiency" is one of the performance testing practice's primary concerns. The application may not handle the expected loads if it is not efficient.
+There is a correlation between the efficiency of the application's resource usage and the point where the speed and responsiveness start to degrade. If the application is not efficient, it may not handle the expected loads. That is why "efficiency" is one of the performance testing practice's core elements and a crucial element for load testing. 
 
-The impacts of slow, unresponsive, or unavailable applications, were described in the introduction section. - _Tip. It surrounds frustration and lost customers, but ultimately, it is about money._
+There are multiple impacts of slow, unresponsive, or unavailable applications. We have the same that we defined in [[Introduction to Performance Testing]] 
+As a small resume:
+- Lower or lost sales
+- Low or lost productivity
+- Angry users/customers
+- High costs when the above happens
+- High costs fixing issues
 
-  
+But on top of those, those problems will happen when the application is needed the most. That will be when multiple people need to interact with it. Increasing exponentially the problems in the list.
+
+
+# How to load test
+We load-test a system to observe and validate how it will behave or endure (survive) a significant volume of interactions. If there is an identified risk when the system is under load, load testing generates a load similar to the one identified.
+
+There are two main concerns when working on a load test. 
+1. One deals with the ways or means to generate or simulate the load. 
+2. The other deals with the types of load to simulate, also known as **scenarios**. 
+
+Let's check point #1 first.
 
 ## Ways to load test
 
-Load testing has two main concerns. To simulate the load and measure what happens with it. The measurement focuses on the key elements: speed (response times) and efficiency (hardware impact). We will go over those techniques later in this workshop.
-
-  
-
-For now, we will focus on the load-simulation part. The performance testing team has two main ways to simulate different load patterns.
+Load testing consist on generating (simulating) the specific loaded use of the system that poses a risk, to measure and observe how and if it will endure it and keep performing. The performance testing team has two main ways to simulate those load patterns.
 
 1.  **Manual**. Contrary to common beliefs, there are multiple ways to do load testing with real people. Manual load testing falls in the realm of Shift-Right testing techniques. We will not get in-depth about it but, beware as it is a valuable technique for performance testing in productive and pre-productive environments.
-2.  **Automated.** It is the first thing most people think of performance testing. It is a programmatical computer simulation of real-user interaction with the tested system. In other words, we use programs that forge interactions to make the system think it is responding to a human request.
+2.  **Automated.** The first thing most people think when they hear the term "performance testing". It is a programmatical computer simulation of real-user interaction with the system. In other words, we use programs to interact and make the system think it is responding to human requests.
+
+Again, we will not go deep into manual load testing... For now. This section will focus on the types of loads that we can simulate with synthetics or automated load tests. In other words, load scenarios.
+
+
+# Load test scenarios
+
+A scenario is a combination of actions to execute in a system, together with how much to execute each action.
+
+Scenarios can combine multiple mixes and behaviors. They can simulate only one action or process, or they can mix many different ones. There is a multitude of types of scenarios that can be created through several parameters that define them.
+
+The following parameters will generally define the scenarios:
+
+-   **Name**. Silly as it sounds, the scenarios need to distinguish themselves clearly.
+-   **Total threads/VUsers.** The sum of the VUsers that each process will simulate.
+-   **Processes.** A list of the processes or scripts to execute. Each process must come with a few specifications:
+
+-   **Iterations.** Total number of iterations per hour. It could be defined in total or per VUser as well.
+-   **Threads/VUsers:** Number of concurrent threads that run the given process.
+
+-   **Ramp up.** The period in which the number of threads or iterations will increase until reaching the desired amount.
+-   **Load duration.** The amount of time a test will not change once the test reaches the desired volume of VUsers or volume of actions.
+-   **Ramp down.** It is a gradual stop of the threads or volumes of action. It can be instantaneous, but generally, load tests stop gradually.
+-   **In-test variations.** It is generally not recommended, but in some situations, the teams may wish to change the volumes of actions or VUsers more than once after they reach the desired amounts of activity.
+-   **Total test duration.** An approximation of the total duration of the test from beginning to end.
+
+**_Note_**: There is no standardized naming convention for these common scenario types. The names here are descriptive, and some organizations may name them differently.
+
+**_Note 2:_** Trying to test scenarios that vary too much or have crazy patterns is unwise, as identifying a source for a problem may become hectic. To simplify things, there is a standard set of load test scenarios that teams traditionally run to validate usual risk sources.  
+
+Let's go over the most traditional types of load tests.
+
+## Mini Load - Single process
+
+This scenario is intended more as a safe check than an actual load test. But it counts as it uses concurrency. 
+
+The automation created to test it is very straightforward. It simulates a single process, with few iterations and few threads or virtual users. A usual recommendation is to have five to ten iterations with three to five threads.
+
+This type of test validates new/updated code as it moves towards production. It is a rapid test that gives early indications of performance degradation under small loads.
+
+As well, teams frequently use it as synthetic monitoring. It is triggered periodically to check that production systems are not experiencing issues or significant performance degradation.
 
   
 
-## Types of load tests
-
-The types of load-type interactions with the developed system are varied. Generally, tests should aim at a particular situation per test. In other words, test one scenario at a time.
-
-These scenarios refer to risky situations that the system may experience soon, typical day situations, and even low volume validations.
-
-Some scenarios that load testing tries to test are:
-
--   **Common use**. This type of test usually happens in big bang releases of large applications. The application will be released soon, and the team wants to know how it will handle the load of average days.
--   **Stress**. This type applies to new releases and applications already in production. Applications at times have perfect storms. A larger-than-usual number of users may want to work with it. Even if this heavy use is improbable, Murphy's law says that teams must test those higher loads. Otherwise, the system may become slow or unavailable.
--   **Extended use**. Systems nowadays are on 24x7. They may be regularly used daily during business hours or round the clock in global solutions. Load tests must check if the system won't degrade after long periods of constant use.
--   **Sudden spikes**. Systems often are under sudden extreme loads. The rush in utilization can happen on rare occasions like annual declarations, significant shopping events, appreciated concert ticket sales, etc. These events tend to be so overwhelming that they can quickly bring down the system. Load tests should simulate these scenarios focusing on the key actions users may want to do on those events.
--   **Mini loads**. It is common to run a minimal load over a new or updated component on CI/CD projects. Here, the solution is already in production, and the team must test the new item and make sure it won't impact ongoing processes.
+_Example_:
+	
+![Min Single Scenario](../images/ScensMinSing.png)
+```
+Name: MiniSingleLoad
+	
+Total threads: 3
+	
+Processes: 
+	
+	Process-A, 3 threads, 5 iterations per thread
+	
+Ramp-up: 0 seconds
+	
+Full load: as long as it takes, no wait time
+	
+Ramp-Down: 0 seconds
+```
 
   
 
-There are many other vague types of load tests. They tend to be mixes or variations of the ones mentioned above. But the best practices suggest focusing on the list above.
+## Mini Load - Concurrent process
+
+This type of scenario puts together different single-process mini-load tests. It executes relevant test processes simultaneously to assess rapidly if any of those processes may degrade the performance of the others. These quick executions are generally done in the last pre-productive environment to avoid releasing conflicting processes into production. This scenario is also executed in the production environment right after the new code is released. With that scenario, the team assures any system difference does not impact the processes' performance.
+
+  
+
+_Example_:
+	
+![Min Concurrent Scenario](../images/ScensMinConc.png)
+```	
+Name: MiniConcurrentLoad
+	
+Total threads: 3x3 = **9** (# of threads times # of processes)
+	
+Processes: 
+
+	Process-A, 3 threads, 5 iterations per thread
+
+	Process-B, 3 threads, 5 iterations per thread
+
+	Process-C, 3 threads, 5 iterations per thread
+	
+Ramp-up: 0 seconds
+	
+Full load: as long as it takes, no wait time
+	
+Ramp-Down: 0 seconds
+```
+  
+
+## Average Load
+
+This scenario simulates the system's user workload during an average hour. The scenario includes the most frequently executed processes during that hour and aims to trigger each process as much as projected. 
+
+In real life, the activity in the system does not start all at once. Users gradually log in and interact with the system. The load test gradually increases the number of actions or threads until it reaches the desired load to mimic the average load behavior. 
+
+After that, the test maintains the total load simulation for an hour or so. Depending on the size of the test, some organizations run the target load for 30 minutes, 60 minutes, or even 90. The most common is an hour.
+
+After that, the test ramps down gradually.
+
+  
+
+_Example_:
+	
+![Average Load Scenario](../images/ScensAvg.png)
+```	
+Name: AverageLoad
+	
+Total threads: 53 (sum of all threads)
+	
+Processes: 
+	
+	Process-A, 10 threads, 10 iterations per thread/hour
+	
+	Process-B, 15 threads, 12 iterations per thread/hour
+	
+	Process-C, 5 threads, 100 iterations per thread/hour
+	
+	Process-D, 20 threads, 30 iterations per thread/hour
+	
+	Process-E, 3 threads, 10 iterations per thread/hour
+	
+Ramp-up: 30 minutes
+	
+Full load: 60 minutes
+	
+Ramp-Down: 15 minutes
+	
+Total duration:~105 minutes  
+```
+
+## Endurance
+
+This scenario is almost the same as the average load test. The only difference is that the total duration is considerably longer. The test aims to verify how the system will do over extended periods. A common problem with centralized systems is that they must be active 24/7. If there are problems with memory management, the performance may degrade after extended periods or have sudden alterations when the system restores memory.
+
+Some teams run just the endurance test since it is identical to the average load scenario. If it does well during the same period as the average load, they leave it running.
+
+Typical durations for this are 4, 8, and even 24 hours. Some leave the test running even whole days.
+
+  
+
+_Example_:
+	
+![Endurance Scenario](../images/ScensEndur.png)
+```		
+Name: Endurance
+	
+Total threads: 53 (sum of all threads)
+	
+Processes: 
+
+	Process-A, 10 threads, 10 iterations per thread/hour
+
+	Process-B, 15 threads, 12 iterations per thread/hour
+
+	Process-C, 5 threads, 100 iterations per thread/hour
+
+	Process-D, 20 threads, 30 iterations per thread/hour
+
+	Process-E, 3 threads, 10 iterations per thread/hour
+	
+Ramp-up: 30 minutes
+	
+Full load: **360** minutes
+	
+Ramp-Down: 15 minutes
+	
+Total duration:~**405** minutes
+```
+ 
+
+## Stress Load
+
+This scenario simulates expected periods where the load becomes higher than usual. This test mitigates the risk of degrading performance during rush hours or when most people in the organization use the system at once, such as on paydays or end-of-month processes.
+
+The configuration of this scenario is similar to the average load, only that it increases the number of threads (VUsers or people) interacting with the system.
+
+A variation of this scenario is where specific processes increase instead of an even increase.
+
+The phases and duration of the test are similar to the average load test.
+
+  
+
+_Example_:
+	
+![Stress Scenario](../images/ScensStress.png)
+```	
+Name: StressLoad
+	
+Total threads: 85 (sum of all threads)
+	
+Processes: 
+
+	Process-A, 15 threads, 10 iterations per thread/hour
+
+	Process-B, 25 threads, 12 iterations per thread/hour
+
+	Process-C, 10 threads, 100 iterations per thread/hour
+
+	Process-D, 30 threads, 30 iterations per thread/hour
+
+	Process-E, 5 threads, 10 iterations per thread/hour
+	
+Ramp-up: 30 minutes
+	
+Full load: 60 minutes
+	
+Ramp-Down: 15 minutes
+	
+Total duration:~105 minutes
+```
+  
+
+## Breakpoint load
+
+This scenario increases the load on the system until it reaches a breaking point. The only goal is to find the system's upper limits (or capacity) until the performance starts to degrade, become problematic, or the system stops working.
+
+The scenario usually departs from the average load utilizations defined per process and VUser. It consists of only ramp-up. It increases the number of threads per process in the same proportion defined in the average load. The top increase will be up to a point where the team may consider it above the expected limits. Usually, the total duration will be when the system breaks, but it may sometimes reach the whole load and duration of the test.
+
+  
+
+_Example_:
+	
+![Break Point Scenario](../images/ScensBP.png)
+```	
+Name: BreakpointLoad
+	
+Total threads: 1000
+	
+Processes: 
+
+	Process-A, 25% of threads, 10 iterations per thread/hour
+
+	Process-B, 35% of threads, 12 iterations per thread/hour
+
+	Process-C, 20% of threads, 100 iterations per thread/hour
+
+	Process-D, 15% of threads, 30 iterations per thread/hour
+
+	Process-E, 5% of threads, 10 iterations per thread/hour
+
+Ramp-up: 30 minutes
+
+Full load: 60 minutes
+
+Ramp-Down: 15 minutes
+
+Total duration:~105 minutes  
+```
+	
+
+## Spike load
+
+The spike scenario simulates a sudden and extreme increase in the tested load. Generally, the ramp-up is way faster than the other tests, with a short full-load duration and a quick ramp-down.
+
+Teams rarely execute these scenarios, as they focus on outstanding events. Those sudden spikes happen on peculiar expected situations like:
+
+-   Sudden product announcements (like in a super-bowl ad)
+-   Timed opening of desired sales (product launches or concert tickets)
+-   Deadlines (last days of tax submissions)
+-   Sales seasons (Black Friday or Cyber Monday)
+
+Another difference with the previous scenarios is the selection of processes to be tested. Here, the team must pick only the priority actions for the event instead of the usual day-to-day processes. For example, in an event ticket sale, the users' focus will be on the buying process for the desired event instead of browsing other events.
+
+  
+
+_Example_:
+	
+![Spike Scenario](../images/ScensSpike.png)
+```
+Name: SpikeLoad
+	
+Total threads: 300 (sum of all threads)
+	
+Processes: 
+
+	Process-A, 55 threads, 100 iterations per thread/hour
+
+	Process-R, 100 threads, 120 iterations per thread/hour
+
+	Process-Z, 150 threads, 300 iterations per thread/hour
+	
+Ramp-up: 5 minutes
+	
+Full load: 20 minutes
+	
+Ramp-Down: 5 minutes
+	
+Total duration:~30 minutes
+```
 
 Previous <-- [[Introduction to Performance Testing]]
 
