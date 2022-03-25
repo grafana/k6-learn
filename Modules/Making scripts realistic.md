@@ -1,28 +1,37 @@
-Automated Performance and load testing have faced the challenge of modeling realistic user behavior. That is a problem that comes from two sources. 
+# Realistic scripts
+Automated Performance and load testing have faced the challenge of modeling realistic user behavior. That is a problem that comes from few main sources. 
 
-First, automated simulations can go at inhuman speeds. A machine does not have to stop and think like a human being, and it will go as fast as a machine can go, which is incredibly fast.
+### Super fast computers
+Automated simulations can go at inhuman speeds. A machine does not have to stop and think like a human being, and it will go as fast as a machine can go, which is incredibly fast.
 
-Second, load testing has to simulate tons of humans interacting with the system, adding to the trouble of simulating one human being. Each with its peculiarities over how fast they can work.
+### Random human behavior
+Load testing has to simulate tons of humans interacting with the system, adding to the trouble of simulating one human being. Each with its peculiarities over how fast they can work.
 
-And adding up to the mix, a possible third element is that lately, the performance simulations do not focus so much on the end-to-end set of steps in the interaction of a single user.
+### Simulations simulate in bulk
+Adding up to the mix, a possible third element is that lately, the performance simulations do not focus so much on the end-to-end set of steps in the interaction of a single user. Simulations have to mimic these complex and multi step behaviors at times, and others just focus on having separate processes that will trigger each step on it's own.
 
+### So how can we do it?
+
+Out of these situations, there are multiple ways in which automations try to solve or approach these issues. They do it through different behaviors and types of automations.
 We will go from the smallest and least problematic to the most significant and complex of these types.
 
-  
+  ![[Realistic.png]]
 
 ## Process-oriented automations
 
-As mentioned, these are the simplest, as these automations on themselves do not focus on simulating a real user. They are helpful to test a single process that has just been created or was updated. Once we create single-process automations, we can leverage them to simulate it, but in essence, they focus on triggering one of the processes this user could trigger.
+As mentioned, these are the simplest automations, as these do not focus on simulating a real user. They are helpful to test a single process that has just been created or was updated. Once we create single-process automations, they can trigger that single process, but in essence, that is the only thing or set of things they will do.
 
-When we use them independently, their only focus is on how many times to trigger the process will in a given period. We define how many parallel simulations we need (virtual users or threads) and how many times each should execute the process.
+With these, it is not a matter of just repeating a single request, as the response of the request can be slow enough to not to allow the number of requests we desire to simulate. Because of this we also add the number of parallel requests we need to simulate. We will end up using two main parameters. 
+1. How many parallel simulations we need (virtual users or threads) 
+2. How many times each should execute the process.
 
-Traditionally we managed this by first calculating the number of iterations per thread and then calculating how long each iteration should wait to start again. 
+Traditionally we figured this by first calculating the number of iterations per thread and then calculating how long each iteration should wait to start again. 
 
-TotalIterations = NumberOfUsers x IterationsPerUser
+> TotalIterations = NumberOfThreads x IterationsPerThread
 
 Then the wait per thread.
 
-Wait = (TotalTime - (IterationsPerUser x AvgProcess duration)) / TotalIterations
+> Wait = (TotalTime - (IterationsPerUser x AvgProcess duration)) / TotalIterations
 
 Crazy amount of calculations for the easiest of them all, right? Thankfully k6 does some of this automatically. Please check the workshop section on Load test options or the k6 documentation for Executors for more information.
 

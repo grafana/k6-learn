@@ -99,35 +99,6 @@ The development of mature observability platforms encourages many to forego perf
 
 Performance testing enables teams to simulate rich user scenarios _before_ potential performance issues are released to production, making helpful observability in test environments. And if no user activity is present in the system, you will still receive information about your processes' performance. Some types of tests, such as disaster recovery, chaos engineering, and reliability testing, also help teams prepare for inevitable failures.
 
-## Test your knowledge
-
-### Question 1
-
-SDFASFGASG?
-
-A: Back-end testing
-B: Front-end testing
-C: Usability testing
-
-### Question 2
-
-SDFASFGASG?
-
-A: It provides metrics like Time To Interactive (TTI) that measure when users can first interact with the application.
-B: It simulates users by driving real browsers to test the application.
-C: It can target application components before they're integrated.
-D: A and B.
-
-### Question 3
-
-SDFASFGASG?
-
-A: Performance testing is generating high user load or traffic against application servers.
-B: Performance testing is an activity that requires specialized expertise to carry out.
-C: Performance testing requires a production-like environment.
-D: Observability and performance testing are complementary approaches to improving application quality.
-[[Load Testing]]
-
 Previous <-- [Main](../README.md)
 
 Next -->[[Load Testing]]
