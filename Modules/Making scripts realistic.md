@@ -10,12 +10,12 @@ Load testing has to simulate tons of humans interacting with the system, adding 
 ### Simulations simulate in bulk
 Adding up to the mix, a possible third element is that lately, the performance simulations do not focus so much on the end-to-end set of steps in the interaction of a single user. Simulations have to mimic these complex and multi step behaviors at times, and others just focus on having separate processes that will trigger each step on it's own.
 
-### So how can we do it?
+### So how can we make them realitic?
 
 Out of these situations, there are multiple ways in which automations try to solve or approach these issues. They do it through different behaviors and types of automations.
 We will go from the smallest and least problematic to the most significant and complex of these types.
 
-  ![[Realistic.png]]
+  ![Realistic](../Realistic.png)
 
 ## Process-oriented automations
 
@@ -34,7 +34,7 @@ Then the wait per thread.
 > Wait = (TotalTime - (IterationsPerUser x AvgProcess duration)) / TotalIterations
 
 Crazy amount of calculations for the easiest of them all, right? Thankfully k6 does some of this automatically. Please check the workshop section on Load test options or the k6 documentation for Executors for more information.
-
+  ![Realistic](../Realistic1.png)
   
 
 ## Step flow automations
@@ -55,17 +55,15 @@ We can configure different waits on each of those pauses, but a recommendation i
 
 That leaves us with a process flow like the following:
 
-Step1 -> Wait -> Step2 -> Wait -> Step3 -> Wait -> Step4 -> WaitToRestart
+>Step1 -> Wait -> Step2 -> Wait -> Step3 -> Wait -> Step4 -> WaitToRestart
 
-Another detail is that human beings do not wait exactly 5 seconds between steps. Even if that was the requirement, a person could not wait exactly 5 seconds between steps. Only machines have that precision. The automations must add some randomization to that pause, but still somewhat near those 5 seconds.
-
-  
+Another detail is that human beings do not wait exactly 5 seconds between steps. Even if that was the requirement, a person could not wait exactly 5 seconds between steps. Only machines have that precision. The automations must add some randomization to that pause, but still somewhat near those 5 seconds.  
 
 Then what's left is to calculate a reasonable wait time at the end of the steps to simulate the desired volumes in a load test. The random stops, the variable time each step will take, and other factors will increase the complexity to simulate the desired load with a flow of steps.
 
-  
+  ![Realistic](../Realistic2.png)
 
-Again k6 comes to the rescue on that with the executors.
+Again k6 comes to the rescue with the executors.
 
   
 
@@ -84,7 +82,7 @@ In both cases, the mixed bag of tasks comes down to defining how many times we s
 Getting these numbers right is the core of simulating a realistic full-load scenario.
 
 The first step is to have the total number of actions in the desired period, per process, and a global total.
-
+```
 Process TotalxHour
 
 A 10
@@ -98,9 +96,20 @@ D 20
 E 40
 
 TOTAL 150
-
+```
   
+Here we need to know the goal number of virtual users desired to be simulated. This can be defined either from the load test requirement, or from the number of threads needed to generate the desired total thorughput, or per process throughput.
 
-A complementary information point is the total number of Vusers or Threads required in the simulation. The number of users is a common metric for teams to simulate several people interacting with the system. Even as this metric is not so relevant internally, it is useful to spread the tasks.
+When the goal of number of virtual users is provided, we can divide that number between the total throughput goal. That will give us a good aproximate pace to give to each process. Let's say we have a goal of 50 total virtual users.
 
-If it is provided...
+```
+Iterations per VU = Total iterations/Total VUs
+
+Example: 150/50 = 3
+```
+
+In the example each Virtual user would have to iterate 3 times per hour with the desired throughput and target number of virtual users.
+
+In escence, on a complex load test, it will be critical to keep the proportion of throughput, pacing, and number of virtual users.
+
+for these situations, k6 has multiple functions that help the test creators to ease this processes with controls over the times each vuser iterates, or all of the users, or control their injection rate, and many more. For more information check the k6
