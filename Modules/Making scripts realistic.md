@@ -15,7 +15,7 @@ Adding up to the mix, a possible third element is that lately, the performance s
 Out of these situations, there are multiple ways in which automations try to solve or approach these issues. They do it through different behaviors and types of automations.
 We will go from the smallest and least problematic to the most significant and complex of these types.
 
-  ![Realistic](../Realistic.png)
+  ![Realistic](../images/Realistic.png)
 
 ## Process-oriented automations
 
@@ -34,7 +34,7 @@ Then the wait per thread.
 > Wait = (TotalTime - (IterationsPerUser x AvgProcess duration)) / TotalIterations
 
 Crazy amount of calculations for the easiest of them all, right? Thankfully k6 does some of this automatically. Please check the workshop section on Load test options or the k6 documentation for Executors for more information.
-  ![Realistic](../Realistic1.png)
+  ![Realistic](../images/Realistic1.png)
   
 
 ## Step flow automations
@@ -61,7 +61,7 @@ Another detail is that human beings do not wait exactly 5 seconds between steps.
 
 Then what's left is to calculate a reasonable wait time at the end of the steps to simulate the desired volumes in a load test. The random stops, the variable time each step will take, and other factors will increase the complexity to simulate the desired load with a flow of steps.
 
-  ![Realistic](../Realistic2.png)
+  ![Realistic](../images/Realistic2.png)
 
 Again k6 comes to the rescue with the executors.
 
