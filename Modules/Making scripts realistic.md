@@ -66,43 +66,43 @@ Crazy amount of calculations for the most accessible type of automation, right? 
 
   ![Realistic](../images/Realistic1.png)
   
-===============================
+
 ## Step flow automations
 
-Step flow automations simulate in a single script, a set of steps that a human being may do when working with the system. Contrary to the previous one which a single script just simulates one step.
+Step flow automations simulate a flow of different steps that a human being may do when working with the system in a single script. Contrary to the previous one which a single script simulates one step.
 
 These automations are losing popularity as the need to simulate the steps and waits done by an actual human is no longer needed in modern modular and service-oriented applications. The focus is on triggering each service according to average production use or test goals.
 
-Simulating a set of steps in a single VUser was a requirement from the days when there was no clear observability on the utilization of each service and the whole thing resided in a monolithic design. The only indication teams had to load test a system was the number of users and vague guidelines to figure out what steps were done by the users.
+Simulating a set of steps in a single VUser was a requirement when there was no clear observability of the utilization of each service, and the whole thing resided in a monolithic design. The only indication teams had to load test a system was the number of users and vague guidelines to figure out what steps were done by the users.
 
 Process flow automations do multiple and different actions one after the other in a single script or flow. 
 
 As we mentioned, machine simulations can go incredibly fast compared to humans. Humans wait, think, remember, or move their hands slower than the electrons in the silicon board running the simulation.
-Hence, we must add wait or sleep times ain between each one of the different steps the process follows. Automations must simulate the time between each action, where humans are idle. The industry commonly calls it Think Time, Sleep, Wait, and many other synonyms. We will refer to them as sleep from now on.
+Hence, we must add wait or sleep times between each of the different steps the process follows. Automations must simulate the time between each action when humans are idle. The industry commonly calls it Think Time, Sleep, Wait, and many other synonyms. We will refer to them as sleep from now on.
 
-This is different from the pacing time we mentioned earlier. Sleep gives some realism to the automation taking a virtual breath in between steps. Where pacing is a wait at the very end, before starting all over, to control the number of iterations and generate the desired throughput.
+That is different from the pacing time we mentioned earlier. Sleep gives realism to the automation taking a virtual breath in between steps where pacing is a wait at the very end before starting all over to control the number of iterations and generate the desired throughput.
 
-For the sleep time in between steps, we can configure different waits on each of those pauses, but a recommendation is to use a somewhat realistic standard time between each big step in the automation. Let's say about 5 seconds.
+For the sleep time between steps, we can configure different waits on each of those pauses. Still, a recommendation is to use a somewhat realistic standard time between each significant step in the automation. Let's say about 5 seconds.
 
 That leaves us with a process flow like the following:
 
 >Step1 -> Sleep -> Step2 -> Sleep -> Step3 -> Sleep -> Step4 -> WaitToRestart
 
-Another detail is that human beings do not wait exactly 5 seconds between steps. Even if that was the requirement, a person could not wait exactly 5 seconds between steps. Only machines have that precision. The automations must add some randomization to that pause, but still somewhat near those 5 seconds.  
+Another detail is that human beings do not wait precisely 5 seconds between steps. Even if that was the requirement, a person could not wait precisely 5 seconds between steps. Only machines have that precision. The automations must add some randomization to that pause, but still somewhat near those 5 seconds.  
 
 Then what's left is to calculate a reasonable wait time at the end of the steps to simulate the desired volumes in a load test. The random stops, the variable time each step will take, and other factors will increase the complexity to simulate the desired load with a flow of steps.
 
   ![Realistic](../images/Realistic2.png)
 
-Again k6 comes to the rescue with the executors which streamline some of these calculations. But in the case of multi step or E2E automations, it is recommended to add them manually between steps.
+Again k6 comes to the rescue with the executors, which streamline some of these calculations. But in the case of multi-step or E2E automations, it is recommended to add them manually between steps.
 
   
 
 ## Multiple processes, multiple flows, multiple users
 
-Load tests were cosiderably complex in the past. 
+Load tests were considerably complex in the past. 
 
-The most common load tests had multiple test cases, each test case or script had a flow of steps simulating a targeted process. Each test script was asigned several virtual users and varied load targets for each. *(see 'All together option 1')*
+The most common load tests had multiple test cases; each test case or script had a flow of steps simulating a targeted process. We assign to each test script several virtual users and varied load targets for each. *(see 'All together option 1')*
 
 Nowadays, full-scale load tests focus on triggering each targeted process accordingly to what is observed or expected in production. *(see 'All together option 2')*
 
@@ -127,9 +127,9 @@ E 40
 TOTAL 150
 ```
   
-Here we need to know the goal number of virtual users desired to be simulated. This can be defined either from the load test requirement, or from the number of threads needed to generate the desired total thorughput, or per process throughput.
+Here we need to know the goal number of virtual users to be simulated. That can be defined either from the load test requirement, the number of threads needed to generate the desired total throughput, or the per-process throughput.
 
-When number of virtual users is provided as a target, we can divide that number between the total throughput goal. That will give us a good aproximate pace to give to each process. Let's say we have a goal of 50 total virtual users.
+When the number of virtual users is provided as a target, we can divide that number between the total throughput goal. That will give us a great approximate pace to give to each process. Let's say we have a goal of 50 total virtual users.
 
 ```
 Iterations per VU = Total iterations/Total VUs
@@ -137,14 +137,14 @@ Iterations per VU = Total iterations/Total VUs
 Example: 150/50 = 3
 ```
 
-In the example each Virtual user would have to iterate 3 times per hour with the desired throughput and target number of virtual users.
+In the example, each Virtual user would have to iterate three times per hour with the desired throughput and target number of virtual users.
 
-As you can see, even if at scale, here the proportion between Total number of users, desired throughput, and iterations per vUser, stays consistent.
+As you can see, even if at scale, the proportion between the total number of users, desired throughput, and iterations per vUser stays consistent.
 
   ![Realistic](../images/Realistic3a.png)
 
-In escence, on a complex load test, it will be critical to keep the proportion of throughput, pacing, and number of virtual users.
+In essence, keeping the proportion of throughput, pacing, and the number of virtual users on a complex load test will be critical.
 
   ![Realistic](../images/Realistic3b.png)
 
-For these situations, k6 has multiple functions that help the test creators to ease this processes with controls over the times each vuser iterates, or all of the users, or control their injection rate, and many more. For more information check the k6 executors documentation.
+For these situations, k6 has multiple functions that help the test creators to ease this process with controls over the times each vuser iterates, or all of the users, or control their injection rate, and many more. For more information, check the k6 executors' documentation.
