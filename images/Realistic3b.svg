@@ -15,7 +15,7 @@
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
    sodipodi:docname="Realistic3b.svg"
-   inkscape:export-filename="C:\Users\LeanderMan\Documents\repos\k6-workshop\images\Realistic1.png"
+   inkscape:export-filename="C:\Users\LeanderMan\Documents\repos\k6-workshop\images\Realistic3b.png"
    inkscape:export-xdpi="126.263"
    inkscape:export-ydpi="126.263">
   <defs
@@ -29,7 +29,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
      inkscape:cx="272.00806"
-     inkscape:cy="332.94183"
+     inkscape:cy="218.65612"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -74,7 +74,7 @@
          x="11.601386"
          y="5.978364"
          style="font-size:4.93889px;stroke-width:0.264583"
-         id="tspan851">Single process per thread</tspan></text>
+         id="tspan851">All together 2</tspan></text>
     <image
        width="26.884075"
        height="26.884075"
