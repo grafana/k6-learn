@@ -35,6 +35,8 @@ Performance testing focuses on three main elements.
 2.  **_Efficiency_**_: Another interest is to measure the system's impact after the given event. Common measurements can be computer resource consumption (CPU, RAM, etc.) and measurable metrics (temperature, number of connections, data transfer, etc.)
 3.  **_Scenario_**_: These are the particular conditions stated in the definition. Performance testing measures the speed and impact during a particular event or scenario. Some events or scenarios are RUM (Real User Monitoring), instrumentation, load-tests, single-user tests, no-user tests, and many more.
 
+![PerfTriforce](../images/PerfTriforce.png)
+
 Part 3 is integral to the performance testing trade. Teams must figure out ways to stimulate or trigger those specific circumstances or scenarios. The ways to simulate go from manual, automated, synthetic, and even no actions.
 
 
