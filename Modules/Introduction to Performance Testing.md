@@ -3,7 +3,7 @@
 Let's start explaining what performance-testing means by defining it word by word. Here are some dictionary-paraphrasing definitions of each word.
 
 >**Performance**
->Refers to the capabilities (how good, fast or efficient) of a machine, vehicle, or product, when observed under particular conditions._
+>Refers to the capabilities (how good, fast or efficient) of a machine, vehicle, or product, when observed under particular conditions.
 
 >**Testing**
 >To take measures to check the quality, performance, or reliability of (something), especially before putting it into widespread use or practice.
@@ -31,9 +31,9 @@ Performance testing measures performance under many circumstances, and load focu
 
 Performance testing focuses on three main elements.
 
-1.  **_Time_**_: It measures the responsiveness of the solution after an event is triggered. In other words, how fast the system reacts to that event. In other words, how fast it reacts to an event (and there are many events, not just user actions and load.)
-2.  **_Efficiency_**_: Another interest is to measure the system's impact after the given event. Common measurements can be computer resource consumption (CPU, RAM, etc.) and measurable metrics (temperature, number of connections, data transfer, etc.)
-3.  **_Scenario_**_: These are the particular conditions stated in the definition. Performance testing measures the speed and impact during a particular event or scenario. Some events or scenarios are RUM (Real User Monitoring), instrumentation, load-tests, single-user tests, no-user tests, and many more.
+1.  **_Time_**: It measures the responsiveness of the solution after an event is triggered. In other words, how fast the system reacts to that event. In other words, how fast it reacts to an event (and there are many events, not just user actions and load.)
+2.  **_Efficiency_**: Another interest is to measure the system's impact after the given event. Common measurements can be computer resource consumption (CPU, RAM, etc.) and measurable metrics (temperature, number of connections, data transfer, etc.)
+3.  **_Scenario_**: These are the particular conditions stated in the definition. Performance testing measures the speed and impact during a particular event or scenario. Some events or scenarios are RUM (Real User Monitoring), instrumentation, load-tests, single-user tests, no-user tests, and many more.
 
 ![PerfTriforce](../images/PerfTriforce.png)
 
