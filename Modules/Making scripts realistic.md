@@ -127,58 +127,28 @@ Again k6 comes to the rescue with the _executors_, which streamline some of thes
 
 ## Multiple processes, multiple flows, multiple users
 
-  
-
 Load tests were considerably complex in the past. 
-
-  
-
+ 
 The most common load tests had multiple test cases; each test case or script had a flow of steps simulating a targeted process. We assign to each test script several virtual users and varied load targets for each. *(see 'All together option 1')*
-
-  
 
 Nowadays, full-scale load tests focus on triggering each targeted process according to what is observed or expected in production. *(see 'All together option 2')*
 
-  
-
 In both cases, the mixed bag of tasks comes down to defining how many times we should run each process/script, per-thread or virtual user, and how many threads to use for each process.
 
-  
-
 Getting these numbers right is the core of simulating a realistic full-load scenario.
-
-  
 
 Again, the first step is to have the total number of actions in the desired period, per process, and a global total.
 
 ```
-
 Process TotalxHour
 
-  
-
 A 10
-
-  
-
 B 50
-
-  
-
 C 30
-
-  
-
 D 20
-
-  
-
 E 40
 
-  
-
 TOTAL 150
-
 ```
 
 Here we need to know the goal number of virtual users to simulate. That can be defined either from the load test requirement, the number of threads needed to generate the desired total throughput, or the per-process throughput.
@@ -190,13 +160,9 @@ When the team receives the number of virtual users as a target, we can divide th
   
 
 ```
-
 Iterations per VU = Total iterations/Total VUs
 
-  
-
 Example: 150/50 = 3
-
 ```
 
   
