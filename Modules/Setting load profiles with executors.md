@@ -18,7 +18,7 @@ As noted above, the primary objective is to perform your test `iterations` numbe
 [Experiment with _Shared Iterations_ for yourself!](Executors/Shared%20Iterations%20Exercises.md)
 
 ### Per VU Iterations
-_Per VU Iterations_ is a slight evolution on the _Shared Iterations_ executor. With this executor, we're still focused on the number of _iterations_, however, this time we want **each _virtual user_** to execute the **same amount** of iterations.
+_Per VU Iterations_ is a slight evolution on the _Shared Iterations_ executor. With this executor, we're still focused on the number of _iterations_, however, this time we want **each _virtual user_** to execute the **same number** of iterations.
 
 | Option        | Description                                                   | Default |
 |---------------|---------------------------------------------------------------|---------|
@@ -99,18 +99,43 @@ The primary objective for this executor is to define the `duration` timeframe of
 [Experiment with _Externally Controlled_ for yourself!](Executors/Externally%20Controlled%20Exercises.md)
 
 ## Test your knowledge
-See how well you understand the executors with the following quiz. Check your answers with the [answer key](#Answer%20Key) toward the bottom of the page.
+
+See how well you understand the executors with the following quiz. Check your answers with the [answer key](#Answers) toward the bottom of the page.
 
 ### Question 1
 
-A: `blah`
+A system runs with approximately 80 concurrent users and encounters occasional spikes of 50 additional users. How would this best be modelled?
 
-B: `blah`
+A: Use the `ramping-arrival-rate` with multiple stages. Start with 80 VUs with a stage to maintain for a short period, then another stage to target 130 users within a short duration, then another to bring back to 80 users.
 
-C: `blah`
+B: Use the `constant-vus` having the 130 virtual users. Have this run with a 5-minute duration.
+
+C: Use the `ramping-vus` with multiple stages. Start with 80 VUs with a stage to maintain for a short period, then another stage to target 130 users within a short duration, then another to bring back to 80 users.
+
+### Question 2
+
+We're looking to establish some baseline metrics to define an SLA for an existing service, what is the quickest way to achieve this?
+
+A: Use the `shared-iterations` executor to run through 1,000 requests.
+
+B: Use the `constant-arrival-rate` to see how many virtual users it takes to maintain a constant 50 requests per second (RPS).
+
+C: Use the `externally-controlled` executor to start k6 in server mode to have your _sweet_ Bash script ramp up virtual users.
+
+### Question 3
+
+Your SRE team has been seeing issues with your service hitting a garbage collection pause once an instance starts exceeding 30 RPS. You're not on Kubernetes yet, so scaling isn't an easy option. How can your developers simulate the load locally in order to test their json marshaling code? 
+
+A: Use the `constant-vus` to simulte 30 virtual users performing requests as quickly as possible.
+
+B: Use the `constant-arrival-rate` to maintain a constant 30 requests per second (RPS).
+
+C: Use the `per-vu-iterations` executor to have 30 virutal users run 1,000 requests each.
 
 > :rocket: Want more? Check out the [k6 Office Hours](https://www.youtube.com/playlist?list=PLJdv3RhAQXNE1TFXn2pp9h_Ul1q_kJrEZ) session where we talked in depth about *Executors in k6*!
 > <iframe width="560" height="315" src="https://www.youtube.com/embed/3AJLSH0Ifm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-#### Answer Key
-TODO Here will be the answers!!!
+#### Answers
+1. C. `ramping-vus` allows you to model spikes in concurrent _virtual users_.
+2. A. With `shared-iterations` we can easily run through a fixed number of test iterations, with or without concurrency. We're after simple service-levels to establish a baseline, so probably won't need anything overly complex.
+3. B. With the `constant-arrival-rate` executor, you can have your script achieve and maintain the targeted request rate to monitor your memory heap.
