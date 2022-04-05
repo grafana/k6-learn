@@ -11,19 +11,19 @@ A common mistake in the industry is to use the terms Performance Testing and Loa
 
 ## Then... what is load testing?
 
-The term "load testing" refers to a type of testing that focuses on verifying and validating software when it receives considerable volumes of work/tasks to process.  
+The term "load testing" refers to a sub-type of performance testing that focuses on verifying and validating the performance of software when it receives considerable volumes of work/tasks to process.
 
 Many organizations undermine the importance of load testing. They focus only on releasing the solution into production. But what can happen if no load testing is done, especially if the application expects to receive multiple user interactions?
 
 ## Reasons for load testing
 
-Load testing focuses on the impact of extensive use (load) over the application's performance (speed and resources.)
+Load testing focuses on figuring out the impact of extensive use (load) over the application's performance (speed and resources.)
 
-*- The most significant risk that load testing tries to identify slowness or unresponsiveness when load occurs.*
+*- The most significant risk that load testing tries to identify is slowness or unresponsiveness when the high load use scenario occurs.*
 
-There is a correlation between the efficiency of the application's resource usage and the point where the speed and responsiveness start to degrade. If the application is not efficient, it may not handle the expected loads. That is why "efficiency" is one of the performance testing practice's core elements and a crucial element for load testing. 
+The efficiency of the application's resource usage and the point where the speed and responsiveness start to degrade go hand-in-hand. If the application is not efficient, it may not handle the expected loads. That is why "efficiency" is one of the performance testing practice's core elements and a crucial validation for load testing. 
 
-There are multiple impacts of slow, unresponsive, or unavailable applications. We have the same that we defined in [[Introduction to Performance Testing]] 
+Slow, unresponsive, or unavailable applications have multiple impacts. We have the same that we defined in [[Introduction to Performance Testing]] 
 As a small resume:
 - Lower or lost sales
 - Low or lost productivity
@@ -31,43 +31,44 @@ As a small resume:
 - High costs when the above happens
 - High costs fixing issues
 
-But on top of those, those problems will happen when the application is needed the most. That will be when multiple people need to interact with it. Increasing exponentially the problems in the list.
+But on top of those, problems will happen when the application recieves the heaviest use, in other words, when it is needed the most. That will increase exponentially the problems listed above.
 
 
 # How to load test
-We load-test a system to observe and validate how it will behave or endure (survive) a significant volume of interactions. If there is an identified risk when the system is under load, load testing generates a load similar to the one identified.
+We load-test a system to observe and validate how it will behave or endure (survive) a significant volume of interactions. If there is an identified risk when the system is under load, load testing generates a load similar to the pattern identified as a risk scenario.
 
 There are two main concerns when working on a load test. 
-1. One deals with the ways or means to generate or simulate the load. 
-2. The other deals with the types of load to simulate, also known as **scenarios**. 
+1. The ways or means to generate or simulate the load. 
+2. The type of load to simulate, also known as **scenarios**. 
 
 Let's check point #1 first.
 
 ## Ways to load test
 
-Load testing consist on generating (simulating) the specific loaded use of the system that poses a risk, to measure and observe how and if it will endure it and keep performing. The performance testing team has two main ways to simulate those load patterns.
+Load testing consist on generating (simulating) the specific loaded use of the system that poses a risk to measure and observe how and if it will endure the load and keeping timely responses. The performance testing team has two main ways to simulate those risky load patterns.
 
-1.  **Manual**. Contrary to common beliefs, there are multiple ways to do load testing with real people. Manual load testing falls in the realm of Shift-Right testing techniques. We will not get in-depth about it but, beware as it is a valuable technique for performance testing in productive and pre-productive environments.
+1.  **Manual**. Contrary to common beliefs, there are multiple ways to do load testing with real people. Manual load testing falls in the realm of Shift-Right testing techniques. We will not get in-depth about it. But beware as it is a valuable technique for performance testing in productive and pre-productive environments.
 2.  **Automated.** The first thing most people think when they hear the term "performance testing". It is a programmatical computer simulation of real-user interaction with the system. In other words, we use programs to interact and make the system think it is responding to human requests.
 
-Again, we will not go deep into manual load testing... For now. This section will focus on the types of loads that we can simulate with synthetics or automated load tests. In other words, load scenarios.
+Again, we will not go deep into manual load testing... For now. 
+
+This section will focus on the types of loads that we can simulate with synthetics or automated load tests. In other words, automated load scenarios.
 
 
 # Load test scenarios
 
 A scenario is a combination of actions to execute in a system, together with how much to execute each action.
 
-Scenarios can combine multiple mixes and behaviors. They can simulate only one action or process, or they can mix many different ones. There is a multitude of types of scenarios that can be created through several parameters that define them.
+Scenarios can combine multiple mixes and behaviors. They can simulate only one action or process, or they can mix many different ones, pushing different loads, durations, and mixes. There is a multitude of types of scenarios that can be created through some of the main parameters that define them.
 
 The following parameters will generally define the scenarios:
 
 -   **Name**. Silly as it sounds, the scenarios need to distinguish themselves clearly.
--   **Total threads/VUsers.** The sum of the VUsers that each process will simulate.
+-   **Total threads/VUsers.** The sum of the VUsers that all of the processes will simulate.
 -   **Processes.** A list of the processes or scripts to execute. Each process must come with a few specifications:
-
--   **Iterations.** Total number of iterations per hour. It could be defined in total or per VUser as well.
--   **Threads/VUsers:** Number of concurrent threads that run the given process.
-
+	-   **Iterations.** Total number of iterations per hour. It could be defined in total or per VUser as well.
+	-   **Threads/VUsers:** Number of concurrent threads that run the given process.
+====================
 -   **Ramp up.** The period in which the number of threads or iterations will increase until reaching the desired amount.
 -   **Load duration.** The amount of time a test will not change once the test reaches the desired volume of VUsers or volume of actions.
 -   **Ramp down.** It is a gradual stop of the threads or volumes of action. It can be instantaneous, but generally, load tests stop gradually.
