@@ -43,6 +43,7 @@ Performance testing focuses on three main elements.
 -  **_Scenario_**: These are the particular conditions stated in the definition. Performance testing measures the speed and impact during a particular event or scenario. Some events or scenarios are RUM (Real User Monitoring), instrumentation, load tests, single-user tests, no-user tests, and many more.
 
 ![PerfTriforce](../images/PerfTriforce.png)
+
 Creating scenarios is integral to the performance-testing trade. Teams must figure out ways to stimulate or trigger those specific circumstances or scenarios. The ways to simulate the scenarios goes from manual, automated, continuous triggering (synthetics), and even no actions.
  
 
