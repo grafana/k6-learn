@@ -1,13 +1,13 @@
 # Externally Controlled Executor
 
-As noted in the in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Externally%20Controlled), this particular executor relegates the control of VUs and the running state of tests to external processes. Feel free to use Bash, Python, or some automation component; the source of these processes is of no consequence for the executor.
+As noted in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Externally%20Controlled), this particular executor relegates the control of VUs and the running state of tests to external processes. Feel free to use Bash, Python, or some automation component; the source of these processes is of no consequence for the executor.
 
 The focus of the executor will be to set up the test scenario and provide constraints on the overall duration and allowable number of virtual users. From this point, a running test will be in somewhat of a _holding pattern_ waiting for further instructions.
 
 Interaction with the running test utilizes either the [REST APIs](https://k6.io/docs/misc/k6-rest-api/) exposed by the k6 process, or by using the `k6` command line interface (CLI).
 
 ## Exercises
-For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits three seconds before completing the test iteration. We're providing some console output so as things change. 
+For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits three seconds before completing the test iteration. We're providing some console output as things change. 
 
 The configured `options` will be the absolute minimum required for the `externally-controlled` executor.
 
@@ -47,7 +47,7 @@ Let's open another _terminal_ window, this time however, the directory should no
 ```bash
 k6 scale --vus 2 --max 10
 ```
-> If you don't specify the `maxVUs` in your script options, any request to scale up will fail unless you provide a `--max` with the scale request!
+> :point_up: If you don't specify the `maxVUs` in your script options, any request to scale up will fail unless you provide a `--max` with the scale request!
 
 Now that VUs have been scaled up, you should now see console output showing that each virtual user is now executing the test code.
 
