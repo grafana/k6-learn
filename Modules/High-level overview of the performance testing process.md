@@ -4,20 +4,24 @@ Performance testing is a vast practice. It is full of variations, ways to do it,
 
 In the same way, performance testing has no silver bullet solution. Even as many medical specialists may heal most problems by giving antibiotics for every illness, we know that is not the best action path.
 
-There are multiple system risks related to performance, and each requires a specific process. We must avoid silver bullet approaches. But, that said, there are general steps that the performance testing practice can follow.
+There are multiple performance-related system risks, and each requires a specific process. We must avoid silver bullet approaches. But, that said, there are general steps that the performance testing practice can follow.
 
 
 # The incremental performance process
 
 Performance testing is the process that helps us to verify and validate the speed and impact of actions in our software. 
 
-An initial goal is to identify performance-related risks and create devices to provide performance information on the components impacted by those risks.  
+- Risks. First we must identify performance-related risks in our system. 
 
-Then, assess that new processes are not slow or do not consume too many resources themselves. The teams must define strategies, define thresholds, create automations, test each created element, and ensure it comes out of the developer's machine performing at its best.
+- Create tests. Then we can create devices to provide performance metrics from the components impacted by those risks.  
 
-Then they must validate that updates or other new items will not degrade that existing good performance.
+- Test the new. Then, assess that the risk-related processes are not slow or do not consume too many resources themselves. For this, the teams must define strategies, define thresholds, create automations, test each created element, and ensure it comes out of the developer's machine performing at its best.
 
-After we validate that a single process is performant, we want to assess that our software will not degrade its performance when it interacts with multiple users simultaneously, especially in the case of a large number of users.
+- Test updates. Then the team must validate that updates or other new items will not degrade that existing good performance.
+
+- Load test. After we validate that a single process is performant, we want to assess that our software will not degrade its performance when it interacts with multiple users simultaneously, especially in the case of a large number of users.
+
+Lets do a general overview on these steps. But first we must check some 
  
 
 # Day -1
