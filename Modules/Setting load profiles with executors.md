@@ -4,6 +4,8 @@ One of the more complicated aspects of testing is modeling your desired load pro
 
 > :point_up: An important point to keep in mind is that each executor controls the number of VUs and/or the number--or even rate--of iterations per testing cycle.
 
+We've provided example exercises to walk through the details when working with each of the available executors. 
+
 ### Shared Iterations
 _Shared Iterations_ is the most basic of the executors. As can be inferred from the name, the primary focus will be the number of _iterations_ for your test; this is the number of times your test function will be run.
 
@@ -91,7 +93,7 @@ _Externally Controlled_ is a completely different executor in that it does not a
 | Option         | Description                                            | Default      |
 |----------------|--------------------------------------------------------|--------------|
 | **`duration`** | Overall scenario duration                              | - (required) |
-| `maxVUs`       | Maximum number of virtual users allowed to be utilized | - (no limit) |
+| `maxVUs`       | Maximum number of virtual users allowed to be utilized | `0`          |
 | `vus`          | Number of virtual users to run concurrently            | `0`          |
 
 The primary objective for this executor is to define the `duration` timeframe of the test. If nothing else is provided, k6 will essentially be in a state of waiting for commands. If none are given, k6 will simply exit once the duration has been reached. If `vus` are specified with a non-zero value, the executor will run similar to the _Constant VUs_ until acted upon by an external actor. The `maxVUs` setting will put in place a limit to be enforced when receiving external requests to scale up.
