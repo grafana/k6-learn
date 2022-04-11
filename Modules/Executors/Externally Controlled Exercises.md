@@ -1,18 +1,13 @@
 # Externally Controlled Executor
 
-As noted in the in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Externally%20Controlled),
-this particular executor relegates the control of VUs and the running state of tests to external processes. Feel free to use Bash, 
-Python, or some automation component; the source of these processes is of no consequence for the executor.
+As noted in the in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Externally%20Controlled), this particular executor relegates the control of VUs and the running state of tests to external processes. Feel free to use Bash, Python, or some automation component; the source of these processes is of no consequence for the executor.
 
-The focus of the executor will be to set up the test scenario and provide constraints on the overall duration and allowable number
-of virtual users. From this point, a running test will be in somewhat of a _holding pattern_ waiting for further instructions.
+The focus of the executor will be to set up the test scenario and provide constraints on the overall duration and allowable number of virtual users. From this point, a running test will be in somewhat of a _holding pattern_ waiting for further instructions.
 
-Interaction with the running test utilizes either the [REST APIs](https://k6.io/docs/misc/k6-rest-api/) exposed by the k6 process, 
-or by using the `k6` command line interface (CLI).
+Interaction with the running test utilizes either the [REST APIs](https://k6.io/docs/misc/k6-rest-api/) exposed by the k6 process, or by using the `k6` command line interface (CLI).
 
 ## Exercises
-For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits three
-seconds before completing the test iteration. We're providing some console output so as things change. 
+For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits three seconds before completing the test iteration. We're providing some console output so as things change. 
 
 The configured `options` will be the absolute minimum required for the `externally-controlled` executor.
 
@@ -43,27 +38,21 @@ Open a _terminal_ window within the same directory as the `test.js` script. We'r
 ```bash
 k6 run test.js
 ```
-k6 should now start. You should see a timer counting up as the test is running, but nothing much happening. We're not seeing 
-our expected console message included in our script! We'll stay in this holding pattern until the timer reaches the configured
-`duration` from the script options.
+k6 should now start. You should see a timer counting up as the test is running, but nothing much happening. We're not seeing our expected console message included in our script! We'll stay in this holding pattern until the timer reaches the configured `duration` from the script options.
 
 ### Scaling up VUs
-No tests were actually performed due to there being `0` virtual users (VUs) started by the script. k6 waits for the external 
-process to _scale up_ VUs. To scale up, we're going to use the 'k6' commandline.
+No tests were actually performed due to there being `0` virtual users (VUs) started by the script. k6 waits for the external process to _scale up_ VUs. To scale up, we're going to use the 'k6' commandline.
 
-Let's open another _terminal_ window, this time however, the directory should not matter. If your script timed out in the meantime,
-start it back up again using `k6 run test.js`.
+Let's open another _terminal_ window, this time however, the directory should not matter. If your script timed out in the meantime, start it back up again using `k6 run test.js`.
 ```bash
 k6 scale --vus 2 --max 10
 ```
 > If you don't specify the `maxVUs` in your script options, any request to scale up will fail unless you provide a `--max` with the scale request!
 
-Now that VUs have been scaled up, you should now see console output showing that each virtual user is now executing 
-the test code.
+Now that VUs have been scaled up, you should now see console output showing that each virtual user is now executing the test code.
 
 ### Controlling the execution engine
-Continuing with the currently running test from the previous step, let's play with other options available to control
-the overall test execution.
+Continuing with the currently running test from the previous step, let's play with other options available to control the overall test execution.
 
 Using an idle _terminal_ window (one not currently running the k6 test), we'll issue the following commands:
 ```bash
@@ -92,8 +81,7 @@ tainted: false
 ```
 
 ### Gather a metrics snapshot
-While your script is running, whether paused or active, you can poll the current metrics from the running script. This will 
-dump the current metrics in YAML format to your console which can be _piped_ to an output file.
+While your script is running, whether paused or active, you can poll the current metrics from the running script. This will dump the current metrics in YAML format to your console which can be _piped_ to an output file.
 
 ```bash
 $ k6 stats
@@ -117,8 +105,7 @@ $ k6 stats
 ```
 
 ### Ending your test
-If you wish to complete a test before the `duration` timeframe has been met, you will have to use the `Ctrl+C` keyboard
-command in the _terminal_ running your test or use the REST API:
+If you wish to complete a test before the `duration` timeframe has been met, you will have to use the `Ctrl+C` keyboard command in the _terminal_ running your test or use the REST API:
 ```bash
 curl -X PATCH \
   http://localhost:6565/v1/status \
@@ -139,12 +126,9 @@ curl -X PATCH \
 ### Script options
 Our initial script provides the bare minimum to begin your test. 
 
-Consider a best-practice of specifying your `maxVUs` within the script. As noted previously, the `maxVUs` is not required, however
-any attempt to scale will be met with an error unless a `--max` is specified with the initial scaling request. The `maxVUs` value
-may be overridden using the `--max` argument should the controlling script deem necessary.
+Consider a best-practice of specifying your `maxVUs` within the script. As noted previously, the `maxVUs` is not required, however any attempt to scale will be met with an error unless a `--max` is specified with the initial scaling request. The `maxVUs` value may be overridden using the `--max` argument should the controlling script deem necessary.
 
-The final script option is the `vus` setting. When provided, this number of VUs will begin processing once the script is started
-thereby eliminating the need for an initial scale up.
+The final script option is the `vus` setting. When provided, this number of VUs will begin processing once the script is started thereby eliminating the need for an initial scale up.
 
 Let's update the _options_ declaration in our _test.js_ script to include these additional settings:
 ```js
