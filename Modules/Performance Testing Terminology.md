@@ -10,6 +10,8 @@ https://k6.io/docs/using-k6/options/
 
 ### Embedded Resources
 
+### Execution Context
+
 ### Environment Variables
 
 https://k6.io/docs/using-k6/environment-variables/
