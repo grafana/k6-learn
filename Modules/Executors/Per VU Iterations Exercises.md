@@ -2,7 +2,7 @@
 
 As noted in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Per%20VU%20Iterations), _Per VU Iterations_ is an executor with a focus on _iterations_ performed by a _virtual user (VU)_.
 
-##Exercises
+## Exercises
 
 For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits one second before completing the test iteration. We're providing some console output as things change.
 
@@ -172,5 +172,6 @@ Our script was only able to complete 95 iterations within the allowable 10-secon
 
 We could use that information as a baseline to establish a _Service Level Agreement (SLA)_ for the service being tested; we'll account for some fluctuation by setting the `maxDuration` to 30 seconds. If tests are not able to complete in that timeframe, it's possible the service performance has degraded enough to warrant investigation.
 
-# Summary
+### Wrapping up
+
 With this exercise, you should see how to run a very basic test and how you can control the number of iterations, virtual users, and even setting time limits. Additionally, you see that the distribution of tests for amongst VUs is _fairly scheduled_ when using _Per VU Iterations_.

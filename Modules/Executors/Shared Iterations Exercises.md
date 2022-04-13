@@ -2,7 +2,7 @@
 
 As noted in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Shared%20Iterations), _Shared Iterations_ is the most basic of the executors. As can be inferred from the name, the primary focus will be the number of _iterations_ for your test; this is the number of times your test function will be run.
 
-##Exercises
+## Exercises
 For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits one second before completing the test iteration. We're providing some console output as things change.
 
 ### Creating our script
@@ -136,5 +136,5 @@ Let's look at these results a bit more closely. The above results (trimmed for b
 
 A behavior of the `shared-iterations` executor may become apparent: _some VUs performed more tests than others_. This is the "shared" aspect in the executor name. As each VU completes a test iteration, they immediately reserve another while there are iterations remaining. If a VU continually gets quick responses from the service being tested, it's possible, as in this case, that the VU gets more than its _fair share_.
 
-# Summary
+### Wrapping up
 With this exercise, you should see how to run a very basic test and how you can control the number of iterations, concurrency, and even setting time limits. Additionally, you see that the distribution of tests amongst VUs may not be _fair_.
