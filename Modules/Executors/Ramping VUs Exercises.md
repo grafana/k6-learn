@@ -137,7 +137,7 @@ VUs
         #1        #2  #3       #4
 ```
 
-From our lovely _ASCII art_ diagram, we'll modify our script to run 4 stages to simulate a spike in virtual users. Let's alter our `startVUs`, first stage, and the new stages for our simulation:
+From our lovely _ASCII art_ diagram, we'll modify our script to run 4 stages to simulate a spike in virtual users. Let's alter our `startVUs`, first stage, and add new stages to our simulation:
 
 ```js
 export const options = {

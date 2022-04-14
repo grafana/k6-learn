@@ -60,13 +60,13 @@ A time-based scenario, the total duration is equal to the sum of `duration` time
 ### Constant Arrival Rate
 With the _Constant Arrival Rate_, we now start to focus on the rate at which your test iterations are performed over a prescribed period of time. k6 will dynamically adjust the number of VUs to achieve the desired rate.
 
-| Option                | Description                                                     | Default      |
-|-----------------------|-----------------------------------------------------------------|--------------|
-| **`duration`**        | Overall scenario duration                                       | - (required) |
-| **`preAllocatedVUs`** | Number of virtual users at the beginning of test                | - (required) |
-| **`rate`**            | Desired iterations per `timeUnit` to be achieved and maintained | - (required) |
-| `maxVUs`              | Maximum number of virtual users allowed to be utilized          | - (no limit) |
-| `timeUnit`            | Duration to which the desired `rate` applies                    | `"1s"`       |
+| Option                | Description                                                     | Default        |
+|-----------------------|-----------------------------------------------------------------|----------------|
+| **`duration`**        | Overall scenario duration                                       | - (required)   |
+| **`preAllocatedVUs`** | Number of virtual users at the beginning of test                | - (required)   |
+| **`rate`**            | Desired iterations per `timeUnit` to be achieved and maintained | - (required)   |
+| `maxVUs`              | Maximum number of virtual users allowed to scale                | - (no scaling) |
+| `timeUnit`            | Duration to which the desired `rate` applies                    | `"1s"`         |
 
 Our primary focus will be to achieve and maintain an _iteration rate_ of `rate` per `timeUnit` over the desired `duration`. The number of VUs to achieve the desired rate will be managed by k6, and will be anywhere from `preAllocatedVUs` to `maxVUs`. Note that there is time and resource overhead associated with VU creation, so defining a reasonable `preAllocatedVUs` will allow for more testing time at the desired rate. 
 
