@@ -75,13 +75,13 @@ Our primary focus will be to achieve and maintain an _iteration rate_ of `rate` 
 ### Ramping Arrival Rate
 _Ramping Arrival Rate_ is an evolution of the _Constant Arrival Rate_ executor which introduces **_stages_**. This is probably the best candidate for modeling real-world testing scenarios, allowing k6 to transition the desired _iteration rate_ from one stage to another. Each stage defines its own timeframe for which to achieve the desired rate.
 
-| Option                | Description                                                                          | Default      |
-|-----------------------|--------------------------------------------------------------------------------------|--------------|
-| **`preAllocatedVUs`** | Number of virtual users at the beginning of test                                     | - (required) |
-| **`stages`**          | Consists of a time `duration` and `target` for the desired iterations per `timeUnit` | - (required) |
-| `maxVUs`              | Maximum number of virtual users allowed to be utilized                               | - (no limit) |
-| `startRate`           | Desired iterations per `timeUnit` to be achieved and maintained                      | `0`          |
-| `timeUnit`            | Duration to which the desired `rate` applies                                         | `"1s"`       |
+| Option                | Description                                                                          | Default        |
+|-----------------------|--------------------------------------------------------------------------------------|----------------|
+| **`preAllocatedVUs`** | Number of virtual users at the beginning of test                                     | - (required)   |
+| **`stages`**          | Consists of a time `duration` and `target` for the desired iterations per `timeUnit` | - (required)   |
+| `maxVUs`              | Maximum number of virtual users allowed to scale                                     | - (no scaling) |
+| `startRate`           | Desired iterations per `timeUnit` to be achieved and maintained                      | `0`            |
+| `timeUnit`            | Duration to which the desired `rate` applies                                         | `"1s"`         |
 
 Similar to the _Constant Arrival Rate_, the main focus is achieving a target _iteration rate_. The primary difference being the desired rate is achieved within each defined `stage`. The overall duration will be equal to the sum of `duration` timeframe(s) from each `stage`. The first stage will begin with an _iteration rate_ of `startRate` per `timeUnit` performed by `preAllocatedVUs` virtual user(s). The _iteration rate_ will ramp up (or down) linearly over the configured `duration` to the `target` rate specified for the stage. The next stage, if configured, will then ramp up or down from that point to the desired `target` rate over the specified `duration` timeframe. This pattern continues for each remaining stage. _Spikes_, _valleys_, and _plateaus_ can be simulated with these stages.
 
