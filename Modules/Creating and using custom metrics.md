@@ -37,7 +37,90 @@ A trend metric measures minimum, maximum, average, and percentile statistics. Un
 - the number of retries executed before the correct response is returned (such as when simulating polling behavior)
 - the number of active user accounts reported to an admin user account
 
-## Example: Function duration with sleep
+## Example: Custom timers
+
+A common reason to use custom metrics is to set up a timer for specific actions that you specify. For example, k6 automatically removes sleep times in the calculation for response time, but it may sometimes be necessary to keep track of the total time that a VU spends on a part of the script, including the sleep. 
+
+Here's a short script you can use to create a custom timer:
+
+```js
+import http from 'k6/http';
+import { sleep, check } from 'k6';
+import { Trend } from 'k6/metrics';
+
+const transactionDuration = new Trend('transaction_duration');
+
+export default function () {
+
+  // This is a transaction
+    let timeStart = Date.now();
+    let res = http.get('https://test.k6.io', {tags: { name: '01_Home' }});
+    check(res, {
+      'is status 200': (r) => r.status === 200,
+    });
+    sleep(Math.random() * 5);
+    let timeEnd = Date.now();
+    transactionDuration.add(timeEnd - timeStart);
+    console.log('The transaction took', timeEnd - timeStart, 'ms to complete.');
+
+  // This is another transaction
+  res = http.get('https://test.k6.io/about', {tags: { name: '02_About' }});
+}
+```
+
+First, import the metric type required.
+
+```js
+import { Trend } from 'k6/metrics';
+```
+
+In this case, the Trend metric seems most appropriate, so that k6 will report full statistics on your new timer.
+
+Second, declare your timer.
+
+```js
+const transactionDuration = new Trend('transaction_duration');
+```
+
+Third, determine where to start and stop the timer.
+
+```js
+let timeStart = Date.now();
+let timeEnd = Date.now();
+```
+
+Place these lines strategically in your script so that the execution of all code between `timeStart` and `timeEnd` is included in the elapsed time you want to measure.
+
+Finally, add the elapsed time to your timer.
+
+```js
+transactionDuration.add(timeEnd - timeStart);
+```
+
+When you run the script, you'll see something like this:
+
+```plain
+checks.........................: 100.00% ✓ 1        ✗ 0  
+     data_received..................: 17 kB   5.3 kB/s
+     data_sent......................: 621 B   194 B/s
+     http_req_blocked...............: avg=320.48ms min=15µs     med=320.48ms max=640.95ms p(90)=576.86ms p(95)=608.9ms 
+     http_req_connecting............: avg=59.06ms  min=0s       med=59.06ms  max=118.12ms p(90)=106.31ms p(95)=112.21ms
+     http_req_duration..............: avg=221.24ms min=128.58ms med=221.24ms max=313.89ms p(90)=295.36ms p(95)=304.63ms
+       { expected_response:true }...: avg=128.58ms min=128.58ms med=128.58ms max=128.58ms p(90)=128.58ms p(95)=128.58ms
+     http_req_failed................: 50.00%  ✓ 1        ✗ 1  
+     http_req_receiving.............: avg=71µs     min=55µs     med=71µs     max=87µs     p(90)=83.8µs   p(95)=85.4µs  
+     http_req_sending...............: avg=546µs    min=12µs     med=546µs    max=1.08ms   p(90)=973.2µs  p(95)=1.02ms  
+     http_req_tls_handshaking.......: avg=258.3ms  min=0s       med=258.3ms  max=516.6ms  p(90)=464.94ms p(95)=490.77ms
+     http_req_waiting...............: avg=220.62ms min=127.42ms med=220.62ms max=313.83ms p(90)=295.19ms p(95)=304.51ms
+     http_reqs......................: 2       0.623378/s
+     iteration_duration.............: avg=3.2s     min=3.2s     med=3.2s     max=3.2s     p(90)=3.2s     p(95)=3.2s    
+     iterations.....................: 1       0.311689/s
+     transaction_duration...........: avg=2893     min=2893     med=2893     max=2893     p(90)=2893     p(95)=2893    
+     vus............................: 1       min=1      max=1
+     vus_max........................: 1       min=1      max=1
+```
+
+Your custom metric, `transaction_duration`, is reported along with the other built-in k6 metrics.
 
 ## Test your knowledge
 
