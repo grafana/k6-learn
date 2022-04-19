@@ -6,6 +6,19 @@ A goal of load automations (a sub-practice of performance testing) is to simulat
 3. **Simulations simulate in bulk** - Adding up to the mix, a possible third element is that the performance simulations do not focus on simulating the user's end-to-end set of steps lately. Traditional simulations had to mimic these complex and multi-step behaviors (think of a 3-course meal). While modern ones focus on having separate processes that will trigger each step on its own (think of a food court where you can order each thing from a different place).
 4. **Software is more modular than ever** - One new element is that users do not touch a single server anymore while working. They may touch several services from different servers on a single page. Systems will see a single user in many places; that makes it weird to use the user metric to simulate load in these microservice environments and harder, as a single person may be seen simultaneously in different servers.
   
+## Why scripts must be realistic?
+
+Short answer: scripts do not have to be realistic all the time.
+
+It is common to simulate realistic loads, but there is a need for focalized non-realistic loads.
+
+Teams may run smaller and unrealistic loads to verify the performance of a process under small loads or concurrence, a standard in microservice architectures, or measure the impact of a new or updated component.
+Run 5 virtual users, and make them execute the tested process by iterating 10 times as fast as possible. That is not a realistic test, but it will provide helpful information on how the process performs under that small load. Or, if it is an updated process, it will show if it deviates from the last execution results.
+
+These are particular and needed load tests. Teams must execute them consistently as they create new components or update them.
+
+But, since these tests are somewhat straightforward, a large part of the load testing practice involves making scripts simulate loads that mimic real-user behaviors.
+  
 
 ## So, how can we make automated tests realistic?
 
