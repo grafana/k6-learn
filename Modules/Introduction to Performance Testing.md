@@ -1,7 +1,5 @@
 # What is performance testing?
 
-  
-
 Let's start explaining what performance testing means by defining it word by word. Here are some dictionary-paraphrasing definitions of each word.
 
 >**Performance**
@@ -19,7 +17,7 @@ In this writing, we will be talking about _Software_ Performance Testing for our
 
 In other words, Performance Testing is a branch of software testing whose primary concern is verifying _how well_ a system works instead of _if_ it works (the focus of the functional testing practice). 
 
-  
+
 
 ## Beware: performance testing is not load testing
 
