@@ -10,9 +10,24 @@ Front-end performance testing is concerned with the end user-experience of an ap
 
 Front-end performance testing provides insights that back-end performance testing does not, such as whether pages of the application are optimized to render quickly on a user's screen or how long it takes for a user to be able to interact with the UI elements of the application. Because it primarily measures a single user's experience of the system, front-end performance testing tends to be easier to carry out on a small scale.
 
-Some disadvantages of this type of performance testing are its dependency on fully integrated environments and cost of scaling. Front-end performance testing can only be done once the application code and infrastructure have been integrated with a user interface, so it begins later in a cycle than does back-end performance testing. Tools to automate the front-end are also inherently more resource-intensive, so they can be costly to run at scale and are not suitable for high load tests.
+Some concerns when doing this type of performance testing are its dependency on fully integrated environments and cost of scaling. Front-end performance testing can only be done once the application code and infrastructure have been integrated with a user interface. Tools to automate the front-end are also inherently more resource-intensive, so they can be costly to run at scale and are not suitable for high load tests.
 
 Front-end performance testing excels at identifying issues on a micro level, but does not expose issues in the underlying architecture of a system.
+
+### Why isn't front-end performance testing enough?
+
+Since front-end performance testing already measures end user experience, why do we even need back-end performance testing?
+
+Front-end testing tools are executed on the client side and are limited in scope. They do not provide enough information about back-end components to allow for fine-tuning beyond the user interface.
+
+This limitation can lead to false confidence in overall application performance when the amount of traffic against an application increases. While the front-end component of response time remains more or less constant, the back-end component of response time increases exponentially with the number of concurrent users:
+
+
+
+![](../images/front-end-back-end.png)
+
+Doing only front-end performance testing ignores a large part of the application, one that is more susceptible to increased failures and performance bottlenecks at higher levels of load.
+
 
 ### Back-end performance testing
 
@@ -25,20 +40,19 @@ Back-end performance testing targets the underlying application servers to verif
 - *Resiliency*: Can the system gracefully withstand unexpected events?
 - *Latency*: How quickly does the system process and respond to requests?
 
-Back-end testing is broader in scope than front-end performance testing, and it can be carried out at multiple stages in the development cycle. API testing can be used to target specific components or integrated components, allowing application teams more flexibility and higher chances of finding performance issues earlier. Back-end testing is less resource-intensive than front-end performance testing, and is thus more suitable to generating high amounts of load.
+Back-end testing is broader in scope than front-end performance testing. API testing can be used to target specific components or integrated components, allowing application teams more flexibility and higher chances of finding performance issues earlier. Back-end testing is less resource-intensive than front-end performance testing, and is thus more suitable to generating high amounts of load.
 
-Some disadvantages of this type of testing are its complexity and its inability to test "the first mile" of user experience. Back-end testing involves sending messages at the protocol level, so it requires some knowledge of the syntax and content of those messages, as well as of networking principles. Back-end performance testing verifies the foundation of an application rather than the highest layer of it that a user ultimately sees.
+Some concerns when doing this type of testing are its inability to test "the first mile" of user experience and breadth. Back-end testing involves sending messages at the protocol level rather than interacting with page elements. It verifies the foundation of an application, rather than the highest layer of it that a user ultimately sees. Depending on the complexity of the application architecture, back-end testing may also be more expansive in scope.
 
-Back-end performance testing excels at identifying issues in the application code and infrastructure, but does not expose issues in the application interface.
 
 ## Why should we do performance testing?
 
 Doing performance testing, even for smaller teams, comes with a few benefits:
 
-- **Holistic view of user experience**. Performance testing provides a complete picture of what the experience of a user accessing your application is like, beyond just the application functionality.
-- **Reduction of cost and effort.** Doing continuous performance testing allows teams to identify potential bottlenecks and issues early on in the development process, prompting changes in design or code before more code is written to compound the error. Testing scaling configurations can also lower overall environment costs.
-- **Increased revenue.** When production incidents occur, they often result in a loss of sales as users switch to competitors due to an unpleasant user experience or outages. Preventing these performance bugs is essential to reducing churn.
+- **Improve user experience.** Doing continuous performance testing allows teams to identify potential bottlenecks and issues early on in the development process. Performance testing provides a complete picture of what the experience of a user accessing your application is like, beyond just the application functionality.
+- **Prepare for unexpected demand.** Test load scenarios beyond what you might expect, to understand the breaking points of the application and formulate better procedures for responding to and capitalizing on unprecedented success.
 - **Increased confidence in the application.** Systematic performance testing and subjecting the application to various states builds the team's confidence in its ability to withstand unexpected conditions in production and lower overall risk of failure.
+- **Assess and optimize infrastructure.** Reduce unnecessary infrastructure costs without compromising on performance. Simulate scenarios to observe horizontal and vertical scaling, and run experiments to verify the resources that the system under test actually requires.
 
 If performance testing is so valuable, why don't more teams do it?
 
