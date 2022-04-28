@@ -19,6 +19,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [Making scripts realistic](Modules/Making%20scripts%20realistic.md)
 
 ### 2: k6 Foundations
+
 - [Getting started with k6 OSS](Modules/Getting%20started%20with%20k6%20OSS.md)
 - [The k6 CLI](Modules/The%20k6%20CLI.md)
 - [Understanding k6 results](Modules/Understanding%20k6%20results.md)
