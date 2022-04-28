@@ -15,7 +15,7 @@ Upon completing the workshop, attendees will know how to write realistic load te
 #### Theory
 - [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
 - [Load testing](Modules/Load%20Testing.md)
-- [High-level overview of the performance testing process](Modules/High-level%20overview%20of%20the%20performance%20testing%20process.md)
+- [High-level overview of the load testing process](Modules/High-level%20overview%20of%20the%20load%20testing%20process.md)
 - [Making scripts realistic](Modules/Making%20scripts%20realistic.md)
 
 ### 2: k6 Foundations
