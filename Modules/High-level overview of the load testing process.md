@@ -1,6 +1,7 @@
 # High-level overview of the load testing process
 
 In the last section, you learned about what load testing is, how it's different from performance testing, and what the different types of test scenarios are. In this section, you'll learn about the different phases of the load testing process:
+
 - Planning for load testing
 - Scripting a load test
 - Executing load tests
@@ -9,6 +10,8 @@ In the last section, you learned about what load testing is, how it's different 
 
 
 ## Planning for load testing
+
+
 
 - Formulate requirements for load testing
 - Clarify scope of testing
