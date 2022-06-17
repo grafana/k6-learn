@@ -2,10 +2,9 @@
 
 A common mistake in the industry is to use the terms *performance testing* and *load testing* interchangeably. In fact, load testing is a sub-practice of performance testing.
 
+**Performance testing != Load testing**
+
 [Performance testing](Introduction%20to%20Performance%20Testing.md) verifies how well a system works as a whole, including aspects such as scalability, elasticity, availability, reliability, resiliency, and latency. Load testing is just one type of performance testing, and it is an approach that can be used to test many of the aspects of application performance. However, not all performance testing involves load testing.
-
-
-![LoadNotPerf](../images/LoadNotPerf.png)
 
 Load testing specifically focuses on verifying and validating the performance of an application while it has a significant volume of tasks to process. Load testing can be done manually, but most teams write automated load testing scripts to programmatically simulate real users accessing the application.
 
