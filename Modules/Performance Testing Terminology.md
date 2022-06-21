@@ -1,3 +1,7 @@
+### CDN
+
+Content Delivery Network.
+
 ### Check
 
 https://k6.io/docs/using-k6/checks/

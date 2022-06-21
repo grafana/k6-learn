@@ -1,3 +1,5 @@
+# k6 Load Test Options
+
 Up until now, you've been running the same script with a single VU and a single iteration. In this section, you'll learn how to scale that out and run a full-sized load test against your application.
 
 Test options are configuration values that affect how your test script is executed, such as the number of VUs or iterations, the duration of your test, and more. They are also sometimes called "test parameters".

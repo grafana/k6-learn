@@ -1,3 +1,5 @@
+# Adding think time using sleep
+
 Before you ramp up your load tests, there's one more thing to add: think time.
 
 [Think time](Performance%20Testing%20Terminology.md#Think%20time) is the amount of time that a script pauses during test execution to simulate delays that real users have in the course of using an application.
