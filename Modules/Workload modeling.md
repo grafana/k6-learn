@@ -16,7 +16,7 @@ Making scripts and scenarios realistic increases the value a load test can provi
 2. **Human behavior is unpredictable**. Sometimes, humans don't do the most logical or reasonable thing. Historical data can help identify exactly how your end users behave and inform your load test's behavior.
 3. **User flows can be complex**. As systems grow in scope, the number of user flows that a load test may need to simulate to be realistic has increased as well. A load test may need to cover multiple end-to-end flows, each of which may require different test parameters.
 4. **Distributed systems come with multiple points of failure**. Software with event-driven or microservices-based architectures have many modular components, each of which may need to be tested and monitored.
-5. **Many systems have multiple traffic sources.** Users' geographical locations, as well as their internet speeds, have an impact on their 
+5. **Many systems have multiple traffic sources.** Users' geographical locations, as well as their internet speeds, impact the load they apply on the system.
 
 So how can we make automated tests realistic despite these obstacles?
 
@@ -58,7 +58,7 @@ See [Parallel requests in k6](Parallel%20requests%20in%20k6.md) for instructions
 
 ### Cache and cookie behavior
 
-When users visit a website, some resources may be saved in what is called a cache so that subsequent requests don't require those resources to be downloaded anew. Cookies are small bits of information about a user's previous activities (such as the last time they visited a site) that are saved for funcional, analytical, or marketing purposes.
+When users visit a website, some resources may be saved in what is called a cache so that subsequent requests don't require those resources to be downloaded anew. Cookies are small bits of information about a user's previous activities (such as the last time they visited a site) that are saved for functional, analytical, or marketing purposes.
 
 Both caches and cookies add to the overall load that a script generates, and should be tailored to the test objectives. First-time visitors to a site won't have resources cached locally, but repeat visitors may be retrieving resources from the cache.
 
@@ -73,33 +73,34 @@ Requesting the same resources over and over again in your script can lead to som
 
 ### Question 1
 
+Which of the following issues could have been caused by incomplete or inaccurate workload modeling?
 
+A: The load testing tool selected cannot generate the load required and scripts must be rewritten in another tool.
 
-A: 
+B: Performance-related production incidents occur despite previous successful load tests.
 
-B: 
-
-C: 
+C: Development effort is wasted on features that users do not want.
 
 ### Question 2
 
+Which of the following facts about a hypothetical application are not relevant when building a workload model?
 
+A: Most end users live in Australia.
 
-A: 
+B: Most end users are single mothers.
 
-B: 
-
-C: 
+C: Most end users access the application on their mobiles, using 3G/4G networks.
 
 ### Question 3
 
+Which of the following changes would increase the load on an application server?
 
+A: Decreasing think time
 
-A: 
+B: Enabling caching
 
-B: 
-
-C: 
+C: Disabling downloading of static resources
 
 ### Answers
 
+*B, B, A*
