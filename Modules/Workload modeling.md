@@ -1,13 +1,26 @@
-# Realistic scripts
-A goal of load automations (a sub-practice of performance testing) is to simulate and test risk scenarios that mimic realistic human behavior and use. That is not an easy task―many factors complicate and make human behavior hard to simulate:
+# Workload modeling
 
-1. **Computers are super fast** - Automated simulations can go at inhuman speeds. A machine does not have to stop and think like a human being, and it will go as fast as a machine can go, which is incredibly fast.
-2. **Human behavior is unpredictable** - Load testing has to simulate tons of humans interacting with the system, adding to the trouble of simulating real human beings, who all use the application at their own speeds and with their particularities about how quickly they can use the application.
-3. **Simulations simulate in bulk** - Adding up to the mix, a possible third element is that the performance simulations do not focus on simulating the user's end-to-end set of steps lately. Traditional simulations had to mimic these complex and multi-step behaviors (think of a 3-course meal). While modern ones focus on having separate processes that will trigger each step on its own (think of a food court where you can order each thing from a different place).
-4. **Software is more modular than ever** - One new element is that users do not touch a single server anymore while working. They may touch several services from different servers on a single page. Systems will see a single user in many places; that makes it weird to use the user metric to simulate load in these microservice environments and harder, as a single person may be seen simultaneously in different servers.
-  
+It's not enough to know _what_ to test (which pages or endpoints to hit)-- you should also think about _how_ to test. How many virtual users should you simulate? Will those users pause their execution to simulate "think times" of real users? Are they new users, or returning users? The answers to these questions can affect your test results.
 
-## So, how can we make automated tests realistic?
+The process of **workload modeling** involves determining *how* the load will be applied against the system, and it is essential for a successful load test.
+
+Your workload model is heavily influenced by the situations or scenarios you'd like to test. The closer your load test gets to simulating those circumstances, the more *realistic* it is. Realism could mean simulating peak traffic in production, but it could also mean simulating smaller and more targeted traffic against a particular component of your system.
+
+If your load testing script isn't realistic enough, you may not achieve the expected test throughput, or you may not be exercising the same components of a system that real users hit in production. Unrealistic test scripts and scenarios can lead to inconsistent and inaccurate results. More dangerously, they can create a false sense of confidence in what a system can withstand.
+
+## Challenges in workload modeling
+
+Making scripts and scenarios realistic increases the value a load test can provide. However, that is not an easy task. Increasing the realism of a load test can often increase the amount of time and effort required to create and maintain your test suite. There are also many factors that make human behavior hard to simulate:
+
+1. **Computers are faster than humans**. Automated simulations can be executed at inhuman speeds. A machine does not have to stop and think like a human being, which is a problem when you're trying to simulate real users.
+2. **Human behavior is unpredictable**. Sometimes, humans don't do the most logical or reasonable thing. Historical data can help identify exactly how your end users behave and inform your load test's behavior.
+3. **User flows can be complex**. As systems grow in scope, the number of user flows that a load test may need to simulate to be realistic has increased as well. A load test may need to cover multiple end-to-end flows, each of which may require different test parameters.
+4. **Distributed systems come with multiple points of failure**. Software with event-driven or microservices-based architectures have many modular components, each of which may need to be tested and monitored.
+5. **Many systems have multiple traffic sources.** Users' geographical locations, as well as their internet speeds, have an impact on their 
+
+So how can we make automated tests realistic despite these obstacles?
+
+## 
 
 Load test requirements demand that tests mimic real users in particular settings or scenarios. 
 

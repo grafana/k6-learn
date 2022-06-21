@@ -60,7 +60,7 @@
 - [Load testing](Modules/Load%20Testing.md)
 - [Types of load tests](Modules/Types%20of%20load%20tests.md)
 - [High-level overview of the load testing process](Modules/High-level%20overview%20of%20the%20load%20testing%20process.md)
-- [Making scripts realistic](Modules/Making%20scripts%20realistic.md)
+- [Workload modeling](Modules/Workload%20modeling.md)
 
 ### k6 Foundations
 - [Getting started with k6 OSS](Modules/Getting%20started%20with%20k6%20OSS.md)
