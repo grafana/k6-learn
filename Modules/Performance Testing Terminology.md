@@ -1,4 +1,13 @@
+### CDN
 
+Content Delivery Network.
+
+### Check
+
+https://k6.io/docs/using-k6/checks/
+
+
+### CI/CD
 
 ### CLI
 
@@ -10,37 +19,13 @@ https://k6.io/docs/using-k6/options/
 
 ### Embedded Resources
 
-### Execution Context
-
 ### Environment Variables
 
 https://k6.io/docs/using-k6/environment-variables/
 
-### Iteration
+### Error rate
 
-### Ramp-up
-
-### Ramp-down
-
-
-### Scenario
-
-
-### Tag
-
-https://k6.io/docs/using-k6/tags-and-groups/#tags
-
-### Think time
-
-https://k6.io/docs/javascript-api/k6/sleep-t/
-
-### Transaction
-
-### Virtual user
-
-### Metric
-
-https://k6.io/docs/using-k6/metrics/#built-in-metrics
+### Execution Context
 
 ### Executor
 
@@ -50,28 +35,50 @@ https://k6.io/docs/using-k6/scenarios/graceful-stop/
 
 30 seconds by default
 
+### Group
+
+https://k6.io/docs/using-k6/tags-and-groups/#groups
+
+
+### Iteration
+
+### Load generator
+
+### Metric
+
+https://k6.io/docs/using-k6/metrics/#built-in-metrics
+
+
 ### Percentiles
 
-### Error rate
 
-### Check
 
-https://k6.io/docs/using-k6/checks/
+### Ramp-down
+
+### Ramp-up
+
+### Requirement
+
+### Scenario
+
+
+### Tag
+
+https://k6.io/docs/using-k6/tags-and-groups/#tags
+
+### Test options
+
+### Think time
+
+https://k6.io/docs/javascript-api/k6/sleep-t/
+
+### Transaction
+
 
 ### Threshold
 
 https://k6.io/docs/using-k6/thresholds/
 
-### Requirement
+### Virtual user
 
-### Load generator
-
-### Environment variable
-
-### Test options
-
-### CI/CD
-
-### Group
-
-https://k6.io/docs/using-k6/tags-and-groups/#groups
+### Workload modeling

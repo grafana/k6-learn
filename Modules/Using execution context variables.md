@@ -1,6 +1,6 @@
 # Using execution context variables
 
-In the previous sections, you learned how to make your k6 scripts [more realistic](Making%20scripts%20realistic.md) by using executors and scenarios to better simulate traffic from real users of your application. Bringing your scripts closer to production traffic makes your test results more accurate.
+In the previous sections, you learned how to make your k6 scripts [more realistic](Workload%20modeling.md) by using executors and scenarios to better simulate traffic from real users of your application. Bringing your scripts closer to production traffic makes your test results more accurate.
 
 However, you may quickly find that ramping your scripts up across multiple virtual users, scenarios, and instances may also lead to increased difficulty in understanding your results. When the script reports an error, for example, how do you trace it down to the VU that encountered it?
 

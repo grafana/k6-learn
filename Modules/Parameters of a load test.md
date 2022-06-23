@@ -1,8 +1,8 @@
 A test parameter describes the situation under which traffic is generated during the load test. Below are some common test parameters:
 
 - Transaction distribution
-- Scenarios
-- Ramp-up and ramp-down
+- User flows
+- Ramp-up and ramp-down periods
 - Steady state
 - Duration
 - Concurrency
@@ -43,15 +43,15 @@ The transaction distribution for a load test describes:
 
 In k6, the best way to represent transactions is by using [groups](https://k6.io/docs/using-k6/tags-and-groups#groups). Groups combine multiple requests together and calculate a combined response time for those requests as well.
 
-## Scenario
+## User flows
 
-A scenario is the description of the user flow you're trying to test. Here are some examples of scenarios you could create based on the list of transactions above:
+A user flow is the description of the path through an application that you're trying to test. Here are some examples of user flows you could create based on the list of transactions above:
 
 - Just browsing: Home Page > View Product List > View Product Page > View Product List > View Product Page
 - Clicking product link in email: View Product Page > Add to Cart > Checkout
 - Returning to checkout: Home Page > View Cart > Checkout
 
-Scenarios are sequences of transactions that represent actions a user might take as they use your application. In k6, you can [create multiple scenarios and run them in the same script](https://k6.io/docs/using-k6/scenarios/).
+User flows are sequences of transactions that represent actions a user might take as they use your application. In k6, you can [create multiple user flows as part of scenarios and run them in the same script](https://k6.io/docs/using-k6/scenarios/).
 
 ## Ramp-up and ramp-down periods
 
