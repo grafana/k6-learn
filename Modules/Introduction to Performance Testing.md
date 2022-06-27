@@ -99,13 +99,13 @@ A common misconception is that the terms performance testing and load-testing ar
 
 ### Question 1
 
-Which type of performance testing does k6 excel in?
+Which type of testing does k6 excel in?
 
 A: Back-end testing
 
 B: Manual testing
 
-C: Usability testing
+C: Accessibility testing
 
 ### Question 2
 
@@ -133,4 +133,6 @@ D: Observability and performance testing are complementary approaches to improvi
 
 ### Answers
 
-A, C, D
+1. A. k6 excels at back-end performance testing. With xk6-browser, it does have a front-end performance testing capability, but accessibility testing is not yet possible.
+2. C. A and B are both incorrect because they apply to front-end performance testing.
+3. D. A is incorrect because performance testing can be done at lower load levels. B is incorrect because anyone can do  performance testing, not just specialized performance testers. C is incorrect because performance testing can be done in development, staging, and test environments as well.
