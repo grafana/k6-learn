@@ -13,7 +13,6 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [Introduction to Performance Testing](Modules/Introduction%20to%20Performance%20Testing.md)
 - [Load testing](Modules/Load%20Testing.md)
 - [High-level overview of the load testing process](Modules/High-level%20overview%20of%20the%20load%20testing%20process.md)
-- [Workload modeling](Modules/Workload%20modeling.md)
 
 ## II: k6 Foundations
 
@@ -31,12 +30,12 @@ Upon completing the workshop, attendees will know how to write realistic load te
 
 - [How to debug k6 load testing scripts](Modules/How%20to%20debug%20k6%20load%20testing%20scripts.md)
 - [Dynamic correlation in k6](Modules/Dynamic%20correlation%20in%20k6.md)
+- [Workload modeling](Modules/Workload%20modeling.md)
 - [Adding test data](Modules/Adding%20test%20data.md)
 - [Parallel requests in k6](Modules/Parallel%20requests%20in%20k6.md)
 - [Organizing code in k6 by transaction - groups and tags](Modules/Organizing%20code%20in%20k6%20by%20transaction%20-%20groups%20and%20tags.md)
 - [Setup and Teardown functions](Modules/Setup%20and%20Teardown%20functions.md)
 - [Setting load profiles with executors](Modules/Setting%20load%20profiles%20with%20executors.md)
-- [Workload modeling with scenarios](Modules/Workload%20modeling%20with%20scenarios.md)
 - [Using execution context variables](Modules/Using%20execution%20context%20variables.md)
 - [Creating and using custom metrics](Modules/Creating%20and%20using%20custom%20metrics.md)
 
