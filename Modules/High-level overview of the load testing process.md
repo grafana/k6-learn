@@ -6,7 +6,6 @@ In the last section, you learned about what load testing is, how it's different 
 - Scripting a load test
 - Executing load tests
 - Analysis of load testing results
-- Continuous load testing
 
 These activities are shown as distinct phases here for clarity; however, in practice, they often overlap. Just like when releasing applications, testing should be a continuous and Agile process, with each small increment building upon previous work and growing more and more robust over time.
 
@@ -63,7 +62,7 @@ Using the data collected during the test to understand how the system behaves du
 
 ## Continuous load testing
 
-Continuous load testing can be started at any of the previous phases. During this phase, you may do any of the following activities:
+Continuous load testing is a practice that spans all the testing phases. It may include:
 - Add load testing scripts into a version-controlled repository
 - Incorporate load tests into a CI/CD pipeline
 - Automate reporting
@@ -109,4 +108,6 @@ C: Running load tests automatically stops developers from checking in code that 
 
 ### Answers
 
-_A, A, A_
+1. A. While it can be useful to think of distinct phases in testing to understand the process, in practice, testing should be tightly integrated with other activities in the software development lifecycle.
+2. A. The testing and observability stack selected can have an impact on the type of testing you do and your testing results, so we recommend you consider your options as early as possible.
+3. A. Incorporating load testing into continuous integration pipelines helps you see trends in performance over time.

@@ -27,11 +27,11 @@ In general, there are a few ways to simulate load.
 
 **Protocol-based load testing** simulates the underlying requests going to application servers. These requests are sent over the protocol layer. Protocol-based load testing can vary in scope, and includes both:
 - targeted API testing of one or more specific application components, and
-- end-to-end testing that simulates traffic flowing through the entire system, going through multiple components
+- end-to-end or more realistic testing that simulates traffic flowing through the entire system, going through multiple components
 
 **Browser-based load testing**, on the other hand, simulates the way users interact with the application's user interface. Instead of simulating protocol-level requests, browser-based testing automates things like clicks on elements of a web app, typing on a form, and other actions that real users may take. Browser-based load testing more often involves end-to-end testing.
 
-**Hybrid load testing** is a mixture of the protocol-based and browser-based testing and it is usually employed to test different aspects of performance. The most economical approach involves using protocol-based load testing to generate majority of the load, and then using a smaller number of browser-based load testing users at the same time.
+**Hybrid load testing** is a mixture of the protocol-based and browser-based testing, and it is usually employed to test different aspects of performance. The most economical approach involves using protocol-based load testing to generate the majority of the load, and then using a smaller number of browser-based load testing users at the same time.
 
 
 # Load test scenarios
@@ -206,4 +206,6 @@ C: Average Load Test
 
 ### Answers
 
-_A, B, B_
+1. A. B describes one type of load test, peak load tests, and C mentions only one of many test parameters that could have an impact on the test scenario chosen and the test results.
+2. B. A soak test is executed over a longer period of time, and can end in too many errors to be useful if the environment has not yet gone through shakeout testing. Full regression tests could likewise not be too useful without first verifying that the environment and script(s) work.
+3. B. While memory leaks can be discovered during stress and average load tests, the longer duration of soak tests make them uniquely suited for unearthing more gradual trends like memory leaks.
