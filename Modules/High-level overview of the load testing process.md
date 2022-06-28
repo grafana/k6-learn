@@ -9,6 +9,20 @@ In the last section, you learned about what load testing is, how it's different 
 
 These activities are shown as distinct phases here for clarity; however, in practice, they often overlap. Just like when releasing applications, testing should be a continuous and Agile process, with each small increment building upon previous work and growing more and more robust over time.
 
+![Continuous Testing Snowball](../images/continuous-testing-snowball.png)
+
+
+Just like application code, a test starts off slowly at the peak of a mountain, at its simplest form. A test in its early stages could be thought of as primarily **risk-based**. Tests are written specifically to prevent failure in an application's most critical components, but there might not be enough time for anything else. Testing at this level is a reaction to probable failures.
+
+As testing matures within the project, it may eventually start to include **regression**. Now that all the high-risk areas are covered, teams have time to make tests a bit more backward-compatible and preventative, and they write tests to see if new code breaks past functionalities.
+
+The Continuous Testing Snowball gathers speed as the team grows along with the test suite, focusing on **automating** more and more parts of the testing process with every iteration or sprint. A repeatable framework is established. In this stage, the snowball is at its fastest speed.
+
+At the bottom of the slope, continuous testing has evolved testing to such an extent that the team is able to expand their focus from addressing specific defects to increasing overall **reliability and confidence** in the application's ability to withstand unexpected events. The framework is made even more robust with more exploratory types of testing like [[Chaos Engineering]].
+
+In Continuous Testing, the focus is on organically and iteratively evolving the testing suite in parallel with the application, starting with something small with the goal of making enough incremental changes until it is more robust.
+
+
 ## Planning for load testing
 
 Planning for a load test is the first part of the process, and it involves identifying the reasons for testing, _what_ to test, and _how_, generally, to test it.
