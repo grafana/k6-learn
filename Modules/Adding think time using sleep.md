@@ -99,8 +99,6 @@ A: Yes, because it will take time for the application team to respond to the tic
 B: Yes, because users take time to type out their issue.
 C: No, because the load generator's CPU utilization is too high.
 
-Answer: B
-
 ### Question 2
 
 In the following line, what does the number 3 represent?
@@ -109,10 +107,7 @@ In the following line, what does the number 3 represent?
 
 A: A think time of 3 milliseconds
 B: The number of iterations that will get a think time
-C: A think time of 3 millisecond
-
-
-Answer: C
+C: A think time of 3 seconds
 
 ### Question 3
 
@@ -122,8 +117,8 @@ A: 5 seconds
 B: 6 seconds
 C: 4 seconds
 
-Answer: B
+### Answers
 
-## Next Up
-
-You've got your script, and you've added a check and think time. Time to ramp it up and run a larger test with multiple users! In the next section, you'll learn how to change test options in k6.
+1. B. A is incorrect because think time simulates the time taken for the user to interact with the application, not the time taken for the application team to respond. C is incorrect because adding think time does not increase CPU utilization; in fact, the opposite is true in that in reduces CPU utilization by spacing out requests.
+2. C. The parameter of `sleep()` should 
+3. B

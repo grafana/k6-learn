@@ -104,7 +104,6 @@ k6 run test.js -i 100
 
 In either of the two lines above, k6 will run 100 iterations of the script.
 
-
 #### Virtual users
 
 You can adjust the number of virtual users on the fly by adding the `-u` or `--vus` flag when running the test:
@@ -115,11 +114,6 @@ k6 run test.js -u 10 --iterations 100
 ```
 
 The two lines above are equivalent, and they both instruct k6 to execute the file `test.js` with 10 virtual users. Each one also sets a test duration and a number of iterations.
-
-```ad-warning
-You can only set the number of virtual users if you are _also_ setting the number of iterations, the total test duration, or stages for the test.
-```
-
 
 #### Environment variables
 
@@ -190,18 +184,20 @@ A: `k6 run test.js --duration 10m`
 
 B: `k6 run test.js -i 3`
 
-C: `k6 run test.js --vus 3i`
+C: `k6 run test.js --users 3`
 
 ### Question 3
 
 Which of the following statements about using environment variables is true?
 
-A: The script needs to be updated *and* the environment variable must be set in the command line.
+A: To use an environment variable, the script needs to be updated *and* the environment variable must be set in the command line.
 
-B: Only the script needs to be updated to define the value of the variable.
+B: To use an environment variable, only the script needs to be updated to define the value of the variable.
 
-C: Only the command line flag must be used, and the value will automatically be passed to the script.
+C: To use an environment variable, only the command line flag must be used, and the value will automatically be passed to the script.
 
 ### Answers
 
-B, C, A
+1. B. The first option is missing the `run` keyword, and the third is missing `k6`. B is the only one that will actually run the script.
+2. C. `--users` is not a valid option and will yield an `invalid argument` error on the CLI.
+3. A. The value of an environment variable will not be taken by the k6 script unless the script is updated to accept it in addition to the value being passed on the command line.

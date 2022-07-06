@@ -151,11 +151,11 @@ You're almost ready to scale up your test to multiple users! Before you do so, t
 
 Which of the following can you use a check to verify?
 
-A: Whether the response time of the request was greater than 1 s
+A: Whether the 95th percentage response time of the request was greater than 1 s
 B: The size of the response body returned
 C: The error rate of the test
 
-Answer: B
+
 
 ### Question 2
 
@@ -165,7 +165,6 @@ A: The response time of a request
 B: The syntax of the request sent to the application
 C: The application server's response
 
-Answer: C
 
 ### Question 3
 
@@ -182,4 +181,8 @@ A: 51.50%
 B: 1215
 C: 1144
 
-Answer: C
+### Answer
+
+1. B. The 95th percentile of the response time is an aggregated metric: it relies on measurements from all requests up to that point. This is not something you can create a check for, although you can certainly include this as a [threshold](https://k6.io/docs/using-k6/thresholds/) in your script. The error rate of a test is similarly aggregated. B, the size of the response body, is the correct answer.
+2. C. Checks parse the responses from the application server, not the request sent by k6.
+3. C. The number of checks that failed is displayed in  `✗ 1144`. This request's checks passed 51.50% of the time.

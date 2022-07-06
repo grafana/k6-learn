@@ -262,8 +262,6 @@ A: 131.04 ms
 B: 122.08 ms
 C: 4.46 ms
 
-Answer: A
-
 ### Question 2
 
 How many virtual users did this test execute?
@@ -272,7 +270,6 @@ A: 9463
 B: 1
 C: 10
 
-Answer: C
 
 ### Question 3
 
@@ -282,4 +279,8 @@ A: 0
 B: 9463
 C: 10
 
-Answer: A
+### Answers
+
+1. A. B refers to `http_req_waiting`, which is only a component of the response time. C refers to `http_req_blocked`, which refers to the time spent waiting for a TCP connection to be established before sending the request. A is the 95th percentile value for `http_req_duration`, which is the best metric to use for response time.
+2. C. The number of VUs is listed in the second to the last row in the results, and is 10 in this case.
+3. A. In the line with the metric `http_req_failed`, the `0.00%  ✓ 0` refers to the number of responses with errors. That is, how many of the requests had `http_req_failed` set to `true`. 9463 is the number of requests that passed, or had `http_req_failed` set to `false`. The correct answer is A, 0. None of the requests failed, and the test ha a 0% error rate.

@@ -122,7 +122,7 @@ That's a lot of metrics! In the next section, we'll go over what each of these l
 
 ### Question 1
 
-How do we access the JSON body of an HTTP response?
+What's the best way to access the JSON body of an HTTP response?
 
 A: `response.json()`
 
@@ -152,4 +152,6 @@ C: In a function called `exec()`
 
 ### Answers
 
-A, C, B
+1. A. Using `response.json()` will not only get the response body but also parse the JSON.
+2. C. `k6/http` is the module that needs to be imported in a k6 script if you want to use HTTP. The other two options do not exist.
+3. B. Only code placed within an exported function (either the default one or one that is named in the `exec` option [of a scenario](https://k6.io/docs/using-k6/scenarios/#common-options)) will be executed by a virtual user.
