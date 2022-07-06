@@ -336,8 +336,6 @@ A: Add a check based on the response body size.
 B: Use the `http-debug` flag to try to read the content of the PDF.
 C: Add a `console.log()` statement after the request is made.
 
-Answer: A
-
 ### Question 2
 
 In the script used on this page, a random number is used to select a user account from arrays. How could you find out what the value of the random number is each time you run the script?
@@ -353,8 +351,6 @@ check(response, {
 B: `k6 run test.js --http-debug="rand"`
 C: `console.log('rand', rand);`
 
-Answer: C
-
 ### Question 3
 
 Why should you disable as much logging as possible during a ramped-up load test?
@@ -363,4 +359,8 @@ A: You should never do any logging when you're running a proper test.
 B: Unnecessary logging eats up resources on the load generator.
 C: Using `http-debug` is a better choice for use during a load test.
 
-Answer: B
+### Answers
+
+1. A. The `http-debug` and `console.log` approaches may be unnecessarily verbose and taxing on load generator resourecs. If you know that a PDF file is significantly larger than the size of a response returned without a PDF, you can use response body size to verify the PDF.
+2. C. `console.log()` is great for use cases like this, especially while troubleshooting or debugging a script.
+3. B. Writing too much information to logs may itself be a performance bottleneck within the load generator, so be juidicious about the information you print and save.

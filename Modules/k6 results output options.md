@@ -101,8 +101,6 @@ A: To graph the response time, you must take the number in the `metric_value` co
 B: Each line contains a metric and a value for that metric at a specific timestamp.
 C: The `metric_name` column in the CSV file refers to the URL of the HTTP request that was sent.
 
-Answer: B
-
 ### Question 2
 
 Below is a line from a JSON containing k6 test results:
@@ -117,8 +115,6 @@ A: The maximum number of VUs at the time was 100.
 B: This measurement is for the `http_req_duration` metric.
 C: The test reached the maximum number of VUs at 12:46 on January 5th, 2022.
 
-Answer: A
-
 ### Question 3
 
 Which of the following is the correct command for outputting k6 results to different formats? 
@@ -127,8 +123,6 @@ A: `k6 run test.js --out json=myresults.json`
 B: `k6 run test -o csv=results.csv`
 C: `k6 output csv=results.csv`
 
-Answer: A
-
 ## k6 Cloud
 
 The previous two options let you output k6 results in different formats, but they still require some setup as you do the analysis in a separate results visualization software.
@@ -136,3 +130,9 @@ The previous two options let you output k6 results in different formats, but the
 An alternative to this is to use k6 Cloud. k6 Cloud is a paid SaaS platform built around k6 OSS. You can use k6 without using k6 Cloud, but k6 Cloud does provide some added functionalities that are quite useful, and one of them is results visualization.
 
 The next section talks about k6 Cloud, how to use it in conjunction with k6 OSS, and how it could help you analyze results.
+
+### Answers
+
+1. B. A is incorrect because the CSV output includes multiple metrics, not just `http_req_duration`. C is incorrect because `url` is the column that contains the URL for the request.
+2. A. The metric is `vus_max`, which is the number of virtual users that were running at that time (100, in this case). However, this does not necessarily correspond to the maximum number of VUs for the test, since the test could have ramped up further beyond this point.
+3. A. Only A has the correct syntax for outputting results.

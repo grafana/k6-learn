@@ -264,4 +264,6 @@ C: 5
 
 ### Answers
 
-A, B, B
+1. A. The setup and teardown functions are deliberately executed only once per test (at the beginning and at the end, respectively). Meanwhile, the default function is what is repeatedly executed.
+2. B. The setup function is only executed once, at the beginning of the test.
+3. B. Init code (code in the global scope) is executed once per VU, once before setup, and once before teardown.

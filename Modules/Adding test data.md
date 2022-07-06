@@ -140,8 +140,6 @@ A: Your application locks out a user account after three logins in a short amoun
 B: You want to see how the application behaves when the same user refreshes a page repeatedly.
 C: Both A and B.
 
-Answer: A
-
 ### Question 2
 
 You have a CSV file with 100 MB of personal information that you'd like to use as test data. Which of the following approaches is the best one to use?
@@ -149,8 +147,6 @@ You have a CSV file with 100 MB of personal information that you'd like to use a
 A: SharedArray
 B: Simple array
 C: JSON files because the CSV is better converted into JSON
-
-Answer: A
 
 ### Question 3
 
@@ -160,4 +156,8 @@ A: When you want to prevent server-side caching.
 B: When you want to guarantee that each element of test data has been sequentially utilized by the script.
 C: When you want to make your tests as realistic as possible.
 
-Answer: B
+### Answers
+
+1. A. The situation described in A could be resolved by adding test data of different logins that the script could use. B is incorrect, because it is in fact a good example of a use case where *not* including test data may be the better option.
+2. A. Very large data files can have an impact on load testing results when they are copied and transferred repeatedly to every load generator. The SharedArray is a better way to handle these, although it may also be worthwhile to consider storing test data in a database.
+3. B. Randomly selecting test data can prevent caching and make the test more realistic. However, random selection can also make it more difficult to determine which test data the test utilized as the data file is not sequentially parsed.

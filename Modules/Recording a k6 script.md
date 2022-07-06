@@ -724,4 +724,6 @@ C: Using the browser recorder does not mean you won't have to modify test code t
 
 ### Answers
 
-B, A, C
+1. B. Recording a script is particularly useful for web applications where a single action (such as clicking on a link) requires downloading many other embedded resources, such as images or scripts.
+2. A. The k6 browser recorder is free and doesn't require a k6 Cloud subscription.
+3. C. After you record a script, you will likely also have to correlate dynamic data, add test data, or modify it in other ways before you can consistently and repeatably execute it within a load test.

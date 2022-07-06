@@ -205,8 +205,6 @@ A: `http_req_duration: ['p(95)>2000'],`
 B: `http_response_time: ['avg<=2000'],`
 C: `http_req_duration: ['p(95)<=2000'],`
 
-Answer: C
-
 ### Question 2
 
 Your test script has the following threshold defined in the test options:
@@ -222,9 +220,6 @@ The test runs for 100 iterations of 1 HTTP request each. 3 of the HTTP requests 
 A: The test will abort on failure of the check threshold.
 B: The test will run to completion and will be marked as a success because check failures do not fail tests.
 C: The test will run to completion, but there will be an error that some thresholds have failed.
-
-Answer: C
-
 ### Question 3
 
 Your test script has the following threshold defined in the test options:
@@ -243,8 +238,6 @@ A: The test will fail if the error rate is 5% or higher.
 B: The test will fail if the error rate exceeds 3%.
 C: The test will pass if the 90th percentile response time is 4 seconds.
 
-Answer: B
-
 ## A note on thresholds
 
 Thresholds are useful as initial indicators of the success or failure of a test run, but they should not be used as the _only_ way to assess as test.
@@ -254,3 +247,9 @@ The main limitation of thresholds is that they're based on metrics, and metrics 
 Metrics like percentiles do a slightly better job at describing where measurements fall, but there's no replacement for graphing each of those measurements and seeing the shape of the distribution of the data for yourself.
 
 The problem is that k6 OSS doesn't produce graphs natively. In the next section, you'll learn about how to output results for use in your results visualization tool of choice.
+
+### Answers
+
+1. C. Thresholds are expressed in terms of what would cause them to pass, so C is the correct answer because it describes a test whose 95th percentile response time is less than (faster than) or equal to 2000 ms, or 2 seconds. Anything beyond this would cause the threshold to fail.
+2. C. Thresholds don't abort tests on failure [unless `abortOnFail` is set to `true`](https://k6.io/docs/using-k6/thresholds/#aborting-a-test-when-a-threshold-is-crossed), so only C is correct. The test will still go through the execution, but a message will be displayed in the end-of-test summary to say that some thresholds have failed.
+3. B. A is incorrect because when contradicting thresholds are defined, the last one will be used, so the threshold on `http_req_failure` will be set to 3% rather than 5%. C is incorrect because the threshold is set to pass if the response time is *less than* 4 seconds, so a 4-second response time will cause it to fail.

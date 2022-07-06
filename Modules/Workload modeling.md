@@ -103,4 +103,6 @@ C: Disabling downloading of static resources
 
 ### Answers
 
-*B, B, A*
+1. B. Production incidents despite performance testing is a classic symptom that the situation during a load test did not match the situation during production. This may be due to many factors, one of which is workload modeling.
+2. B. Users' geographical locations are relevant because Content Distribution Networks (CDNs) do not have servers in every country, and their absence may affect overall user response time. Users' network speeds may similarly affect response times. B is the correct answer because whether or not a user is a single mother is relevant for business demographics, but not response times.
+3. A. Decreasing think time will cause a script to be executed more rapidly, and in some cases may contribute to increased resource utilization on both load generators and application servers. Enabling caching and disabling static resources have the opposite effect.

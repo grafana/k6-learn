@@ -156,4 +156,6 @@ C: Only rate and trend metric results are shown in the end-of-test summary repor
 
 ### Answers
 
-C, B, A
+1. C. Both A and B describe metrics that already exist by default. Custom metrics are for creating and measuring things beyond what comes with k6 out of the box.
+2. B. A counter would be best for tracking the number of occurrences of an event during the test.
+3. A. Custom metrics are displayed at the end-of-test summary report, although they are *also* available in k6 Cloud if you use it. C is false.

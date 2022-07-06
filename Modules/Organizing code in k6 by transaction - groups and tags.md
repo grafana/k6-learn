@@ -246,8 +246,6 @@ A: Groups
 B: Tags
 C: URL grouping
 
-Answer: A
-
 ### Question 2
 
 Examine the following code:
@@ -282,8 +280,6 @@ A: `Homepage`
 B: `HTML`
 C: `http://ecommerce.k6.io/`
 
-Answer: C
-
 ### Question 3
 
 Which of the following is an advantage of using functions to organize your k6 test script?
@@ -292,4 +288,8 @@ A: Functions aggregate all the metrics within a function and report them under a
 B: Functions give you the freedom to create test scenarios that correspond to user journeys for your application.
 C: Functions tag all requests with the function name so you can filter by function in the test results.
 
-Answer: B
+### Answers
+
+1. A. Grouping requests saves metrics for each reuqest *and* for each group (unlike tags and URL groups).
+2. C. Without a specific `name` being specified, k6 defaults to using the URL as the name, so that you can identify the request more easily.
+3. B. Functions do not aggregate metrics (groups are better for that) or tag requests within them (you'd need to add tags to do that). Instead, they are better used for organizing user actions or user flows within a script.

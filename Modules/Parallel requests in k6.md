@@ -61,8 +61,6 @@ A: Whether or not to use parallel requests depends on your test scenario.
 B: Using parallel requests is always recommended as a performance testing best practice.
 C: Parallel requests should always be used for testing websites.
 
-Answer: A
-
 ### Question 2
 
 Which of the following might be a side effect of you including parallel requests in your script?
@@ -71,14 +69,16 @@ A: Your load generator sends fewer requests when some are batched.
 B: Your load test's executed requests per second (rps) will increase.
 C: The application server caches batched requests and performance is improved.
 
-Answer: B
-
 ### Question 3
 
 When might you _not_ want to use parallel requests?
 
-A: When you want to reduce the amount of requests your test is sending
+A: When you want to increase the amount of requests your test is sending
 B: When you have requests using multiple types of HTTP methods
 C: When you're testing API endpoints
 
-Answer: C
+### Answers
+
+1. A. Parallel requests are sometimes, but not always, useful. For example, they are useful if you're trying to simulate a user accessing a web app on a browser, but not so useful if you're trying to mimic sequential requests to an API endpoint.
+2. B. All other things being equal, increasing the parallelism of your requests will increase the throughput (rps) of your test.
+3. A. The key here is your objective, not *what* you're testing. If you want to increase your test throughput (the amount of requests sent by k6), parallel requests *would* be a valid way to do that. Whether you're using multiple HTTP methods or testing API endpoints is beside the point.

@@ -176,8 +176,6 @@ A: Use DevTools to look at the network traffic as you perform the action, then l
 B: Record the script and run it using k6.
 C: Add a check for the word `csrftoken` to see if there are any being returned in the response.
 
-Answer: A
-
 ### Question 2
 
 Which of the following might help you identify when correlation is required?
@@ -233,3 +231,8 @@ export default function() {
     })
 }
 ```
+
+### Answers
+
+1. A. DevTools is a great way to run through the request and response pairs of a web application, step by step. B would likely not give much useful information beyond errors, and C is too specific-- there are other dynamic parameters beyond tokens that may cause errors if not properly handled.
+2. C. Using the `http-debug` flag may be useful because it prints out all the response and request information. If there is too much information to be useful, consider using DevTools or [a proxy](https://k6.io/blog/k6-load-testing-debugging-using-a-web-proxy/) instead.

@@ -160,7 +160,6 @@ A: Iterations
 B: Stages
 C: Duration
 
-Answer: A
 
 ### Question 2
 
@@ -178,7 +177,6 @@ A: 10 hours
 B: As long as it takes to finish 3 iterations or 1h, whichever is shorter
 C: 1 hour plus as long as it takes to finish 3 iterations
 
-Answer: B
 
 ### Question 3
 
@@ -216,8 +214,9 @@ export let options = {
 };
 ```
 
-Answer: A
 
-## Next Up
+### Answers
 
-Scaling up a load test comes with some added complexity, especially when you're trying to figure out whether the test was successful or not. In the next section, you'll learn how to set thresholds to define success for a test run.
+1. A. Setting the number of iterations to 100 would be the best way to accomplish this task. Stages for [some executors](https://k6.io/docs/using-k6/scenarios/executors/ramping-arrival-rate) do allow you to do this as well, but not for all of them. Duration only changes how long the test will run for, not specifically how many times it iterates.
+2. B. In the case of contradicting parameters, k6 will run for the shorter amount of time. In this case, 3 iterations will likely take less time than 1 hour, so the test will finish in less time than an hour.
+3. A. B and C are incorrect because they both describe a test that will gradually and evenly add virtual users until there are 300 running. That is, the rate of increase is steady. A is the only correct one because it's the only one that includes a steady state (a period of no VU increases) between periods of ramp-up.

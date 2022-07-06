@@ -120,5 +120,5 @@ C: 4 seconds
 ### Answers
 
 1. B. A is incorrect because think time simulates the time taken for the user to interact with the application, not the time taken for the application team to respond. C is incorrect because adding think time does not increase CPU utilization; in fact, the opposite is true in that in reduces CPU utilization by spacing out requests.
-2. C. The parameter of `sleep()` should 
-3. B
+2. C. The parameter of `sleep()` takes a value given in seconds, so `sleep(3)` will pause script execution for 3 seconds.
+3. B. If a script takes 5 second to execute without sleep, and a sleep of 1 second is included, then the script will take 6 seconds to execute.
