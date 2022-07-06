@@ -70,7 +70,7 @@ Performance testing *can* be expensive and time-consuming, but teams can pick an
 
 #### It requires extensive technical knowledge
 
-There are different types of performance testing, and some require more technical knowledge than others. At its face, however, performance testing is no more or less complex than other forms of testing. Teams can choose from a spectrum of performance testing activities according to their appetite for complexity. Accessing a web page while looking at timings from the Network panel of DevTools within a browser is a type of performance testing that adds immediately value for little effort.
+There are different types of performance testing, and some require more technical knowledge than others. At its face, however, performance testing is no more or less complex than other forms of testing. Teams can choose from a spectrum of performance testing activities according to their appetite for complexity. Accessing a web page while looking at timings from the Network panel of DevTools within a browser is a type of performance testing that adds immediate value for little effort.
 
 #### We don't have a performance environment
 

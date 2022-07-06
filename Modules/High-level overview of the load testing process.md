@@ -33,6 +33,7 @@ In this phase, we formulate requirements for load testing:
 - Identify workload models
 - Set up environment for testing, including monitoring
 - Agree on the frequency and schedule of tests
+- Prepare test data, if applicable
 
 Planning for any testing is a team activity, and load testing is no exception. This phase is an opportunity for all stakeholders to get together and understand what testing will look like, as well as what would define a successful round of testing.
 
