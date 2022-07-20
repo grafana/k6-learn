@@ -36,6 +36,6 @@ Upon completing the workshop, attendees will know how to write realistic load te
 - [Organizing code in k6 by transaction - groups and tags](Modules/Organizing%20code%20in%20k6%20by%20transaction%20-%20groups%20and%20tags.md)
 - [Setup and Teardown functions](Modules/Setup%20and%20Teardown%20functions.md)
 - [Setting load profiles with executors](Modules/Setting%20load%20profiles%20with%20executors.md)
+- [Workload modeling with scenarios](Modules/Workload%20modeling%20with%20scenarios.md)
 - [Using execution context variables](Modules/Using%20execution%20context%20variables.md)
 - [Creating and using custom metrics](Modules/Creating%20and%20using%20custom%20metrics.md)
-
