@@ -1,4 +1,4 @@
-# What is performance testing?
+``# What is performance testing?
 
 Performance testing is a branch of software testing whose primary concern is verifying *how well* a system works instead of *if* it works (the focus of the functional testing practice). Performance testing seeks to measure qualitative aspects of a user's experience of a system such as its responsiveness during the course of normal operations.
 
