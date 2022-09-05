@@ -3,25 +3,26 @@
 The primary concern of performance testing is _how well_ a system works.
 Unlike functional testing, which tests _whether_ a system works, performance testing seeks to measure qualitative aspects of a user's experience of a system, such as its responsiveness and success rate.
 
-For a holistic view of performance, testers need to test both the front and back ends of an application. Though there is some overlap in tools and techniques, the approach and focus will be different for differnt arts of the test.
+For a holistic view of performance, testers need to test both the front and back ends of an application. Though there is some overlap in the tools and techniques, the approach and focus differs when testing different application parts.
+
 
 ### Frontend performance testing
 
-Frontend performance testing verifies application performance on the interface level, measuring round-trip metrics that take into account how and when page elements appear on the screen.
-It is concerned with the end user experience of an application, usually involving a browser.
-Frontend performance testing excels at identifying issues on a micro level, but does not expose issues in the underlying architecture of a system.
+Frontend performance testing verifies application performance on the interface level, measuring round-trip metrics that consider how and when page elements appear on the screen.
+It is concerned with the end-user experience of an application, usually involving a browser.
+Frontend performance testing excels at identifying issues on a micro level but does not expose issues in the underlying architecture of a system.
 
 Because it primarily measures a single user's experience of the system, frontend performance testing tends to be easier to carry out on a small scale.
 Frontend performance testing has metrics that are distinct from backend performance testing. Frontend performance tests for things like:
 - Whether the pages of the application are optimized to render quickly on a user's screen
-- How long it takes for a user to be able to interact with the UI elements of the application.
+- How long it takes a user to interact with the UI elements of the application.
 
-Some concerns when doing this type of performance testing are its dependency on fully integrated environments and cost of scaling. Frontend performance testing can be done only once the application code and infrastructure have been integrated with a user interface. Tools to automate the frontend are also inherently more resource-intensive, so they can be costly to run at scale and are not suitable for high load tests.
+Some concerns when doing this type of performance testing are its dependency on fully integrated environments and the cost of scaling. You can test frontend performance only once the application code and infrastructure have been integrated with a user interface. Tools to automate frontend testing are also inherently more resource-intensive, so they can be costly to run at scale and are not suitable for high load tests.
 
 
 ### Why isn't frontend performance testing enough?
 
-Since frontend performance testing already measures end user experience, why do we even need backend performance testing?
+Since frontend performance testing already measures end-user experience, why do we even need backend performance testing?
 
 Frontend testing tools are executed on the client side and are limited in scope. They do not provide enough information about backend components for fine-tuning beyond the user interface.
 
@@ -43,9 +44,9 @@ Backend performance testing targets the underlying application servers to verify
 - *Latency*: How quickly does the system process and respond to requests?
 
 Backend testing is broader in scope than frontend performance testing.
-API testing can be used to target specific components or integrated components, meaning that application teams have more flexibility and higher chances of finding performance issues earlier. Backend testing is less resource-intensive than frontend performance testing and is thus more suitable to generating high amounts of load.
+API testing can be used to target specific components or integrated components, meaning that application teams have more flexibility and higher chances of finding performance issues earlier. Backend testing is less resource-intensive than frontend performance testing and is thus more suitable for generating high load.
 
-Some concerns when doing this type of testing are its inability to test "the first mile" of user experience and breadth. Backend testing involves messaging at the protocol level rather than interacting with page elements. It verifies the foundation of an application, rather than the highest layer of it that a user ultimately sees. Depending on the complexity of the application architecture, backend testing may also be more expansive in scope.
+Some concerns when doing this type of testing are its inability to test "the first mile" of user experience and breadth. Backend testing involves messaging at the protocol level rather than interacting with page elements. It verifies the foundation of an application rather than the highest layer of it that a user ultimately sees. Depending on the complexity of the application architecture, backend testing may also be more expansive in scope.
 
 
 ## Why should we do performance testing?
@@ -53,7 +54,7 @@ Some concerns when doing this type of testing are its inability to test "the fir
 With performance testing, your team can:
 
 - **Improve user experience.** Identify potential bottlenecks and issues early in the development process. Performance testing provides a complete picture of what the experience of a user accessing your application is like, beyond just the application functionality.
-- **Prepare for unexpected demand.** Test beyond expected load to you find the breaking points of the application and formulate better procedures for responding to and capitalizing on unprecedented success.
+- **Prepare for unexpected demand.** Test beyond expected load to find the breaking points of the application and formulate better procedures for responding to and capitalizing on unprecedented success.
 - **Increased confidence in the application.** Lower the overall risk of failure with systematic performance testing. This reduced risk also builds team confidence. Teams can work knowing their application can withstand unexpected conditions in production.
 - **Assess and optimize infrastructure.** Reduce unnecessary infrastructure costs without compromising performance. Simulate scenarios to observe horizontal and vertical scaling, and run experiments to verify the resources that the system under test actually requires.
 
@@ -73,7 +74,7 @@ Performance testing *can* be expensive and time-consuming, but teams can pick an
 
 ### It requires extensive technical knowledge
 
-Different types of performance testing require more different degrees technical knowledge. At its face, however, performance testing is no more or less complex than other forms of testing. Teams can choose from a spectrum of performance-testing activities according to their appetite for complexity. Accessing a web page while looking at timings from the Network panel of DevTools within a browser is a type of performance testing that adds immediate value for little effort.
+Different types of performance testing require more different degrees of technical knowledge. On its face, however, performance testing is no more or less complex than other forms of testing. Teams can choose from a spectrum of performance-testing activities according to their appetite for complexity. Accessing a web page while looking at timings from the Network panel of DevTools within a browser is a type of performance testing that adds immediate value for little effort.
 
 ### We don't have a performance environment
 
@@ -86,7 +87,7 @@ Performance testing doesn't always mean load testing, and even load testing does
 
 Having a mature observability platform encourages many to forego performance testing in favor of monitoring application performance in production. However, the efficacy of observability depends on having data to observe, and without the ability to generate data artificially, application performance is often observed only after bottlenecks are already live.
 
-With performance testing, teams can simulate rich user scenarios *before* potential performance issues are released to production, making observability useful in test environments as well. Some types of tests, such as disaster recovery, chaos engineering, and reliability testing also help teams prepare for inevitable failures.
+With performance testing, teams can simulate rich user scenarios *before* potential performance issues are released to production, making observability useful in test environments as well. Some types of tests, such as disaster recovery, chaos engineering, and reliability testing, also help teams prepare for inevitable failures.
 
 Both performance testing and observability are essential components to improving the quality of a system.
 
@@ -94,12 +95,11 @@ Both performance testing and observability are essential components to improving
 
 Now that many applications are hosted in the cloud, it can be tempting to think that horizontal or vertical scaling negates the need to test performance. However, this belief can lead to significantly increased costs if efficiency is not taken into account.
 
-Scalability is only *one* aspect of application performance that should be tested. Even efficiently scaled systems can be slow or prone to failure and outages that render the application unusable. Cascading failures, like retry storms and the thundering-herd problem, can in fact be exacerbated as systems are scaled up.
+Scalability is only *one* aspect of application performance that should be tested. Even efficiently scaled systems can be slow or prone to failure and outages that render the application unusable. In fact, scaling systems up can exacerbate some types of cascading failures, like retry storms and the thundering-herd problem.
 
 ## Beware: performance testing is not load testing
 
-A common misconception is that the term "performance testing" is interchangeable with the term "load testing". The concepts are not interchangeable.
-In the next section, you'll learn about what load testing is, and how it differs from performance testing.
+A common misconception is that the term "performance testing" is interchangeable with the term "load testing." In the next section, you'll learn about what load testing is and how it differs from performance testing.
 
 
 ## Test your knowledge

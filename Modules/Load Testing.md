@@ -31,13 +31,13 @@ In general, you can simulate load in a few ways:
 
 **Browser-based load testing**, on the other hand, simulates the way users interact with the application user interface. Instead of simulating protocol-level requests, browser-based testing automates things like clicks on elements of a web app, typing on a form, and other actions that real users may take. Browser-based load testing more often involves end-to-end testing.
 
-**Hybrid load testing** is a mixture of the protocol-based and browser-based testing. It's usually employed to test different aspects of performance. The most economical approach involves protocol-based load testing to generate the majority of the load in conjunction with a smaller number of browser-based load-testing users.
+**Hybrid load testing** is a mixture of protocol-based and browser-based testing. It's usually employed to test different aspects of performance. The most economical approach involves protocol-based load testing to generate the majority of the load in conjunction with a smaller number of browser-based load-testing users.
 
 ## Load test scenarios
 
 A load test scenario combines specific values of test parameters. Each scenario recreates a certain situation or set of conditions that the application will be exposed to.
 
-Load test scenarios are often called "types of load tests". Some of the most common scenarios are listed here.
+Load test scenarios are often called _load-tests types_. Some of the most common scenarios are listed here.
 
 ### Shakeout test
 
@@ -67,7 +67,7 @@ A shakeout test can also consist of [multiple scenarios](Workload%20modeling%20w
 A regression load test is similar in load profile to a shakeout test, but its purpose is to verify whether recent changes to the application code have affected application performance.
 
 Regression tests are executed developers make changes. These tests are good candidates for continuous load testing within a [CI/CD](Performance%20Testing%20Terminology.md#CI%20CD) pipeline.
-Regression tests are small in terms of load and duration, but they ideally run frequently and provide a good idea of an application performance over time in response to different builds.
+Regression tests are small in terms of load and duration, but they ideally run frequently and provide a good idea of application performance over time in response to different builds.
 
 Regression tests tend to be more limited in scope compared to other types of tests, as they verify only the most commonly used or high-risk functionalities rather than full user flows.
 
@@ -92,15 +92,15 @@ Ramp-down: 10 minutes
 Total duration: 100 minutes
 ```
 
-In the example above, the average load test was defined in terms of the number of VUs, but it can also be defined in terms of the number of iterations or requests per second that the test generates. For more information, see [Setting load profiles with executors](Setting%20load%20profiles%20with%20executors.md).
+In the preceding example, the average load test was defined in terms of the number of VUs, but it can also be defined in terms of the number of iterations or requests per second that the test generates. For more information, see [Setting load profiles with executors](Setting%20load%20profiles%20with%20executors.md).
 
 ## Stress test
 
 A stress test, also known as a peak load test, simulates the traffic that the application is expected to experience at the *highest* point of the day or season. While the average load test simulates the traffic on a typical day, aggregated over a week, month, or longer, a stress test focuses on the highest amount of traffic that the application experiences.
 
-Though a stress test is similar to an average load test in shape it usually generates a far higher test throughput than the average load test does. For example, an application that typically has 100 users accessing it on a regular day, but 300 users during the lunch hour might benefit from being tested with a stress test at the 300 VU level.
+Though a stress test is similar to an average load test in shape, it usually generates a far higher test throughput. Consider an application that typically has 100 accessing users during "normal" hours, but 300 users during the lunch hour. This application might benefit from being tested with a stress test at the 300 VU level.
 
-Stress tests are a good test scenario when testing rush hours or sale periods during which the application faces heavier-than-normal load.
+Stress tests are a good test scenario when testing rush hours or sale periods during which the application faces abnormally heavy load.
 
 ## Soak or Endurance Test
 
@@ -209,4 +209,4 @@ C: Average Load Test
 
 1. A. B describes one type of load test, peak load tests, and C mentions only one of many test parameters that could have an impact on the test scenario chosen and the test results.
 2. B. A soak test is executed over a longer period of time, and can end in too many errors to be useful if the environment has not yet gone through shakeout testing. Full regression tests could likewise not be too useful without first verifying that the environment and script(s) work.
-3. B. While memory leaks can be discovered during stress and average load tests, the longer duration of soak tests make them uniquely suited for unearthing more gradual trends like memory leaks.
+3. B. While memory leaks can be discovered during stress and average load tests, the longer duration of soak tests makes them uniquely suited for unearthing more gradual trends like memory leaks.
