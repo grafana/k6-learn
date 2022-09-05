@@ -40,9 +40,9 @@ Back-end performance testing targets the underlying application servers to verif
 - *Resiliency*: Can the system gracefully withstand unexpected events?
 - *Latency*: How quickly does the system process and respond to requests?
 
-Back-end testing is broader in scope than front-end performance testing. API testing can be used to target specific components or integrated components, allowing application teams more flexibility and higher chances of finding performance issues earlier. Back-end testing is less resource-intensive than front-end performance testing, and is thus more suitable to generating high amounts of load.
+Backend testing is broader in scope than frontend performance testing. API testing can be used to target specific components or integrated components, allowing application teams more flexibility and higher chances of finding performance issues earlier. Backend testing is less resource-intensive than frontend performance testing, and is thus more suitable to generating high amounts of load.
 
-Some concerns when doing this type of testing are its inability to test "the first mile" of user experience and breadth. Back-end testing involves sending messages at the protocol level rather than interacting with page elements. It verifies the foundation of an application, rather than the highest layer of it that a user ultimately sees. Depending on the complexity of the application architecture, back-end testing may also be more expansive in scope.
+Some concerns when doing this type of testing are its inability to test "the first mile" of user experience and breadth. Backend testing involves sending messages at the protocol level rather than interacting with page elements. It verifies the foundation of an application, rather than the highest layer of it that a user ultimately sees. Depending on the complexity of the application architecture, backend testing may also be more expansive in scope.
 
 
 ## Why should we do performance testing?
@@ -101,7 +101,7 @@ A common misconception is that the terms performance testing and load-testing ar
 
 Which type of testing does k6 excel in?
 
-A: Back-end testing
+A: Backend testing
 
 B: Manual testing
 
@@ -109,7 +109,7 @@ C: Accessibility testing
 
 ### Question 2
 
-Which of the following is an advantage of back-end performance testing?
+Which of the following is an advantage of backend performance testing?
 
 A: It provides metrics like Time To Interactive (TTI) that measure when users can first interact with the application.
 
@@ -133,6 +133,7 @@ D: Observability and performance testing are complementary approaches to improvi
 
 ### Answers
 
-1. A. k6 excels at back-end performance testing. With xk6-browser, it does have a front-end performance testing capability, but accessibility testing is not yet possible.
-2. C. A and B are both incorrect because they apply to front-end performance testing.
+1. A. k6 excels at backend performance testing. With xk6-browser, it does have a frontend performance testing capability, but accessibility testing is not yet possible.
+2. C. A and B are both incorrect because they apply to frontend performance testing.
 3. D. A is incorrect because performance testing can be done at lower load levels. B is incorrect because anyone can do  performance testing, not just specialized performance testers. C is incorrect because performance testing can be done in development, staging, and test environments as well.
+

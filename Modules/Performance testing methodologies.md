@@ -55,13 +55,13 @@ Here we also have two principal classifications on the way software is done. The
 
 ### The Monolith
 
-We refer to most old software solutions as monolithic. In some ways, this officially means that a solution sits in a single box, environment, realm, or packed up together. No service tier (or very weak), front-end and back-end requests are usually in the same call, no distribution, any change/problem will stop the whole thing, it is tough to segment test steps, and the list goes on.
+We refer to most old software solutions as monolithic. In some ways, this officially means that a solution sits in a single box, environment, realm, or packed up together. No service tier (or very weak), frontend and backend requests are usually in the same call, no distribution, any change/problem will stop the whole thing, it is tough to segment test steps, and the list goes on.
 
   
 
 ### Modern apps
 
-These applications have implemented multiple new technologies or ways to do software. To start, they are considerably modular and distributed. They separate the front-end tier from the back-end processing tier through services, making it easier to update continuously and somewhat isolated. Those services may be micro, distributed, separated, in the cloud, or provided by third parties. The modularity and distribution provide a crazy amount of possibilities!
+These applications have implemented multiple new technologies or ways to do software. To start, they are considerably modular and distributed. They separate the frontend tier from the backend processing tier through services, making it easier to update continuously and somewhat isolated. Those services may be micro, distributed, separated, in the cloud, or provided by third parties. The modularity and distribution provide a crazy amount of possibilities!
 
   
 
@@ -84,7 +84,7 @@ We will go over each of those variations with a brief description of how we shou
 
 In the past, this was the traditional mix. Most of the projects were performance testing this way ten years ago.
 
-It is heavily phased in the same way as Waterfall does. On top of that, since it is monolithic, it focuses on automating front-end and end-to-end load tests. The big-bang release nature of Waterfall and the Monolithic solutions make it almost mandatory to focus on load testing for production and worst-case scenario loads.
+It is heavily phased in the same way as Waterfall does. On top of that, since it is monolithic, it focuses on automating frontend and end-to-end load tests. The big-bang release nature of Waterfall and the Monolithic solutions make it almost mandatory to focus on load testing for production and worst-case scenario loads.
 
 The performance (load) testing project will have the following phases that usually start after development has finished: **Discovery**, figuring out the performance risks, the system uses, and processes available. **Design**, identify the business processes to script, document load test cases, plan every script, every scenario run, and document it all. **Creation**, script all the business processes, create the scenarios, getting everything ready to run some load tests. **Execution**, run all the planned load scenarios, gather the results from each, report any found issues, and repeat if needed/viable. **Reporting**, right before the production release, present the findings; this may stop the production release if the results need rework.
 
