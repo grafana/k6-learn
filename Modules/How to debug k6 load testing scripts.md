@@ -177,7 +177,7 @@ When you re-run that script, you may notice that despite the corrected credentia
 
 What else could be wrong? What response is being returned, if not an HTTP 200?
 
-### The HTTP debug flag
+### Use the HTTP debug flag
 
 To find out exactly what the request is returning, you can use the `--http-debug` flag. Run the test like this:
 

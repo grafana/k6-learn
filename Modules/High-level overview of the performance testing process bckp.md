@@ -32,7 +32,7 @@ The team must implement multiple techniques from the beginning to enable this.
 
 Each of the steps above covers some aspects of performance, load testing, SRE, and observability.
 
-Focusing on the k6 tool, this guide will go mostly over the service and front-end automation parts.
+Focusing on the k6 tool, this guide will go mostly over the service and frontend automation parts.
 
 But to not to leave gaps on the processes, here is a quick description of each.
 
@@ -73,15 +73,15 @@ Some teams use the single-service automations and chain the different steps to s
 
 ## Front-End
 
-Front-end simulations are the ones that work directly on the user interface, such as a browser, a desktop application, or a mobile app. This limitation makes these automations of the E2E type, as there is no other way to trigger processes in the front-end. That is the case unless the front end has a modular design, which is not a common thing to happen. 
+Frontend simulations are the ones that work directly on the user interface, such as a browser, a desktop application, or a mobile app. This limitation makes these automations of the E2E type, as there is no other way to trigger processes in the frontend. That is the case unless the front end has a modular design, which is not a common thing to happen. 
 
-There are a few reasons to simulate at the front-end tier from the performance and load testing perspective.
+There are a few reasons to simulate at the frontend tier from the performance and load testing perspective.
 
-One reason is that the application offers no means of automation at the service or protocol tier. The only way to automate it is by simulating actions directly in the GUI. This limitation poses disadvantages as front-end automations require considerably more resources than the protocol or service automations, limiting the capacity to simulate load. But that is the only way to automate and load test an application if there is no other way.
+One reason is that the application offers no means of automation at the service or protocol tier. The only way to automate it is by simulating actions directly in the GUI. This limitation poses disadvantages as frontend automations require considerably more resources than the protocol or service automations, limiting the capacity to simulate load. But that is the only way to automate and load test an application if there is no other way.
 
-The other reason performance teams use these automations is not for load testing. It is helpful to have some front-end for performance measurements, even if we can automate the application at the service tier. Teams can monitor real user and front-end performance metrics (web performance) when they have front-end automations on critical business processes running in a single thread at intervals.
+The other reason performance teams use these automations is not for load testing. It is helpful to have some frontend for performance measurements, even if we can automate the application at the service tier. Teams can monitor real user and frontend performance metrics (web performance) when they have frontend automations on critical business processes running in a single thread at intervals.
 
-_Note_: It is best to avoid automating load tests at a front-end level because it is easier. These tend to be unstable and hard to maintain. Have just a few critical processes, and do not try to load-test them unless there is no other way.
+_Note_: It is best to avoid automating load tests at a frontend level because it is easier. These tend to be unstable and hard to maintain. Have just a few critical processes, and do not try to load-test them unless there is no other way.
 
 # The process
 
