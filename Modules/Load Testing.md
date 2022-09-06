@@ -63,14 +63,6 @@ Ramp-Down: 0 seconds
 
 A shakeout test can also consist of [multiple scenarios](Workload%20modeling%20with%20scenarios.md).
 
-## Regression Load Test
-
-A regression load test is similar in load profile to the shakeout test, but its purpose is to verify whether recent changes to the application code have affected application performance.
-
-Regression tests are executed after changes are made, and are good candidates for continuous load testing within a [CI/CD](Performance%20Testing%20Terminology.md#CI%20CD) pipeline so that no manual intervention is required to execute them. Regression tests are small in terms of load and duration, but they are ideally run frequently and provide a good idea of an application's performance over time in response to different builds.
-
-Regression tests tend to be more limited in scope compared to other types of tests, as they verify only the most commonly used or high-risk functionalities rather than full user flows.
-
 ## Average Load Test
 
 This scenario simulates the system's user workload during a typical hour in production. The scenario includes the most frequently executed requests or functionalities within that hour.
