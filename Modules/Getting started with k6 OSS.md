@@ -1,9 +1,9 @@
 # Getting Started with k6 OSS
 
 There are many ways to start scripting with k6, but we're starting with [k6 OSS](https://github.com/grafana/k6) for a few reasons:
-- It is a fully-fledged load testing tool on its own, and it doesn't require a subscription or any payment to use. 
-- k6 Cloud, the SaaS platform, also uses k6 OSS, so the skills you learn in this section will apply even if you decide to use k6 Cloud later. 
-- Learning to script in k6 OSS gives you the ability to add on more advanced scenarios and features later. Other methods of script generation that we'll discuss later are limited in functionality.
+- It is a fully-fledged load testing tool on its own, and it doesn't require a subscription or any payment to use.
+- k6 Cloud, the SaaS platform, also uses k6 OSS, so the skills you learn in this section will apply even if you decide to use k6 Cloud later.
+- You can add advanced scenearios and features to your k6 OSS scripts. The other methods of script generation that we'll discuss later are limited in functionality.
 
 Let's get started!
 
@@ -15,7 +15,7 @@ Next, pick your favorite IDE or text editor. Many of us use and recommend [VS Co
 
 ## Writing your first k6 script
 
-Time to write the script! 
+Time to write the script!
 
 k6 supports multiple protocols, but for now, let's stick to HTTP. Your first script will do a basic HTTP POST request against a test API that will echo back whatever you send to it.
 
@@ -34,7 +34,7 @@ export default function() {
 }
 ```
 
-Any code placed in the default function will be executed by each k6 virtual user when the test is run.
+Any code in the `default` function is executed by each k6 virtual user when the test runs.
 
 Add the logic for making the actual HTTP call:
 
@@ -66,7 +66,7 @@ You'll learn more ways to verify the results of your tests later, but for now, g
 
 ## Hello World: running your k6 script
 
-Save your script in your editor. Then, open up your terminal and go to the directory you saved your k6 script in. Now, run the test:
+Save your script in your editor. Then, open up your terminal and go to the directory where you saved your k6 script. Now, run the test:
 
 ```js
 k6 run test.js
@@ -77,10 +77,10 @@ You should get something like this:
 ```plain
 $ k6 run test.js
 
-          /\      |‾‾| /‾‾/   /‾‾/   
-     /\  /  \     |  |/  /   /  /    
-    /  \/    \    |     (   /   ‾‾\  
-   /          \   |  |\  \ |  (‾)  | 
+          /\      |‾‾| /‾‾/   /‾‾/
+     /\  /  \     |  |/  /   /  /
+    /  \/    \    |     (   /   ‾‾\
+   /          \   |  |\  \ |  (‾)  |
   / __________ \  |__| \__\ \_____/ .io
 
   execution: local
@@ -102,8 +102,8 @@ default ✓ [======================================] 1 VUs  00m00.7s/10m0s  1/1 
      http_req_duration..............: avg=130.19ms min=130.19ms med=130.19ms max=130.19ms p(90)=130.19ms p(95)=130.19ms
        { expected_response:true }...: avg=130.19ms min=130.19ms med=130.19ms max=130.19ms p(90)=130.19ms p(95)=130.19ms
      http_req_failed................: 0.00%  ✓ 0        ✗ 1
-     http_req_receiving.............: avg=165µs    min=165µs    med=165µs    max=165µs    p(90)=165µs    p(95)=165µs   
-     http_req_sending...............: avg=80µs     min=80µs     med=80µs     max=80µs     p(90)=80µs     p(95)=80µs    
+     http_req_receiving.............: avg=165µs    min=165µs    med=165µs    max=165µs    p(90)=165µs    p(95)=165µs
+     http_req_sending...............: avg=80µs     min=80µs     med=80µs     max=80µs     p(90)=80µs     p(95)=80µs
      http_req_tls_handshaking.......: avg=399.48ms min=399.48ms med=399.48ms max=399.48ms p(90)=399.48ms p(95)=399.48ms
      http_req_waiting...............: avg=129.94ms min=129.94ms med=129.94ms max=129.94ms p(90)=129.94ms p(95)=129.94ms
      http_reqs......................: 1      1.525116/s
