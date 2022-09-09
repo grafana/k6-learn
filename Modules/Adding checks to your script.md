@@ -25,13 +25,13 @@ export default function() {
 }
 ```
 
-Note that there are four lines that you need to add, including importing `check` from the k6 library:
+Note that you need to import the `check` from the k6 library:
 
 ```js
 import check from 'k6'
 ```
 
-and the actual check, which you should put within the default function:
+And you need to put the actual check in the default function:
 
 ```js
 check(response, {

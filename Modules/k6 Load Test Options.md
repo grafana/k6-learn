@@ -24,7 +24,7 @@ export let options = {
 };
 ```
 
-You can set multiple options within this function, but make sure you end each one with a `,`.
+If you set multiple options, make sure you end each one with  `,`.
 
 ## VUs
 
@@ -49,7 +49,7 @@ WARN[0000] the `vus=10` option will be ignored, it only works in conjunction wit
      output: -
 ```
 
-If you set the number of VUs, you will need to additionally specify how long those users should be executed for, using one of the following ways:
+If you set the number of VUs, you need to additionally specify how long those users should be executed for, using one of the following options:
 - iterations
 - durations
 - stages

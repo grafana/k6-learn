@@ -1,6 +1,6 @@
 In [Clarifying test criteria](Clarifying%20testing%20criteria.md#Thresholds), we talked a bit about [thresholds](Performance%20Testing%20Terminology.md#Threshold) and how they can be used to implement other criteria, such as SLAs.
 
-Thresholds can also be used to determine whether a test has passed and failed. Adding thresholds to a load testing script is useful because it tells k6 to alert you when those thresholds are breached, or even stop the test. Having thresholds as part of the code makes it easier for other colleagues to step in and run the test.
+You can also use Thresholds to determine whether a test passed and failed. Adding thresholds to a load-testing script is useful because it tells k6 to alert you when those thresholds are breached, or even stop the test. Having thresholds as part of the code makes it easier for other colleagues to step in and run the test.
 
 If you'd like to run load tests within a [CI/CD](Performance%20Testing%20Terminology.md#CI%20CD) pipeline, you'll also want k6 to send non-zero exit codes so that failures are clearly recorded.
 
@@ -20,11 +20,11 @@ export let options = {
 };
 ```
 
-Thresholds are always based on metrics. You can revise the full list of [built-in metrics here](https://k6.io/docs/using-k6/metrics/#built-in-metrics). 
+Thresholds are always based on metrics. You can review the full list of [built-in metrics here](https://k6.io/docs/using-k6/metrics/#built-in-metrics).
 
 Thresholds are expressed as a statement of what is expected:
-- When threshold statements evaluate to `true`, the threshold is met and the test has passed. The exit code that k6 returns is 0.
-- When threshold statements are `false`, the threshold is not met, the test has failed, and k6 returns a non-zero exit code.
+- When threshold statements evaluate to `true`, the threshold is met and the test passes. The exit code that k6 returns is 0.
+- When threshold statements are `false`, the threshold is not met, the test fails, and k6 returns a non-zero exit code.
 
 ## Types of thresholds
 
@@ -48,6 +48,7 @@ To add a threshold for the error rate, use the metric `http_req_failed` and ente
 The threshold above will be met only if the error rate during the test is less than or equal to 5%.
 
 #### Rule of thumb: error rate
+
 What's a good error rate? This depends on your test, script, test data, application, and end users' tolerance for error:
 - For mission-critical applications, consider a lower error rate such as 1%.
 - For auxiliary or non-critical applications, consider a higher error rate of 5%.
