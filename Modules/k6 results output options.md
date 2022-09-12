@@ -1,8 +1,8 @@
-k6 doesn't natively have a way to graph load testing results, but it does have a lot of options for saving the output in different formats. You can find the full list of results visualization integrations or tutorials [here](https://k6.io/docs/results-visualization/).
+k6 doesn't natively have a way to graph load-testing results, but it does have a lot of options to save output in different formats. You can find the full list of results visualization integrations or tutorials [here](https://k6.io/docs/results-visualization/).
 
-In this section, we'll discuss two common test result formats: CSV and JSON.
+In this section, we'll discuss two common test-result formats: CSV and JSON.
 
-Note: For both the CSV and JSON formats, you'll need your own visualization tool. This could be anything from [Google Sheets](https://sheets.google.com), to [Grafana](https://grafana.com), to [Tableau](https://tableau.com).
+Note: For both CSV and JSON formats, you'll need your own visualization tool. This could be anything from [Google Sheets](https://sheets.google.com), to [Grafana](https://grafana.com), to [Tableau](https://tableau.com).
 
 ## What's the difference between end-of-test results and time-series results?
 
@@ -24,7 +24,7 @@ You can also use `--out` instead of `-o`.
 
 The command above will save k6 results as a CSV in the following format:
 
-```plain
+```csv
 metric_name,timestamp,metric_value,check,error,error_code,expected_response,group,method,name,proto,scenario,service,status,subproto,tls_version,url,extra_tags
 http_reqs,1641298536,1.000000,,,,true,,POST,https://httpbin.test.k6.io/post,HTTP/1.1,default,,200,,tls1.2,https://httpbin.test.k6.io/post,
 http_req_duration,1641298536,114.365000,,,,true,,POST,https://httpbin.test.k6.io/post,HTTP/1.1,default,,200,,tls1.2,https://httpbin.test.k6.io/post,
@@ -71,7 +71,7 @@ check(response, {
 
 ### Saving k6 results as a JSON
 
-To output k6 results to a JSON file, use this command when running the test:
+To output k6 results to a JSON file, run the test with this command:
 
 ```plain
 k6 run test.js -o json=results.json

@@ -12,11 +12,12 @@ However, there are also situations where recording a script may save time:
 - You aren't sure what the underlying HTTP requests are, or the API isn't well-documented.
 
 In this section, you'll learn how to record a k6 script.
+
 ## Creating a k6 Cloud account
 
-Did you know that you can use k6 Cloud's script recording features for free?
+Did you know that you can use k6 Cloud's script-recording features for free?
 
-Recording a k6 script requires a k6 Cloud account, but it doesn't have to be a paid one, and you don't need to enter credit card details. To get started, [sign up for an account](https://app.k6.io/). Make sure you're signed in before you proceed.
+Though recording a k6 script requires a k6 Cloud account, it doesn't require a paid subscription, and you don't need to enter credit card details. To get started, [sign up for an account](https://app.k6.io/). Make sure you're signed in before you proceed.
 
 Next, download and install the k6 browser recording extension for your browser-- [Chrome](https://chrome.google.com/webstore/detail/k6-browser-recorder/phjdhndljphphehjpgbmpocddnnmdbda?hl=en) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/k6-browser-recorder/) are supported. When you see the k6 icon on your extension bar, you're ready to start recording.
 
@@ -26,7 +27,7 @@ Then, open up a new tab and click on the k6 browser extension icon. You'll see a
 
 ![k6-browser-recorder-01](../images/k6-browser-recorder-01.png)
 Here's what those options mean:
-- **Download HAR file**: HAR stands for HTTP ARchive, which is a JSON-formatted file that is used to save network information like HTTP requests and timings. Enable this if you'd like to be able to be able to save the recording somewhere other than k6. Otherwise, **leave this disabled**.
+- **Download HAR file**: HAR stands for HTTP ARchive, which is a JSON-formatted file that saves network information like HTTP requests and timings. Enable this if you'd like to be able to be able to save the recording somewhere other than k6. Otherwise, **leave this disabled**.
 - **Clear cache (last 7 days):** Enabling this deletes your browser cache for the last week. This is useful if what you want to simulate a new user to your application. Disable this if you want to simulate an existing user. Otherwise, **leave this option enabled**. (Read more about [caching options here](Caching%20options.md).)
 - **Correlate request/response data:** The k6 recorder can automatically detect when dynamic values are being passed to the application servers and try to correlate them for you. This doesn't always work for complex applications, but it can be a good starting point for scripting. **Enable this option** unless you'd prefer to have a raw recording.
 
@@ -39,7 +40,7 @@ Now you're ready to start recording! Navigate to your web application, and inter
 
 ### Tips for recording
 
-To make the best out of your recording, keep the following tips in mind:
+To make the best of your recording, keep the following tips in mind:
 - If you'd like to get an idea of how long the [sleep](Adding%20think%20time%20using%20sleep.md) should be, try filling out forms and reading text the way a new user would. Sleep timings are recorded by the extension.
 - Wait for all the page's resources to load before you proceed to the next page or action. If you'd like to be sure, try opening up DevTools for your browser and waiting until there is no activity in the Network tab.
 - Take notes separately about the actions you're doing, to help you make sense of the generated script later.
@@ -59,21 +60,11 @@ Let's go over the options!
 - **Title:** Next to the project selection dropdown, give your recording a descriptive name that will help you remember what this recording was later.
 - **Test Builder or Script Editor:** Decide whether you'd like to see your recorded flow in the Test Builder (GUI) or the Script Editor (plain JavaScript). You'll learn more about these options later. For now, choose Test Builder if you'd be more comfortable interacting with an interface, and the Script Editor if you'd prefer to see the code. If you're not sure, choose Test Builder and you'll be able to switch to the Script Editor later if you change your mind.
 - **Correlate request and response data:** Tick this option if you'd like k6 to detect and correlate dynamic data for you.
-- **Include static assets:** Tick this option if you'd like your test script to include requests for embedded resources like scripts, fonts, and images. Ticking this option makes the script more [realistic](Workload%20modeling.md), but at the cost of more requests.
+- **Include static assets:** Tick this option if you'd like your test script to include requests for embedded resources like scripts, fonts, and images. Ticking this option makes the script more [realistic](Workload%20modeling.md) at the cost of more requests.
 - **Generate sleep**: Tick this option if you'd like k6 to [add think time](Adding%20think%20time%20using%20sleep.md) based on your actual delays while recording.
 - **Third-party domains filtering:** By default, k6 ignores requests sent to domains other than the one you initially navigated to. Doing so prevents you from accidentally load testing servers that don't belong to you. Have a look at the domains listed, and tick any that you'd like to include in the test. _Note: Testing servers you don't own could lead to legal or financial ramifications, so we recommend you test only servers you own._
 
 Then, click Save!
-
-### Test Builder
-
-If you chose the Test Builder option in the previous step, you'll see a screen like this:
-
-![](../images/k6-browser-recorder-5.png)
-
-From here, you can continue to explore, build out your script, and ramp it up to run as a shakeout or load test. You can find out more information about [using the Test Builder here](Creating%20a%20script%20using%20the%20Test%20Builder.md). However, keep in mind that running the test on k6 Cloud will use up one of your free test runs. If you'd like to run the test locally, click on the toggle to switch from _Builder_ to _Script_.
-
-### Script Editor
 
 If you switched to the Script Editor from Test Builder, your script will be displayed in _read only_ mode:
 
@@ -86,6 +77,9 @@ If, instead, you chose the _Script Editor_ option in the recording dialog screen
 ![](../images/k6-cloud-script-editor.png)
 
 You can modify the script here, or click the _COPY SCRIPT_ button to select all the text in your script. You can then paste the script into your IDE of choice and continue working on it there.
+
+<details>
+<summary> Example recorded script </summary>
 
 %%
 ```js
@@ -669,7 +663,17 @@ export function scenario_1() {
   })
 }
 ```
+</details>
+
 %%
+### Test Builder
+
+If you chose the Test Builder option in the previous step, you'll see a screen like this:
+
+![](../images/k6-browser-recorder-5.png)
+
+From here, you can continue to explore, build out your script, and ramp it up to run as a shakeout or load test. You can find out more information about [using the Test Builder here](Creating%20a%20script%20using%20the%20Test%20Builder.md). However, keep in mind that running the test on k6 Cloud will use up one of your free test runs. If you'd like to run the test locally, click on the toggle to switch from _Builder_ to _Script_.
+
 ## Limitations to recording a script
 
 In this section, you learned how to use the free version of k6 Cloud to record a business flow in your browser and generate a k6 script from the recording. Generating a script this way can lead to significantly less ramp-up time when you're beginning the scripting process.
