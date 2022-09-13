@@ -154,7 +154,7 @@ let csrfToken = response.html().find("input[name=csrftoken]").attr("value");
 console.log(csrfToken);
 ```
 
-The first line parses the HTML response body and looks for the value of an `input` element with a `name` equal to `csrftoken`. Run the script to see if the value of `csrfToken` looks right, and you should get something like this:
+The first line parses the HTML response body and looks for the value of an `input` element with a `name` equal to `csrftoken`. Run the script to see if the value of `csrfToken` looks right. You should get something like this:
 
 ```js
 INFO[0001] NDExODkxOTcz                                  source=console

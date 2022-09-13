@@ -1,5 +1,6 @@
 # How to debug k6 load testing scripts
-While the k6 metrics help you in [understanding what happened in a k6 test](Understanding%20k6%20results.md), you may need more detailed information when you're in the process of writing your load testing script. In this section, you'll learn what you can do to figure out why your script is failing.
+
+While the k6 metrics help you [understand what happened in a k6 test](Understanding%20k6%20results.md), you may need more detailed information when you're in the process of writing your load-testing script. In this section, you'll learn what you can do to figure out why your script is failing.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zln_TWOuoho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 *In this k6 Office Hours, Tom Miseur and Nicole van der Hoeven demonstrate different ways to debug a k6 load testing script.*
@@ -8,7 +9,8 @@ There are a few things you can add to your script that can help you determine wh
 
 ### Add checks
 
-You already learned that [adding checks to your script](Adding%20checks%20to%20your%20script.md) helps you identify issues during text execution, but they can be useful during debugging as well. It's good practice to include checks for every major action your script makes, so that it's clear where the issue lies.
+You already learned that you can [add checks to your script](Adding%20checks%20to%20your%20script.md) to identify issues during text execution, but they can be useful during debugging as well.
+It's good practice to include checks for every major action your script makes, so that it's clear where the issue lies.
 
 Consider the script below.
 
@@ -28,7 +30,8 @@ export default function() {
 }
 ```
 
-In the script, two simple arrays are declared: one containing usernames, and one containing passwords. The script chooses one pair from those arrays randomly, and then passes them onto an HTTP POST request.
+This script declares two simple arrays: one containing usernames, and one containing passwords.
+The script chooses one pair from those arrays randomly, then passes them onto an HTTP POST request.
 
 When you run this script, you'll notice that no errors are returned:
 
@@ -69,7 +72,7 @@ default ✓ [======================================] 1 VUs  00m01.1s/10m0s  1/1 
      vus_max........................: 1      min=1      max=1
 ```
 
-There's nothing there that indicates an error, yet there is one.
+Nothing indicates an error, yet there is one.
 
 To find it, add a check to see what the response returned is.
 
@@ -108,7 +111,7 @@ But what's going on?
 
 ### Add logging
 
-Since the script uses test data, it could very well be that the username and password are incorrect. Maybe the combination is what causes an authentication error. In this case, there are only three elements in each username and password array, so it wouldn't be too difficult to test them all manually. But what if you had hundreds of them?
+Since the script uses test data, it could very well be that the username and password are incorrect. Maybe the combination is what causes an authentication error. In this case, the `username` and `password` arrays have only three elements, so it wouldn't be too difficult to test them all manually. But what if you had hundreds of them?
 
 In that case, you can try adding logging at specific parts of your script by using `console.log()`. The script below shows this statement in action:
 
