@@ -1,7 +1,7 @@
 # Parallel requests in k6
 Parallel requests are requests that are sent at the same time. Parallel requests are sometimes called "concurrent" requests.
 
-The screenshot below shows the Network panel in Chrome DevTools while a site is loaded. Each bar shows when resources embedded in the page were requested throughout the first 4000 ms.
+This screenshot shows the Network panel in Chrome DevTools while a site is loaded. Each bar shows when resources embedded in the page were requested throughout the first 4000 ms.
 
 ![](../images/parallel-requests.png)
 
