@@ -7,21 +7,8 @@ In the last section, you learned what load testing is, how it differs from perfo
 - Executing load tests
 - Analysis of load testing results
 
-For clarity, these activities are shown as distinct phases here; however, in practice, they often overlap. Like the application-release process, the testing process should be continuous and Agile, with each small increment building upon previous work, growing more and more robust over time.
-
-![Continuous Testing Snowball](../images/continuous-testing-snowball.png)
-
-
-Just like application code, a test starts slowly. At the mountain's peak, the test is in its simplest form. You can think of an early-stage test as primarily **risk-based**: testing at this level is a reaction to probable failures. These tests are written specifically to prevent failure in an application's most critical components, and there might not be enough time for anything else.
-
-As testing matures within the project, it may start to include **regression**. Now that all the high-risk areas are covered, teams have time to make tests a bit more backward-compatible and preventative, and they write tests to see if new code breaks past functionalities.
-
-The Continuous Testing Snowball gathers speed as the team grows along with the test suite, focusing on **automating** more and more parts of the testing process with every iteration or sprint. A repeatable framework is established. In this stage, the snowball is at its fastest speed.
-
-At the bottom of the slope, continuous testing has evolved testing to such an extent that the team can expand its focus from addressing specific defects to increasing overall **reliability and confidence** in the application's ability to withstand unexpected events. The framework is made even more robust with more exploratory types of testing like Chaos Engineering.
-
-The focus of Continuous Testing is on organically and iteratively evolving the testing suite in parallel with the application, starting with something small with the goal of making enough incremental changes until it is more robust.
-
+In practice, these phases often overlap, and they happen iteratively, occuring in cycles across a broader, more gradual shift towards increasingly robust testing.
+Like the application-release process, the testing process should be continuous and Agile, with each small increment building upon previous work.
 
 ## Planning for load testing
 
@@ -88,6 +75,24 @@ Continuous load testing is a practice that spans all the testing phases. In cont
 Without ensuring that load testing is done continuously, load testing can become a one-off process. Incorporating it into existing CI/CD pipelines keeps performance front-of-mind for everyone involved.
 
 As the testing suite grows in maturity and scope, teams should naturally create more efficient frameworks for running tests, managing notifications, analyzing results, and reporting. In this way, testing can start very simply, usually around the most critical or high-risk functionalities of the application, then evolve and improve organically along with the application.
+
+## Maturing test aims: from risk-based to reliability
+
+These preceding phases happen in iterations, and the goals of the testing-suite mature as the organization gains momentum.
+
+![Continuous Testing Snowball](../images/continuous-testing-snowball.png)
+
+Early-stage tests are often primarily **risk-based**: testing at this level is a reaction to probable failures. These tests are written specifically to prevent failure in an application's most critical components, and there might not be enough time for anything else.
+
+As testing matures within the project, it may start to include **regression**. Now that all the high-risk areas are covered, teams have time to make tests a bit more backward-compatible and preventative, and they write tests to see if new code breaks past functionalities.
+
+The Continuous Testing Snowball gathers speed as the team grows along with the test suite, focusing on **automating** more and more parts of the testing process with every iteration or sprint. A repeatable framework is established. In this stage, the snowball is at its fastest speed.
+
+At the bottom of the slope, continuous testing has evolved testing to such an extent that the team can expand its focus from addressing specific defects to increasing overall **reliability and confidence** in the application's ability to withstand unexpected events. The framework is made even more robust with more exploratory types of testing like Chaos Engineering.
+
+The focus of Continuous Testing is on organically and iteratively evolving the testing suite in parallel with the application, starting with something small with the goal of making enough incremental changes until it is more robust.
+
+
 
 ## Test your knowledge
 
