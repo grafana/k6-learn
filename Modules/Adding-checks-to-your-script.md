@@ -1,6 +1,6 @@
 ## Review
 
-In [Clarifying testing criteria](Clarifying%20testing%20criteria.md#Checks), you learned about the different levels of test criteria. One type of test criteria, [checks](Performance%20Testing%20Terminology.md#Check), can be used to verify the response returned by a request.
+In [Clarifying testing criteria](Clarifying-testing-criteria.md#Checks), you learned about the different levels of test criteria. One type of test criteria, [checks](Performance-Testing-Terminology.md#Check), can be used to verify the response returned by a request.
 
 Up until now, you've been using `console.log()` to print the response body to the terminal. This approach is useful for debugging, but it can quickly get out of hand if the response body is large or if you decide to run the test with more than one VU. Instead, in this section, you'll learn how to use checks.
 

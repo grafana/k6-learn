@@ -4,7 +4,7 @@ A common mistake in the industry is to use the terms *performance testing* and *
 
 **Performance testing != Load testing**
 
-[Performance testing](Introduction%20to%20Performance%20Testing.md) verifies how well a system works as a whole, including aspects such as scalability, elasticity, availability, reliability, resiliency, and latency. Load testing is just one type of performance testing, and it is an approach that can be used to test many of aspects of application performance. However, not all performance testing involves load testing.
+[Performance testing](Introduction-to-Performance-Testing.md) verifies how well a system works as a whole, including aspects such as scalability, elasticity, availability, reliability, resiliency, and latency. Load testing is just one type of performance testing, and it is an approach that can be used to test many of aspects of application performance. However, not all performance testing involves load testing.
 
 Load testing specifically focuses on verifying and validating the performance of an application while it has a significant volume of tasks to process. Load testing can be done manually, but most teams write automated load testing scripts to programmatically simulate real users accessing the application.
 
@@ -60,7 +60,7 @@ Ramp-Down: 0 seconds
 ```
 
 
-A shakeout test can also consist of [multiple scenarios](Workload%20modeling%20with%20scenarios.md).
+A shakeout test can also consist of [multiple scenarios](Workload-modeling-with-scenarios.md).
 
 ## Average Load Test
 
@@ -83,7 +83,7 @@ Ramp-down: 10 minutes
 Total duration: 100 minutes
 ```
 
-In the preceding example, the average load test was defined in terms of the number of VUs, but it can also be defined in terms of the number of iterations or requests per second that the test generates. For more information, see [Setting load profiles with executors](Setting%20load%20profiles%20with%20executors.md).
+In the preceding example, the average load test was defined in terms of the number of VUs, but it can also be defined in terms of the number of iterations or requests per second that the test generates. For more information, see [Setting load profiles with executors](Setting-load-profiles-with-executors.md).
 
 ## Stress test
 
@@ -162,7 +162,7 @@ Total duration: unknown
 ```
 
 
-Because breakpoint tests are more exploratory in nature, testers can't know in advance how many maximum VUs will be executed or how long the test will last. Teams typically monitor an application closely while a breakpoint test is running and either stop the test manually or program it to stop when it exceeds certain [thresholds](Setting%20test%20criteria%20with%20thresholds.md).
+Because breakpoint tests are more exploratory in nature, testers can't know in advance how many maximum VUs will be executed or how long the test will last. Teams typically monitor an application closely while a breakpoint test is running and either stop the test manually or program it to stop when it exceeds certain [thresholds](Setting-test-criteria-with-thresholds.md).
 
 ## Test your knowledge
 

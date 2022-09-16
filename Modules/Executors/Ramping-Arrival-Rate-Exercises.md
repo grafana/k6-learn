@@ -1,6 +1,6 @@
 # Ramping Arrival Rate Executor
 
-As noted in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Ramping%20Arrival%20Rate), the _Ramping Arrival Rate_ executor has a primary focus on the _iteration rate_ being applied over a specified duration within _stages_.
+As noted in [Setting load profiles with executors](../Setting-load-profiles-with-executors.md#Ramping-Arrival-Rate), the _Ramping Arrival Rate_ executor has a primary focus on the _iteration rate_ being applied over a specified duration within _stages_.
 
 ## Exercises
 

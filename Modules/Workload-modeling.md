@@ -34,7 +34,7 @@ Test parameters are values that affect how your load-testing script is executed.
 
 Each of these parameters influence the amount and type of load that is simulated.
 
-Check out [k6 Load Test Options](k6%20Load%20Test%20Options.md) for more information on these parameters, or [Setting load profiles with executors](Setting%20load%20profiles%20with%20executors.md) for instructions on how to implement these in k6.
+Check out [k6 Load Test Options](k6-Load-Test-Options.md) for more information on these parameters, or [Setting load profiles with executors](Setting-load-profiles-with-executors.md) for instructions on how to implement these in k6.
 
 ### Think time and pacing
 
@@ -42,19 +42,19 @@ Think time and pacing are both types of delays in the script that simulate the p
 
 Longer delays mean fewer requests, given a fixed duration, and shorter delays mean more requests. The number of requests and how quickly they are sent may change how your system responds. We also recommend using dynamic delays if you'd like to make the generated load look a little less regular and uniform.
 
-See [Adding think time using sleep](Adding%20think%20time%20using%20sleep.md) for how to implement delays in k6.
+See [Adding think time using sleep](Adding-think-time-using-sleep.md) for how to implement delays in k6.
 
 ### Adding static resources
 
 In web applications, static resources refer to images, client-side scripts, fonts, and other files embedded onto a page. If you want your script to access that page, you have to decide whether you want the script to also download those resources.
 
-Downloading static resources makes the script more realistic if you want to simulate an end-user behavior, because web browsers automatically download them. However, if you want to download only the HTML of the page (for example, perhaps because the images are served by a [CDN](Performance%20Testing%20Terminology.md#CDN) that you don't want to test), it may be more prudent *not* to download the static resources.
+Downloading static resources makes the script more realistic if you want to simulate an end-user behavior, because web browsers automatically download them. However, if you want to download only the HTML of the page (for example, perhaps because the images are served by a [CDN](Performance-Testing-Terminology.md#CDN) that you don't want to test), it may be more prudent *not* to download the static resources.
 
 ### Parallel requests
 
 Parallel requests are requests that are sent concurrently. Modern browsers request a certain number of static resources at the same time, so if your script requests them sequentially, that can change the load applied on your system.
 
-Refer to [Parallel requests in k6](Parallel%20requests%20in%20k6.md) for instructions on use batching to implement parallel requests.
+Refer to [Parallel requests in k6](Parallel-requests-in-k6.md) for instructions on use batching to implement parallel requests.
 
 ### Cache and cookie behavior
 

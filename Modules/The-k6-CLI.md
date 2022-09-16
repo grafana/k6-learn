@@ -76,7 +76,7 @@ k6 run --help
 
 Another common k6 command is `k6 run [filename].js`. In the previous section, you learned how to use `k6 run` to execute an existing k6 script in JavaScript.
 
-Without any modification, `k6 run` instructs k6 to run your script as it is (see [Changing settings in k6](The%20k6%20CLI.md#Changing%20settings%20in%20k6) to understand how k6 determines which configuration settings to use). However, you can also use flags with the `run` command to override settings within the script (such as [k6 Load Test Options](k6%20Load%20Test%20Options.md)) from the command line.
+Without any modification, `k6 run` instructs k6 to run your script as it is (see [Changing settings in k6](The-k6-CLI.md#Changing-settings-in-k6) to understand how k6 determines which configuration settings to use). However, you can also use flags with the `run` command to override settings within the script (such as [k6 Load Test Options](k6-Load-Test-Options.md)) from the command line.
 
 ### The duration flag
 

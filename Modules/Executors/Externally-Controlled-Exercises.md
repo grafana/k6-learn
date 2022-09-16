@@ -1,6 +1,6 @@
 # Externally Controlled Executor
 
-As noted in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Externally%20Controlled), this particular executor relegates the control of VUs and the running state of tests to external processes. Feel free to use Bash, Python, or some automation component; the source of these processes is of no consequence for the executor.
+As noted in [Setting load profiles with executors](../Setting-load-profiles-with-executors.md#Externally-Controlled), this particular executor relegates the control of VUs and the running state of tests to external processes. Feel free to use Bash, Python, or some automation component; the source of these processes is of no consequence for the executor.
 
 The focus of the executor will be to set up the test scenario and provide constraints on the overall duration and allowable number of virtual users. From this point, a running test will be in somewhat of a _holding pattern_ waiting for further instructions.
 

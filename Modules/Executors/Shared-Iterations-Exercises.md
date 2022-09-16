@@ -1,6 +1,6 @@
 # Shared Iterations Executor
 
-As noted in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Shared%20Iterations), _Shared Iterations_ is the most basic of the executors. As can be inferred from the name, the primary focus will be the number of _iterations_ for your test; this is the number of times your test function will be run.
+As noted in [Setting load profiles with executors](../Setting-load-profiles-with-executors.md#Shared-Iterations), _Shared Iterations_ is the most basic of the executors. As can be inferred from the name, the primary focus will be the number of _iterations_ for your test; this is the number of times your test function will be run.
 
 ## Exercises
 For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits one second before completing the test iteration. We're providing some console output as things change.

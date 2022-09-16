@@ -1,6 +1,6 @@
 # Ramping VUs Executor
 
-As noted in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Ramping%20VUs), _Ramping VUs_ executor has a primary focus on the number of _virtual users (VUs)_ within _stages_. 
+As noted in [Setting load profiles with executors](../Setting-load-profiles-with-executors.md#Ramping-VUs), _Ramping VUs_ executor has a primary focus on the number of _virtual users (VUs)_ within _stages_. 
 
 ## Exercises
 
@@ -57,7 +57,7 @@ k6_workshop ✓ [======================================] 00/10 VUs  30s
 
 > :point-up: The iteration counter is 0-based, meaning a count of 12 is _actually_ 13 iterations.
 
-Closer inspection at the iteration counts may seem odd. The counts seem to be all over the board: _VU #7_ only performed 3 iterations, while _VU #4_ performed 22. As with the [Constant VUs](../Setting%20load%20profiles%20with%20executors.md#Constant%20VUs) executor, each virtual user executes the `default function ()` continuously, so how can there be such a disparity? 
+Closer inspection at the iteration counts may seem odd. The counts seem to be all over the board: _VU #7_ only performed 3 iterations, while _VU #4_ performed 22. As with the [Constant VUs](../Setting-load-profiles-with-executors.md#Constant-VUs) executor, each virtual user executes the `default function ()` continuously, so how can there be such a disparity? 
 
 This disparity in iteration counts is due to the _ramping_ aspect of the executor. k6 will linearly scale up or down the number of running VUs to achieve the `target` number of VUs defined within the stage. The `duration` will determine how long the scaling with take place.
 

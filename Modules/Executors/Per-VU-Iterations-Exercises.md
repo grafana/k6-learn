@@ -1,6 +1,6 @@
 # Per VU Iterations Executor
 
-As noted in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Per%20VU%20Iterations), _Per VU Iterations_ is an executor with a focus on _iterations_ performed by a _virtual user (VU)_.
+As noted in [Setting load profiles with executors](../Setting-load-profiles-with-executors.md#Per-VU-Iterations), _Per VU Iterations_ is an executor with a focus on _iterations_ performed by a _virtual user (VU)_.
 
 ## Exercises
 

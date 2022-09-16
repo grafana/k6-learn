@@ -1,4 +1,4 @@
-If you've written a load testing script before, you might be familiar with the term [transaction](Modules/Performance%20Testing%20Terminology.md#Transaction). A transaction in load testing is a request or group of requests that correspond to a single action by the user.
+If you've written a load testing script before, you might be familiar with the term [transaction](Modules/Performance-Testing-Terminology.md#Transaction). A transaction in load testing is a request or group of requests that correspond to a single action by the user.
 
 For example, you might have a transaction called `01_Go_to_homepage` that consists of a user going to your website main page for the first time. That transaction would then include GET requests for the main HTML, in addition to embedded resources like scripts, images, and fonts.
 
@@ -33,9 +33,9 @@ export default function () {
 
 ```
 
-When you create a script [using the k6 browser recorder](Recording%20a%20k6%20script.md), you may notice that these groups are automatically created for you whenever k6 detects multiple embedded resources on a page.
+When you create a script [using the k6 browser recorder](Recording-a-k6-script.md), you may notice that these groups are automatically created for you whenever k6 detects multiple embedded resources on a page.
 
-When you use groups, k6 still reports and saves metrics for each request individually, but each one also includes its group name. If you [save the output results to a CSV](k6%20results%20output%20options.md#CSV) by using `k6 run test.js -o csv=results.csv`, you'll see that the group of each request is also reported:
+When you use groups, k6 still reports and saves metrics for each request individually, but each one also includes its group name. If you [save the output results to a CSV](k6-results-output-options.md#CSV) by using `k6 run test.js -o csv=results.csv`, you'll see that the group of each request is also reported:
 
 ```plain
 metric_name,timestamp,metric_value,check,error,error_code,expected_response,group,method,name,proto,scenario,service,status,subproto,tls_version,url,extra_tags
@@ -228,13 +228,13 @@ export function CheckoutPage() {
 }
 ```
 
-Using functions in this way gives you the added benefit of being able to define multiple user flows within the same script. For example, you could define one user flow that goes to the homepage only, another that visits the homepage and a few product pages, and a third that goes through all the pages and checks out. You'll learn more about scenarios in [Workload modeling with scenarios](Workload%20modeling%20with%20scenarios.md).
+Using functions in this way gives you the added benefit of being able to define multiple user flows within the same script. For example, you could define one user flow that goes to the homepage only, another that visits the homepage and a few product pages, and a third that goes through all the pages and checks out. You'll learn more about scenarios in [Workload modeling with scenarios](Workload-modeling-with-scenarios.md).
 
 ### Modularizing your script further
 
-What if you're using all groups, tags (including URL grouping), comments, functions, and your script is _still_ too long and unwieldy to be readable? [Modular scripting](Modular%20scripting.md) might be the answer to your problem.
+What if you're using all groups, tags (including URL grouping), comments, functions, and your script is _still_ too long and unwieldy to be readable? [Modular scripting](Modular-scripting.md) might be the answer to your problem.
 
-Modular scripting involves breaking apart your k6 test script into multiple scripts, and then calling each one into a single "runner" script that coordinates it all. You'll learn more about building a modular framework for running k6 tests in [Modular scripting](Modular%20scripting.md).
+Modular scripting involves breaking apart your k6 test script into multiple scripts, and then calling each one into a single "runner" script that coordinates it all. You'll learn more about building a modular framework for running k6 tests in [Modular scripting](Modular-scripting.md).
 
 ## Test your knowledge
 

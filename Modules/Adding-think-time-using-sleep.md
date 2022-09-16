@@ -2,21 +2,21 @@
 
 Before you ramp up your load tests, there's one more thing to add: think time.
 
-[Think time](Performance%20Testing%20Terminology.md#Think%20time) is the amount of time that a script pauses during test execution to simulate delays that real users have in the course of using an application.
+[Think time](Performance-Testing-Terminology.md#Think-time) is the amount of time that a script pauses during test execution to simulate delays that real users have in the course of using an application.
 
 ### When should you use think time?
 
 You should consider adding think time in the following situations:
 - Your test follows a user flow, like accessing different parts of the application in a certain order
 - You want to simulate actions that take some time to carry out, like reading text on a page or filling out a form
-- Your [load generator](Performance%20Testing%20Terminology.md#Load%20generator), or the machine you're running k6 from, displays high (> 80%) CPU utilization during test execution.
+- Your [load generator](Performance-Testing-Terminology.md#Load-generator), or the machine you're running k6 from, displays high (> 80%) CPU utilization during test execution.
 
 Not including think time in a script that is executed iteratively takes up more resources on the load generator, which could lead to inaccurate results. Adding think time is one way to [reduce high CPU usage](https://k6.io/docs/cloud/analyzing-results/performance-insights/#high-load-generator-cpu-usage).
 
 ### When shouldn't you use think time?
 
 Think time is unnecessary in the following situations:
-- You want to do a [stress test](Types%20of%20load%20tests.md#Stress%20Test) to find out how many requests per second your application can handle
+- You want to do a [stress test](Types-of-load-tests.md#Stress-Test) to find out how many requests per second your application can handle
 - The API endpoint you're testing experiences a high amount of requests per second in production that occur without delays
 - Your load generator can run your test script without crossing the 80% CPU utilization mark.
 
@@ -43,7 +43,7 @@ export default function() {
 
 `sleep(1);` means that the script will pause for 1 second when it is executed.
 
-Including sleep does not affect the response time (`http_req_duration`); the response time is always reported with sleep removed. Sleep *is*, however, included in the [iteration duration](Understanding%20k6%20results.md#Iteration%20duration).
+Including sleep does not affect the response time (`http_req_duration`); the response time is always reported with sleep removed. Sleep *is*, however, included in the [iteration duration](Understanding-k6-results.md#Iteration-duration).
 
 ### Dynamic think time
 

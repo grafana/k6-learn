@@ -1,6 +1,6 @@
 # Creating and using custom metrics
 
-In [Understanding k6 results](Understanding%20k6%20results.md), you learned how to interpret the metrics that k6 reports by default. But what if you want to measure something else that k6 doesn't keep track of?
+In [Understanding k6 results](Understanding-k6-results.md), you learned how to interpret the metrics that k6 reports by default. But what if you want to measure something else that k6 doesn't keep track of?
 
 k6 allows you to create your own custom metrics within your script. Once you've defined what you want measured, k6 collects the measurements during the test and reports your custom metrics along with the built-in ones in the end-of-test summary report.
 

@@ -1,6 +1,6 @@
 # Workload modeling with scenarios
 
-In [Workload modeling](Workload%20modeling.md), we mentioned that one of the challenges is that user flows can be complex. A single test may need to cover multiple end-to-end flows simultaneously. For example, in a storefront application, we may have several members browsing products while many others (hopefully!) are adding items to their cart. To help organize these various flows, the k6 team has created [scenarios](https://k6.io/docs/using-k6/scenarios/).
+In [Workload modeling](Workload-modeling.md), we mentioned that one of the challenges is that user flows can be complex. A single test may need to cover multiple end-to-end flows simultaneously. For example, in a storefront application, we may have several members browsing products while many others (hopefully!) are adding items to their cart. To help organize these various flows, the k6 team has created [scenarios](https://k6.io/docs/using-k6/scenarios/).
 
 With _scenarios_, script authors may create distinct flows having different execution patterns and environment settings. Scenarios can be executed in parallel or staggered using time offsets with the `startTime` option.
 
@@ -8,7 +8,7 @@ By breaking down each of your flows into a different scenario, your overarching 
 
 ## Defining scenarios
 
-Each _scenario_ includes the same [elements of a workload model](Workload%20modeling.md#Elements%20of%20a%20workload%20model) in addition to the `executor`, `startTime`, and optionally `env` variables and `tags` exclusive to the _scenario_.
+Each _scenario_ includes the same [elements of a workload model](Workload-modeling.md#Elements-of-a-workload-model) in addition to the `executor`, `startTime`, and optionally `env` variables and `tags` exclusive to the _scenario_.
 
 Save the following script as `playground.js`.
 
@@ -92,7 +92,7 @@ Viewing the results, you should notice that users are browsing products, then af
 
 Our example used a minimal number of configuration options for the _scenarios_, but the available options include the following:
 
-> Remember that additional options may be required depending upon the `executor` specified. See [setting load profiles with executors](Setting%20load%20profiles%20with%20executors.md) for more about _executors_.
+> Remember that additional options may be required depending upon the `executor` specified. See [setting load profiles with executors](Setting-load-profiles-with-executors.md) for more about _executors_.
 
 | Option         | Description                                                                                       | Default      |
 |----------------|---------------------------------------------------------------------------------------------------|--------------|

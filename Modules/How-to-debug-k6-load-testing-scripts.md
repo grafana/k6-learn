@@ -1,6 +1,6 @@
 # How to debug k6 load testing scripts
 
-While the k6 metrics help you [understand what happened in a k6 test](Understanding%20k6%20results.md), you may need more detailed information when you're in the process of writing your load-testing script. In this section, you'll learn what you can do to figure out why your script is failing.
+While the k6 metrics help you [understand what happened in a k6 test](Understanding-k6-results.md), you may need more detailed information when you're in the process of writing your load-testing script. In this section, you'll learn what you can do to figure out why your script is failing.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zln_TWOuoho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 *In this k6 Office Hours, Tom Miseur and Nicole van der Hoeven demonstrate different ways to debug a k6 load testing script.*
@@ -9,7 +9,7 @@ There are a few things you can add to your script that can help you determine wh
 
 ### Add checks
 
-You already learned that you can [add checks to your script](Adding%20checks%20to%20your%20script.md) to identify issues during text execution, but they can be useful during debugging as well.
+You already learned that you can [add checks to your script](Adding-checks-to-your-script.md) to identify issues during text execution, but they can be useful during debugging as well.
 It's good practice to include checks for every major action your script makes, so that it's clear where the issue lies.
 
 Consider the script below.

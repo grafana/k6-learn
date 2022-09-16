@@ -1,6 +1,6 @@
 # Dynamic correlation in k6
 
-In the previous section, you learned [different approaches to debugging a script in k6](Modules/How%20to%20debug%20k6%20load%20testing%20scripts.md), and ended up encountering an issue that every load tester faces: correlation.
+In the previous section, you learned [different approaches to debugging a script in k6](Modules/How-to-debug-k6-load-testing-scripts.md), and ended up encountering an issue that every load tester faces: correlation.
 
 ## What is correlation?
 

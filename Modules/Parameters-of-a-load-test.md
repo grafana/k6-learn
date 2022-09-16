@@ -13,7 +13,7 @@ We'll discuss each one in more detail below.
 
 ## Transaction distribution
 
-A [transaction](Performance%20Testing%20Terminology.md#Transaction) is a grouping of requests or steps that are triggered by a single user action. For example, a login transaction might consist of the following steps:
+A [transaction](Performance-Testing-Terminology.md#Transaction) is a grouping of requests or steps that are triggered by a single user action. For example, a login transaction might consist of the following steps:
 - Type in username
 - Type in password
 - Click LOG IN button.

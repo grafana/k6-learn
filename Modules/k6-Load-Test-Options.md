@@ -91,13 +91,13 @@ k6 will execute the test for 40 iterations or 5 minutes, *whichever ends earlier
 
 ### Stages
 
-Defining iterations and durations both cause k6 to execute your test script using a [simple load profile](Parameters%20of%20a%20load%20test.md#Simple%20load%20profile): VUs are started, sustained for a certain time or number of iterations, and then ended.
+Defining iterations and durations both cause k6 to execute your test script using a [simple load profile](Parameters-of-a-load-test.md#Simple-load-profile): VUs are started, sustained for a certain time or number of iterations, and then ended.
 
 ![A simple load profile](load_profile-no_ramp-up_or_ramp-down.png)
 
 _Simple load profile_
 
-What if you want to add [a ramp-up](Performance%20Testing%20Terminology.md#Ramp-up) or [ramp-down](Performance%20Testing%20Terminology.md#Ramp-down), so that the profile looks more like this?
+What if you want to add [a ramp-up](Performance-Testing-Terminology.md#Ramp-up) or [ramp-down](Performance-Testing-Terminology.md#Ramp-down), so that the profile looks more like this?
 
 ![Constant load profile, with ramps](load_profile-constant.png.png)
 
@@ -118,7 +118,7 @@ export let options = {
 The stages option lets you define different steps or phases for your load test, each of which can be configured with a number of VUs and duration. The example above consists of three steps (but you can add more if you'd like).
 
 1. The first step is a gradual ramp-up from 0 VUs to 100 VUs.
-2. The second step defines the [steady state](Parameters%20of%20a%20load%20test.md#Steady%20state). The load is held constant at 100 VUs for 1 hour.
+2. The second step defines the [steady state](Parameters-of-a-load-test.md#Steady-state). The load is held constant at 100 VUs for 1 hour.
 3. Then, the third step is a gradual ramp-down from 100 VUs back to 0, at which point the test ends.
 
 Stages are the most versatile way to define test parameters for a single scenario. They give you flexibility in shaping the load of your test to match the situation in production that you're trying to simulate.

@@ -20,7 +20,7 @@ Adding test data can help prevent server-side caching. Common test data includes
 
 ## Array
 
-The simplest way to add test data is with an array. In [Dynamic correlation in k6](Dynamic%20correlation%20in%20k6.md), you defined an array like this:
+The simplest way to add test data is with an array. In [Dynamic correlation in k6](Dynamic-correlation-in-k6.md), you defined an array like this:
 
 ```js
 let usernameArr = ['admin', 'test_user'];

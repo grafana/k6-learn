@@ -1,4 +1,4 @@
-You've already learned how to [write your first k6 script](Getting%20started%20with%20k6%20OSS.md). Why would you want to _record_ one?
+You've already learned how to [write your first k6 script](Getting-started-with-k6-OSS.md). Why would you want to _record_ one?
 
 Writing a k6 script yourself is the best way to learn how k6 works, and the skills that you've learned in previous sections will make you a better tester because even recorded scripts will need to be modified. Writing a k6 script may still be the better option in these situations:
 - You want your script to make a series of API calls.
@@ -8,7 +8,7 @@ Writing a k6 script yourself is the best way to learn how k6 works, and the skil
 
 However, there are also situations where recording a script may save time:
 - You are testing a web page and want to include requests for embedded resources on a page (scripts and images), rather than just the HTML.
-- The application involves a lot of [dynamic correlation](Dynamic%20correlation%20in%20k6.md), and you want most of that work done for you.
+- The application involves a lot of [dynamic correlation](Dynamic-correlation-in-k6.md), and you want most of that work done for you.
 - You aren't sure what the underlying HTTP requests are, or the API isn't well-documented.
 
 In this section, you'll learn how to record a k6 script.
@@ -28,7 +28,7 @@ Then, open up a new tab and click on the k6 browser extension icon. You'll see a
 ![k6-browser-recorder-01](../images/k6-browser-recorder-01.png)
 Here's what those options mean:
 - **Download HAR file**: HAR stands for HTTP ARchive, which is a JSON-formatted file that saves network information like HTTP requests and timings. Enable this if you'd like to be able to be able to save the recording somewhere other than k6. Otherwise, **leave this disabled**.
-- **Clear cache (last 7 days):** Enabling this deletes your browser cache for the last week. This is useful if what you want to simulate a new user to your application. Disable this if you want to simulate an existing user. Otherwise, **leave this option enabled**. (Read more about [caching options here](Caching%20options.md).)
+- **Clear cache (last 7 days):** Enabling this deletes your browser cache for the last week. This is useful if what you want to simulate a new user to your application. Disable this if you want to simulate an existing user. Otherwise, **leave this option enabled**. (Read more about [caching options here](Caching-options.md).)
 - **Correlate request/response data:** The k6 recorder can automatically detect when dynamic values are being passed to the application servers and try to correlate them for you. This doesn't always work for complex applications, but it can be a good starting point for scripting. **Enable this option** unless you'd prefer to have a raw recording.
 
 Next, click the _Start recording_ button. It may take a few seconds for your last week's browser cache to be deleted. Wait until you see the following screen:
@@ -41,7 +41,7 @@ Now you're ready to start recording! Navigate to your web application, and inter
 ### Tips for recording
 
 To make the best of your recording, keep the following tips in mind:
-- If you'd like to get an idea of how long the [sleep](Adding%20think%20time%20using%20sleep.md) should be, try filling out forms and reading text the way a new user would. Sleep timings are recorded by the extension.
+- If you'd like to get an idea of how long the [sleep](Adding-think-time-using-sleep.md) should be, try filling out forms and reading text the way a new user would. Sleep timings are recorded by the extension.
 - Wait for all the page's resources to load before you proceed to the next page or action. If you'd like to be sure, try opening up DevTools for your browser and waiting until there is no activity in the Network tab.
 - Take notes separately about the actions you're doing, to help you make sense of the generated script later.
 - Record one business flow at a time. If you record multiple long or complex flows, your script may get too large and unwieldy. It's easier to combine multiple scripts than it is to split them apart later.
@@ -60,8 +60,8 @@ Let's go over the options!
 - **Title:** Next to the project selection dropdown, give your recording a descriptive name that will help you remember what this recording was later.
 - **Test Builder or Script Editor:** Decide whether you'd like to see your recorded flow in the Test Builder (GUI) or the Script Editor (plain JavaScript). You'll learn more about these options later. For now, choose Test Builder if you'd be more comfortable interacting with an interface, and the Script Editor if you'd prefer to see the code. If you're not sure, choose Test Builder and you'll be able to switch to the Script Editor later if you change your mind.
 - **Correlate request and response data:** Tick this option if you'd like k6 to detect and correlate dynamic data for you.
-- **Include static assets:** Tick this option if you'd like your test script to include requests for embedded resources like scripts, fonts, and images. Ticking this option makes the script more [realistic](Workload%20modeling.md) at the cost of more requests.
-- **Generate sleep**: Tick this option if you'd like k6 to [add think time](Adding%20think%20time%20using%20sleep.md) based on your actual delays while recording.
+- **Include static assets:** Tick this option if you'd like your test script to include requests for embedded resources like scripts, fonts, and images. Ticking this option makes the script more [realistic](Workload-modeling.md) at the cost of more requests.
+- **Generate sleep**: Tick this option if you'd like k6 to [add think time](Adding-think-time-using-sleep.md) based on your actual delays while recording.
 - **Third-party domains filtering:** By default, k6 ignores requests sent to domains other than the one you initially navigated to. Doing so prevents you from accidentally load testing servers that don't belong to you. Have a look at the domains listed, and tick any that you'd like to include in the test. _Note: Testing servers you don't own could lead to legal or financial ramifications, so we recommend you test only servers you own._
 
 Then, click Save!
@@ -70,7 +70,7 @@ If you switched to the Script Editor from Test Builder, your script will be disp
 
 ![](../images/k6-cloud-script-editor-from-recording.png)
 
-Click _COPY SCRIPT_, as highlighted in orange in the screenshot, to select and copy the entire script. You can then paste the script into your IDE and [run your script locally](Getting%20started%20with%20k6%20OSS.md#Hello%20World%20running%20your%20k6%20script).
+Click _COPY SCRIPT_, as highlighted in orange in the screenshot, to select and copy the entire script. You can then paste the script into your IDE and [run your script locally](Getting-started-with-k6-OSS.md#Hello-World-running-your-k6-script).
 
 If, instead, you chose the _Script Editor_ option in the recording dialog screen earlier, you'll see your test script displayed in k6 Cloud in an editable mode. 
 
@@ -672,7 +672,7 @@ If you chose the Test Builder option in the previous step, you'll see a screen l
 
 ![](../images/k6-browser-recorder-5.png)
 
-From here, you can continue to explore, build out your script, and ramp it up to run as a shakeout or load test. You can find out more information about [using the Test Builder here](Creating%20a%20script%20using%20the%20Test%20Builder.md). However, keep in mind that running the test on k6 Cloud will use up one of your free test runs. If you'd like to run the test locally, click on the toggle to switch from _Builder_ to _Script_.
+From here, you can continue to explore, build out your script, and ramp it up to run as a shakeout or load test. You can find out more information about [using the Test Builder here](Creating-a-script-using-the-Test-Builder.md). However, keep in mind that running the test on k6 Cloud will use up one of your free test runs. If you'd like to run the test locally, click on the toggle to switch from _Builder_ to _Script_.
 
 ## Limitations to recording a script
 
@@ -684,15 +684,15 @@ However, recording a script also has the following limitations:
 - The recorder saves all the information your browser sends and receives, which may lead to increased noise in the script.
 - Sleep times are hard-coded as constant values based on what was recorded.
 
-For these reasons, you can reasonably expect a script recording to do a lot of the up-front work in getting started with a k6 script for you, but it's still a best practice to expect to modify your script, [debugging](How%20to%20debug%20k6%20load%20testing%20scripts.md) it to work the way you want it to and [making it more realistic](Best%20practices%20for%20designing%20realistic%20k6%20scripts.md).
+For these reasons, you can reasonably expect a script recording to do a lot of the up-front work in getting started with a k6 script for you, but it's still a best practice to expect to modify your script, [debugging](How-to-debug-k6-load-testing-scripts.md) it to work the way you want it to and [making it more realistic](Best-practices-for-designing-realistic-k6-scripts.md).
 
 Here are some things you should consider doing after recording a script:
-- Renaming or modifying the [groups](Organizing%20code%20in%20k6%20by%20transaction%20-%20groups%20and%20tags.md#Groups) recorded
-- [Adding checks to your script](Adding%20checks%20to%20your%20script.md)
-- [Making think time dynamic](Adding%20think%20time%20using%20sleep.md#Dynamic%20think%20time)
-- Adding or modifying [test options](k6%20Load%20Test%20Options.md)
-- Adding ways to [organize code](Organizing%20code%20in%20k6%20by%20transaction%20-%20groups%20and%20tags.md) and help colleagues understand what the script does
-- Shaking out the script by running it a few times and [debugging it](How%20to%20debug%20k6%20load%20testing%20scripts.md)
+- Renaming or modifying the [groups](Organizing-code-in-k6-by-transaction---groups-and-tags.md#Groups) recorded
+- [Adding checks to your script](Adding-checks-to-your-script.md)
+- [Making think time dynamic](Adding-think-time-using-sleep.md#Dynamic-think-time)
+- Adding or modifying [test options](k6-Load-Test-Options.md)
+- Adding ways to [organize code](Organizing-code-in-k6-by-transaction---groups-and-tags.md) and help colleagues understand what the script does
+- Shaking out the script by running it a few times and [debugging it](How-to-debug-k6-load-testing-scripts.md)
 
 ## Test your knowledge
 

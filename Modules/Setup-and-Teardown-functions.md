@@ -2,7 +2,7 @@
 
 So far, you've been putting most of the code within the `default` function. All code within the default function is called **VU code**, because it is code that every virtual user executes and repeats until the end of the test.
 
-Unless you specify a number of virtual users and a test duration in [the test options](k6%20Load%20Test%20Options.md), k6 runs your script once with one iteration and one virtual user. But what happens when you set a test duration of, say, one minute?
+Unless you specify a number of virtual users and a test duration in [the test options](k6-Load-Test-Options.md), k6 runs your script once with one iteration and one virtual user. But what happens when you set a test duration of, say, one minute?
 
 ```js
 import { sleep } from 'k6'
@@ -88,8 +88,8 @@ Code in the global scope is called init code, and it is executed:
 You can think of this section as a place to make any preparations you need before you run the first iteration per user.
 
 Here are some things that you may want to put in init code:
-- Declaration of variables that you may want to reuse between iterations of a single VU or across VUs (such as a [Shared Array](Adding%20test%20data.md#Shared%20Array))
-- A [k6 Load Test Options](k6%20Load%20Test%20Options.md) object where you can set the parameters of the test
+- Declaration of variables that you may want to reuse between iterations of a single VU or across VUs (such as a [Shared Array](Adding-test-data.md#Shared-Array))
+- A [k6 Load Test Options](k6-Load-Test-Options.md) object where you can set the parameters of the test
 
 Not all k6 features are available for use in the init section; for example, you cannot make HTTP requests within init code.
 

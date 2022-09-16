@@ -1,6 +1,6 @@
 # Using execution context variables
 
-In the previous sections, you learned how to make your k6 scripts [more realistic](Workload%20modeling.md) by using executors and scenarios to better simulate traffic from real users of your application. Bringing your scripts closer to production traffic makes your test results more accurate.
+In the previous sections, you learned how to make your k6 scripts [more realistic](Workload-modeling.md) by using executors and scenarios to better simulate traffic from real users of your application. Bringing your scripts closer to production traffic makes your test results more accurate.
 
 However, you may quickly find that ramping your scripts up across multiple virtual users, scenarios, and instances may also lead to increased difficulty in understanding your results. When the script reports an error, for example, how do you trace it down to the VU that encountered it?
 
@@ -82,8 +82,8 @@ export default function () {
 Let's go over what the script is doing step by step.
 
 There are three objects being imported by the script:
-- `papaparse` allows the use of a [CSV file as test data](Adding%20test%20data.md#CSV%20Files)
-- `SharedArray` distributes lines of the CSV file only as needed by each VU to [conserve resources](Adding%20test%20data.md#Shared%20Array)
+- `papaparse` allows the use of a [CSV file as test data](Adding-test-data.md#CSV-Files)
+- `SharedArray` distributes lines of the CSV file only as needed by each VU to [conserve resources](Adding-test-data.md#Shared-Array)
 - `vu` gives you access to the unique identifier for each VU
 - `sleep` lets you use delays in the script
 
@@ -99,7 +99,7 @@ const users = new SharedArray("Logins", function() {
 > [!warning] Set header to true
 > Note that the `header: true` option is necessary in this case, because the first line in the CSV file you created defines the names of the columns in the data file (`username,password`).
 
-The next few lines define [options and parameters](k6%20Load%20Test%20Options.md) for the test:
+The next few lines define [options and parameters](k6-Load-Test-Options.md) for the test:
 
 ```js
 export const options = {
@@ -195,6 +195,6 @@ C: `test`
 
 ### Answers
 
-1. A. You can prevent data collision by using a unique identifier like `vu.idInTest`. B is incorrect because you set the number of VUs from the command line using [CLI flags](The%20k6%20CLI.md), and C is incorrect because the way to select an executor is [from the script](Setting%20load%20profiles%20with%20executors.md).
+1. A. You can prevent data collision by using a unique identifier like `vu.idInTest`. B is incorrect because you set the number of VUs from the command line using [CLI flags](The-k6-CLI.md), and C is incorrect because the way to select an executor is [from the script](Setting-load-profiles-with-executors.md).
 2. B. `vu.idInTest` is assigned per VU, not per iteration.
 3. A. `scenario` holds information about the executor that is being used.

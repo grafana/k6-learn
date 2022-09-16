@@ -1,8 +1,8 @@
-In [Clarifying test criteria](Clarifying%20testing%20criteria.md#Thresholds), we talked a bit about [thresholds](Performance%20Testing%20Terminology.md#Threshold) and how they can be used to implement other criteria, such as SLAs.
+In [Clarifying test criteria](Clarifying-testing-criteria.md#Thresholds), we talked a bit about [thresholds](Performance-Testing-Terminology.md#Threshold) and how they can be used to implement other criteria, such as SLAs.
 
 You can also use Thresholds to determine whether a test passed and failed. Adding thresholds to a load-testing script is useful because it tells k6 to alert you when those thresholds are breached, or even stop the test. Having thresholds as part of the code makes it easier for other colleagues to step in and run the test.
 
-If you'd like to run load tests within a [CI/CD](Performance%20Testing%20Terminology.md#CI%20CD) pipeline, you'll also want k6 to send non-zero exit codes so that failures are clearly recorded.
+If you'd like to run load tests within a [CI/CD](Performance-Testing-Terminology.md#CI-CD) pipeline, you'll also want k6 to send non-zero exit codes so that failures are clearly recorded.
 
 You can add thresholds to a k6 script in the Test Options object:
 
@@ -64,7 +64,7 @@ thresholds: {
 
 In the example above, the response time threshold is set to a 95th percentile response time of 5000 milliseconds. This statement will be true if 95% of all HTTP requests have a response time of 5 seconds or less.
 
-You can add a response time threshold using any of the metrics displayed in the [k6 end-of-test summary](Understanding%20k6%20results.md):
+You can add a response time threshold using any of the metrics displayed in the [k6 end-of-test summary](Understanding-k6-results.md):
 
 ```plain
 http_req_duration..............: avg=151.06ms min=151.06ms med=151.06ms max=151.06ms p(90)=151.06ms p(95)=151.06ms
@@ -118,7 +118,7 @@ thresholds: {
 
 ### Checks
 
-As you learned in [Adding checks to your script](Adding%20checks%20to%20your%20script.md), failed checks are reported, but they don't affect the status of the test as a whole. If you want to make the test fail when a certain check error rate is reached, you can use a combination of checks and thresholds:
+As you learned in [Adding checks to your script](Adding-checks-to-your-script.md), failed checks are reported, but they don't affect the status of the test as a whole. If you want to make the test fail when a certain check error rate is reached, you can use a combination of checks and thresholds:
 
 ```js
 thresholds: {

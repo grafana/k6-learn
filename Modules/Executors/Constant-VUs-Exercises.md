@@ -1,6 +1,6 @@
 # Constant VUs Executor
 
-As noted in [Setting load profiles with executors](../Setting%20load%20profiles%20with%20executors.md#Constant%20VUs), _Constant VUs_ executor has a primary focus on the number of _virtual users (VUs)_ running for a specified timeframe. 
+As noted in [Setting load profiles with executors](../Setting-load-profiles-with-executors.md#Constant-VUs), _Constant VUs_ executor has a primary focus on the number of _virtual users (VUs)_ running for a specified timeframe. 
 
 ## Exercises
 
