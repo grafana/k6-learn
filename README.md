@@ -38,7 +38,7 @@ Consider running a workshop for k6. Below is an outline of what that workshop co
 - [Workload modeling](Modules/Workload-modeling.md)
 - [Adding test data](Modules/Adding-test-data.md)
 - [Parallel requests in k6](Modules/Parallel-requests-in-k6.md)
-- [Organizing code in k6 by transaction - groups and tags](Modules/Organizing-code-in-k6-by-transaction---groups-and-tags.md)
+- [Organizing code in k6 by transaction - groups and tags](Modules/Organizing-code-in-k6-by-transaction_groups-and-tags.md)
 - [Setup and Teardown functions](Modules/Setup-and-Teardown-functions.md)
 - [Setting load profiles with executors](Modules/Setting-load-profiles-with-executors.md)
 - [Workload modeling with scenarios](Modules/Workload-modeling-with-scenarios.md)
