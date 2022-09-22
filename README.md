@@ -17,8 +17,9 @@ Consider running a workshop for k6. Below is an outline of what that workshop co
 ### I: Performance testing principles
 
 - [Introduction to Performance Testing](Modules/I-Performance-testing-principles/01-Introduction-to-Performance-Testing.md)
-- [Load testing](Modules/I-Performance-testing-principles/02-Load-Testing.md)
-- [High-level overview of the load testing process](Modules/I-Performance-testing-principles/03-High-level-overview-of-the-load-testing-process.md)
+- [Frontend vs. backend performance testing](Modules/I-Performance-testing-principles/02-Frontend-vs-backend-performance-testing.md)
+- [Load testing](Modules/I-Performance-testing-principles/03-Load-Testing.md)
+- [High-level overview of the load testing process](Modules/I-Performance-testing-principles/04-High-level-overview-of-the-load-testing-process.md)
 
 ### II: k6 Foundations
 

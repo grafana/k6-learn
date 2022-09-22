@@ -5,8 +5,8 @@
 ### One day
 
 - [Introduction to Performance Testing](Modules/I-Performance-testing-principles/01-Introduction-to-Performance-Testing.md)
-- [Load Testing](Modules/I-Performance-testing-principles/02-Load-Testing.md) vs performance testing
-- [High-level overview of the load testing process](Modules/I-Performance-testing-principles/03-High-level-overview-of-the-load-testing-process.md)
+- [Load Testing](Modules/I-Performance-testing-principles/03-Load-Testing.md) vs performance testing
+- [High-level overview of the load testing process](Modules/I-Performance-testing-principles/04-High-level-overview-of-the-load-testing-process.md)
 - [k6 OSS vs k6 Cloud](Modules/XX-Future-Ideas/k6-OSS-vs-k6-Cloud.md)
 - [Getting started with k6 OSS](Modules/II-k6-Foundations/01-Getting-started-with-k6-OSS.md)
 - [Understanding k6 results](Modules/II-k6-Foundations/03-Understanding-k6-results.md)
@@ -43,7 +43,7 @@
 ### 1 hour
 
 - [Introduction to Performance Testing](Modules/I-Performance-testing-principles/01-Introduction-to-Performance-Testing.md)
-- [High-level overview of the load testing process](Modules/I-Performance-testing-principles/03-High-level-overview-of-the-load-testing-process.md)
+- [High-level overview of the load testing process](Modules/I-Performance-testing-principles/04-High-level-overview-of-the-load-testing-process.md)
 - [Getting started with k6 OSS](Modules/II-k6-Foundations/01-Getting-started-with-k6-OSS.md)
 - [Understanding k6 results](Modules/II-k6-Foundations/03-Understanding-k6-results.md)
 - [Adding checks to your script](Modules/II-k6-Foundations/04-Adding-checks-to-your-script.md)
@@ -57,9 +57,9 @@
 
 ### Theory
 - [Introduction to Performance Testing](Modules/I-Performance-testing-principles/01-Introduction-to-Performance-Testing.md)
-- [Load testing](Modules/I-Performance-testing-principles/02-Load-Testing.md)
+- [Load testing](Modules/I-Performance-testing-principles/03-Load-Testing.md)
 - [Types of load tests](Modules/Types-of-load-tests.md)
-- [High-level overview of the load testing process](Modules/I-Performance-testing-principles/03-High-level-overview-of-the-load-testing-process.md)
+- [High-level overview of the load testing process](Modules/I-Performance-testing-principles/04-High-level-overview-of-the-load-testing-process.md)
 - [Workload modeling](Modules/III-k6-Intermediate/03-Workload-modeling.md)
 
 ### k6 Foundations
