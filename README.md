@@ -1,9 +1,10 @@
-# Welcome to the k6-Learn
+# Welcome to k6-Learn
 
-Want to present about k6 to your company or meetup? This repo contains resources for:
+This repo contains resources for:
 - creating slide presentations
 - giving a workshop
 - speaking about k6
+- learning about k6
 
 ## Starter slide deck
 
@@ -15,32 +16,32 @@ Consider running a workshop for k6. Below is an outline of what that workshop co
 
 ### I: Performance testing principles
 
-- [Introduction to Performance Testing](Modules/Introduction-to-Performance-Testing.md)
-- [Load testing](Modules/Load-Testing.md)
-- [High-level overview of the load testing process](Modules/High-level-overview-of-the-load-testing-process.md)
+- [Introduction to Performance Testing](Modules/I-Performance-testing-principles/01-Introduction-to-Performance-Testing.md)
+- [Load testing](Modules/I-Performance-testing-principles/02-Load-Testing.md)
+- [High-level overview of the load testing process](Modules/I-Performance-testing-principles/03-High-level-overview-of-the-load-testing-process.md)
 
 ### II: k6 Foundations
 
-- [Getting started with k6 OSS](Modules/Getting-started-with-k6-OSS.md)
-- [The k6 CLI](Modules/The-k6-CLI.md)
-- [Understanding k6 results](Modules/Understanding-k6-results.md)
-- [Adding checks to your script](Modules/Adding-checks-to-your-script.md)
-- [Adding think time using sleep](Modules/Adding-think-time-using-sleep.md)
-- [k6 Load Test Options](Modules/k6-Load-Test-Options.md)
-- [Setting test criteria with thresholds](Modules/Setting-test-criteria-with-thresholds.md)
-- [k6 results output options](Modules/k6-results-output-options.md)
-- [Recording a k6 script](Modules/Recording-a-k6-script.md)
+- [Getting started with k6 OSS](Modules/II-k6-Foundations/01-Getting-started-with-k6-OSS.md)
+- [The k6 CLI](Modules/II-k6-Foundations/02-The-k6-CLI.md)
+- [Understanding k6 results](Modules/II-k6-Foundations/03-Understanding-k6-results.md)
+- [Adding checks to your script](Modules/II-k6-Foundations/04-Adding-checks-to-your-script.md)
+- [Adding think time using sleep](Modules/II-k6-Foundations/05-Adding-think-time-using-sleep.md)
+- [k6 Load Test Options](Modules/II-k6-Foundations/06-k6-Load-Test-Options.md)
+- [Setting test criteria with thresholds](Modules/II-k6-Foundations/07-Setting-test-criteria-with-thresholds.md)
+- [k6 results output options](Modules/II-k6-Foundations/08-k6-results-output-options.md)
+- [Recording a k6 script](Modules/II-k6-Foundations/09-Recording-a-k6-script.md)
 
 ### III: k6 Intermediate
 
-- [How to debug k6 load testing scripts](Modules/How-to-debug-k6-load-testing-scripts.md)
-- [Dynamic correlation in k6](Modules/Dynamic-correlation-in-k6.md)
-- [Workload modeling](Modules/Workload-modeling.md)
-- [Adding test data](Modules/Adding-test-data.md)
-- [Parallel requests in k6](Modules/Parallel-requests-in-k6.md)
-- [Organizing code in k6 by transaction - groups and tags](Modules/Organizing-code-in-k6-by-transaction_groups-and-tags.md)
-- [Setup and Teardown functions](Modules/Setup-and-Teardown-functions.md)
-- [Setting load profiles with executors](Modules/Setting-load-profiles-with-executors.md)
-- [Workload modeling with scenarios](Modules/Workload-modeling-with-scenarios.md)
-- [Using execution context variables](Modules/Using-execution-context-variables.md)
-- [Creating and using custom metrics](Modules/Creating-and-using-custom-metrics.md)
+- [How to debug k6 load testing scripts](Modules/III-k6-Intermediate/01-How-to-debug-k6-load-testing-scripts.md)
+- [Dynamic correlation in k6](Modules/III-k6-Intermediate/02-Dynamic-correlation-in-k6.md)
+- [Workload modeling](Modules/III-k6-Intermediate/03-Workload-modeling.md)
+- [Adding test data](Modules/III-k6-Intermediate/04-Adding-test-data.md)
+- [Parallel requests in k6](Modules/III-k6-Intermediate/05-Parallel-requests-in-k6.md)
+- [Organizing code in k6 by transaction - groups and tags](Modules/III-k6-Intermediate/06-Organizing-code-in-k6-by-transaction_groups-and-tags.md)
+- [Setup and Teardown functions](Modules/III-k6-Intermediate/07-Setup-and-Teardown-functions.md)
+- [Setting load profiles with executors](Modules/III-k6-Intermediate/08-Setting-load-profiles-with-executors/Setting-load-profiles-with-executors.md)
+- [Workload modeling with scenarios](Modules/III-k6-Intermediate/09-Workload-modeling-with-scenarios.md)
+- [Using execution context variables](Modules/III-k6-Intermediate/10-Using-execution-context-variables.md)
+- [Creating and using custom metrics](Modules/III-k6-Intermediate/11-Creating-and-using-custom-metrics.md)
