@@ -41,7 +41,7 @@ Load test scenarios are often called _load-tests types_. Some of the most common
 
 ### Shakeout test
 
-A shakeout test is a small test that checks for major issues before spending more time and resources. A shakeout test typically uses one or a few VUs that runs for a short amount of time checks for major issues such as:
+A shakeout test, sometimes known as a smoke test, is a small test that checks for major issues before spending more time and resources. A shakeout test typically uses one or a few VUs that runs for a short amount of time checks for major issues such as:
 - script-related problems that would significantly impact the accuracy of test results
 - unexpected environment configuration
 - significant application performance bottlenecks that arise at even low loads
@@ -62,7 +62,7 @@ Ramp-Down: 0 seconds
 
 A shakeout test can also consist of [multiple scenarios](Workload-modeling-with-scenarios.md).
 
-## Average Load Test
+### Average Load Test
 
 This scenario simulates the user workload during a typical hour in production. The scenario includes the most frequently executed requests or functionalities within that hour.
 
@@ -85,7 +85,7 @@ Total duration: 100 minutes
 
 In the preceding example, the average load test was defined in terms of the number of VUs, but it can also be defined in terms of the number of iterations or requests per second that the test generates. For more information, see [Setting load profiles with executors](Setting-load-profiles-with-executors.md).
 
-## Stress test
+### Stress test
 
 A stress test, also known as a peak load test, simulates the traffic that the application is expected to experience at the *highest* point of the day or season. While the average load test simulates the traffic on a typical day, aggregated over a week, month, or longer, a stress test focuses on the highest amount of traffic that the application experiences.
 
@@ -93,7 +93,7 @@ Though a stress test is similar to an average load test in shape, it usually gen
 
 Stress tests are a good test scenario when testing rush hours or sale periods during which the application faces abnormally heavy load.
 
-## Soak or Endurance Test
+### Soak or Endurance Test
 
 Soak tests, also called endurance tests, are tests with a longer duration than average or peak tests. Some performance bottlenecks, such as ones caused by defects in memory management, appear only during longer periods of time. Soak tests verify whether performance degrades over time.
 
@@ -112,7 +112,7 @@ Ramp-down: 10 minutes
 Total duration: 520 minutes (8 hours and 40 minutes)
 ```
 
-## Spike Test
+### Spike Test
 
 The previous types of tests have all recreated a situation where load is introduced gradually (such as in the case of the average, stress, and soak tests) or where a small amount of load is executed (shakeout). A spike test, on the other hand, recreates a situation where the application experiences a *sudden* and massive increase in traffic. 
 
@@ -141,7 +141,7 @@ Total duration: 26 minutes
 
 
 
-## Breakpoint Test
+### Breakpoint Test
 
 While the previous load test types simulate realistic and expected production load, breakpoint tests attempt to go one step further. A breakpoint test exposes an application to increasing levels of load in an attempt to identify the traffic level at which performance begins to degrade.
 
