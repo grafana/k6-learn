@@ -2,7 +2,8 @@
 
 While the k6 metrics help you [understand what happened in a k6 test](../II-k6-Foundations/03-Understanding-k6-results.md), you may need more detailed information when you're in the process of writing your load-testing script. In this section, you'll learn what you can do to figure out why your script is failing.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Zln_TWOuoho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![In this k6 Office Hours, Tom Miseur and Nicole van der Hoeven demonstrate different ways to debug a k6 load testing script](https://img.youtube.com/vi/Zln_TWOuoho/0.jpg)](https://www.youtube.com/embed/Zln_TWOuoho)
+
 *In this k6 Office Hours, Tom Miseur and Nicole van der Hoeven demonstrate different ways to debug a k6 load testing script.*
 
 There are a few things you can add to your script that can help you determine what's happening at which point in the script.
