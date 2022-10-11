@@ -1,7 +1,6 @@
 # What is performance testing?
 
-The primary concern of performance testing is _how well_ a system works.
-Unlike functional testing, which tests _whether_ a system works, performance testing seeks to measure qualitative aspects of a user's experience of a system, such as its responsiveness and success rate.
+The primary concern of performance testing is _how well_ a system works. Unlike functional testing, which tests _whether_ a system works, performance testing seeks to measure qualitative aspects of a user's experience of a system, such as its responsiveness and reliability.
 
 ## Why should we do performance testing?
 
