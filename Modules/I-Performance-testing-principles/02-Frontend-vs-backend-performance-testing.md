@@ -2,8 +2,8 @@ For a holistic view of performance, testers need to test both the front and back
 
 ## Frontend performance testing
 
-Frontend performance testing verifies application performance on the interface level, measuring round-trip metrics that consider how and when page elements appear on the screen.
-It is concerned with the end-user experience of an application, usually involving a browser.
+Frontend performance testing verifies application performance on the interface level, measuring round-trip metrics that consider how and when page elements appear on the screen. It is concerned with the end-user experience of an application, usually involving a browser.
+
 Frontend performance testing excels at identifying issues on a micro level but does not expose issues in the underlying architecture of a system.
 
 Because it primarily measures a single user's experience of the system, frontend performance testing tends to be easier to carry out on a small scale.
@@ -38,8 +38,7 @@ Backend performance testing targets the underlying application servers to verify
 - *Resiliency*: Can the system gracefully withstand unexpected events?
 - *Latency*: How quickly does the system process and respond to requests?
 
-Backend testing is broader in scope than frontend performance testing.
-API testing can be used to target specific components or integrated components, meaning that application teams have more flexibility and higher chances of finding performance issues earlier. Backend testing is less resource-intensive than frontend performance testing and is thus more suitable for generating high load.
+Backend testing is broader in scope than frontend performance testing. API testing can be used to target specific components or integrated components, meaning that application teams have more flexibility and higher chances of finding performance issues earlier. Backend testing is less resource-intensive than frontend performance testing and is thus more suitable for generating high load.
 
 Some concerns when doing this type of testing are its inability to test "the first mile" of user experience and breadth. Backend testing involves messaging at the protocol level rather than interacting with page elements. It verifies the foundation of an application rather than the highest layer of it that a user ultimately sees. Depending on the complexity of the application architecture, backend testing may also be more expansive in scope.
 
@@ -69,13 +68,16 @@ D: A and B.
 
 ### Question 3
 
+Which of the following statements is true?
 
+A: Frontend performance testing results are not affected by bottlenecks in the backend of an application.
 
-A: 
+B: Frontend performance testing is always carried out with a single automated user.
 
-B: 
-
-C: 
+C: Frontend performance testing can verify user experience in ways that backend performance testing cannot.
 
 ### Answers
 
+1. A. k6 cannot do either manual or accessibility testing at this point.
+2. C. A and B are incorrect because they are referring to frontend performance testing. Backend performance testing does not provide frontend metrics like TTI and it does not interact with applications through a browser.
+3. C. A is incorrect because backend performance bottlenecks can also affect frontend performance. B is incorrect because frontend testing scripts can be executed as part of a load test. C is correct because frontend performance testing measures a real user's experience from the browser, which is not something backend testing can measure.

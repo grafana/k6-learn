@@ -9,7 +9,7 @@ With performance testing, your team can:
 
 - **Improve user experience.** Identify potential bottlenecks and issues early in the development process. Performance testing provides a complete picture of what the experience of a user accessing your application is like, beyond just the application functionality.
 - **Prepare for unexpected demand.** Test beyond expected load to find the breaking points of the application and formulate better procedures for responding to and capitalizing on unprecedented success.
-- **Increased confidence in the application.** Lower the overall risk of failure with systematic performance testing. This reduced risk also builds team confidence. Teams can work knowing their application can withstand unexpected conditions in production.
+- **Increased confidence in the application.** Lower the overall risk of failure with systematic performance testing. This reduced risk also builds team confidence. Teams can work better knowing their application can withstand unexpected conditions in production.
 - **Assess and optimize infrastructure.** Reduce unnecessary infrastructure costs without compromising performance. Simulate scenarios to observe horizontal and vertical scaling, and run experiments to verify the resources that the system under test actually requires.
 
 If performance testing is so valuable, why don't more teams do it?
@@ -86,11 +86,11 @@ B: Performance testing is an activity that requires specialized expertise to car
 
 C: Performance testing requires a production-like environment.
 
-D: Observability and performance testing are complementary approaches to improving application quality.
+D: Performance testing improves overall team morale by building confidence in what the application can withstand.
 
 ### Answers
 
 1. C. Performance testing and observability complement each other. They do not replace each other, and instead work together to improve confidence in a system.
-2. C. A and B are both incorrect because they apply to frontend performance testing.
+2. C. Performance bottlenecks and other issues often cost more to fix when identified in production. Proactive performance testing can more than offset its cost when it identifies and fixes these defects earlier on in development.
 3. D. A is incorrect because performance testing can be done at lower load levels. B is incorrect because anyone can do  performance testing, not just specialized performance testers. C is incorrect because performance testing can be done in development, staging, and test environments as well.
 
