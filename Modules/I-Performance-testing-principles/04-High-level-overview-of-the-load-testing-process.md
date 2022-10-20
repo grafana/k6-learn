@@ -1,13 +1,13 @@
 # High-level overview of the load testing process
 
-In the last section, you learned what load testing is, how it differs from performance testing, and what its test-scenario types are. In this section, you'll learn about the different phases of the load testing process:
+In the last section, you learned what load testing is, how it differs from performance testing, and what its test scenario types are. In this section, you'll learn about the different phases of the load testing process:
 
 - Planning for load testing
 - Scripting a load test
 - Executing load tests
 - Analysis of load testing results
 
-For clarity, these activities are shown as distinct phases here; however, in practice, they often overlap. Like the application-release process, the testing process should be continuous and Agile, with each small increment building upon previous work, growing more and more robust over time.
+For clarity, these activities are shown as distinct phases here; however, in practice, they often overlap. Like the application release process, the testing process should be continuous and Agile, with each small increment building upon previous work, growing more and more robust over time.
 
 ![Continuous Testing Snowball](../../images/continuous-testing-snowball.png)
 
@@ -25,7 +25,7 @@ The focus of Continuous Testing is on organically and iteratively evolving the t
 
 ## Planning for load testing
 
-Planning for a load test is the first part of the process. It involves identifying the reasons _why_ to test, finding _what_ to test, and outlining< _how_, generally, to test it.
+Planning for a load test is the first part of the process. It involves identifying the reasons _why_ to test, finding _what_ to test, and outlining _how_, generally, to test it.
 
 In this phase, we formulate requirements for load testing:
 - Clarify the scope of testing
@@ -39,9 +39,9 @@ Planning for any testing is a team activity, and load testing is no exception. T
 
 ## Scripting a load test
 
-Scripting the load-testing script involves translating the test plan into executable tests. In this phase, you might do some of the following:
+Scripting the load testing script involves translating the test plan into executable tests. In this phase, you might do some of the following:
 - Create test scenarios that adequately cover the requirements
-- Write test scripts using load-testing tools
+- Write test scripts using load testing tools
 - Make scripts realistic
 - Run shakeout tests to verify that the script works as expected
 - Run tests against upstream environments, usually dev or staging
@@ -52,7 +52,7 @@ While tests may be executed while scripting, they are usually for debugging or s
 
 ## Executing load tests
 
-During test execution, the load-testing scripts run against their intended targets, often test environments or production. In the test-execution phase, you might do some of the following:
+During test execution, the load testing scripts run against their intended targets, often test environments or production. In the test-execution phase, you might do some of the following:
 - Set up cloud or on-premise infrastructure
 - Set up observability tools to monitor application server and load-generator health
 - Run shakeout tests to verify that test environments work as expected
@@ -78,7 +78,7 @@ Using the data collected during the test to understand how the system behaves du
 ## Continuous load testing
 
 Continuous load testing is a practice that spans all the testing phases. In continuous testing, you might:
-- Add load-testing scripts into a version-controlled repository
+- Add load testing scripts into a version-controlled repository
 - Incorporate load tests into a CI/CD pipeline
 - Automate reporting
 - Set up notifications for failed tests
