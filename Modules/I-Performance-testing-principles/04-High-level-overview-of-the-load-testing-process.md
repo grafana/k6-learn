@@ -52,7 +52,7 @@ While tests may be executed while scripting, they are usually for debugging or s
 
 ## Executing load tests
 
-During test execution, the load testing scripts run against their intended targets, often test environments or production. In the test-execution phase, you might do some of the following:
+During test execution, the load testing scripts run against their intended targets, often test environments or production. In the test execution phase, you might do some of the following:
 - Set up cloud or on-premise infrastructure
 - Set up observability tools to monitor application server and load-generator health
 - Run shakeout tests to verify that test environments work as expected

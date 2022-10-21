@@ -6,6 +6,8 @@ Before you ramp up your load tests, there's one more thing to add: think time.
 
 ### When should you use think time?
 
+In general, using think time to accurately simulate end users' behavior makes a load testing script more realistic. If realism would help you achieve your test objectives, using think time can help with that.
+
 You should consider adding think time in the following situations:
 - Your test follows a user flow, like accessing different parts of the application in a certain order
 - You want to simulate actions that take some time to carry out, like reading text on a page or filling out a form
@@ -15,10 +17,14 @@ Not including think time in a script that is executed iteratively takes up more 
 
 ### When shouldn't you use think time?
 
+Using think time reduces the maximum request rate per VU that you can achieve in your test. It slows down how quickly requests are sent. 
+
 Think time is unnecessary in the following situations:
 - You want to do a [stress test](Types-of-load-tests.md#Stress-Test) to find out how many requests per second your application can handle
 - The API endpoint you're testing experiences a high amount of requests per second in production that occur without delays
 - Your load generator can run your test script without crossing the 80% CPU utilization mark.
+
+
 
 As you can see, the question of whether or not to use think time is dependent on your testing goals. When in doubt, use think time.
 
