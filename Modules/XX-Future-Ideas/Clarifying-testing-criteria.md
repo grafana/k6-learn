@@ -121,7 +121,7 @@ _Operational requirement:_ The application should process requests with a 95th p
 _SLO:_ The 95th percentile response time for [Application component] is 2 seconds or less.
 *Threshold:* The 95th percentile response time is less than or equal to 2 seconds.
 _Check:_ Verify whether the response time for this request is less than or equal to 2 seconds.
-*Assertion:* If the check failure rate is 10% or higher, stop the test.
+*Assertion:* If the check failure rate is 10% or higher, fail the test.
 
 ## Test your knowledge
 
