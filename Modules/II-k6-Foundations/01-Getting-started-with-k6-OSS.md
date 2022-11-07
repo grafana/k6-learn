@@ -3,7 +3,7 @@
 There are many ways to start scripting with k6, but we're starting with [k6 OSS](https://github.com/grafana/k6) for a few reasons:
 - It is a fully-fledged load testing tool on its own, and it doesn't require a subscription or any payment to use.
 - k6 Cloud, the SaaS platform, also uses k6 OSS, so the skills you learn in this section will apply even if you decide to use k6 Cloud later.
-- You can add advanced scenearios and features to your k6 OSS scripts. The other methods of script generation that we'll discuss later are limited in functionality.
+- You can add advanced scenarios and features to your k6 OSS scripts. The other methods of script generation that we'll discuss later are limited in functionality.
 
 Let's get started!
 
