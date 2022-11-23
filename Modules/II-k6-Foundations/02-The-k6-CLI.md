@@ -150,9 +150,11 @@ Despite the name, these variables can hold many types of information, not just i
 
 ## Changing settings in k6
 
-In this section, you learned how to use command-line flags and environment variables to change your script executes. You have also previously learned how to set some of these options within the script itself. What happens if there is a conflict between these two ways of changing k6 settings?
+In this section, you learned how to use command-line flags and environment variables to change your script executes. You have also previously learned how to set some of these options within the script itself. Check the documentation for a [complete list of options](https://k6.io/docs/using-k6/k6-options/reference/).
 
-k6 always prioritizes settings in this order:
+What happens if there is a conflict between these two ways of changing k6 settings?
+
+k6 always [prioritizes settings](https://k6.io/docs/using-k6/k6-options/how-to/#order-of-precedence) in this order:
 1. Command-line flags
 1. Environment variables
 1. Exported k6 script options
