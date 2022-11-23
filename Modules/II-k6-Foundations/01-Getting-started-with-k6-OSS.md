@@ -116,7 +116,7 @@ That's a lot of metrics! In the next section, we'll go over what each of these l
 
 ## Other resources
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y5tteMKZUqk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Week of Load testing day 3: Installing k6 and running load test](../../images/week-of-testing-youtube.png)](https://www.youtube.com/embed/y5tteMKZUqk)
 
 ## Test your knowledge
 
