@@ -58,13 +58,13 @@ You can use k6 OSS to run test scripts locally (`local`) or on k6 Cloud (`cloud`
 In this test, the test script was executed on your local machine.
 
 ```plain
-script: test.js`
+script: test.js
 ```
 
 This is the filename of the script that was executed.
 
 ```plain
-output: -`
+output: -
 ```
 
 This indicates the default behavior: k6 printed your test results to standard output.
@@ -72,7 +72,7 @@ This indicates the default behavior: k6 printed your test results to standard ou
 k6 can also [output results in other formats](https://k6.io/docs/getting-started/results-output/#external-outputs). These options, when used, are displayed in `output`.
 
 ```plain
-scenarios: (100.00%) 1 scenario, 1 max VUs, 10m30s max duration (incl. graceful stop):`
+scenarios: (100.00%) 1 scenario, 1 max VUs, 10m30s max duration (incl. graceful stop):
 ```
 
 An execution [scenario](Performance-Testing-Terminology.md#Scenario) is a set of instructions about running a test: what code should run, when and how often it should run, and other configurable parameters. In this case, your first test was executed using default parameters: one scenario, one [virtual user (VU)](Performance-Testing-Terminology.md#Virtual-user), and a max duration of 10 minutes and 30 seconds.
@@ -82,7 +82,7 @@ The max duration is the execution time limit; it is the time beyond which the te
 A [graceful stop](Performance-Testing-Terminology.md#Graceful-stop) is a period at the end of the test when k6 finishes any running [iterations](Performance-Testing-Terminology.md#Iteration), if possible. By default, k6 includes a graceful stop of 30 seconds within the max duration of 10 minutes and 30 seconds.
 
 ```plain
-* default: 1 iterations for each of 1 VUs (maxDuration: 10m0s, gracefulStop: 30s)`
+* default: 1 iterations for each of 1 VUs (maxDuration: 10m0s, gracefulStop: 30s)
 ```
 
 `default` here refers to the scenario name. Since the test script did not have any explicitly set up, k6 used the default name.
