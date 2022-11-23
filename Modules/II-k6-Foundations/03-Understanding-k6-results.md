@@ -96,7 +96,7 @@ Think of a virtual user as a single thread or instance that attempts to simulate
 This section of the end-of-test summary is usually empty, but your test script included a line to save part of the response body to the console (`console.log(response.json().data);`). Here's what that looks like in the report:
 
 ```plain
-INFO[0001] Hello world!                                  source=console`
+INFO[0001] Hello world!                                  source=console
 ```
 
 The test script's target endpoint, `https://httpbin.test.k6.io/post` returns whatever was sent in the POST body, so this is a good sign! The target endpoint received the `Hello world!` that you sent in your script and sent the same body back.
