@@ -20,7 +20,7 @@ The main danger in removing or reducing think time is that it increases how quic
 Using think time reduces the maximum request rate per VU that you can achieve in your test. It slows down how quickly requests are sent. 
 
 Think time is unnecessary in the following situations:
-- You want to do a [stress test](Types-of-load-tests.md#Stress-Test) to find out how many requests per second your application can handle
+- You want to do a [stress test](https://k6.io/docs/misc/glossary/#stress-test) to find out how many requests per second your application can handle
 - The API endpoint you're testing experiences a high amount of requests per second in production that occur without delays
 - Your load generator can run your test script without crossing the 80% CPU utilization mark.
 
