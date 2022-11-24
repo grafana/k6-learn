@@ -11,7 +11,7 @@ In general, using think time to accurately simulate end users' behavior makes a 
 You should consider adding think time in the following situations:
 - Your test follows a user flow, like accessing different parts of the application in a certain order
 - You want to simulate actions that take some time to carry out, like reading text on a page or filling out a form
-- Your [load generator](Performance-Testing-Terminology.md#Load-generator), or the machine you're running k6 from, displays high (> 80%) CPU utilization during test execution.
+- Your load generator, or the machine you're running k6 from, displays high (> 80%) CPU utilization during test execution.
 
 The main danger in removing or reducing think time is that it increases how quickly requests are sent, which can, in turn, increase CPU utilization. When CPU usage is too high, the load generator itself is struggling with *sending* the requests, which could lead to inaccurate results such as false negatives. Adding think time is one way to [reduce high CPU usage](https://k6.io/docs/cloud/analyzing-results/performance-insights/#high-load-generator-cpu-usage). 
 
