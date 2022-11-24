@@ -1,4 +1,4 @@
-k6 doesn't natively have a way to graph load-testing results, but it does have a lot of options to save output in different formats. You can find the full list of results visualization integrations or tutorials [here](https://k6.io/docs/results-visualization/).
+k6 doesn't natively have a way to graph load-testing results. However, it does have a lot of options to save the output in different formats. This [blog](https://k6.io/blog/ways-to-visualize-k6-results/) is a good starting point. And you can find the full list of results visualization integrations or tutorials [here](https://k6.io/docs/integrations/#result-store-and-visualization).
 
 In this section, we'll discuss two common test-result formats: CSV and JSON.
 
@@ -48,11 +48,13 @@ The results file uses the following columns:
 - **`timestamp`**: The local date and time that each measurement was taken, [in Epoch time](https://www.epochconverter.com/).
 - **`metric_value`**: The reading for the given metric at the timestamp provided. The unit of measurement for this value differs depending on the metric. For example, `http_req_duration` values are in milliseconds.
 - **`check`**: The unique name given to the check being verified. In the check example below, the check name is `Application says hello`:
-```js
-check(response, {
-      'Application says hello': (r) => r.body.includes('Hello world!')
-});
-```
+
+  ```js
+  check(response, {
+  'Application says hello': (r) => r.body.includes('Hello world!')
+  });
+  ```
+      
 - **`error`**: The text of any non-HTTP errors encountered, such as network or DNS errors. This value is empty if there were no errors.
 - **`error_code`**: A k6 error code. This value is empty if there were no errors. [Here is a full list](https://k6.io/docs/javascript-api/error-codes) of possible error codes.
 - **`expected_response`**: A boolean (`true` or `false`) indicating whether the response returned was as expected (an HTTP code less than 400 by default).
@@ -98,7 +100,9 @@ Each line is either a metric or a point. A **metric** defines either [built-in m
 Which of the following statements about the default k6 CSV results format is true?
 
 A: To graph the response time, you must take the number in the `metric_value` column from every line in the CSV file.
+
 B: Each line contains a metric and a value for that metric at a specific timestamp.
+
 C: The `metric_name` column in the CSV file refers to the URL of the HTTP request that was sent.
 
 ### Question 2
@@ -112,7 +116,9 @@ Below is a line from a JSON containing k6 test results:
 What can we determine from this line?
 
 A: The maximum number of VUs at the time was 100.
+
 B: This measurement is for the `http_req_duration` metric.
+
 C: The test reached the maximum number of VUs at 12:46 on January 5th, 2022.
 
 ### Question 3
@@ -120,7 +126,9 @@ C: The test reached the maximum number of VUs at 12:46 on January 5th, 2022.
 Which of the following is the correct command for outputting k6 results to different formats? 
 
 A: `k6 run test.js --out json=myresults.json`
+
 B: `k6 run test -o csv=results.csv`
+
 C: `k6 output csv=results.csv`
 
 ## k6 Cloud
