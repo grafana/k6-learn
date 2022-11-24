@@ -98,14 +98,11 @@ thresholds: {
 ```
 
 The threshold above states that:
-- 90% of all HTTP requests should have a response time less than 400 ms
-- 95% of all HTTP requests should have a response time less than 800 ms
-- 99.9% of all HTTP requests should have a response time less than 2000 ms
+- 90% of all HTTP requests should have a response time lower than 400 ms
+- 95% of all HTTP requests should have a response time lower than 800 ms
+- 99.9% of all HTTP requests should have a response time lower than 2000 ms
 
-> :warning: Specifying multiple thresholds for the same metric.
-> If you want to include more than one threshold for the same metric, such as `http_req_duration` above, you **must** declare them in an array.
-
-> Note that the example below will NOT work, and will result in only the last line being used as a threshold:
+> :warning: Specifying multiple thresholds for the same metric. If you want to include more than one threshold for the same metric, such as `http_req_duration` above, you **must** declare them in an array. The example below will NOT work, and will result in only the last line being used as a threshold:
 
 ```js
 thresholds: {
