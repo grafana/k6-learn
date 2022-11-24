@@ -93,13 +93,13 @@ k6 will execute the test for 40 iterations or 5 minutes, *whichever ends earlier
 
 Defining iterations and durations both cause k6 to execute your test script using a [simple load profile](../XX-Future-Ideas/Parameters-of-a-load-test.md#Simple-load-profile): VUs are started, sustained for a certain time or number of iterations, and then ended.
 
-![A simple load profile](load_profile-no_ramp-up_or_ramp-down.png)
+![A simple load profile](../../images/load_profile-no_ramp-up_or_ramp-down.png)
 
 _Simple load profile_
 
-What if you want to add [a ramp-up](Performance-Testing-Terminology.md#Ramp-up) or [ramp-down](Performance-Testing-Terminology.md#Ramp-down), so that the profile looks more like this?
+What if you want to add a [ramp-up or ramp-down](../XX-Future-Ideas/Parameters-of-a-load-test.md#ramp-up-and-ramp-down-periods), so that the profile looks more like this?
 
-![Constant load profile, with ramps](load_profile-constant.png.png)
+![Constant load profile, with ramps](../../images/load_profile-constant.png.png)
 
 _Constant load profile, with ramps_
 
@@ -157,7 +157,9 @@ export default function() {
 You've been instructed to create a script that sends the same HTTP request exactly 100 times. Which of the following test options is the best way to accomplish this task?
 
 A: Iterations
+
 B: Stages
+
 C: Duration
 
 
@@ -174,7 +176,9 @@ export let options = {
 ```
 
 A: 10 hours
+
 B: As long as it takes to finish 3 iterations or 1h, whichever is shorter
+
 C: 1 hour plus as long as it takes to finish 3 iterations
 
 
@@ -189,7 +193,7 @@ export let options = {
     { duration: '10m', target: 100 },
     { duration: '30m', target: 100 },
     { duration: '10m', target: 200 },
-	{ duration: '30m', target: 200 },
+    { duration: '30m', target: 200 },
     { duration: '10m', target: 300 },
     { duration: '30m', target: 300 },	  
   ],
