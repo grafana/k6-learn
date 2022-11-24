@@ -75,11 +75,11 @@ k6 can also [output results in other formats](https://k6.io/docs/getting-started
 scenarios: (100.00%) 1 scenario, 1 max VUs, 10m30s max duration (incl. graceful stop):
 ```
 
-An execution [scenario](Performance-Testing-Terminology.md#Scenario) is a set of instructions about running a test: what code should run, when and how often it should run, and other configurable parameters. In this case, your first test was executed using default parameters: one scenario, one [virtual user (VU)](Performance-Testing-Terminology.md#Virtual-user), and a max duration of 10 minutes and 30 seconds.
+An execution [scenario](https://k6.io/docs/misc/glossary/#scenario) is a set of instructions about running a test: what code should run, when and how often it should run, and other configurable parameters. In this case, your first test was executed using default parameters: one scenario, one [virtual user (VU)](https://k6.io/docs/misc/glossary/#virtual-user), and a max duration of 10 minutes and 30 seconds.
 
 The max duration is the execution time limit; it is the time beyond which the test will be forcibly stopped. In this case, k6 received a response to the request in the script long before this time period elapsed.
 
-A [graceful stop](Performance-Testing-Terminology.md#Graceful-stop) is a period at the end of the test when k6 finishes any running [iterations](Performance-Testing-Terminology.md#Iteration), if possible. By default, k6 includes a graceful stop of 30 seconds within the max duration of 10 minutes and 30 seconds.
+A [graceful stop](https://k6.io/docs/misc/glossary/#graceful-stop) is a period at the end of the test when k6 finishes any running [iterations](https://k6.io/docs/misc/glossary/#iteration), if possible. By default, k6 includes a graceful stop of 30 seconds within the max duration of 10 minutes and 30 seconds.
 
 ```plain
 * default: 1 iterations for each of 1 VUs (maxDuration: 10m0s, gracefulStop: 30s)
@@ -116,7 +116,7 @@ In this case, the test ran for 0.7 seconds with 1 VU. A single iteration was exe
 
 ### k6 built-in metrics
 
-Now for the [metrics](Performance-Testing-Terminology.md#Metric)! k6 comes with [many built-in metrics](https://k6.io/docs/using-k6/metrics/#built-in-metrics).
+Now for the [metrics](https://k6.io/docs/misc/glossary/#metric)! k6 comes with [many built-in metrics](https://k6.io/docs/using-k6/metrics/#built-in-metrics).
 
 ```plain
      data_received..................: 5.9 kB 9.0 kB/s
@@ -164,7 +164,7 @@ To improve accuracy and prevent failed requests from skewing results, use the 95
 
 #### Error rate
 
-The `http_req_failed` metric describes the [error rate](Performance-Testing-Terminology.md#Error-rate) for the test. The error rate is the number of requests that failed during the test as a percentage of the total requests.
+The `http_req_failed` metric describes the error rate for the test. The error rate is the number of requests that failed during the test as a percentage of the total requests.
 
 ```plain
 http_req_failed................: 0.00%  ✓ 0        ✗ 1
