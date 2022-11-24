@@ -27,8 +27,8 @@ Then, open up a new tab and click on the k6 browser extension icon. You'll see a
 
 ![k6-browser-recorder-01](../../images/k6-browser-recorder-01.png)
 Here's what those options mean:
-- **Download HAR file**: HAR stands for HTTP ARchive, which is a JSON-formatted file that saves network information like HTTP requests and timings. Enable this if you'd like to be able to be able to save the recording somewhere other than k6. Otherwise, **leave this disabled**.
-- **Clear cache (last 7 days):** Enabling this deletes your browser cache for the last week. This is useful if what you want to simulate a new user to your application. Disable this if you want to simulate an existing user. Otherwise, **leave this option enabled**. (Read more about [caching options here](../XX-Future-Ideas/Caching-options.md).)
+- **Download HAR file**: HAR stands for HTTP ARchive, which is a JSON-formatted file that saves network information like HTTP requests and timings. Enable this if you'd like to be able to save the recording somewhere other than k6. Otherwise, **leave this disabled**.
+- **Clear cache (last 7 days):** Enabling this deletes your browser cache for the last week. This is useful if what you want to simulate a new user to your application. Disable this if you want to simulate an existing user. Otherwise, **leave this option enabled**. Read more about [caching options here](../XX-Future-Ideas/Caching-options.md).
 - **Correlate request/response data:** The k6 recorder can automatically detect when dynamic values are being passed to the application servers and try to correlate them for you. This doesn't always work for complex applications, but it can be a good starting point for scripting. **Enable this option** unless you'd prefer to have a raw recording.
 
 Next, click the _Start recording_ button. It may take a few seconds for your last week's browser cache to be deleted. Wait until you see the following screen:
@@ -81,7 +81,6 @@ You can modify the script here, or click the _COPY SCRIPT_ button to select all 
 <details>
 <summary> Example recorded script </summary>
 
-%%
 ```js
 // Scenario: Scenario_1 (executor: ramping-vus)
 
@@ -665,7 +664,6 @@ export function scenario_1() {
 ```
 </details>
 
-%%
 ### Test Builder
 
 If you chose the Test Builder option in the previous step, you'll see a screen like this:
@@ -687,11 +685,11 @@ However, recording a script also has the following limitations:
 For these reasons, you can reasonably expect a script recording to do a lot of the up-front work in getting started with a k6 script for you, but it's still a best practice to expect to modify your script, [debugging](../III-k6-Intermediate/01-How-to-debug-k6-load-testing-scripts.md) it to work the way you want it to and [making it more realistic](../XX-Future-Ideas/Best-practices-for-designing-realistic-k6-scripts.md).
 
 Here are some things you should consider doing after recording a script:
-- Renaming or modifying the [groups](Organizing-code-in-k6-by-transaction---groups-and-tags.md#Groups) recorded
+- Renaming or modifying the [groups](https://k6.io/docs/using-k6/tags-and-groups/#groups) recorded
 - [Adding checks to your script](04-Adding-checks-to-your-script.md)
 - [Making think time dynamic](05-Adding-think-time-using-sleep.md#Dynamic-think-time)
 - Adding or modifying [test options](06-k6-Load-Test-Options.md)
-- Adding ways to [organize code](Organizing-code-in-k6-by-transaction---groups-and-tags.md) and help colleagues understand what the script does
+- Adding ways to [organize code](https://k6.io/docs/using-k6/tags-and-groups/) and help colleagues understand what the script does
 - Shaking out the script by running it a few times and [debugging it](../III-k6-Intermediate/01-How-to-debug-k6-load-testing-scripts.md)
 
 ## Test your knowledge
