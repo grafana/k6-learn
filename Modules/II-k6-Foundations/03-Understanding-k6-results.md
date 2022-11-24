@@ -58,13 +58,13 @@ You can use k6 OSS to run test scripts locally (`local`) or on k6 Cloud (`cloud`
 In this test, the test script was executed on your local machine.
 
 ```plain
-script: test.js
+script: test.js`
 ```
 
 This is the filename of the script that was executed.
 
 ```plain
-output: -
+output: -`
 ```
 
 This indicates the default behavior: k6 printed your test results to standard output.
@@ -96,7 +96,7 @@ Think of a virtual user as a single thread or instance that attempts to simulate
 This section of the end-of-test summary is usually empty, but your test script included a line to save part of the response body to the console (`console.log(response.json().data);`). Here's what that looks like in the report:
 
 ```plain
-INFO[0001] Hello world!                                  source=console
+INFO[0001] Hello world!                                  source=console`
 ```
 
 The test script's target endpoint, `https://httpbin.test.k6.io/post` returns whatever was sent in the POST body, so this is a good sign! The target endpoint received the `Hello world!` that you sent in your script and sent the same body back.
@@ -260,7 +260,9 @@ default ✓ [======================================] 10 VUs  2m0s
 Which of the following is the best value to use as the response time for all HTTP requests?
 
 A: 131.04 ms
+
 B: 122.08 ms
+
 C: 4.46 ms
 
 ### Question 2
@@ -268,7 +270,9 @@ C: 4.46 ms
 How many virtual users did this test execute?
 
 A: 9463
+
 B: 1
+
 C: 10
 
 
@@ -277,7 +281,9 @@ C: 10
 How many requests failed?
 
 A: 0
+
 B: 9463
+
 C: 10
 
 ### Answers
