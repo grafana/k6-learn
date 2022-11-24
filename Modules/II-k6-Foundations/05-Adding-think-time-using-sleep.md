@@ -2,7 +2,7 @@
 
 Before you ramp up your load tests, there's one more thing to add: think time.
 
-[Think time](Performance-Testing-Terminology.md#Think-time) is the amount of time that a script pauses during test execution to simulate delays that real users have in the course of using an application.
+The think time is the amount of time that a script pauses during test execution to simulate delays that real users have in the course of using an application.
 
 ### When should you use think time?
 
@@ -102,7 +102,9 @@ In the absence of any data on production traffic, however, you can time how long
 You're testing a new "Open a Ticket" page where users are asked to type in their name, email address, and a description of their issue, and their responses are sent to the application team. Should you use think time?
 
 A: Yes, because it will take time for the application team to respond to the ticket.
+
 B: Yes, because users take time to type out their issue.
+
 C: No, because the load generator's CPU utilization is too high.
 
 ### Question 2
@@ -112,7 +114,9 @@ In the following line, what does the number 3 represent?
 `sleep(3)`
 
 A: A think time of 3 milliseconds
+
 B: The number of iterations that will get a think time
+
 C: A think time of 3 seconds
 
 ### Question 3
@@ -120,7 +124,9 @@ C: A think time of 3 seconds
 A script without think time runs with a single iteration, and the iteration duration was 5 seconds. What would the iteration duration have been if the script had included a sleep of 1 second?
 
 A: 5 seconds
+
 B: 6 seconds
+
 C: 4 seconds
 
 ### Answers
