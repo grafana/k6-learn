@@ -12,7 +12,7 @@ So, remove the `console.log()` statement and add a check by copying this code sn
 
 ```js
 import http from 'k6/http';
-import check from 'k6';
+import { check } from 'k6';
 
 export default function() {
   let url = 'https://httpbin.test.k6.io/post';
@@ -26,7 +26,7 @@ export default function() {
 Note that you need to import the `check` from the k6 library:
 
 ```js
-import check from 'k6'
+import { check } from 'k6';
 ```
 
 And you need to put the actual check in the default function:
@@ -131,9 +131,7 @@ This time, the `✗ 1` indicates that one check failed.
 
 You may have noticed that in the last example, `http_req_failed`, or the HTTP error rate, was not affected by the failing check. This is because checks do not stop a script from executing successfully, and they do not return a failed exit status.
 
-```ad-tip
-To make failing checks stop your test, you can [combine them with thresholds](https://k6.io/docs/using-k6/thresholds/#failing-a-load-test-using-checks).
-```
+> To make failing checks stop your test, you can [combine them with thresholds](https://k6.io/docs/using-k6/thresholds/#failing-a-load-test-using-checks).
 
 ## Other types of checks
 
@@ -149,10 +147,11 @@ You're almost ready to scale up your test to multiple users! Before you do so, t
 
 Which of the following can you use a check to verify?
 
-A: Whether the 95th percentage response time of the request was greater than 1 s
-B: The size of the response body returned
-C: The error rate of the test
+A: Whether the 95th percentage response time of the request was greater than 1s
 
+B: The size of the response body returned
+
+C: The error rate of the test
 
 
 ### Question 2
@@ -160,7 +159,9 @@ C: The error rate of the test
 What part of the test do checks assess?
 
 A: The response time of a request
+
 B: The syntax of the request sent to the application
+
 C: The application server's response
 
 
@@ -176,7 +177,9 @@ In the following snippet from the end-of-test summary, how many checks failed?
 ```
 
 A: 51.50%
+
 B: 1215
+
 C: 1144
 
 ### Answer
