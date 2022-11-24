@@ -131,7 +131,7 @@ This time, the `✗ 1` indicates that one check failed.
 
 You may have noticed that in the last example, `http_req_failed`, or the HTTP error rate, was not affected by the failing check. This is because checks do not stop a script from executing successfully, and they do not return a failed exit status.
 
-> To make failing checks stop your test, you can [combine them with thresholds](https://k6.io/docs/using-k6/thresholds/#failing-a-load-test-using-checks).
+> :bulb: To make failing checks stop your test, you can [combine them with thresholds](https://k6.io/docs/using-k6/thresholds/#failing-a-load-test-using-checks).
 
 ## Other types of checks
 
