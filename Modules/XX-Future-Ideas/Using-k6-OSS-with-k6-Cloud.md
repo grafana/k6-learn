@@ -123,5 +123,5 @@ C: `k6 run script.js -o cloud`
 ### Answers
 
 1. C.
-2. B.
+2. C.
 3. A.
