@@ -2,8 +2,7 @@ k6 Cloud is an optional service and load testing platform that provides the best
 
 ## Using k6 OSS with k6 Cloud
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jDmMmc75RRM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+[![Week of Load testing day 4: Streaming results to the cloud and stepped load profiles on k6](../../images/week-of-testing-day4-youtube.png)](https://www.youtube.com/embed/jDmMmc75RRM)
 
 ### Sign up for k6 Cloud
 
@@ -96,27 +95,33 @@ These commands let you easily switch between execution modes depending on the ty
 Which of the following do you need to be able to link your k6 Cloud account for use in k6 OSS?
 
 A: The receipt number for your purchase of a k6 Cloud plan
-B: Your k6 Cloud account number
-C: Your API token
 
-Answer: C
+B: Your k6 Cloud account number
+
+C: Your API token
 
 ### Question 2
 
 What can you do for free on k6 Cloud?
 
 A: Nothing; using k6 Cloud requires a payment plan
-B: Run a test on 50 cloud load generators
-C: Run 50 tests on cloud infrastructure
 
-Answer: C
+B: Run a test on 50 cloud load generators
+
+C: Run 50 tests on cloud infrastructure
 
 ### Question 3
 
 Which of the following commands would NOT send k6 test results to k6 Cloud?
 
 A: `k6 run script.js`
+
 B: `k6 cloud script.js`
+
 C: `k6 run script.js -o cloud`
 
-Answer: A
+### Answers
+
+1. C.
+2. B.
+3. A.
