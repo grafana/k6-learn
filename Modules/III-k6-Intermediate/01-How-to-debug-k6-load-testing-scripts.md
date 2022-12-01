@@ -145,7 +145,7 @@ INFO[0000] username: guest  / password: 12345          source=console
 
 That way, you know exactly which combination to try. Perhaps the username or the password is incorrect, or perhaps both. Either way, adding logs to your script help you understand the value of key variables your script uses.
 
-> :warning: **Disable logging during load tests**. `console.log()` can be very resource-intensive, and too much logging can affect your test results. Comment out logging as much as possible to avoid high resource utilization during test execution.
+> :warning: **Disable logging during load tests**. `console.log()` can be very resource-intensive, and too much logging can affect your test results. Comment out logging as much as possible to avoid high resource utilization as the test runs.
 
 Now, imagine you try to log into the app using the username and password selected by the script (`guest` and `12345`) and it doesn't work. Aha! The credentials were wrong to begin with. You verify that the other two accounts you had work.
 

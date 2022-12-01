@@ -2,7 +2,7 @@
 
 Before you ramp up your load tests, there's one more thing to add: think time.
 
-The think time is the amount of time that a script pauses during test execution to simulate delays that real users have in the course of using an application.
+_Think time_ is the amount of time that a script pauses during test execution to simulate delays that real users have in the course of using an application.
 
 ### When should you use think time?
 
@@ -20,7 +20,7 @@ The main danger in removing or reducing think time is that it increases how quic
 Using think time reduces the maximum request rate per VU that you can achieve in your test. It slows down how quickly requests are sent. 
 
 Think time is unnecessary in the following situations:
-- You want to do a [stress test](https://k6.io/docs/misc/glossary/#stress-test) to find out how many requests per second your application can handle
+- You want to do a [stress test](https://k6.io/docs/test-types/stress-testing/) to find out how many requests per second your application can handle
 - The API endpoint you're testing experiences a high amount of requests per second in production that occur without delays
 - Your load generator can run your test script without crossing the 80% CPU utilization mark.
 

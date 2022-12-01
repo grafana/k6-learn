@@ -1,4 +1,4 @@
-In k6, [thresholds](https://k6.io/docs/misc/glossary/#threshold) are used to codify service-level objectives (SLOs); that is, developers and testers using k6 are encouraged to define SLOs for each test as part of the test script options. In this context, thresholds are a way to implement testing criteria rather than testing criteria themselves. Thresholds could also be used to implement service-level Agreements (SLAs).
+k6 encourages developers and testers to define goals for each test. To do this, you can set [thresholds](https://k6.io/docs/using-k6/thresholds) to evaluate whether the test performs to a certain criteria. As an example, you can use thresholds to assert that the system performs within your service-level objectives while the test runs.
 
 You can also use Thresholds to determine whether a test passed or failed. Adding thresholds to a load-testing script is useful because it tells k6 to alert you when those thresholds are breached, or even stop the test. Having thresholds as part of the code makes it easier for other colleagues to step in and run the test.
 
@@ -147,7 +147,7 @@ thresholds: {
 },
 ```
 
-The extra parameter `abortOnFail: true` instructs k6 to stop the test (without a [graceful stop](https://k6.io/docs/misc/glossary/#graceful-stop)) as soon as the threshold is not met. In this case, that happens when the error rate goes over 5%. k6 will display the end-of-test summary report with an error that looks like this:
+The extra parameter `abortOnFail: true` instructs k6 to stop the test (without a [graceful stop](https://k6.io/docs/misc/glossary/#graceful-stop)) as soon as the threshold is crossed. In this case, that happens when the error rate goes over 5%. k6 will display the end-of-test summary report with an error that looks like this:
 
 ```plain
 ERRO[0012] some thresholds have failed 

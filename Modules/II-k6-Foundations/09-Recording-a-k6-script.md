@@ -27,9 +27,10 @@ Then, open up a new tab and click on the k6 browser extension icon. You'll see a
 
 ![k6-browser-recorder-01](../../images/k6-browser-recorder-01.png)
 Here's what those options mean:
-- **Download HAR file**: HAR stands for HTTP ARchive, which is a JSON-formatted file that saves network information like HTTP requests and timings. Enable this if you'd like to be able to save the recording somewhere other than k6. Otherwise, **leave this disabled**.
-- **Clear cache (last 7 days):** Enabling this deletes your browser cache for the last week. This is useful if what you want to simulate a new user to your application. Disable this if you want to simulate an existing user. Otherwise, **leave this option enabled**. Read more about [caching options here](../XX-Future-Ideas/Caching-options.md).
-- **Correlate request/response data:** The k6 recorder can automatically detect when dynamic values are being passed to the application servers and try to correlate them for you. This doesn't always work for complex applications, but it can be a good starting point for scripting. **Enable this option** unless you'd prefer to have a raw recording.
+- **Download HAR file**: HAR stands for HTTP ARchive, which is a JSON-formatted file that saves network information like HTTP requests and timings. **Enable this if you'd like to be able to save the recording somewhere other than k6**. 
+- **Clear cache (last 7 days):** Enabling this deletes your browser cache for the last week. This is useful if what you want to simulate a new user to your application. **Disable this if you want to simulate an existing user.** 
+-  Read more about [caching options](../XX-Future-Ideas/Caching-options.md).
+- **Correlate request/response data:** The k6 recorder can automatically detect when dynamic values are being passed to the application servers and try to correlate them for you. This doesn't always work for complex applications, but it can be a good starting point for scripting. **Enable this option unless you'd prefer to have a raw recording**.
 
 Next, click the _Start recording_ button. It may take a few seconds for your last week's browser cache to be deleted. Wait until you see the following screen:
 
