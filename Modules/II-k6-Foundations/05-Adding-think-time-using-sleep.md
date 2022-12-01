@@ -2,7 +2,7 @@
 
 Before you ramp up your load tests, there's one more thing to add: think time.
 
-[Think time](Performance-Testing-Terminology.md#Think-time) is the amount of time that a script pauses during test execution to simulate delays that real users have in the course of using an application.
+_Think time_ is the amount of time that a script pauses during test execution to simulate delays that real users have in the course of using an application.
 
 ### When should you use think time?
 
@@ -11,7 +11,7 @@ In general, using think time to accurately simulate end users' behavior makes a 
 You should consider adding think time in the following situations:
 - Your test follows a user flow, like accessing different parts of the application in a certain order
 - You want to simulate actions that take some time to carry out, like reading text on a page or filling out a form
-- Your [load generator](Performance-Testing-Terminology.md#Load-generator), or the machine you're running k6 from, displays high (> 80%) CPU utilization during test execution.
+- Your load generator, or the machine you're running k6 from, displays high (> 80%) CPU utilization during test execution.
 
 The main danger in removing or reducing think time is that it increases how quickly requests are sent, which can, in turn, increase CPU utilization. When CPU usage is too high, the load generator itself is struggling with *sending* the requests, which could lead to inaccurate results such as false negatives. Adding think time is one way to [reduce high CPU usage](https://k6.io/docs/cloud/analyzing-results/performance-insights/#high-load-generator-cpu-usage). 
 
@@ -20,7 +20,7 @@ The main danger in removing or reducing think time is that it increases how quic
 Using think time reduces the maximum request rate per VU that you can achieve in your test. It slows down how quickly requests are sent. 
 
 Think time is unnecessary in the following situations:
-- You want to do a [stress test](Types-of-load-tests.md#Stress-Test) to find out how many requests per second your application can handle
+- You want to do a [stress test](https://k6.io/docs/test-types/stress-testing/) to find out how many requests per second your application can handle
 - The API endpoint you're testing experiences a high amount of requests per second in production that occur without delays
 - Your load generator can run your test script without crossing the 80% CPU utilization mark.
 
@@ -102,7 +102,9 @@ In the absence of any data on production traffic, however, you can time how long
 You're testing a new "Open a Ticket" page where users are asked to type in their name, email address, and a description of their issue, and their responses are sent to the application team. Should you use think time?
 
 A: Yes, because it will take time for the application team to respond to the ticket.
+
 B: Yes, because users take time to type out their issue.
+
 C: No, because the load generator's CPU utilization is too high.
 
 ### Question 2
@@ -112,7 +114,9 @@ In the following line, what does the number 3 represent?
 `sleep(3)`
 
 A: A think time of 3 milliseconds
+
 B: The number of iterations that will get a think time
+
 C: A think time of 3 seconds
 
 ### Question 3
@@ -120,7 +124,9 @@ C: A think time of 3 seconds
 A script without think time runs with a single iteration, and the iteration duration was 5 seconds. What would the iteration duration have been if the script had included a sleep of 1 second?
 
 A: 5 seconds
+
 B: 6 seconds
+
 C: 4 seconds
 
 ### Answers

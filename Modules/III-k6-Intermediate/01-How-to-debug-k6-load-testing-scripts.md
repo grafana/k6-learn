@@ -135,7 +135,6 @@ export default function() {
         'is status 200': (r) => r.status === 200,
     })
 }
-}
 ```
 
 The `console.log()` statement prints out the exact combination used, like this:
@@ -146,10 +145,7 @@ INFO[0000] username: guest  / password: 12345          source=console
 
 That way, you know exactly which combination to try. Perhaps the username or the password is incorrect, or perhaps both. Either way, adding logs to your script help you understand the value of key variables your script uses.
 
-```ad-warning
-title: Disable logging during load tests
-`console.log()` can be very resource-intensive, and too much logging can affect your test results. Comment out logging as much as possible to avoid high resource utilization during test execution.
-```
+> :warning: **Disable logging during load tests**. `console.log()` can be very resource-intensive, and too much logging can affect your test results. Comment out logging as much as possible to avoid high resource utilization as the test runs.
 
 Now, imagine you try to log into the app using the username and password selected by the script (`guest` and `12345`) and it doesn't work. Aha! The credentials were wrong to begin with. You verify that the other two accounts you had work.
 
@@ -246,10 +242,7 @@ X-Powered-By: PHP/5.6.40
   group= iter=0 request_id=d33e02d3-0ac5-46cd-4437-45650f2c052e scenario=default source=http-debug vu=1
 ```
 
-```ad-warning
-title: Use HTTP-debug only while debugging
-`http-debug` can be quite noisy, so avoid using it for longer or larger tests. It is best used for troubleshooting while writing a script.
-```
+> :warning: **Use HTTP-debug only while debugging** `http-debug` can be quite noisy, so avoid using it for longer or larger tests. It is best used for troubleshooting while writing a script.
 
 The end-of-test summary now includes information on 2 requests and 2 responses. But wait a minute. Doesn't the script have only one request?
 
@@ -337,7 +330,9 @@ CSRF ([Cross-Site Request Forgery](https://owasp.org/www-community/attacks/csrf)
 What's the best way to verify whether an application returns a PDF file in response to a request sent by your script?
 
 A: Add a check based on the response body size.
+
 B: Use the `http-debug` flag to try to read the content of the PDF.
+
 C: Add a `console.log()` statement after the request is made.
 
 ### Question 2
@@ -353,6 +348,7 @@ check(response, {
 ```
 
 B: `k6 run test.js --http-debug="rand"`
+
 C: `console.log('rand', rand);`
 
 ### Question 3
@@ -360,7 +356,9 @@ C: `console.log('rand', rand);`
 Why should you disable as much logging as possible during a ramped-up load test?
 
 A: You should never do any logging when you're running a proper test.
+
 B: Unnecessary logging eats up resources on the load generator.
+
 C: Using `http-debug` is a better choice for use during a load test.
 
 ### Answers

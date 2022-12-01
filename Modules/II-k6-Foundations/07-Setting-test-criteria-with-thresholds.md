@@ -1,8 +1,8 @@
-In [Clarifying test criteria](../XX-Future-Ideas/Clarifying-testing-criteria.md#Thresholds), we talked a bit about [thresholds](Performance-Testing-Terminology.md#Threshold) and how they can be used to implement other criteria, such as SLAs.
+k6 encourages developers and testers to define goals for each test. To do this, you can set [thresholds](https://k6.io/docs/using-k6/thresholds) to evaluate whether the test performs to a certain criteria. As an example, you can use thresholds to assert that the system performs within your service-level objectives while the test runs.
 
-You can also use Thresholds to determine whether a test passed and failed. Adding thresholds to a load-testing script is useful because it tells k6 to alert you when those thresholds are breached, or even stop the test. Having thresholds as part of the code makes it easier for other colleagues to step in and run the test.
+You can also use Thresholds to determine whether a test passed or failed. Adding thresholds to a load-testing script is useful because it tells k6 to alert you when those thresholds are breached, or even stop the test. Having thresholds as part of the code makes it easier for other colleagues to step in and run the test.
 
-If you'd like to run load tests within a [CI/CD](Performance-Testing-Terminology.md#CI-CD) pipeline, you'll also want k6 to send non-zero exit codes so that failures are clearly recorded.
+If you'd like to run load tests within a CI/CD pipeline, you'll also want k6 to send non-zero exit codes so that failures are clearly recorded.
 
 You can add thresholds to a k6 script in the Test Options object:
 
@@ -43,7 +43,7 @@ thresholds: {
 },
 ```
 
-To add a threshold for the error rate, use the metric `http_req_failed` and enter the error rate that you expect the test to fall within. By default, `http_req_failed` counts any HTTP 4xx and HTTP 5xx errors as a failure (but you can change this behavior with [`setResponseCallback()`](https://k6.io/docs/javascript-api/k6-http/setresponsecallback-callback/)).
+To add a threshold for the error rate, use the metric `http_req_failed` and enter the error rate that you expect the test to fall within. By default, `http_req_failed` counts any HTTP 4xx and HTTP 5xx errors as a failure. You can change this behavior with [`setResponseCallback()`](https://k6.io/docs/javascript-api/k6-http/setresponsecallback-callback/).
 
 The threshold above will be met only if the error rate during the test is less than or equal to 5%.
 
@@ -81,7 +81,7 @@ That includes:
 
 #### Rule of thumb: response time
 
-![](52qQi-marketing-strategies-app-and-mobile-page-load-time-statistics-downlo.jpg)
+[![Google mobile-page-speed-new-industry-benchmarks](../../images/52qQi-marketing-strategies-app-and-mobile-page-load-time-statistics-downlo.jpg)](https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/page-load-time-statistics/)
 
 [According to research by Google](https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/), the probability of potential customers leaving your site increases by 32% when the response time increases to 3 seconds.
 
@@ -98,21 +98,17 @@ thresholds: {
 ```
 
 The threshold above states that:
-- 90% of all HTTP requests should have a response time less than 400 ms
-- 95% of all HTTP requests should have a response time less than 800 ms
-- 99.9% of all HTTP requests should have a response time less than 2000 ms
+- 90% of all HTTP requests should have a response time lower than 400 ms
+- 95% of all HTTP requests should have a response time lower than 800 ms
+- 99.9% of all HTTP requests should have a response time lower than 2000 ms
 
-```ad-warning
-title: Specifying multiple thresholds for the same metric
-If you want to include more than one threshold for the same metric, such as `http_req_duration` above, you **must** declare them in an array.
-
-Note that the example below will NOT work, and will result in only the last line being used as a threshold:
+> :warning: Specifying multiple thresholds for the same metric. If you want to include more than one threshold for the same metric, such as `http_req_duration` above, you **must** declare them in an array. The example below will NOT work, and will result in only the last line being used as a threshold:
 
 ```js
 thresholds: {
-    http_req_duration: ['p(90) < 400'],
-	http_req_duration: ['p(95) < 800'],
-	http_req_duration: ['p(99.9) < 2000'],
+  http_req_duration: ['p(90) < 400'],
+  http_req_duration: ['p(95) < 800'],
+  http_req_duration: ['p(99.9) < 2000'],
 },
 ```
 
@@ -122,7 +118,7 @@ As you learned in [Adding checks to your script](04-Adding-checks-to-your-script
 
 ```js
 thresholds: {
-	checks: ['rate>=0.9'],
+  checks: ['rate>=0.9'],
 },
 ```
 
@@ -132,7 +128,7 @@ The threshold above states that 90% or more of all checks in the test should be 
 
 There may be situations in which you would like the test to stop running if thresholds aren't met. For example, if a test has a very high error rate due to an application component being unresponsive, it may be better to stop the test and start troubleshooting the issue.
 
-In these situations, you can extend the relevant threshold to tell k6 to abort the test if the threshold is not met. Instead of 
+In these situations, you can extend the relevant threshold to tell k6 to abort the test if the threshold is not met. Instead of:
 
 ```js
 thresholds: {
@@ -151,7 +147,7 @@ thresholds: {
 },
 ```
 
-The extra parameter `abortOnFail: true` instructs k6 to stop the test (without a graceful stop) as soon as the threshold is not met. In this case, that happens when the error rate goes over 5%. k6 will display the end-of-test summary report with an error that looks like this:
+The extra parameter `abortOnFail: true` instructs k6 to stop the test (without a [graceful stop](https://k6.io/docs/misc/glossary/#graceful-stop)) as soon as the threshold is crossed. In this case, that happens when the error rate goes over 5%. k6 will display the end-of-test summary report with an error that looks like this:
 
 ```plain
 ERRO[0012] some thresholds have failed 
@@ -203,7 +199,9 @@ Copy the script, save it, and do a `k6 run test.js` to run the test with thresho
 Your team has decided to aim for a 95th percentile response time of 2 seconds. What is the best way to express this as a threshold?
 
 A: `http_req_duration: ['p(95)>2000'],`
+
 B: `http_response_time: ['avg<=2000'],`
+
 C: `http_req_duration: ['p(95)<=2000'],`
 
 ### Question 2
@@ -219,7 +217,9 @@ thresholds: {
 The test runs for 100 iterations of 1 HTTP request each. 3 of the HTTP requests fail the check. Which of the following outcomes would you expect?
 
 A: The test will abort on failure of the check threshold.
+
 B: The test will run to completion and will be marked as a success because check failures do not fail tests.
+
 C: The test will run to completion, but there will be an error that some thresholds have failed.
 ### Question 3
 
@@ -236,12 +236,14 @@ thresholds: {
 Which of the following statements is true?
 
 A: The test will fail if the error rate is 5% or higher.
+
 B: The test will fail if the error rate exceeds 3%.
+
 C: The test will pass if the 90th percentile response time is 4 seconds.
 
 ## A note on thresholds
 
-Thresholds are useful as initial indicators of the success or failure of a test run, but they should not be used as the _only_ way to assess as test.
+Thresholds are useful as initial indicators of the success or failure of a test run. However, they should not be used as the _only_ way to assess a test.
 
 The main limitation of thresholds is that they're based on metrics, and metrics can be heavily influenced by the presence of a handful of outlier measurements that are either extremely low or extremely high.
 
