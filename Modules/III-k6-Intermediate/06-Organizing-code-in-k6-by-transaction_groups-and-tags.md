@@ -1,4 +1,6 @@
-If you've written a load testing script before, you might be familiar with the term [transaction](Modules/Performance-Testing-Terminology.md#Transaction). A transaction in load testing is a request or group of requests that correspond to a single action by the user.
+# Organizing Code in k6 by transaction groups and tags
+
+If you've written a load testing script before, you might be familiar with the term transaction. A transaction in load testing is a request or group of requests that correspond to a single action by the user.
 
 For example, you might have a transaction called `01_Go_to_homepage` that consists of a user going to your website main page for the first time. That transaction would then include GET requests for the main HTML, in addition to embedded resources like scripts, images, and fonts.
 
@@ -243,7 +245,9 @@ Modular scripting involves breaking apart your k6 test script into multiple scri
 Which technique is the best to use as a load testing transaction?
 
 A: Groups
+
 B: Tags
+
 C: URL grouping
 
 ### Question 2
@@ -277,7 +281,9 @@ export default function () {
 What is the value of the `name` tag for the HTTP request?
 
 A: `Homepage`
+
 B: `HTML`
+
 C: `http://ecommerce.k6.io/`
 
 ### Question 3
@@ -285,7 +291,9 @@ C: `http://ecommerce.k6.io/`
 Which of the following is an advantage of using functions to organize your k6 test script?
 
 A: Functions aggregate all the metrics within a function and report them under a single name.
+
 B: Functions give you the freedom to create test scenarios that correspond to user journeys for your application.
+
 C: Functions tag all requests with the function name so you can filter by function in the test results.
 
 ### Answers
