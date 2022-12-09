@@ -32,7 +32,7 @@ Test parameters are values that affect how your load-testing script is executed.
 - Number of iterations
 - Load profile, including stages during the test
 
-Each of these parameters influence the amount and type of load that is simulated.
+Each of these parameters influences the amount and type of load that is simulated.
 
 Check out [k6 Load Test Options](../II-k6-Foundations/06-k6-Load-Test-Options.md) for more information on these parameters, or [Setting load profiles with executors](08-Setting-load-profiles-with-executors/Setting-load-profiles-with-executors.md) for instructions on how to implement these in k6.
 
@@ -48,7 +48,7 @@ See [Adding think time using sleep](../II-k6-Foundations/05-Adding-think-time-us
 
 In web applications, static resources refer to images, client-side scripts, fonts, and other files embedded onto a page. If you want your script to access that page, you have to decide whether you want the script to also download those resources.
 
-Downloading static resources makes the script more realistic if you want to simulate an end-user behavior, because web browsers automatically download them. However, if you want to download only the HTML of the page (for example, perhaps because the images are served by a [CDN](Performance-Testing-Terminology.md#CDN) that you don't want to test), it may be more prudent *not* to download the static resources.
+Downloading static resources makes the script more realistic if you want to simulate an end-user behavior, because web browsers automatically download them. However, if you want to download only the HTML of the page (for example, perhaps because the images are served by a CDN (Content Delivery Network) that you don't want to test), it may be more prudent *not* to download the static resources.
 
 ### Parallel requests
 
