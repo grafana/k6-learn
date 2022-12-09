@@ -4,18 +4,18 @@ In the previous section, you learned [different approaches to debugging a script
 
 ## What is correlation?
 
-Correlation is the process of extracting a value from a previous HTTP response and using that value in the next HTTP request.
+[Data correlation](https://k6.io/docs/misc/glossary/#data-correlation) is the process of extracting a value from a previous HTTP response and using that value in the next HTTP request.
 
 The request flow of a user accessing an application might look like this:
 - Step 1. HTTP GET request for *My Messages* page.
 - Step 2. HTTP POST request with username and password
 
-In the previous section, the script attempted to log in immediately (skipping Step 1 and going straight to Step 2), but after applying some debugging techniques, you discovered that the response code is an HTTP 403 Forbidden, with `error: invalid csrf token` in the response body.
+In the [previous section](./01-How-to-debug-k6-load-testing-scripts.md), the script attempted to log in immediately (skipping Step 1 and going straight to Step 2), but after applying some debugging techniques, you discovered that the response code is an HTTP 403 Forbidden, with `error: invalid csrf token` in the response body.
 
 To correct this error and accurately mimic user behavior, the script must:
 - Save the response to the request in Step 1.
-- Extract the csrf token from Step 1.
-- Pass the csrf token when requesting Step 2.
+- Extract the [Cross-Site Request Forgery (CSFR)](https://owasp.org/www-community/attacks/csrf) token from Step 1.
+- Pass the CSFR token when requesting Step 2.
 
 Since the script starts with Step 2, you need to add another request for Step 1.
 
@@ -135,7 +135,7 @@ default ✓ [======================================] 1 VUs  00m00.6s/10m0s  1/1 
      iterations.....................: 1       1.646844/s
 ```
 
-Now we're getting somewhere! The entire HTML body of the response is saved in the variable `response`.
+Now we're getting somewhere! The entire HTML body of the response is saved in the variable [`response`](https://k6.io/docs/javascript-api/k6-http/response/).
 
 ## Extracting the value from the response
 
@@ -173,7 +173,9 @@ If you're stuck, compare your script against the script at the end of this secti
 You suspect there may be a dynamic value that you need to correlate from a previous response and send with your request. What's the best way to confirm this suspicion?
 
 A: Use DevTools to look at the network traffic as you perform the action, then look at the parameters being passed with the successful request.
+
 B: Record the script and run it using k6.
+
 C: Add a check for the word `csrftoken` to see if there are any being returned in the response.
 
 ### Question 2
@@ -187,19 +189,18 @@ check(response, {
     })
 ```
 B:  `let rand = Math.floor(Math.random() * 2);`
-C: `--http-debug=full`
 
-Answer: C
+C: `--http-debug=full`
 
 ### Question 3
 
 Why might replaying a recorded script yield errors?
 
 A: Some steps may require dynamic values extracted from earlier responses.
-B: There were no checks defined in the script.
-C: Running with multiple users may exert unnecessary load on the application server.
 
-Answer: A
+B: There were no checks defined in the script.
+
+C: Running with multiple users may exert unnecessary load on the application server.
 
 ## The script
 ```js
@@ -236,3 +237,4 @@ export default function() {
 
 1. A. DevTools is a great way to run through the request and response pairs of a web application, step by step. B would likely not give much useful information beyond errors, and C is too specific-- there are other dynamic parameters beyond tokens that may cause errors if not properly handled.
 2. C. Using the `http-debug` flag may be useful because it prints out all the response and request information. If there is too much information to be useful, consider using DevTools or [a proxy](https://k6.io/blog/k6-load-testing-debugging-using-a-web-proxy/) instead.
+3. A.
