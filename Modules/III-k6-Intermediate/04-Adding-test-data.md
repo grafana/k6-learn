@@ -31,7 +31,7 @@ After defining arrays, you can generate a random number to randomly pick a value
 
 ```js
 // Get random username and password from array
-let rand = Math.floor(Math.random() * 2);
+let rand = Math.floor(Math.random() * usernameArr.length);
 let username = usernameArr[rand];
 let password = passwordArr[rand];
 console.log('username: ' + username, ' / password: ' + password);
@@ -41,7 +41,7 @@ An array is best used for very short lists of text, as in this example, or for d
 
 ## CSV Files
 
-CSV files are lists of information that made up of _comma-separated values_ and are saved separately from the script.
+CSV files are lists of information that are made up of _comma-separated values_ and are saved separately from the script.
 
 Below is an example CSV file named `users.csv` containing usernames and passwords:
 ```plain
@@ -86,7 +86,7 @@ Below is a JSON file called `users.json`:
 You can then use it in your k6 script like this:
 
 ```js
-const jsonData = JSON.parse(open('./data/users.json')).users;
+const jsonData = JSON.parse(open('./users.json')).users;
 
 export default function () {
     let rand = Math.floor(Math.random() * jsonData.length);
@@ -134,7 +134,9 @@ Test data can also refer to files that need to be uploaded as part of the scenar
 In which of the following situations would it be advisable to add test data to your load testing scripts?
 
 A: Your application locks out a user account after three logins in a short amount of time.
+
 B: You want to see how the application behaves when the same user refreshes a page repeatedly.
+
 C: Both A and B.
 
 ### Question 2
@@ -142,7 +144,9 @@ C: Both A and B.
 You have a CSV file with 100 MB of personal information that you'd like to use as test data. Which of the following approaches is the best one to use?
 
 A: SharedArray
+
 B: Simple array
+
 C: JSON files because the CSV is better converted into JSON
 
 ### Question 3
@@ -150,7 +154,9 @@ C: JSON files because the CSV is better converted into JSON
 All the examples on this page include a `Math.random()` function to randomly select an element from the data file. In which situations might you want to remove this randomization?
 
 A: When you want to prevent server-side caching.
+
 B: When you want to guarantee that each element of test data has been sequentially utilized by the script.
+
 C: When you want to make your tests as realistic as possible.
 
 ### Answers
