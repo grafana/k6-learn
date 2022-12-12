@@ -110,6 +110,27 @@ Here are some things that you may want to do during setup:
 
 Anything returned in the setup function will be saved and can be passed on to the default and teardown functions like this:
 
+The full k6 API is available during setup, including making HTTP requests.
+
+### Teardown
+
+```js
+export function teardown() {
+    // This is teardown code. It runs once at the end of the test, regardless of the number of VUs.
+}
+```
+
+The teardown function is similar to the setup function in that it runs only once per test (not per VU), but it runs at the _end_ of the test. Any teardown code will be the last to be executed by k6 before test results are generated.
+
+If the `setup()` function ends abnormally, the `teardown()` function isn't called. Consider adding logic to the setup for proper cleanup if necessary. 
+
+Here are some things you might want to do during teardown:
+- Logging out any active users
+- Deleting test data generated during test execution
+- Putting the test environment back to the state it was in before the test
+
+The full k6 API is available during teardown, including making HTTP requests.
+
 ```js
 export function setup() {
   return { v: 1 };
@@ -126,24 +147,7 @@ export function teardown(data) {
 }
 ```
 
-The full k6 API is available during setup, including making HTTP requests.
-
-### Teardown
-
-```js
-export function teardown() {
-    // This is teardown code. It runs once at the end of the test, regardless of the number of VUs.
-}
-```
-
-The teardown function is similar to the setup function in that it runs only once per test (not per VU), but it runs at the _end_ of the test. Any teardown code will be the last to be executed by k6 before test results are generated.
-
-Here are some things you might want to do during teardown:
-- Logging out any active users
-- Deleting test data generated during test execution
-- Putting the test environment back to the state it was in before the test
-
-The full k6 API is available during teardown, including making HTTP requests.
+Check the [test lifecycle documentation](https://k6.io/docs/using-k6/test-lifecycle/) for more details.
 
 ## Setup and teardown while debugging
 
