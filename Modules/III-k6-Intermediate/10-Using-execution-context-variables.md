@@ -194,6 +194,6 @@ C: `test`
 
 ### Answers
 
-1. A. You can prevent data collision by using a unique identifier like `vu.idInTest`. B is incorrect because you set the number of VUs from the command line using [CLI flags](../II-k6-Foundations/02-The-k6-CLI.md), and C is incorrect because the way to select an executor is [from the script](08-Setting-load-profiles-with-executors/Setting-load-profiles-with-executors.md).
+1. A. You can prevent data collision by using a unique identifier like `vu.idInTest`. B is incorrect because you set the number of VUs from the command line using [CLI flags](../II-k6-Foundations/02-The-k6-CLI.md), and C is incorrect because the way to select an executor is [from the script](08-Setting-load-profiles-with-executors.md).
 2. B. `vu.idInTest` is assigned per VU, not per iteration.
 3. A. `scenario` holds information about the executor that is being used.

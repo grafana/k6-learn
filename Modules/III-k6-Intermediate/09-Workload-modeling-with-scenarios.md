@@ -92,7 +92,7 @@ Viewing the results, you should notice that users are browsing products, then af
 
 Our example used a minimal number of configuration options for the _scenarios_, but the available options include the following:
 
-> Remember that additional options may be required depending upon the `executor` specified. See [setting load profiles with executors](08-Setting-load-profiles-with-executors/Setting-load-profiles-with-executors.md) for more about _executors_.
+> Remember that additional options may be required depending upon the `executor` specified. See [setting load profiles with executors](08-Setting-load-profiles-with-executors.md) for more about _executors_.
 
 | Option         | Description                                                                                       | Default      |
 |----------------|---------------------------------------------------------------------------------------------------|--------------|

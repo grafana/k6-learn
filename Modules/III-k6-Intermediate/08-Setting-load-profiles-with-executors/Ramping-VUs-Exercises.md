@@ -1,6 +1,6 @@
 # Ramping VUs Executor
 
-As noted in [Setting load profiles with executors](Setting-load-profiles-with-executors.md#Ramping-VUs), _Ramping VUs_ executor has a primary focus on the number of _virtual users (VUs)_ within _stages_. 
+As noted in [Setting load profiles with executors](../08-Setting-load-profiles-with-executors.md#Ramping-VUs), _Ramping VUs_ executor has a primary focus on the number of _virtual users (VUs)_ within _stages_. 
 
 ## Exercises
 

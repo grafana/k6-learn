@@ -34,7 +34,7 @@ Test parameters are values that affect how your load-testing script is executed.
 
 Each of these parameters influences the amount and type of load that is simulated.
 
-Check out [k6 Load Test Options](../II-k6-Foundations/06-k6-Load-Test-Options.md) for more information on these parameters, or [Setting load profiles with executors](08-Setting-load-profiles-with-executors/Setting-load-profiles-with-executors.md) for instructions on how to implement these in k6.
+Check out [k6 Load Test Options](../II-k6-Foundations/06-k6-Load-Test-Options.md) for more information on these parameters, or [Setting load profiles with executors](08-Setting-load-profiles-with-executors.md) for instructions on how to implement these in k6.
 
 ### Think time and pacing
 
