@@ -125,7 +125,7 @@ export default function () {
 
 This function consists of a log statement and a sleep. The log statement is the stand-in for a login function; instead of logging in with a user, the script instructs k6 to print the current VU's `idInTest`, which is a globally unique identifier. k6 then prints the username and password selected for that VU.
 
-> :bulb: Why `idInTest - 1`?
+> :bulb: **Why `idInTest - 1`?**
 > You may have noticed that while `vu.idInTest` is used when printing the the identifier, `vu.idInTest - 1` is used to select the username and password from the CSV file.
 > This difference is due to the fact that arrays start with 0 while `idInTest` starts with 1. In this example, the array elements corresponding to the rows in the CSV are `0,1,2,3,4,5,6,7,8,9` while the `idInTest`s for each VU are `1,2,3,4,5,6,7,8,9,10`.
 
