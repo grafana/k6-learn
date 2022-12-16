@@ -24,7 +24,7 @@ The **test** object allows you to abort the test execution with an optional erro
 
 The **VU** object assigns a unique number to every iteration and every VU in the load generator.
 
-To learn more about the `k6/execution` module, [click here.](https://k6.io/docs/javascript-api/k6-execution/).
+To learn more about the `k6/execution` module, [click here](https://k6.io/docs/javascript-api/k6-execution/).
 
 ## Generating unique data
 
@@ -96,8 +96,7 @@ const users = new SharedArray("Logins", function() {
 });
 ```
 
-> [!warning] Set header to true
-> Note that the `header: true` option is necessary in this case, because the first line in the CSV file you created defines the names of the columns in the data file (`username,password`).
+> :warning: **Set header to true**. Note that the `header: true` option is necessary in this case, because the first line in the CSV file you created defines the names of the columns in the data file (`username,password`).
 
 The next few lines define [options and parameters](../II-k6-Foundations/06-k6-Load-Test-Options.md) for the test:
 
@@ -126,7 +125,7 @@ export default function () {
 
 This function consists of a log statement and a sleep. The log statement is the stand-in for a login function; instead of logging in with a user, the script instructs k6 to print the current VU's `idInTest`, which is a globally unique identifier. k6 then prints the username and password selected for that VU.
 
-> [!question] Why `idInTest - 1`?
+> :question: Why `idInTest - 1`?
 > You may have noticed that while `vu.idInTest` is used when printing the the identifier, `vu.idInTest - 1` is used to select the username and password from the CSV file.
 > This difference is due to the fact that arrays start with 0 while `idInTest` starts with 1. In this example, the array elements corresponding to the rows in the CSV are `0,1,2,3,4,5,6,7,8,9` while the `idInTest`s for each VU are `1,2,3,4,5,6,7,8,9,10`.
 
