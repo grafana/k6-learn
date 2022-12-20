@@ -136,7 +136,7 @@ C: Use the `per-vu-iterations` executor to have 30 virutal users run 1,000 reque
 
 > :rocket: **Want more** Check out the [k6 Office Hours](https://www.youtube.com/playlist?list=PLJdv3RhAQXNE1TFXn2pp9h_Ul1q_kJrEZ) session where we talked in depth about *Executors in k6*!
 
-![k6 Office Hours](../../images/office-hours-executors-k6.png)](https://www.youtube.com/playlist?list=PLJdv3RhAQXNE1TFXn2pp9h_Ul1q_kJrEZ)
+[![k6 Office Hours](../../images/office-hours-executors-k6.png)](https://www.youtube.com/playlist?list=PLJdv3RhAQXNE1TFXn2pp9h_Ul1q_kJrEZ)
 
 #### Answers
 1. C. `ramping-vus` allows you to model spikes in concurrent _virtual users_.
