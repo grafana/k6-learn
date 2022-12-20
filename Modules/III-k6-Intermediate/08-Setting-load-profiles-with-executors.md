@@ -15,7 +15,7 @@ _Shared Iterations_ is the most basic of the executors. As can be inferred from 
 | `maxDuration` | Forcibly stop your test if not finished within this timeframe | `"10m"` |
 | `vus`         | Number of virtual users to run concurrently                   | `1`     |
 
-As noted above, the primary objective is to perform your test `iterations` number of times, over a time period not to exceed `maxDuration`. At any time during the test scenario, there should be `vus` iteration(s) happening unless the total desired iterations has been reached. In this scenario, it is possible for some VUs to perform more work than others.
+As noted above, the primary objective is to perform your test `iterations` number of times, over a time period not to exceed `maxDuration`. At any time during the test scenario, there should be `vus` iteration(s) happening unless the total desired iterations have been reached. In this scenario, it is possible for some VUs to perform more work than others.
 
 [Experiment with _Shared Iterations_ for yourself!](./08-Setting-load-profiles-with-executors/Shared-Iterations-Exercises.md)
 
@@ -28,7 +28,7 @@ _Per VU Iterations_ is a slight evolution on the _Shared Iterations_ executor. W
 | `maxDuration` | Forcibly stop your test if not finished within this timeframe | `"10m"` |
 | `vus`         | Number of virtual users to run concurrently                   | `1`     |
 
-In this case, we're looking for each of the `vus` VU(s) to perform your test `iterations` number of times over a time period not to exceed `maxDuration`. This is means that test iterations are _fairly_ distributed; no single VU performs more than another.
+In this case, we're looking for each of the `vus` VU(s) to perform your test `iterations` number of times over a time period not to exceed `maxDuration`. This means that test iterations are _fairly_ distributed; no single VU performs more than another.
 
 [Experiment with _Per VU Iterations_ for yourself!](./08-Setting-load-profiles-with-executors/Per-VU-Iterations-Exercises.md)
 
@@ -53,7 +53,7 @@ _Ramping VUs_ is an evolution of the _Constant VUs_ executor which introduces **
 | `gracefulRampDown` | Grace period for a test iteration to finish before shutting down a VU when ramping down | `"30s"`      |
 | `startVUs`         | Number of virtual users at the beginning of test                                        | `1`          |
 
-A time-based scenario, the total duration is equal to the sum of `duration` timeframe(s) from each `stage`. The first stage will begin with `startVUs` VU(s) and ramp up (or down) linearly over the configured `duration` to the `target` number of VUs specified within the stage. The next stage, if configured, will then ramp up or down from that point to the desired `target` VU(s) over the specified `duration` timeframe. This pattern continues for each remaining stage. As with _Constant VUs_, each running VU will continually perform test iterations until the scenario ends.
+As a time-based scenario, the total duration is equal to the sum of `duration` timeframe(s) from each `stage`. The first stage will begin with `startVUs` VU(s) and ramp up (or down) linearly over the configured `duration` to the `target` number of VUs specified within the stage. The next stage, if configured, will then ramp up or down from that point to the desired `target` VU(s) over the specified `duration` timeframe. This pattern continues for each remaining stage. As with _Constant VUs_, each running VU will continually perform test iterations until the scenario ends.
 
 [Experiment with _Ramping VUs_ for yourself!](./08-Setting-load-profiles-with-executors/Ramping-VUs-Exercises.md)
 
@@ -96,7 +96,7 @@ _Externally Controlled_ is a completely different executor in that it does not a
 | `maxVUs`       | Maximum number of virtual users allowed to be utilized | `0`          |
 | `vus`          | Number of virtual users to run concurrently            | `0`          |
 
-The primary objective for this executor is to define the `duration` timeframe of the test. If nothing else is provided, k6 will essentially be in a state of waiting for commands. If none are given, k6 will simply exit once the duration has been reached. If `vus` are specified with a non-zero value, the executor will run similar to the _Constant VUs_ until acted upon by an external actor. The `maxVUs` setting will put in place a limit to be enforced when receiving external requests to scale up.
+The primary objective for this executor is to define the `duration` timeframe of the test. If nothing else is provided, k6 will essentially be in a state of waiting for commands. If none are given, k6 will simply exit once the duration has been reached. If `vus` are specified with a non-zero value, the executor will run similarly to the _Constant VUs_ until acted upon by an external actor. The `maxVUs` setting will put in place a limit to be enforced when receiving external requests to scale up.
 
 [Experiment with _Externally Controlled_ for yourself!](./08-Setting-load-profiles-with-executors/Externally-Controlled-Exercises.md)
 
@@ -134,8 +134,9 @@ B: Use the `constant-arrival-rate` to maintain a constant 30 requests per second
 
 C: Use the `per-vu-iterations` executor to have 30 virutal users run 1,000 requests each.
 
-> :rocket: Want more? Check out the [k6 Office Hours](https://www.youtube.com/playlist?list=PLJdv3RhAQXNE1TFXn2pp9h_Ul1q_kJrEZ) session where we talked in depth about *Executors in k6*!
-> <iframe width="560" height="315" src="https://www.youtube.com/embed/3AJLSH0Ifm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+> :rocket: **Want more** Check out the [k6 Office Hours](https://www.youtube.com/playlist?list=PLJdv3RhAQXNE1TFXn2pp9h_Ul1q_kJrEZ) session where we talked in depth about *Executors in k6*!
+
+![k6 Office Hours](../../images/office-hours-executors-k6.png)](https://www.youtube.com/playlist?list=PLJdv3RhAQXNE1TFXn2pp9h_Ul1q_kJrEZ)
 
 #### Answers
 1. C. `ramping-vus` allows you to model spikes in concurrent _virtual users_.
