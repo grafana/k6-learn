@@ -80,7 +80,7 @@ export const options = {
   },
 };
 ```
-> :point-up: Durations are configured as string values comprised of a positive integer and a suffix representing the time unit. For example, "s" for seconds, "m" for minutes.
+> :point_up: Durations are configured as string values comprised of a positive integer and a suffix representing the time unit. For example, "s" for seconds, "m" for minutes.
 
 As before, run the script with `k6 run test.js`.
 
@@ -132,9 +132,9 @@ k6_workshop ✓ [======================================] 10 VUs  22.6s/30s  200/
 ```
 Let's look at these results a bit more closely. The above results (trimmed for brevity) shows the final report for each of the running VUs. 
 
-> :point-up: The iteration counter is 0-based, meaning a count of 20 is _actually_ 21 iterations.
+> :point_up: The iteration counter is 0-based, meaning a count of 20 is _actually_ 21 iterations.
 
-A behavior of the `shared-iterations` executor may become apparent: _some VUs performed more tests than others_. This is the "shared" aspect in the executor name. As each VU completes a test iteration, they immediately reserve another while there are iterations remaining. If a VU continually gets quick responses from the service being tested, it's possible, as in this case, that the VU gets more than its _fair share_.
+The behavior of the `shared-iterations` executor may become apparent: _some VUs performed more tests than others_. This is the "shared" aspect in the executor name. As each VU completes a test iteration, they immediately reserve another while there are iterations remaining. If a VU continually gets quick responses from the service being tested, it's possible, as in this case, that the VU gets more than its _fair share_.
 
 ### Wrapping up
 With this exercise, you should see how to run a very basic test and how you can control the number of iterations, concurrency, and even setting time limits. Additionally, you see that the distribution of tests amongst VUs may not be _fair_.
