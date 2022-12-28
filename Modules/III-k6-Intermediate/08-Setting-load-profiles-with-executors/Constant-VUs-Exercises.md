@@ -4,7 +4,7 @@ As noted in [Setting load profiles with executors](../08-Setting-load-profiles-w
 
 ## Exercises
 
-For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits one second before completing the test iteration. We're providing some console output as things change.
+For our exercises, we're going to start by using a very basic script that simply performs an HTTP request and then waits one second before completing the test iteration. We're providing some console output as things change.
 
 ### Creating our script
 
@@ -30,11 +30,11 @@ export default function () {
 }
 ```
 
-> :point-up: If you've been working through these workshop exercises in order, you may have noticed that this time, our initial script includes a `duration`. This option is **required** for the executor. Attempting to run the script without this option will result in a configuration error.
+> :point_up: If you've been working through these workshop exercises in order, you may have noticed that this time, our initial script includes a `duration`. This option is **required** for the executor. Attempting to run the script without this option will result in a configuration error.
 
 ### Initial test run
 
-We're starting with the bare-minimum to use the executor, which requires both the `executor` as well as the `duration` for the test. Now that we've defined our basic script, we'll go ahead and run k6:
+We're starting with the bare minimum to use the executor, which requires both the `executor` as well as the `duration` for the test. Now that we've defined our basic script, we'll go ahead and run k6:
 
 ```bash
 k6 run test.js
@@ -54,7 +54,7 @@ k6_workshop ✓ [======================================] 1 VUs  30s
 
 ### Change the concurrency
 
-Once again, our test has only utilized a single virtual user, or VU. We can update the `vus` option to increase the number of requests being performed simultaneously. Let's change the `vus` to simulate 10 users by updating the `options` section of our test script:
+Once again, our test has only utilized a single virtual user or VU. We can update the `vus` option to increase the number of requests being performed simultaneously. Let's change the `vus` to simulate 10 users by updating the `options` section of our test script:
 
 ```js
 export const options = {
@@ -87,9 +87,9 @@ running (0m30.5s), 00/10 VUs, 280 complete and 0 interrupted iterations
 k6_workshop ✓ [======================================] 10 VUs  30s
 ```
 
-> :point-up: The iteration counter is 0-based, meaning a count of 27 is _actually_ 28 iterations.
+> :point_up: The iteration counter is 0-based, meaning a count of 27 is _actually_ 28 iterations.
 
-From the results, you may see interleaving of requests as well as some VUs potentially performing more iterations than others. This will be dependent upon response times for individual requests.
+From the results, you may see some interleaving of requests as well as some VUs potentially performing more iterations than others. This will be dependent upon response times for individual requests.
 
 ### Wrapping up
 
