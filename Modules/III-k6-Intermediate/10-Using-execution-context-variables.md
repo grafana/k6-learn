@@ -24,7 +24,7 @@ The **test** object allows you to abort the test execution with an optional erro
 
 The **VU** object assigns a unique number to every iteration and every VU in the load generator.
 
-To learn more about the `k6/execution` module, [click here](https://k6.io/docs/javascript-api/k6-execution/).
+[Learn more about the `k6/execution` module](https://k6.io/docs/javascript-api/k6-execution/).
 
 ## Generating unique data
 

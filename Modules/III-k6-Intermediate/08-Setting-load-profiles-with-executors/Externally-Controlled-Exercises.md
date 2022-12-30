@@ -43,7 +43,7 @@ k6 should now start. You should see a timer counting up as the test is running, 
 ### Scaling up VUs
 No tests were actually performed due to there being `0` virtual users (VUs) started by the script. k6 waits for the external process to _scale up_ VUs. To scale up, we're going to use the 'k6' command line.
 
-Let's open another _terminal_ window, this time, however, the directory should not matter. If your script timed out in the meantime, start it back up again using `k6 run test.js`.
+Let's open another _terminal_ window. This time, however, the directory should not matter. If your script timed out in the meantime, start it back up again using `k6 run test.js`.
 ```bash
 k6 scale --vus 2 --max 10
 ```
@@ -126,7 +126,7 @@ curl -X PATCH \
 ### Script options
 Our initial script provides the bare minimum to begin your test. 
 
-Consider specifying your `maxVUs` within the script as best practice. As noted previously, the `maxVUs` is not required. However, any attempt to scale will be met with an error unless a `--max` is specified with the initial scaling request. The `maxVUs` value may be overridden using the `--max` argument if deemed necessary.
+Consider specifying your `maxVUs` . As noted previously, the `maxVUs` is not required. However, any attempt to scale will be met with an error unless a `--max` is specified with the initial scaling request. The `maxVUs` value may be overridden using the `--max` argument if deemed necessary.
 
 The final script option is the `vus` setting. When provided, this number of VUs will begin processing once the script is started thereby eliminating the need for an initial scale-up.
 

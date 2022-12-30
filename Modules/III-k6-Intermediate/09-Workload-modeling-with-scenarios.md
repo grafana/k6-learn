@@ -8,7 +8,7 @@ By breaking down each of your flows into a different scenario, your overarching 
 
 ## Defining scenarios
 
-Each _scenario_ includes the same [elements of a workload model](03-Workload-modeling.md#Elements-of-a-workload-model) in addition to the `executor`, `startTime`, and optionally `env` variables and `tags` exclusive to the _scenario_. Check the complete list of scenario options in the [documentation](https://k6.io/docs/using-k6/scenarios/#options).
+Each _scenario_ includes the same [elements of a workload model](03-Workload-modeling.md#Elements-of-a-workload-model) in addition to the `executor`, `startTime`, and optionally `env` variables and `tags` exclusive to the _scenario_. Check the complete list of scenario options in the [documentation](https://k6.io/docs/using-k6/scenarios/).
 
 Save the following script as `playground.js`.
 

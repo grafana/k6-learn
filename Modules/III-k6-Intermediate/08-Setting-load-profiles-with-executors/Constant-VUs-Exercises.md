@@ -54,7 +54,7 @@ k6_workshop ✓ [======================================] 1 VUs  30s
 
 ### Change the concurrency
 
-Once again, our test has only utilized a single virtual user or VU. We can update the `vus` option to increase the number of requests being performed simultaneously. Let's change the `vus` to simulate 10 users by updating the `options` section of our test script:
+Once again, our test has only run a single virtual user or VU. We can update the `vus` option to increase the number of requests being performed simultaneously. Let's change the `vus` to simulate 10 users by updating the `options` section of our test script:
 
 ```js
 export const options = {

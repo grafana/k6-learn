@@ -15,7 +15,7 @@ _Shared Iterations_ is the most basic of the executors. As can be inferred from 
 | `maxDuration` | Forcibly stop your test if not finished within this timeframe | `"10m"` |
 | `vus`         | Number of virtual users to run concurrently                   | `1`     |
 
-As noted above, the primary objective is to perform your test `iterations` number of times, over a time period not to exceed `maxDuration`. At any time during the test scenario, there should be `vus` iteration(s) happening unless the total desired iterations have been reached. In this scenario, it is possible for some VUs to perform more work than others.
+As noted previously, the primary objective is to perform your test `iterations` number of times, over a time period not to exceed `maxDuration`. At any time during the test scenario, there should be `vus` iteration(s) happening unless the total desired iterations have been reached. In this scenario, it is possible for some VUs to perform more work than others.
 
 [Experiment with _Shared Iterations_ for yourself!](./08-Setting-load-profiles-with-executors/Shared-Iterations-Exercises.md)
 

@@ -4,7 +4,7 @@ In the previous section, you learned [different approaches to debugging a script
 
 ## What is correlation?
 
-[Data correlation](https://k6.io/docs/misc/glossary/#data-correlation) is the process of extracting a value from a previous HTTP response and using that value in the next HTTP request.
+Data correlation is the process of extracting a value from a previous HTTP response and using that value in the next HTTP request.
 
 The request flow of a user accessing an application might look like this:
 - Step 1. HTTP GET request for *My Messages* page.
