@@ -1,14 +1,14 @@
 # Constant Arrival Rate Executor
 
-As noted in [Setting load profiles with executors](Setting-load-profiles-with-executors.md#Constant-Arrival-Rate), the _Constant Arrival Rate_ executor has a primary focus on the _iteration rate_ being applied over a specified timeframe.
+As noted in [Setting load profiles with executors](../08-Setting-load-profiles-with-executors.md#Constant-Arrival-Rate), the _Constant Arrival Rate_ executor has a primary focus on the _iteration rate_ being applied over a specified timeframe.
 
 ## Exercises
 
-For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits one second before completing the test iteration. We're providing some console output as things change.
+For our exercises, we're going to start by using a very basic script that simply performs an HTTP request and then waits one second before completing the test iteration. We're providing some console output as things change.
 
 ### Creating our script
 
-Let's begin by implementing our test script with minimally required configuration. Create a file named _test.js_ with the following content:
+Let's begin by implementing our test script with the minimally required configuration. Create a file named _test.js_ with the following content:
 
 ```js
 import http from 'k6/http';
@@ -32,7 +32,7 @@ export default function () {
 }
 ```
 
-We're starting with the bare-minimum to use the executor. Compared to previous executors, this has a bit more required configuration beyond the usual `executor` itself.
+We're starting with the bare minimum to use the executor. Compared to previous executors, this has a bit more required configuration beyond the usual `executor` itself.
 
 Reviewing the additional options, we see that the `rate` and `duration` are now required. This makes sense given the focus of this executor is achieving and maintaining the specified _iteration rate_ over the provided timeframe. Let's defer the discussion of `preAllocatedVUs` for the moment until we get our initial test execution completed.
 
@@ -71,7 +71,7 @@ WARN[0000] Insufficient VUs, reached 5 active VUs and cannot initialize more  ex
 ```
 
 What happened here? Remember the `preAllocatedVUs` setting we glossed over earlier? With this setting, we simply told k6 to start the test with 5 virtual users; after a few iterations, k6 was able to determine that it would **not** be able to achieve our desired iteration rate.
-This fact is evident looking at the `iterations` value in the test summary; our test was only able to attain a rate of 4.4 iterations per second---we wanted 10.
+This fact is evident by looking at the `iterations` value in the test summary; our test was only able to attain a rate of 4.4 iterations per second---we wanted 10.
 
 We _could_ simply double the number of `preAllocatedVUs`, or better yet, we could allow k6 to automatically control the number of VUs to achieve our rate.
 
@@ -94,7 +94,7 @@ export const options = {
   },
 };
 ```
-To show us when the autoscaling is taking place, let's include the following javascript prior to `options` block.
+To show us when the autoscaling is taking place, let's include the following javascript before the `options` block.
 ```js
 // This will be executed for each VU when initialized
 console.log(`Hello, VU #${__VU} has entered the test!`);
@@ -128,17 +128,17 @@ INFO[0031] Hello, VU #0 has entered the test!            source=console
      iterations.....................: 293    9.432192/s
      vus............................: 13     min=8      max=13
 ```
-> :point-up: Feel free to ignore the entries about `VU #0`...it's a bit of a special case.
+> :point_up: Feel free to ignore the entries about `VU #0`...it's a bit of a special case.
 
 Reviewing the output now, we see that the desired rate was more closely achieved at 9.43 iterations per second (for the overall test), and that k6 ultimately scaled up to 13 VUs to achieve the desired rate. That's autoscaling!
 
-> :point-up: By **not** specifying `maxVUs` in our first test, we essentially disabled autoscaling of VUs.
+> :point_up: By **not** specifying `maxVUs` in our first test, we essentially disabled autoscaling of VUs.
 
 ### Other rate options
 
 From our examples so far, we've been basing our _iteration rate_ upon iterations per second. We can change the rate denominator using the `timeUnit` option. Again, by default, the setting value is `1s`. 
 
-As an example, let's say aggregation of a service' logs show that it receives 10,000 requests each hour. Rather than doing the math ourselves to restate that in iterations per second, we can let k6 do the work:
+As an example, let's say the aggregation of a service's logs shows that it receives 10,000 requests each hour. Rather than doing the math ourselves to restate that in iterations per second, we can let k6 do the work:
 
 ```js
 export const options = {
@@ -172,4 +172,4 @@ INFO[0031] Hello, VU #0 has entered the test!            source=console
 
 ### Wrapping up
 
-With this exercise, you should see how to run a very basic test and how you can control allow k6 to automatically control the number of virtual users to achieve a desired iteration rate.
+With this exercise, you should see how to run a very basic test and how you can control allow k6 to automatically control the number of virtual users to achieve the desired iteration rate.

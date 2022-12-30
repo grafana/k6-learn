@@ -15,9 +15,9 @@ _Shared Iterations_ is the most basic of the executors. As can be inferred from 
 | `maxDuration` | Forcibly stop your test if not finished within this timeframe | `"10m"` |
 | `vus`         | Number of virtual users to run concurrently                   | `1`     |
 
-As noted above, the primary objective is to perform your test `iterations` number of times, over a time period not to exceed `maxDuration`. At any time during the test scenario, there should be `vus` iteration(s) happening unless the total desired iterations has been reached. In this scenario, it is possible for some VUs to perform more work than others.
+As noted previously, the primary objective is to perform your test `iterations` number of times, over a time period not to exceed `maxDuration`. At any time during the test scenario, there should be `vus` iteration(s) happening unless the total desired iterations have been reached. In this scenario, it is possible for some VUs to perform more work than others.
 
-[Experiment with _Shared Iterations_ for yourself!](Shared-Iterations-Exercises.md)
+[Experiment with _Shared Iterations_ for yourself!](./08-Setting-load-profiles-with-executors/Shared-Iterations-Exercises.md)
 
 ### Per VU Iterations
 _Per VU Iterations_ is a slight evolution on the _Shared Iterations_ executor. With this executor, we're still focused on the number of _iterations_, however, this time we want **each _virtual user_** to execute the **same number** of iterations.
@@ -28,9 +28,9 @@ _Per VU Iterations_ is a slight evolution on the _Shared Iterations_ executor. W
 | `maxDuration` | Forcibly stop your test if not finished within this timeframe | `"10m"` |
 | `vus`         | Number of virtual users to run concurrently                   | `1`     |
 
-In this case, we're looking for each of the `vus` VU(s) to perform your test `iterations` number of times over a time period not to exceed `maxDuration`. This is means that test iterations are _fairly_ distributed; no single VU performs more than another.
+In this case, we're looking for each of the `vus` VU(s) to perform your test `iterations` number of times over a time period not to exceed `maxDuration`. This means that test iterations are _fairly_ distributed; no single VU performs more than another.
 
-[Experiment with _Per VU Iterations_ for yourself!](Per-VU-Iterations-Exercises.md)
+[Experiment with _Per VU Iterations_ for yourself!](./08-Setting-load-profiles-with-executors/Per-VU-Iterations-Exercises.md)
 
 ### Constant VUs
 _Constant VUs_ focuses on continually performing your test over a specified amount of time. This allows each virtual user to perform as many requests as it can within the allowed timeframe.
@@ -42,7 +42,7 @@ _Constant VUs_ focuses on continually performing your test over a specified amou
 
 As noted above, the primary objective is for each of the `vus` VU(s) to perform as many test iterations as possible for the required `duration` time-period, e.g. `"30s"`, `"1h"`, etc.
 
-[Experiment with _Constant VUs_ for yourself!](Constant-VUs-Exercises.md)
+[Experiment with _Constant VUs_ for yourself!](./08-Setting-load-profiles-with-executors/Constant-VUs-Exercises.md)
 
 ### Ramping VUs
 _Ramping VUs_ is an evolution of the _Constant VUs_ executor which introduces **_stages_**. This allows k6 to transition the number of desired VUs from one stage to another. Each stage defines its own timeframe for which all VUs will continually perform your test.
@@ -53,9 +53,9 @@ _Ramping VUs_ is an evolution of the _Constant VUs_ executor which introduces **
 | `gracefulRampDown` | Grace period for a test iteration to finish before shutting down a VU when ramping down | `"30s"`      |
 | `startVUs`         | Number of virtual users at the beginning of test                                        | `1`          |
 
-A time-based scenario, the total duration is equal to the sum of `duration` timeframe(s) from each `stage`. The first stage will begin with `startVUs` VU(s) and ramp up (or down) linearly over the configured `duration` to the `target` number of VUs specified within the stage. The next stage, if configured, will then ramp up or down from that point to the desired `target` VU(s) over the specified `duration` timeframe. This pattern continues for each remaining stage. As with _Constant VUs_, each running VU will continually perform test iterations until the scenario ends.
+As a time-based scenario, the total duration is equal to the sum of `duration` timeframe(s) from each `stage`. The first stage will begin with `startVUs` VU(s) and ramp up (or down) linearly over the configured `duration` to the `target` number of VUs specified within the stage. The next stage, if configured, will then ramp up or down from that point to the desired `target` VU(s) over the specified `duration` timeframe. This pattern continues for each remaining stage. As with _Constant VUs_, each running VU will continually perform test iterations until the scenario ends.
 
-[Experiment with _Ramping VUs_ for yourself!](Ramping-VUs-Exercises.md)
+[Experiment with _Ramping VUs_ for yourself!](./08-Setting-load-profiles-with-executors/Ramping-VUs-Exercises.md)
 
 ### Constant Arrival Rate
 With the _Constant Arrival Rate_, we now start to focus on the rate at which your test iterations are performed over a prescribed period of time. k6 will dynamically adjust the number of VUs to achieve the desired rate.
@@ -70,7 +70,7 @@ With the _Constant Arrival Rate_, we now start to focus on the rate at which you
 
 Our primary focus will be to achieve and maintain an _iteration rate_ of `rate` per `timeUnit` over the desired `duration`. The number of VUs to achieve the desired rate will be managed by k6, and will be anywhere from `preAllocatedVUs` to `maxVUs`. Note that there is time and resource overhead associated with VU creation, so defining a reasonable `preAllocatedVUs` will allow for more testing time at the desired rate. 
 
-[Experiment with _Constant Arrival Rate_ for yourself!](Constant-Arrival-Rate-Exercises.md)
+[Experiment with _Constant Arrival Rate_ for yourself!](./08-Setting-load-profiles-with-executors/Constant-Arrival-Rate-Exercises.md)
 
 ### Ramping Arrival Rate
 _Ramping Arrival Rate_ is an evolution of the _Constant Arrival Rate_ executor which introduces **_stages_**. This is probably the best candidate for modeling real-world testing scenarios, allowing k6 to transition the desired _iteration rate_ from one stage to another. Each stage defines its own timeframe for which to achieve the desired rate.
@@ -85,7 +85,7 @@ _Ramping Arrival Rate_ is an evolution of the _Constant Arrival Rate_ executor w
 
 Similar to the _Constant Arrival Rate_, the main focus is achieving a target _iteration rate_. The primary difference being the desired rate is achieved within each defined `stage`. The overall duration will be equal to the sum of `duration` timeframe(s) from each `stage`. The first stage will begin with an _iteration rate_ of `startRate` per `timeUnit` performed by `preAllocatedVUs` virtual user(s). The _iteration rate_ will ramp up (or down) linearly over the configured `duration` to the `target` rate specified for the stage. The next stage, if configured, will then ramp up or down from that point to the desired `target` rate over the specified `duration` timeframe. This pattern continues for each remaining stage. _Spikes_, _valleys_, and _plateaus_ can be simulated with these stages.
 
-[Experiment with _Ramping Arrival Rate_ for yourself!](Ramping-Arrival-Rate-Exercises.md)
+[Experiment with _Ramping Arrival Rate_ for yourself!](./08-Setting-load-profiles-with-executors/Ramping-Arrival-Rate-Exercises.md)
 
 ### Externally Controlled
 _Externally Controlled_ is a completely different executor in that it does not alter the number of virtual users beyond starting the test and setting limits on VUs and duration. This is expected to be provided by external processes using either the k6 REST API or the k6 CLI.
@@ -96,9 +96,9 @@ _Externally Controlled_ is a completely different executor in that it does not a
 | `maxVUs`       | Maximum number of virtual users allowed to be utilized | `0`          |
 | `vus`          | Number of virtual users to run concurrently            | `0`          |
 
-The primary objective for this executor is to define the `duration` timeframe of the test. If nothing else is provided, k6 will essentially be in a state of waiting for commands. If none are given, k6 will simply exit once the duration has been reached. If `vus` are specified with a non-zero value, the executor will run similar to the _Constant VUs_ until acted upon by an external actor. The `maxVUs` setting will put in place a limit to be enforced when receiving external requests to scale up.
+The primary objective for this executor is to define the `duration` timeframe of the test. If nothing else is provided, k6 will essentially be in a state of waiting for commands. If none are given, k6 will simply exit once the duration has been reached. If `vus` are specified with a non-zero value, the executor will run similarly to the _Constant VUs_ until acted upon by an external actor. The `maxVUs` setting will put in place a limit to be enforced when receiving external requests to scale up.
 
-[Experiment with _Externally Controlled_ for yourself!](Externally-Controlled-Exercises.md)
+[Experiment with _Externally Controlled_ for yourself!](./08-Setting-load-profiles-with-executors/Externally-Controlled-Exercises.md)
 
 ## Test your knowledge
 
@@ -134,8 +134,9 @@ B: Use the `constant-arrival-rate` to maintain a constant 30 requests per second
 
 C: Use the `per-vu-iterations` executor to have 30 virutal users run 1,000 requests each.
 
-> :rocket: Want more? Check out the [k6 Office Hours](https://www.youtube.com/playlist?list=PLJdv3RhAQXNE1TFXn2pp9h_Ul1q_kJrEZ) session where we talked in depth about *Executors in k6*!
-> <iframe width="560" height="315" src="https://www.youtube.com/embed/3AJLSH0Ifm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+> :rocket: **Want more** Check out the [k6 Office Hours](https://www.youtube.com/playlist?list=PLJdv3RhAQXNE1TFXn2pp9h_Ul1q_kJrEZ) session where we talked in depth about *Executors in k6*!
+
+[![k6 Office Hours](../../images/office-hours-executors-k6.png)](https://www.youtube.com/playlist?list=PLJdv3RhAQXNE1TFXn2pp9h_Ul1q_kJrEZ)
 
 #### Answers
 1. C. `ramping-vus` allows you to model spikes in concurrent _virtual users_.

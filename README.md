@@ -42,7 +42,7 @@ Consider running a workshop for k6. Below is an outline of what that workshop co
 - [Parallel requests in k6](Modules/III-k6-Intermediate/05-Parallel-requests-in-k6.md)
 - [Organizing code in k6 by transaction - groups and tags](Modules/III-k6-Intermediate/06-Organizing-code-in-k6-by-transaction_groups-and-tags.md)
 - [Setup and Teardown functions](Modules/III-k6-Intermediate/07-Setup-and-Teardown-functions.md)
-- [Setting load profiles with executors](Modules/III-k6-Intermediate/08-Setting-load-profiles-with-executors/Setting-load-profiles-with-executors.md)
+- [Setting load profiles with executors](Modules/III-k6-Intermediate/08-Setting-load-profiles-with-executors.md)
 - [Workload modeling with scenarios](Modules/III-k6-Intermediate/09-Workload-modeling-with-scenarios.md)
 - [Using execution context variables](Modules/III-k6-Intermediate/10-Using-execution-context-variables.md)
 - [Creating and using custom metrics](Modules/III-k6-Intermediate/11-Creating-and-using-custom-metrics.md)

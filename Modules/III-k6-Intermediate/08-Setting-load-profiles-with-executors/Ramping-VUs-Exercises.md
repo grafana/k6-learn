@@ -1,10 +1,10 @@
 # Ramping VUs Executor
 
-As noted in [Setting load profiles with executors](Setting-load-profiles-with-executors.md#Ramping-VUs), _Ramping VUs_ executor has a primary focus on the number of _virtual users (VUs)_ within _stages_. 
+As noted in [Setting load profiles with executors](../08-Setting-load-profiles-with-executors.md#Ramping-VUs), the _Ramping VUs_ executor primarily focuses on the number of _virtual users (VUs)_ within _stages_. 
 
 ## Exercises
 
-For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits one second before completing the test iteration. We're providing some console output as things change.
+For our exercises, we're going to start by using a very basic script that simply performs an HTTP request and then waits one second before completing the test iteration. We're providing some console output as things change.
 
 ### Creating our script
 
@@ -32,7 +32,7 @@ export default function () {
 }
 ```
 
-Our _"basic"_ script is a little more complicated than some of our previous examples. This is due to need to define `stages` in addition to the `executor` itself. At least a single _stage_ is required, each of which includes a `target` and `duration` option, both of which are also required.
+Our _"basic"_ script is a little more complicated than some of our previous examples. This is due to the need to define `stages` in addition to the `executor` itself. At least a single _stage_ is required, each of which includes a `target` and `duration` option, both of which are also required.
 
 ### Initial test run
 
@@ -55,9 +55,9 @@ running (0m31.0s), 00/10 VUs, 141 complete and 0 interrupted iterations
 k6_workshop ✓ [======================================] 00/10 VUs  30s
 ```
 
-> :point-up: The iteration counter is 0-based, meaning a count of 12 is _actually_ 13 iterations.
+> :point_up: The iteration counter is 0-based, meaning a count of 12 is _actually_ 13 iterations.
 
-Closer inspection at the iteration counts may seem odd. The counts seem to be all over the board: _VU #7_ only performed 3 iterations, while _VU #4_ performed 22. As with the [Constant VUs](Setting-load-profiles-with-executors.md#Constant-VUs) executor, each virtual user executes the `default function ()` continuously, so how can there be such a disparity? 
+A closer inspection at the iteration counts may seem odd. The counts seem to be all over the board: _VU #7_ only performed 3 iterations, while _VU #4_ performed 22. As with the [Constant VUs](../08-Setting-load-profiles-with-executors.md#Constant-VUs) executor, each virtual user executes the `default function ()` continuously, so how can there be such a disparity? 
 
 This disparity in iteration counts is due to the _ramping_ aspect of the executor. k6 will linearly scale up or down the number of running VUs to achieve the `target` number of VUs defined within the stage. The `duration` will determine how long the scaling with take place.
 
@@ -178,4 +178,4 @@ k6_workshop ✓ [======================================] 00/10 VUs  30s
 
 ### Wrapping up
 
-With this exercise, you should be able to see the power in being able to ramp up and down the number of VUs in order to model your test activity.
+With this exercise, you should be able to see the power of being able to ramp up and down the number of VUs in order to model your test activity.

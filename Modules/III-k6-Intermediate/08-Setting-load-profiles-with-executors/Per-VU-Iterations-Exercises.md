@@ -1,10 +1,10 @@
 # Per VU Iterations Executor
 
-As noted in [Setting load profiles with executors](Setting-load-profiles-with-executors.md#Per-VU-Iterations), _Per VU Iterations_ is an executor with a focus on _iterations_ performed by a _virtual user (VU)_.
+As noted in [Setting load profiles with executors](../08-Setting-load-profiles-with-executors.md#Per-VU-Iterations), _Per VU Iterations_ is an executor with a focus on _iterations_ performed by a _virtual user (VU)_.
 
 ## Exercises
 
-For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits one second before completing the test iteration. We're providing some console output as things change.
+For our exercises, we're going to start by using a very basic script that simply performs an HTTP request and then waits one second before completing the test iteration. We're providing some console output as things change.
 
 ### Creating our script
 
@@ -31,7 +31,7 @@ export default function () {
 
 ### Initial test run
 
-We're starting with the bare-minimum to use the executor, which only requires that we specify the `executor` itself. Now that we've defined our basic script, we'll go ahead and run k6:
+We're starting with the bare minimum to use the executor, which only requires that we specify the `executor` itself. Now that we've defined our basic script, we'll go ahead and run k6:
 
 ```bash
 k6 run test.js
@@ -87,7 +87,7 @@ k6_workshop ✓ [======================================] 10 VUs  00m01.7s/10m0s 
 
 ### Change the iterations
 
-In the previous example, we had not specified how many iterations we desired, so k6 used the default value of 1 for each of the 10 VUs therefore resulting in 10 iterations overall. Expanding on this, let's increase the `iterations` option to 20. Because the iterations are _per VU_, we should expect 200 (`10 VUs * 20 iterations`) total iterations for the test run.
+In the previous example, we had not specified how many iterations we desired, so k6 used the default value of 1 for each of the 10 VUs, therefore resulting in 10 iterations overall. Expanding on this, let's increase the `iterations` option to 20. Because the iterations are _per VU_, we should expect 200 (`10 VUs * 20 iterations`) total iterations for the test run.
 
 ```js
 export const options = {
@@ -129,7 +129,7 @@ k6_workshop ✓ [======================================] 10 VUs  00m25.1s/10m0s 
 
 ```
 
-> :point-up: The iteration counter is 0-based, meaning a count of 19 is _actually_ 20 iterations.
+> :point_up: The iteration counter is 0-based, meaning a count of 19 is _actually_ 20 iterations.
 
 From the output, you should note that _VU #1_ completed early when compared to _VU #7_. In fact, _VU #7_ still had to complete 2 iterations **after** _VU #1_ was already finished. This can be considered _fair-share scheduling_; each VU performs the same amount of work.
 
@@ -154,7 +154,7 @@ export const options = {
 };
 ```
 
-> :point-up: Durations are configured as string values comprised of a positive integer and a suffix representing the time unit. For example, "s" for seconds, "m" for minutes.
+> :point_up: Durations are configured as string values comprised of a positive integer and a suffix representing the time unit. For example, "s" for seconds, "m" for minutes.
 
 As before, run the script with `k6 run test.js`.
 
@@ -174,4 +174,4 @@ We could use that information as a baseline to establish a _Service Level Agreem
 
 ### Wrapping up
 
-With this exercise, you should see how to run a very basic test and how you can control the number of iterations, virtual users, and even setting time limits. Additionally, you see that the distribution of tests for amongst VUs is _fairly scheduled_ when using _Per VU Iterations_.
+With this exercise, you should see how to run a very basic test and how you can control the number of iterations, virtual users, and even setting time limits. Additionally, you see that the distribution of tests amongst VUs is _fairly scheduled_ when using _Per VU Iterations_.

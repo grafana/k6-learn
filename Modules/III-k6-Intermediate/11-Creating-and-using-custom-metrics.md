@@ -2,11 +2,11 @@
 
 In [Understanding k6 results](../II-k6-Foundations/03-Understanding-k6-results.md), you learned how to interpret the metrics that k6 reports by default. But what if you want to measure something else that k6 doesn't keep track of?
 
-k6 allows you to create your own custom metrics within your script. Once you've defined what you want measured, k6 collects the measurements during the test and reports your custom metrics along with the built-in ones in the end-of-test summary report.
+You can create your own custom metrics within your script. Once you've defined what you want to measure, k6 collects the measurements during the test and reports your custom metrics along with the built-in ones in the end-of-test summary report.
 
 ## Types of metrics
 
-There are four types of custom metrics that you can create, and each one measures a different kind of data.
+There are [four types](https://k6.io/docs/using-k6/metrics/#metric-types) of [custom metrics](https://k6.io/docs/using-k6/metrics/#custom-metrics) that you can create, and each one measures a different kind of data.
 
 ### Counter
 
@@ -18,7 +18,7 @@ A counter is an integer that can be incremented whenever a certain event happens
 
 ### Gauge
 
-A gauge metric stores three numbers: the minimum value, maximum value, and the _last_ value. Gauges are useful to watch in real time for tracking things that are relevant only while the test is running. You could use gauges to measure:
+A gauge metric stores three numbers: the minimum value, the maximum value, and the _last_ value. Gauges are useful to watch in real-time for tracking things that are relevant only while the test is running. You could use gauges to measure:
 - the size of response bodies returned
 - a custom version of the response time (for example, the response time of three ungrouped URLs)
 - the number of unprocessed applications, in a test involving scenarios that create applications and process them simultaneously
@@ -39,7 +39,7 @@ A trend metric measures minimum, maximum, average, and percentile statistics. Un
 
 ## Example: Custom timers
 
-A common reason to use custom metrics is to set up a timer for specific actions that you specify. For example, k6 automatically removes sleep times in the calculation for response time, but it may sometimes be necessary to keep track of the total time that a VU spends on a part of the script, including the sleep. 
+A common reason to use custom metrics is to set up a timer for specific actions that you specify. For example, k6 automatically removes sleep times in the calculation for response time, but it may sometimes be necessary to keep track of the total time that a VU spends on a part of the script, including the sleep time. 
 
 Here's a short script you can use to create a custom timer:
 

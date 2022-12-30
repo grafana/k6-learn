@@ -8,7 +8,7 @@ By breaking down each of your flows into a different scenario, your overarching 
 
 ## Defining scenarios
 
-Each _scenario_ includes the same [elements of a workload model](03-Workload-modeling.md#Elements-of-a-workload-model) in addition to the `executor`, `startTime`, and optionally `env` variables and `tags` exclusive to the _scenario_.
+Each _scenario_ includes the same [elements of a workload model](03-Workload-modeling.md#Elements-of-a-workload-model) in addition to the `executor`, `startTime`, and optionally `env` variables and `tags` exclusive to the _scenario_. Check the complete list of scenario options in the [documentation](https://k6.io/docs/using-k6/scenarios/).
 
 Save the following script as `playground.js`.
 
@@ -92,11 +92,11 @@ Viewing the results, you should notice that users are browsing products, then af
 
 Our example used a minimal number of configuration options for the _scenarios_, but the available options include the following:
 
-> Remember that additional options may be required depending upon the `executor` specified. See [setting load profiles with executors](08-Setting-load-profiles-with-executors/Setting-load-profiles-with-executors.md) for more about _executors_.
+> Remember that additional options may be required depending upon the `executor` specified. See [setting load profiles with executors](08-Setting-load-profiles-with-executors.md) for more about _executors_.
 
 | Option         | Description                                                                                       | Default      |
 |----------------|---------------------------------------------------------------------------------------------------|--------------|
-| **`executor`** | Specific [executor](https://k6.io/docs/using-k6/scenarios/#executors) to "shape" traffic patterns | - (required) |
+| **`executor`** | Specific [executor](https://k6.io/docs/using-k6/scenarios/executors/) to "shape" traffic patterns | - (required) |
 | `env`          | Environment variables specific to the scenario                                                    | `{}`         | 
 | `exec`         | Name of the exported JS function to execute for the scenario                                      | `"default"`  | 
 | `gracefulStop` | Time period to allow an iteration to complete before being forcefully terminated                  | `"30s"`      |

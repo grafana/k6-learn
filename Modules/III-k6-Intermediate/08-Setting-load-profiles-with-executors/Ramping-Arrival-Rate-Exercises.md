@@ -4,7 +4,7 @@ As noted in [Setting load profiles with executors](Setting-load-profiles-with-ex
 
 ## Exercises
 
-For our exercises, we're going to start by using a very basic script which simply performs an HTTP request then waits one second before completing the test iteration. We're providing some console output as things change.
+For our exercises, we're going to start by using a very basic script that simply performs an HTTP request and then waits one second before completing the test iteration. We're providing some console output as things change.
 
 ### Creating our script
 
@@ -33,7 +33,7 @@ export default function () {
 }
 ```
 
-Our "basic" script is a little more complicated than most of our previous examples. This is due to need to define `stages` in addition to the `executor` itself. At least a single _stage_ is required, each of which must include a `target` and `duration`. In this case, `target` represents the desired _iteration rate_ to be achieved by the end of the `duration` within the `stage`. Let's defer the discussion of the required `preAllocatedVUs` for the moment until we get our initial test execution completed.
+Our "basic" script is a little more complicated than most of our previous examples. This is due to the need to define `stages` in addition to the `executor` itself. At least a single _stage_ is required, each of which must include a `target` and `duration`. In this case, `target` represents the desired _iteration rate_ to be achieved by the end of the `duration` within the `stage`. Let's defer the discussion of the required `preAllocatedVUs` for the moment until we get our initial test execution completed.
 
 ### Initial test run
 
@@ -68,7 +68,7 @@ k6_workshop ✓ [======================================] 0/5 VUs  30s  10 iters/
      vus............................: 5      min=5      max=5
 ```
 
-While _successful_, closer inspection of our results shows that our test behavior was not as intended.
+While _successful_, a closer inspection of our results shows that our test behavior was not as intended.
 
 Looking at the output, we see the following:
 
@@ -76,7 +76,7 @@ Looking at the output, we see the following:
 WARN[0015] Insufficient VUs, reached 5 active VUs and cannot initialize more  executor=ramping-arrival-rate scenario=k6_workshop
 ```
 
-What happened? With the `preAllocatedVUs` setting we glossed over earlier, we told k6 to start the test with 5 virtual users; after a few iterations, k6 was able to determine that it would **not** be able to achieve our desired iteration rate within the stage. This fact is evident looking at the `iterations` value in the test summary; our test was only able to attain a rate of 3.32 iterations per second---we wanted 10.
+What happened? With the `preAllocatedVUs` setting we glossed over earlier, we told k6 to start the test with 5 virtual users; after a few iterations, k6 was able to determine that it would **not** be able to achieve our desired iteration rate within the stage. This fact is evident by looking at the `iterations` value in the test summary; our test was only able to attain a rate of 3.32 iterations per second---we wanted 10.
 
 We _could_ simply double the number of `preAllocatedVUs`, or better yet, we could allow k6 to automatically control the number of VUs to achieve our desired rate.
 
@@ -101,7 +101,7 @@ export const options = {
 };
 ```
 
-To show us when the autoscaling is taking place, let's include the following javascript prior to `options` block.
+To show us when the autoscaling is taking place, let's include the following javascript before the `options` block.
 
 ```js
 // This will be executed for each VU when initialized
@@ -132,11 +132,11 @@ INFO[0031] Hello, VU #0 has entered the test!            source=console
      iterations.....................: 143    4.61819/s
      vus............................: 11     min=5     max=11
 ```
-> :point-up: Feel free to ignore the entries about `VU #0`...it's a bit of a special case.
+> :point_up: Feel free to ignore the entries about `VU #0`...it's a bit of a special case.
 
 Reviewing the output, we now see that k6 automatically added VUs to increase the _iteration rate_ ultimately reaching 11 VUs from our starting point of 5 VUs. 
 
-> :point-up: By **not** specifying `maxVUs` in our first test, we essentially disabled autoscaling of VUs potentially eliminating the ability to reach the desire iteration rate.
+> :point_up: By **not** specifying `maxVUs` in our first test, we essentially disabled autoscaling of VUs potentially eliminating the ability to reach the desire iteration rate.
 
 ### Ramping effect
 
@@ -215,7 +215,7 @@ Rate
  0/s +---------------------------------------+ 30s
                  S T A G E  # 1    
 ```
-The scaling was within the first second or two so that our graph would like the above for the configured stage. 
+The scaling was within the first second or two so that our graph would look like the above for the configured stage. 
 
 > If we wanted a single stage with a flat---or _constant_---rate we'd use the _Constant Arrival Rate_ executor instead!
 
@@ -266,7 +266,7 @@ export const options = {
 
 From our examples so far, we've been basing our _iteration rate_ upon iterations per second. We can change the rate denominator using the `timeUnit` option. Again, by default, the setting value is `1s`.
 
-> The `timeUnit` applies to the `target` rates within all stages as well as the `startRate`.
+> :point_up: The `timeUnit` applies to the `target` rates within all stages as well as the `startRate`.
 
 Let's slow down our example by changing our rates from iterations per second, to iterations per minute.
 ```js

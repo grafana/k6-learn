@@ -16,7 +16,7 @@
 - [Setting test criteria with thresholds](Modules/II-k6-Foundations/07-Setting-test-criteria-with-thresholds.md)
 - [k6 results output options](Modules/II-k6-Foundations/08-k6-results-output-options.md)
 - [Best practices for designing realistic k6 scripts](Modules/XX-Future-Ideas/Best-practices-for-designing-realistic-k6-scripts.md)
-- [Setting load profiles with executors](Modules/III-k6-Intermediate/08-Setting-load-profiles-with-executors/Setting-load-profiles-with-executors.md)
+- [Setting load profiles with executors](Modules/III-k6-Intermediate/08-Setting-load-profiles-with-executors.md)
 - [Workload modeling with scenarios](Modules/III-k6-Intermediate/09-Workload-modeling-with-scenarios.md)
 - [Integrating k6 with Grafana and Prometheus](Modules/XX-Future-Ideas/Integrating-k6-with-Grafana-and-Prometheus.md)
 
@@ -82,7 +82,7 @@
 - [Organizing code in k6 by transaction - groups and tags](Modules/Organizing-code-in-k6-by-transaction---groups-and-tags.md)
 - [Setup and Teardown functions](Modules/III-k6-Intermediate/07-Setup-and-Teardown-functions.md)
 - [Best practices for designing realistic k6 scripts](Modules/XX-Future-Ideas/Best-practices-for-designing-realistic-k6-scripts.md)
-- [Setting load profiles with executors](Modules/III-k6-Intermediate/08-Setting-load-profiles-with-executors/Setting-load-profiles-with-executors.md)
+- [Setting load profiles with executors](Modules/III-k6-Intermediate/08-Setting-load-profiles-with-executors.md)
 - [Workload modeling with scenarios](Modules/III-k6-Intermediate/09-Workload-modeling-with-scenarios.md)
 - [Creating and using custom metrics](Modules/III-k6-Intermediate/11-Creating-and-using-custom-metrics.md)
 - [Environment variables](Modules/Environment-variables.md)
