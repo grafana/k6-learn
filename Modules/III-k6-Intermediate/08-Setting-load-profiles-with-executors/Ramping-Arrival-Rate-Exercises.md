@@ -2,6 +2,8 @@
 
 As noted in [Setting load profiles with executors](Setting-load-profiles-with-executors.md#Ramping-Arrival-Rate), the _Ramping Arrival Rate_ executor has a primary focus on the _iteration rate_ being applied over a specified duration within _stages_.
 
+This is a scenario typically seen with [stress or spike testing](https://k6.io/docs/test-types/stress-testing/) when there is a need to gradually push an API beyond its breaking point or to simulate spikes to extreme load over a very short period of time.
+
 ## Exercises
 
 For our exercises, we're going to start by using a basic script that simply performs an HTTP request, and aims at achieving 30 requests per time unit (which defaults to 1 second) during the only _stage_ we define. We're providing some console output as things change.
