@@ -6,7 +6,7 @@ This is a scenario typically seen with [stress or spike testing](https://k6.io/d
 
 ## Exercises
 
-For our exercises, let's start with a basic script that runs an HTTP request and trys to achieve 30 requests per time unit (which defaults to 1 second) during the only _stage_ we define. We're providing some console output as things change.
+For our exercises, let's start with a basic script that runs an HTTP request and tries to achieve 30 requests per time unit (which defaults to 1 second) during the only _stage_ we define. We're providing some console output as things change.
 
 ### Creating our script
 
