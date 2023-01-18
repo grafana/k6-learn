@@ -6,7 +6,7 @@ This is a scenario typically seen with [stress or spike testing](https://k6.io/d
 
 ## Exercises
 
-For our exercises, we're going to start by using a basic script that simply performs an HTTP request, and aims at achieving 30 requests per time unit (which defaults to 1 second) during the only _stage_ we define. We're providing some console output as things change.
+For our exercises, let's start with a basic script that runs an HTTP request and trys to achieve 30 requests per time unit (which defaults to 1 second) during the only _stage_ we define. We're providing some console output as things change.
 
 ### Creating our script
 
@@ -98,7 +98,7 @@ WARN[0015] Insufficient VUs, reached 2 active VUs and cannot initialize more  ex
 
 What happened? 
 
-With the `preAllocatedVUs` setting we glossed over earlier, we told k6 to start the test with 2 virtual users; after a few iterations, k6 was able to determine that it would **not** be able to achieve our desired iteration rate within the stage. 
+With the `preAllocatedVUs` setting we glossed over earlier, we told k6 to start the test with 2 virtual users. With this pre-allocation, k6 could **not** achieve the desired iteration rate within the stage. 
 
 This fact is evident by looking at the `iterations` value in the test summary; our test was only able to attain a rate of 10.47 iterations per second and we wanted 30.
 

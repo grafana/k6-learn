@@ -6,7 +6,7 @@ This is a scenario typically seen with [load testing an API](https://k6.io/docs/
 
 ## Exercises
 
-For our exercises, we're going to start by using a basic script that simply performs an HTTP request on each test iteration and aims at achieving 50 requests per time unit (which defaults to 1 second). We're providing some console output as things change.
+Our exercises start with a basic script. It runs an HTTP request on each test iteration and tries to achieve 50 requests per time unit (which defaults to 1 second). We provide some console output as things change.
 
 ### Creating our script
 
@@ -34,9 +34,9 @@ export default function () {
 
 We're starting with the bare minimum to use the executor. Compared to previous executors, this has a bit more required configuration beyond the usual `executor` itself.
 
-Reviewing the [options in the documentation](https://k6.io/docs/using-k6/scenarios/executors/constant-arrival-rate/), we see that the `rate` and `duration` are now required. This makes sense given the focus of this executor is achieving and maintaining the specified _iteration rate_ over the provided timeframe. 
+As noted in the [`constant-arrival-rate` documentation](https://k6.io/docs/using-k6/scenarios/executors/constant-arrival-rate/),  `rate` and `duration` are now required. This makes sense given the focus of this executor is to acheive and maintain the specified _iteration rate_ over the provided timeframe. 
 
-Let's defer the discussion of `preAllocatedVUs` for the moment until we get our initial test execution completed.
+Let's defer the discussion of `preAllocatedVUs` for the moment until our initial test finishes.
 
 ### Initial test run
 
@@ -87,7 +87,7 @@ k6_workshop ✓ [======================================] 0/2 VUs  30s  50.00 ite
      vus_max........................: 2      min=2       max=2
 ```
 
-Our test ran successfully. However, a closer inspection of the results shows that our actual results are not as intended.
+Our test ran successfully. However, closer inspections shows that our results are not as intended.
 
 Looking at the output, we see the following:
 
@@ -97,15 +97,15 @@ WARN[0000] Insufficient VUs, reached 2 active VUs and cannot initialize more  ex
 
 What happened here? 
 
-Remember the `preAllocatedVUs` setting we glossed over earlier? With this setting, we simply told k6 to start the test with 2 virtual users; after a few iterations, k6 was able to determine that it would **not** be able to achieve our desired iteration rate (50 iterations/s).
+Remember the `preAllocatedVUs` setting we glossed over earlier? With this setting, we told k6 to start the test with 2 virtual users. With such few allocated VUs, k6  could **not** achieve our desired iteration rate (50 iterations/s).
 
-This fact is evident by looking at the `iterations` value in the test summary; our test was only able to attain a rate of 13.61 iterations per second and we wanted 50.
+You can confirm this fact in the `iterations` value in the test summary; our test was attained a rate of only 13.61 iterations per second and we wanted 50.
 
 ### Adjusting preallocated virtual users
 
-Restating once again, the _Constant Arrival Rate_ executor is focused on the _iteration rate_ over a time frame. k6 aims to eliminate the need to be overly concerned about the actual number of users required to achieve such a rate. However, we still need to give our script enough VUs to achieve that rate. 
+To restate, _Constant Arrival Rate_  focuses on the _iteration rate_. k6 aims to eliminate the need to be overly concerned about the actual number of users required to achieve such a rate. However, we still must give our script enough VUs to achieve that rate. 
 
-From our example above, we have that our request duration or latency is, on average, 132.35ms, and the 95 percentile is around 165.43ms. With just 2 VUs (`preAllocatedVUs`), in a very optimistic scenario, we cannot expect more than `2 VUs / 0.132 s = 15.15 iterations/s`.
+In the preceding example, the request duration or latency is, on average, 132.35ms, and the 95 percentile is around 165.43ms. With just 2 VUs (`preAllocatedVUs`), in a very optimistic scenario, we cannot expect more than `2 VUs / 0.132 s = 15.15 iterations/s`.
 
 Playing a bit with the number of `preAllocatedVUs`, we can update your script to a higher value, e.g. 25.
 
@@ -153,7 +153,7 @@ Reviewing the output now, we see that the desired rate is more closely achieved 
 
 You might be tempted to set a lower value for [`preAllocatedVUs` and use `maxVUs` option](https://k6.io/docs/using-k6/scenarios/executors/constant-arrival-rate/) to autoscale the test. `maxVUs` is the maximum number of VUs to allow during the test run, which defaults to `preAllocatedVUs` when not set. However, it's usually best to leave the default value for `maxVUs` and increase the `preAllocatedVUs`. In this way, the VUs are allocated before the test starts and will be used when (and only if) necessary.
 
-Allocating VUs in the middle of the test can be costly in terms of CPU resources in the load generator instance, and can skew the tests. Preallocating VUs will allow the test to start with all the VUs available with no need to wait to allocate more when needed in the middle of the test run.
+Allocating VUs in the middle of the test can be costly in terms of CPU resources in the load generator instance, and can skew the tests. With preallocating VUs, the test starts with all the VUs available―no need to wait to allocate more when needed in the middle of the test run.
 
 ### Other rate options
 
