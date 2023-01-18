@@ -106,7 +106,7 @@ This fact is evident by looking at the `iterations` value in the test summary; o
 
 Restating once again, the _Ramping Arrival Rate_ executor is focused on the _iteration rate_ over a time frame within each stage. k6 aims to eliminate the need to be overly concerned about the actual number of users required to achieve such a rate. However, we still need to give our script enough VUs to achieve that rate.
 
-From our example above, we have that our request duration or latency is, on average, 116.57ms, and the 95 percentile is around 151.35ms. With just 2 VUs (`preAllocatedVUs`), in a very optimistic scenario, we cannot expect much more than `2 VUs / 0.116 s = 17.24 iterations/s`. Even if this was the only factor at play, which we see is not in the next section.
+From our example above, we have that our request duration -- or latency -- is, on average, 116.57ms, and the 95 percentile is around 151.35ms. With just 2 VUs (`preAllocatedVUs`), in a very optimistic scenario, we cannot expect much more than `2 VUs / 0.116 s = 17.24 iterations/s`. Even if this was the only factor at play, which we will see is not in the [next section](#ramping-effect).
 
 Playing a bit with the number of `preAllocatedVUs`, we can update your script to a higher value, e.g. 10.
 
