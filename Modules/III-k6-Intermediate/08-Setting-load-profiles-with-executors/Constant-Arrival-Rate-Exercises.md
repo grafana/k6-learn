@@ -34,7 +34,7 @@ export default function () {
 
 We're starting with the bare minimum to use the executor. Compared to previous executors, this has a bit more required configuration beyond the usual `executor` itself.
 
-As noted in the [`constant-arrival-rate` documentation](https://k6.io/docs/using-k6/scenarios/executors/constant-arrival-rate/),  `rate` and `duration` are now required. This makes sense given the focus of this executor is to acheive and maintain the specified _iteration rate_ over the provided timeframe. 
+As noted in the [`constant-arrival-rate` documentation](https://k6.io/docs/using-k6/scenarios/executors/constant-arrival-rate/),  `rate` and `duration` are now required. This makes sense given the focus of this executor is to achieve and maintain the specified _iteration rate_ over the provided timeframe. 
 
 Let's defer the discussion of `preAllocatedVUs` for the moment until our initial test finishes.
 
@@ -87,7 +87,7 @@ k6_workshop ✓ [======================================] 0/2 VUs  30s  50.00 ite
      vus_max........................: 2      min=2       max=2
 ```
 
-Our test ran successfully. However, closer inspections shows that our results are not as intended.
+Our test ran successfully. However, closer inspections show that our results are not as intended.
 
 Looking at the output, we see the following:
 
@@ -99,7 +99,7 @@ What happened here?
 
 Remember the `preAllocatedVUs` setting we glossed over earlier? With this setting, we told k6 to start the test with 2 virtual users. With such few allocated VUs, k6  could **not** achieve our desired iteration rate (50 iterations/s).
 
-You can confirm this fact in the `iterations` value in the test summary; our test was attained a rate of only 13.61 iterations per second and we wanted 50.
+You can confirm this fact in the `iterations` value in the test summary; our test attained a rate of only 13.61 iterations per second and we wanted 50.
 
 ### Adjusting preallocated virtual users
 
