@@ -128,34 +128,36 @@ Your custom metric, `transaction_duration`, is reported along with the other bui
 
 In which of the following situations might it be appropriate to use a custom metric in your k6 script?
 
-A: When you want to know the response time of a certain URL
+- [ ] A: When you want to know the response time of a certain URL
 
-B: When you are asked to report how many requests were executed in total during a test
+- [ ] B: When you are asked to report how many requests were executed in total during a test
 
-C: When you want to measure something that the built-in metrics don't cover
+- [ ] C: When you want to measure something that the built-in metrics don't cover
 
 ### Question 2
 
 Which type of custom metric would be best for tracking how many opened forms had a certain checkbox ticked?
 
-A: Trend
+- [ ] A: Trend
 
-B: Counter
+- [ ] B: Counter
 
-C: Gauge
+- [ ] C: Gauge
 
 ### Question 3
 
 How can you get a report on custom metrics after a test?
 
-A: All custom metrics are displayed in the end-of-test summary report.
+- [ ] A: All custom metrics are displayed in the end-of-test summary report.
 
-B: You have to log in to k6 Cloud to see the results.
+- [ ] B: You have to log in to k6 Cloud to see the results.
 
-C: Only rate and trend metric results are shown in the end-of-test summary report.
+- [ ] C: Only rate and trend metric results are shown in the end-of-test summary report.
 
 ### Answers
 
-1. C. Both A and B describe metrics that already exist by default. Custom metrics are for creating and measuring things beyond what comes with k6 out of the box.
-2. B. A counter would be best for tracking the number of occurrences of an event during the test.
-3. A. Custom metrics are displayed at the end-of-test summary report, although they are *also* available in k6 Cloud if you use it. C is false.
+1. **C.** Both A and B describe metrics that already exist by default. Custom metrics are for creating and measuring things beyond what comes with k6 out of the box.
+
+2. **B.** A counter would be best for tracking the number of occurrences of an event during the test.
+
+3. **A.** Custom metrics are displayed at the end-of-test summary report, although they are *also* available in k6 Cloud if you use it. C is false.
