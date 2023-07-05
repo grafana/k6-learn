@@ -46,3 +46,15 @@ Consider running a workshop for k6. Below is an outline of what that workshop co
 - [Workload modeling with scenarios](Modules/III-k6-Intermediate/09-Workload-modeling-with-scenarios.md)
 - [Using execution context variables](Modules/III-k6-Intermediate/10-Using-execution-context-variables.md)
 - [Creating and using custom metrics](Modules/III-k6-Intermediate/11-Creating-and-using-custom-metrics.md)
+
+## Contributors
+
+k6-learn would not be possible without these amazing contributors! 🌟
+
+- [Imma Valls](https://github.com/immavalls)
+- [Krzysztof Widera](https://github.com/kwidera)
+- [Leandro Melendez](https://github.com/srperf)
+- [Marie Cruz](https://github.com/mdcruz)
+- [Matt Dodson](https://github.com/MattDodsonEnglish)
+- [Nicole van der Hoeven](https://github.com/nicolevanderhoeven)
+- [Paul Balogh](https://github.com/javaducky)
