@@ -53,7 +53,7 @@ Including sleep does not affect the response time (`http_req_duration`); the res
 
 ### Dynamic think time
 
-The problem with hard-coding a delay into your script is that it introduces an artificial pattern to your test that may cause later cause load on your application to be more predictable than it would be in production.
+The problem with hard-coding a delay into your script is that, it introduces an artificial pattern to your test that may later cause load on your application to be more predictable than it would be in production.
 
 **Testing best practice:** Use dynamic think time.
 
