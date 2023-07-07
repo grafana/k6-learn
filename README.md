@@ -58,3 +58,8 @@ k6-learn would not be possible without these amazing contributors! 🌟
 - [Matt Dodson](https://github.com/MattDodsonEnglish)
 - [Nicole van der Hoeven](https://github.com/nicolevanderhoeven)
 - [Paul Balogh](https://github.com/javaducky)
+
+## How to contribute?
+
+First, go to the main page: https://github.com/grafana/k6-learn. Fork the repository by clicking the "Fork" button. You should be redirected to your github /username/k6-learn. Now if everything is ok, you can clone the repository. You can do it for example by using your console with "git clone https://github.com/username/k6-learn". Nwo, add the upstream for your repo: "git remote add upstream https://github.com/grafana/k6-learn". Note that new branches, changes and pushes will only affect your repository. If you want to create a pull request go to /username/k6-learn on github and in the "Pull requests" tab create a pull request. At this point you have to decide from which branch you want to create a new pull request. Your changes now will be reviewed and either accepted or you will be asked for modifications.
+For more information about forking visit the page: https://docs.github.com/en/get-started/quickstart/fork-a-repo
