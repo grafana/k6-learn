@@ -64,6 +64,6 @@ k6-learn would not be possible without these amazing contributors! 🌟
 1. If there an issue does not exist, start by creating it under https://github.com/grafana/k6-learn/issues.
 2. [Fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks) this [repository](https://github.com/grafana/k6-learn). 
 3. Make the changes in your forked repository. Note that new branches, changes and pushes will only affect your repository.
-4. Once ready, create a [Pull Request fro your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork), mentioning the issue it solves (step 1). Keep in mind you might need to [sync it](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
+4. Once ready, create a [Pull Request from your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork), mentioning the issue it solves (step 1). Keep in mind you might need to [sync it](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
 5. Once you have the create the Pull Request, your changes now will be reviewed and either accepted or you will be asked for modifications.
 For more information about forking visit the page: https://docs.github.com/en/get-started/quickstart/fork-a-repo
