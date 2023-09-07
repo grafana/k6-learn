@@ -1,0 +1,13 @@
+{
+  "name": "k6-learn",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "slides": "vite"
+  },
+  "devDependencies": {
+    "reveal.js": "^4.5.0",
+    "vite": "^4.4.5"
+  }
+}

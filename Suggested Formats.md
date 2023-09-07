@@ -2,6 +2,10 @@
 
 ## Workshops
 
+### Beginner workshop (up to 120 mins)
+
+- See [workshop intro] for a sample format (./modules/intro/slides.md)
+
 ### One day
 
 - [Introduction to Performance Testing](Modules/I-Performance-testing-principles/01-Introduction-to-Performance-Testing.md)

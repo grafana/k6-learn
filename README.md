@@ -14,6 +14,19 @@ This repo contains resources for:
 
 Consider running a workshop for k6. Below is an outline of what that workshop could look like, as well as modules you could use for each topic. Feel free to take these and include the parts most relevant to you!
 
+We have also created built-in slides for you, which you are free to edit. Please fork this repo and make the edits accordingly how you want the workshop to be structure.
+
+The slides are created using [reveal.js](https://revealjs.com/).
+
+### Running the slides
+
+In your terminal, run the following command:
+
+```
+npm install
+npm run slides
+```
+
 ### I: Performance testing principles
 
 - [Introduction to Performance Testing](Modules/I-Performance-testing-principles/01-Introduction-to-Performance-Testing.md)
