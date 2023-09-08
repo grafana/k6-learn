@@ -27,7 +27,7 @@ This section goes over these common commands and flags.
 
 Executing `k6 help` shows a list of all the available commands.
 
-```plain
+```shell
           /\      |‾‾| /‾‾/   /‾‾/
      /\  /  \     |  |/  /   /  /
     /  \/    \    |     (   /   ‾‾\
