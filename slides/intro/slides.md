@@ -13,24 +13,23 @@ Performance testing and k6! 💜
 ## Structure (Beginner)
 
 I. Performance Testing Principles
-  - Introduction to performance testing
-  - Frontend vs backend performance testing
-  - Load testing
-  - High level overview of the load testing process
+  - [Introduction to performance testing](?p=01-introduction-to-performance-testing)
+  - [Frontend vs backend performance testing](?p=02-frontend-vs-backend-performance-testing)
+  - [Load testing and overview of the load testing process](?p=03-load-testing)
 
 ---
 
 ## Structure (Beginner)
 
 II. k6 Foundations
-  - Getting started with k6 OSS
-  - The k6 CLI
-  - Understanding k6 results
-  - Adding checks to your script
-  - Adding think time using sleep
-  - k6 load test options
-  - Setting test criteria with thresholds
-  - k6 results output options
+  - [Getting started with k6 OSS](?p=04-getting-started-with-k6-oss)
+  - [The k6 CLI](?p=05-the-k6-cli)
+  - [Understanding k6 results](?p=06-understanding-k6-results)
+  - [Adding checks to your script](?p=07-adding-checks-to-your-script)
+  - [Adding think time using sleep](?p=08-adding-think-time)
+  - [k6 load test options](?p=09-load-test-options)
+  - [Setting test criteria with thresholds](?p=10-setting-test-criteria-with-thresholds)
+  - [k6 results output options](?p=11-k6-results-output-options)
 
 ---
 

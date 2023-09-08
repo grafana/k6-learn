@@ -143,11 +143,8 @@ k6 run test.js -e DOMAIN=test.k6.io
 
 k6 always [prioritizes settings](https://k6.io/docs/using-k6/k6-options/how-to/#order-of-precedence) in this order:
 
-1. Command-line flags
-1. Environment variables
-1. Exported k6 script options
-1. Config file
-1. Defaults
+![Priority of configurations and settings in k6](../../images/k6-order-of-preference-settings.png)
+<!-- .element class="stretch" -->
 
 ---
 

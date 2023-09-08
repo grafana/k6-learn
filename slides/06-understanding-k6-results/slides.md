@@ -56,7 +56,9 @@ http_req_duration..............: avg=130.19ms min=130.19ms med=130.19ms max=130.
 
 ---
 
-`http_req_duration` is the value for *all* requests, whether or not they passed.
+### http_req_duration
+
+> 💡 `http_req_duration` is the value for *all* requests.
 
 The line below reports the response time for *only* the successful requests.
 
@@ -105,3 +107,7 @@ iterations.....................: 1      1.525116/s
 ```
 
 ---
+
+## Adding checks to your k6 script
+
+- Move to: [07-adding-checks-to-your-script](?p=07-adding-checks-to-your-script)
