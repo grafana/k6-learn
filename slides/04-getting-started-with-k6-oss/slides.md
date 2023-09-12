@@ -7,6 +7,7 @@
 https://k6.io/docs/getting-started/installation/ 
 
 ![k6 installation page](../../images/installation-page.png)
+<!-- .element class="stretch" -->
 
 ---
 
