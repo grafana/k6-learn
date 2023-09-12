@@ -18,11 +18,11 @@
 
 _Test parameters_ include the distribution, shape, and pattern of the load.
 
-- **Virtual users (VUs).**  
+- **Virtual users (VUs)**  
 - **Iterations**
 - **Throughput**
 - **User flows**
-- **Load profile**.
+- **Load profile**
 - **Duration**
 
 ---
@@ -44,7 +44,7 @@ _Test parameters_ include the distribution, shape, and pattern of the load.
 
 ---
 
-### Average Load Test
+### Average load test
 
 ![](../../images/test-scenario-average.png)
 <!-- .element class="stretch" -->
@@ -58,21 +58,21 @@ _Test parameters_ include the distribution, shape, and pattern of the load.
 
 ---
 
-### Soak or Endurance Test
+### Soak or endurance test
 
 ![](../../images/test-scenario-soak.png)
 <!-- .element class="stretch" -->
 
 ---
 
-### Spike Test
+### Spike test
 
 ![](../../images/test-scenario-spike-test.png)
 <!-- .element class="stretch" -->
 
 ---
 
-### Breakpoint Test
+### Breakpoint test
 
 ![](../../images/test-scenarios-breakpoint.png)
 <!-- .element class="stretch" -->

@@ -14,7 +14,7 @@ This repo contains resources for:
 
 Consider running a workshop for k6. Below is an outline of what that workshop could look like, as well as modules you could use for each topic. Feel free to take these and include the parts most relevant to you!
 
-We have also created built-in slides for you, which you are free to edit. For a more custom slides, please fork this repo and make the edits accordingly how you want the workshop to be structured.
+We have also created built-in slides for you, which you are free to edit. To customize the slides, please fork this repo and make edits according to how you want the workshop to be structured.
 
 The slides are created using [reveal.js](https://revealjs.com/) and are all found in the [slides](./slides/) folder.
 
