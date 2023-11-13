@@ -57,7 +57,7 @@ Flags:
   -c, --config string       JSON config file (default "/Users/nic/Library/Application Support/loadimpact/k6/config.json")
   -h, --help                help for k6
       --log-output string   change the output for k6 logs, possible values are stderr,stdout,none,loki[=host:port] (default "stderr")
-      --log-format string    log output format
+      --log-format string   log output format
       --no-color            disable colored output
   -q, --quiet               disable progress updates
   -v, --verbose             enable verbose logging
