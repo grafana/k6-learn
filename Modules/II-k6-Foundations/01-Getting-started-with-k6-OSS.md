@@ -19,7 +19,11 @@ Time to write the script!
 
 k6 supports multiple protocols, but for now, let's stick to HTTP. Your first script will do a basic HTTP POST request against a test API that will echo back whatever you send to it.
 
-Create a new file named `test.js`, and open it in your favorite IDE. This file is our test script. k6 scripts are always written in JavaScript, even though k6 itself is written in Go. We're going to create the script together, step by step. Copy and paste the code snippets as necessary, so that your script looks like the one here.
+The fastest way to create a k6 test is to use the `k6 new [filename]` command introduced in k6 version 0.48.0. This will automatically create a file with the basic boilerplate you need to get you up and running quickly. 
+
+But, as part of your k6 learning, we will also teach you how to create a test manually.
+
+Create a new file named `test.js`, and open it in your favorite IDE. This file is our test script. k6 scripts are always written in JavaScript, even though k6 itself is written in Go. We're going to create the script together, step by step. Copy and paste the code snippets as necessary, so that your script looks like the one here. 
 
 Import the HTTP Client from the built-in module `k6/http`:
 
