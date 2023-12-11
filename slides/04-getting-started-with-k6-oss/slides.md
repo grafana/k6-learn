@@ -45,6 +45,12 @@ export default function() {
 
 ---
 
+## Writing your first k6 script
+
+Alternatively, you can also run `k6 new [filename]` to automatically create a file with the basic boilerplate to get you up and running quickly. 😉
+
+---
+
 ## Hello World: running your k6 script
 
 Run the command below on a terminal:
