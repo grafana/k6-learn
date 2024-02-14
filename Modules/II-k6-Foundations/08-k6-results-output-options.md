@@ -64,6 +64,7 @@ The results file uses the following columns:
 - **`proto`**: The name of the protocol being used, such as `HTTP/1.1`.
 - **`scenario`**: The name of the test scenario within which the measurement was taken. The standard scenario is `default`.
 - **`service`**: For gRPC, the RPC service name.
+- **`status`**: The HTTP status code of the request/response.
 - **`subproto`**: For websockets, the subprotocol name.
 - **`tls_version`**: The type of Transport Layer Security (TLS) used to encrypt the connection.
 - **`url`**: The URL of the request sent. Unless the name is changed, this is the same as `name`.
