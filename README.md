@@ -6,9 +6,12 @@ This repo contains resources for:
 - speaking about k6
 - learning about k6
 
-## Starter slide deck
+## Other getting-started resources
 
-[Here's a starter slide deck](https://docs.google.com/presentation/d/1gviRg7RTzT0Y2_5WPBADyn5xpa96PIqWivGAThNW6pM/edit?usp=sharing) that you can copy, modify to your use case, and present. It is only intended to be a jumping off point, so you can remove slides that wouldn't appeal to your audience or add new ones to show off your style more.
+You can also use the following resources to learn or teach k6. You copy and modify these projects to your use case and audience. They are intended to be a jumping off point, so you can remove content that wouldn't appeal to your audience or add new ones to show off your style more. 
+
+- [k6 starter slide deck](https://docs.google.com/presentation/d/1gviRg7RTzT0Y2_5WPBADyn5xpa96PIqWivGAThNW6pM/edit?usp=sharing) 
+- [k6 OSS Workshop](https://github.com/grafana/k6-oss-workshop)
 
 ## What if I want something more hands on?
 
