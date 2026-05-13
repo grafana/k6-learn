@@ -2,6 +2,7 @@
   "name": "k6-learn",
   "private": true,
   "version": "0.0.0",
+  "packageManager": "npm@10.9.2",
   "type": "module",
   "scripts": {
     "slides": "vite"
